@@ -8,6 +8,7 @@ from . import errors
 
 logging.basicConfig(level=logging.DEBUG)
 
+SESSION_FIELD = 'internal_session'
 
 class VBRRecord:
     """A Virtual Biospecimen Repository table record
@@ -29,7 +30,7 @@ class VBRRecord:
     PRIMARY_KEY = None
     # Field definitions (name, type, required)
     FIELDS = []
-
+    
     def _to_serial(self, value: Any) -> int:
         """Cast to serial (integer)
         """

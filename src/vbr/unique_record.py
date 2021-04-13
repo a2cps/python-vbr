@@ -1,9 +1,11 @@
 import hashlib
 from . import record
 
+SIGNATURE_FIELD = '_signature'
+
 class VBRUniqueRecord(record.VBRRecord):
     SIGNATURE_FIELDS = []
-    SIGNATURE_FIELD = 'signature'
+    SIGNATURE_FIELD_NAME = SIGNATURE_FIELD
     SIGNATURE_SALT = 'mWKGVzNJcZ*/nn5s^>dC+#j8'
     SIGNATURE_LENGTH = 24
 
@@ -27,7 +29,7 @@ class VBRUniqueRecord(record.VBRRecord):
     @classmethod
     def field_names(cls, include_pk:bool=False) -> tuple:
         fn = list(super().field_names(include_pk))
-        fn.append(cls.SIGNATURE_FIELD)
+        fn.append(cls.SIGNATURE_FIELD_NAME)
         return tuple(fn)
     
     def field_values(self, include_pk:bool=False) -> tuple:

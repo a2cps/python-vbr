@@ -13,19 +13,23 @@ from . import tableclasses
 
 logging.basicConfig(level=logging.DEBUG)
 
-
 class VBRConn:
     """Managed connection to a VBR PostgreSQL database
     """
 
     CONNECT_TIMEOUT = 30
+    SESSION_FIELD_NAME = tableclasses.SESSION_FIELD
 
     def __init__(self, config:dict=None, session:str=None, no_connect:bool=False):
+
         if session is None:
             self.session = uuid.uuid4().hex
         else:
             self.session = str(session)
         logging.debug('VBR Session: ' + self.session)
+
+        self.session_field = self.SESSION_FIELD_NAME
+
         if no_connect is False:
             self.db = self._connect(config)
         else:
@@ -103,7 +107,7 @@ class VBRConn:
 
         # Extend with private session ID
         db_cols = list(db_cols)
-        db_cols.append(constants.SESSION_FIELD)
+        db_cols.append(SESSION_FIELD_NAME)
         db_values = list(db_values)
         db_values.append(self.session)
 

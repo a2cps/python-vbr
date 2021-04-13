@@ -2,6 +2,8 @@ from . import errors
 from . import record
 from . import unique_record
 
+from .record import SESSION_FIELD
+
 def _classes():
     """Private: Return the list of tableclasses via Python inspection
     """
