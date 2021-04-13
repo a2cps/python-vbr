@@ -9,6 +9,7 @@ class ValidationError(GenericRecordError):
 class TableNotSupported(GenericRecordError):
     pass
 
+
 class GenericVBRError(Exception):
     pass
 
@@ -23,4 +24,3 @@ class RecordNotFoundError(GenericVBRError):
 
 class NotUniqueError(GenericVBRError):
     pass
-

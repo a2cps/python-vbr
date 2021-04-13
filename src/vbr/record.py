@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 SESSION_FIELD = 'internal_session'
 
+
 class VBRRecord:
     """A Virtual Biospecimen Repository table record
 
@@ -30,7 +31,7 @@ class VBRRecord:
     PRIMARY_KEY = None
     # Field definitions (name, type, required)
     FIELDS = []
-    
+
     def _to_serial(self, value: Any) -> int:
         """Cast to serial (integer)
         """
@@ -80,9 +81,9 @@ class VBRRecord:
                 return timestring_to_timestamp(value, self.tz1, self.tz2)
 
     def __init__(self,
-                 new:bool=True,
-                 tz1:str=constants.SOURCE_TIMEZONE,
-                 tz2:str=constants.DATABASE_TIMEZONE,
+                 new: bool = True,
+                 tz1: str = constants.SOURCE_TIMEZONE,
+                 tz2: str = constants.DATABASE_TIMEZONE,
                  **kwargs):
 
         # Holds values for the record object
@@ -122,7 +123,7 @@ class VBRRecord:
         return cls.FIELDS
 
     @classmethod
-    def field_names(cls, include_pk:bool=False) -> tuple:
+    def field_names(cls, include_pk: bool = False) -> tuple:
         """Ordered names of fields in self.TABLE for use with DBMS
         """
         fnames = []
@@ -132,7 +133,7 @@ class VBRRecord:
                     fnames.append(field_name)
         return tuple(fnames)
 
-    def field_values(self, include_pk:bool=False) -> tuple:
+    def field_values(self, include_pk: bool = False) -> tuple:
         """Render record as tuple of values for use with DBMS
         """
         fvals = []
@@ -148,14 +149,18 @@ class VBRRecord:
         if field_name in self.field_names(include_pk=True):
             return self._VALUES.get(field_name, None)
         else:
-            raise errors.ValidationError('{0} is not gettable from table {1}'.format(field_name, self.table_name))
+            raise errors.ValidationError(
+                '{0} is not gettable from table {1}'.format(
+                    field_name, self.table_name))
 
     def set_field(self, field_name: str, field_value: Any) -> Any:
         if field_name in self.field_names():
             self._VALUES[field_name] = field_value
             return field_value
         else:
-            raise errors.ValidationError('{0} is not settable in table {1}'.format(field_name, self.table_name))
+            raise errors.ValidationError(
+                '{0} is not settable in table {1}'.format(
+                    field_name, self.table_name))
 
     def validate(self) -> bool:
         """Validate the object's data fields

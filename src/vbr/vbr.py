@@ -9,10 +9,10 @@ logging.basicConfig(level=logging.DEBUG)
 
 class VBR(connection.VBRConn):
     def get_key_for_table(self,
-                          key_column:str,
-                          table:str,
-                          query_column:str,
-                          query_value:str,
+                          key_column: str,
+                          table: str,
+                          query_column: str,
+                          query_value: str,
                           exact_match=True) -> str:
         if exact_match:
             SQL = "SELECT {0} FROM {1} WHERE {2} = %s;".format(
@@ -39,7 +39,7 @@ class VBR(connection.VBRConn):
         except Exception:
             raise
 
-    def organization_name_from_id(self, organization_id:str) -> str:
+    def organization_name_from_id(self, organization_id: str) -> str:
         """Resolve an organization name from its primary identifier
         """
         # https://docs.google.com/document/d/1Rd1lxdcb7lLOnFO_tDCfqcG5tdqrp-A3i4DUiavr0WM/edit#bookmark=id.w6w9zincfs9m
@@ -49,7 +49,7 @@ class VBR(connection.VBRConn):
                                       organization_id,
                                       exact_match=True)
 
-    def organization_id_from_name(self, name:str) -> str:
+    def organization_id_from_name(self, name: str) -> str:
         """Resolve an organization identifier from its name
         """
         # https://docs.google.com/document/d/1Rd1lxdcb7lLOnFO_tDCfqcG5tdqrp-A3i4DUiavr0WM/edit#bookmark=id.w6w9zincfs9m
@@ -59,7 +59,7 @@ class VBR(connection.VBRConn):
                                       name,
                                       exact_match=True)
 
-    def organization_id_from_synonym(self, synonym:str) -> str:
+    def organization_id_from_synonym(self, synonym: str) -> str:
         """Resolve an organization identifier from one of its synonyms
         """
         # https://docs.google.com/document/d/1Rd1lxdcb7lLOnFO_tDCfqcG5tdqrp-A3i4DUiavr0WM/edit#bookmark=id.w6w9zincfs9m
@@ -69,15 +69,16 @@ class VBR(connection.VBRConn):
                                       synonym,
                                       exact_match=False)
 
-    def protocol_id_from_name(self, protocol_name:str) -> str:
+    def protocol_id_from_name(self, protocol_name: str) -> str:
         return self.get_key_for_table('protocol_id', 'protocol', 'name',
                                       protocol_name)
 
-    def dataset_id_from_description(self, dataset_description:str) -> str:
+    def dataset_id_from_description(self, dataset_description: str) -> str:
         return self.get_key_for_table('dataset_id', 'dataset', 'description',
                                       dataset_description)
 
-    def baseline_visit_dataset_id_from_subject_title(self, subject_title:str) -> str:
+    def baseline_visit_dataset_id_from_subject_title(
+            self, subject_title: str) -> str:
         baseline_query = 'baseline visit for {}'.format(' '.join(
             subject_title.split('_')))
         return self.dataset_id_from_description(baseline_query)

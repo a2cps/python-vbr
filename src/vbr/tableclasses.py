@@ -4,6 +4,7 @@ from . import unique_record
 
 from .record import SESSION_FIELD
 
+
 def _classes():
     """Private: Return the list of tableclasses via Python inspection
     """
@@ -22,7 +23,9 @@ def class_from_table(table_name: str) -> record.VBRRecord:
     for c in _classes():
         if getattr(c, 'TABLE') == table_name:
             return c
-    raise errors.TableNotSupported('{0} is not currently supported by the VBR module'.format(table_name))
+    raise errors.TableNotSupported(
+        '{0} is not currently supported by the VBR module'.format(table_name))
+
 
 class BioSample(record.VBRRecord):
     """VBR biosample

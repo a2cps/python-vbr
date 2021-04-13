@@ -11,9 +11,10 @@ def timestamp() -> datetime.datetime:
 
 
 def timestring_to_timestamp(
-        record_time: str,
-        source_timezone:str=constants.SOURCE_TIMEZONE,
-        destination_timezone:str=constants.DATABASE_TIMEZONE) -> datetime.datetime:
+    record_time: str,
+    source_timezone: str = constants.SOURCE_TIMEZONE,
+    destination_timezone: str = constants.DATABASE_TIMEZONE
+) -> datetime.datetime:
     """Transform a time string into a localized datetime
     """
     # Parseable timestring formats, in order of preference

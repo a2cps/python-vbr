@@ -13,6 +13,7 @@ from . import tableclasses
 
 logging.basicConfig(level=logging.DEBUG)
 
+
 class VBRConn:
     """Managed connection to a VBR PostgreSQL database
     """
@@ -20,7 +21,10 @@ class VBRConn:
     CONNECT_TIMEOUT = 30
     SESSION_FIELD_NAME = tableclasses.SESSION_FIELD
 
-    def __init__(self, config:dict=None, session:str=None, no_connect:bool=False):
+    def __init__(self,
+                 config: dict = None,
+                 session: str = None,
+                 no_connect: bool = False):
 
         if session is None:
             self.session = uuid.uuid4().hex
@@ -35,7 +39,7 @@ class VBRConn:
         else:
             self.db = None
 
-    def _connect(self, config:dict=None) -> NoReturn:
+    def _connect(self, config: dict = None) -> NoReturn:
 
         # Environment variables and defaults supported by the VBR database driver
         cfg = [('VBR_HOST', 'ip', 'localhost'),
@@ -59,7 +63,8 @@ class VBRConn:
 
         return conn
 
-    def retrieve_record(self, pk_value:str, table_name:str) -> record.VBRRecord:
+    def retrieve_record(self, pk_value: str,
+                        table_name: str) -> record.VBRRecord:
         """Retrieve a VBR Record from the database by primary key and table name
         """
 
@@ -78,17 +83,23 @@ class VBRConn:
         conn = self.db
         with conn:
             with conn.cursor() as cur:
-                logging.debug(cur.mogrify(SQL, [pk_value,]))
-                cur.execute(SQL, [pk_value,])
+                logging.debug(cur.mogrify(SQL, [
+                    pk_value,
+                ]))
+                cur.execute(SQL, [
+                    pk_value,
+                ])
                 try:
                     db_vals = cur.fetchall()[0]
                     record = dict()
                     for col, val in zip(db_cols, db_vals):
                         record[col] = val
-                    logging.debug('Retrieve successful')    
+                    logging.debug('Retrieve successful')
                     return rec_cls(**record, new=False)
                 except IndexError:
-                    raise errors.RecordNotFoundError('No {0}.{1} record matching {2} was found'.format(db_table, db_pk, pk_value))
+                    raise errors.RecordNotFoundError(
+                        'No {0}.{1} record matching {2} was found'.format(
+                            db_table, db_pk, pk_value))
                 except Exception:
                     raise
 
@@ -124,7 +135,7 @@ class VBRConn:
 
         conn = self.db
         id_of_new_row = None
-        # Using a pair of contexts will automatically roll back the pending transaction 
+        # Using a pair of contexts will automatically roll back the pending transaction
         # if an Exception is encountered
         with conn:
             with conn.cursor() as cur:
@@ -134,7 +145,8 @@ class VBRConn:
                 # https://stackoverflow.com/a/5247723
                 id_of_new_row = cur.fetchone()[0]
                 conn.commit()
-                logging.debug('Create successful: {0}.{1} = {2}'.format(db_table, db_pk, id_of_new_row))
+                logging.debug('Create successful: {0}.{1} = {2}'.format(
+                    db_table, db_pk, id_of_new_row))
                 return str(id_of_new_row)
 
         # TODO - implement better failure handling
@@ -148,8 +160,9 @@ class VBRConn:
         db_cols = vbr_object.field_names(include_pk=False)
         db_values = vbr_object.field_values(include_pk=False)
         if pk_value is None:
-            raise errors.ValidationError('Field {0} cannot be empty'.format(db_pk))
-        
+            raise errors.ValidationError(
+                'Field {0} cannot be empty'.format(db_pk))
+
         # Create SQL statement
         data = []
         sets = []
@@ -157,7 +170,8 @@ class VBRConn:
             sets.append('{0} = %s'.format(col))
             data.append(val)
         sets_sql = ','.join(sets)
-        SQL = "UPDATE {0} SET {1} WHERE {2} = %s;".format(db_table, sets_sql, db_pk)
+        SQL = "UPDATE {0} SET {1} WHERE {2} = %s;".format(
+            db_table, sets_sql, db_pk)
         # Add primary key value to end of data to support the WHERE clause above
         data.append(pk_value)
         conn = self.db
@@ -175,12 +189,15 @@ class VBRConn:
         db_table = vbr_object.table_name
         db_pk = vbr_object.primary_key
         pk_value = vbr_object._VALUES.get(db_pk)
-        SQL = "DELETE FROM {} WHERE {} = %s".format(
-            db_table, db_pk)
+        SQL = "DELETE FROM {} WHERE {} = %s".format(db_table, db_pk)
         conn = self.db
         with conn:
             with conn.cursor() as cur:
-                logging.debug(cur.mogrify(SQL, [pk_value,]))
-                cur.execute(SQL, [pk_value,])
+                logging.debug(cur.mogrify(SQL, [
+                    pk_value,
+                ]))
+                cur.execute(SQL, [
+                    pk_value,
+                ])
                 conn.commit()
                 logging.debug('Delete successful')
