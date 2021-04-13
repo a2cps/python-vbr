@@ -22,7 +22,17 @@ DEBUG:root:VBR Session: b00251b3773344bf8a00b229ec1da5b9
 b00251b3773344bf8a00b229ec1da5b9
 ```
 
-Sessions are intended for supporting development use cases only. 
+**NOTE** Sessions are intended for supporting development use cases only. 
+
+It is also possible to configure a VBR connection using the environment variables `VBR_HOST`, `VBR_DATABASE`, `VBU_USERNAME`, and `VBR_PASSWORD`. Values passed in via the `config` dictionary override environment variables. 
+```shell
+% export VBR_PASSWORD='s3cr379@$$w0rD'
+% python
+>>> import vbr
+d = vbr.VBR(config={'ip': 'localhost', 'user': 'vbruser', 'db': 'vbr'})
+DEBUG:root:VBR Session: b00251b3773344bf8a00b229ec1da5b9
+# The database connection will be configured with password from the environment and the specified dict
+```
 
 ### Direct Database Operations
 
