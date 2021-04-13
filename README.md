@@ -16,7 +16,7 @@ pip install --user .
 
 ```shell
 >>> import vbr
->>> d = vbr.VBR(config={'ip': 'localhost', 'user': 'vbruser', 'pass': 'vbrpass', 'db': 'vbr'})
+>>> d = vbr.VBR(config={'ip': 'localhost', 'user': 'vbruser', 'pass': 'vbrpass', 'db': 'a2cps})
 DEBUG:root:VBR Session: b00251b3773344bf8a00b229ec1da5b9
 >>> d.session
 b00251b3773344bf8a00b229ec1da5b9
@@ -24,12 +24,12 @@ b00251b3773344bf8a00b229ec1da5b9
 
 **NOTE** Sessions are intended for supporting development use cases only. 
 
-It is also possible to configure a VBR connection using the environment variables `VBR_HOST`, `VBR_DATABASE`, `VBU_USERNAME`, and `VBR_PASSWORD`. Values passed in via the `config` dictionary override environment variables. 
+It is also possible to configure a VBR connection using the environment variables `VBR_HOST`, `VBR_DATABASE`, `VBR_USERNAME`, and `VBR_PASSWORD`. Values passed in via the `config` dictionary override environment variables. 
 ```shell
 % export VBR_PASSWORD='s3cr379@$$w0rD'
 % python
 >>> import vbr
-d = vbr.VBR(config={'ip': 'localhost', 'user': 'vbruser', 'db': 'vbr'})
+d = vbr.VBR(config={'ip': 'localhost', 'user': 'vbruser', 'db': 'a2cps'})
 DEBUG:root:VBR Session: b00251b3773344bf8a00b229ec1da5b9
 # The database connection will be configured with password from the environment and the specified dict
 ```
@@ -39,9 +39,10 @@ DEBUG:root:VBR Session: b00251b3773344bf8a00b229ec1da5b9
 The `db` property of a `VBR` class instance is a standard `psycopg2` connection. It supports all documented `psycopg2` functions. The `VBR` class is augmented with several helper functions. 
 
 ```shell
->>> cur = d.db.cur()
+>>> cur = d.db.cursor()
 # Select first 10 biosamples
->>> cur.execute("SELECT * FROM biosample WHERE true LIMIT 10;")
+>>> cur.execute("SELECT * FROM dataset;")
+>>> cur.fetchone()
 ```
 
 ### Table Classes
@@ -93,7 +94,7 @@ DEBUG:root:b'SELECT organization_id,url,name,description,synonyms FROM organizat
 DEBUG:root:Retrieve successful
 DEBUG:root:VBRRecord: {'organization_id': 1, 'url': 'tacc.utexas.edu', 'name': 'TACC', 'description': 'Texas Advanced Computing Center', 'synonyms': 'DCC'}
 # Get the value for a field
->>> tacc.get_field('url)
+>>> tacc.get_field('url')
 'tacc.utexas.edu'
 # Not all tables are currently supported
 >>> a2cps = d.retrieve_record(1, 'project')
