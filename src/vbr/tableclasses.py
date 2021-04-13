@@ -27,10 +27,19 @@ def class_from_table(table_name: str) -> record.VBRRecord:
         '{0} is not currently supported by the VBR module'.format(table_name))
 
 
-class BioSample(record.VBRRecord):
+class BioSample(unique_record.VBRUniqueRecord):
     """VBR biosample
     """
-    pass
+    TABLE = 'biosample'
+    PRIMARY_KEY = 'biosample_id'
+    FIELDS = [('biosample_id_namespace', 'varchar', True),
+              ('biosample_id', 'serial', True),
+              ('project_id_namespace', 'varchar', True),
+              ('project', 'integer', True), ('persistent_id', 'varchar', True),
+              ('creation_time', 'timestamp', False),
+              ('sample_type', 'integer', False), ('anatomy', 'integer', False),
+              ('subject', 'varchar', False), ('protocol', 'integer', True),
+              ('event_id', 'integer', True)]
 
 
 class Contact(record.VBRRecord):
@@ -43,7 +52,7 @@ class Contact(record.VBRRecord):
               ('organization', 'integer', True)]
 
 
-class DataEvent(record.VBRRecord):
+class DataEvent(unique_record.VBRUniqueRecord):
     """VBR data_event
     """
     TABLE = 'data_event'
@@ -75,7 +84,7 @@ class DatasetOrganization(record.VBRRecord):
               ('role', 'integer', True)]
 
 
-class File(record.VBRRecord):
+class File(unique_record.VBRUniqueRecord):
     """VBR file
     """
     TABLE = 'file'
@@ -127,7 +136,7 @@ class Location(record.VBRRecord):
               ('organization', 'integer', True)]
 
 
-class Organization(record.VBRRecord):
+class Organization(unique_record.VBRUniqueRecord):
     """VBR organization
     """
     TABLE = 'organization'
@@ -135,6 +144,18 @@ class Organization(record.VBRRecord):
     FIELDS = [('organization_id', 'serial', True), ('url', 'varchar', True),
               ('name', 'varchar', True), ('description', 'varchar', True),
               ('synonyms', 'varchar', False)]
+
+
+class Project(unique_record.VBRUniqueRecord):
+    """VBR project
+    """
+    TABLE = 'project'
+    PRIMARY_KEY = 'project_id'
+    FIELDS = [('id_namespace', 'varchar', True),
+              ('project_id', 'serial', True), ('project_id', 'varchar', False),
+              ('creation_time', 'timestamp', False),
+              ('abbreviation', 'varchar', False), ('name', 'varchar', False),
+              ('description', 'varchar', False)]
 
 
 class Protocol(record.VBRRecord):
@@ -165,7 +186,7 @@ class Status(record.VBRRecord):
               ('status_description', 'varchar', True)]
 
 
-class Subject(record.VBRRecord):
+class Subject(unique_record.VBRUniqueRecord):
     """VBR subject
     """
     TABLE = 'subject'
