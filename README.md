@@ -97,7 +97,7 @@ vbr.errors.TableNotSupported: project is not currently supported by the VBR modu
 ```
 
 
-#### Create a Record
+### Create a Record
 
 ```shell
 # Create a new DataEvent
@@ -109,7 +109,7 @@ DEBUG:root:New VBRRecord: {'data_event_id': None, 'protocol': None, 'rank': None
 '1'
 ```
 
-#### Update a Record
+### Update a Record
 
 ```shell
 # Retrieve a record from the organizations table
@@ -135,7 +135,7 @@ DEBUG:root:New VBRRecord: {'organization_id': 1, 'url': 'tacc.utexas.edu', 'name
 # Note that the organization has a new synonym 'CI'
 ```
 
-#### Delete a Record
+### Delete a Record
 
 ```shell
 # Create a Table Class instance with the primary key value
