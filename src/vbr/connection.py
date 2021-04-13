@@ -115,7 +115,7 @@ class VBRConn:
 
         # Construct SQL statement including return of primary key
         # https://stackoverflow.com/a/5247723
-        SQL = "INSERT INTO {} ({}) _VALUES ({}) RETURNING {};".format(
+        SQL = "INSERT INTO {} ({}) VALUES ({}) RETURNING {};".format(
             db_table, sql_columns, sql_vars, db_pk)
 
         conn = self.db
