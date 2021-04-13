@@ -115,7 +115,7 @@ vbr.errors.TableNotSupported: project is not currently supported by the VBR modu
 >>> de = vbr.DataEvent(data_event_id=None, status=1)
 DEBUG:root:New VBRRecord: {'data_event_id': None, 'protocol': None, 'rank': None, 'event_ts': None, 'event_count': None, 'subject': None, 'performed_by': None, 'status': 1, 'reason': None, 'dataset': None}
 # Insert into the database
->>> d.insert_vbr_record(de)
+>>> d.create_record(de)
 # Insertion returns the primary key of the created record
 '1'
 ```
