@@ -10,6 +10,10 @@ class VBRUniqueRecord(record.VBRRecord):
     SIGNATURE_SALT = 'mWKGVzNJcZ*/nn5s^>dC+#j8'
     SIGNATURE_LENGTH = 24
 
+    def __init__(self, *args, **kwargs):
+        kwargs.pop(self.SIGNATURE_FIELD_NAME, None)
+        super().__init__(**kwargs)
+
     @property
     def unique_field(self) -> str:
         return self.UNIQUE_FIELD

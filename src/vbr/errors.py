@@ -10,6 +10,10 @@ class TableNotSupported(GenericRecordError):
     pass
 
 
+class DuplicateSignature(GenericRecordError):
+    pass
+
+
 class GenericVBRError(Exception):
     pass
 

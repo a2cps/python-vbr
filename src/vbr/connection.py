@@ -9,6 +9,7 @@ from typing import NoReturn
 from . import constants
 from . import errors
 from . import record
+from . import unique_record
 from . import tableclasses
 
 logging.basicConfig(level=logging.DEBUG)
@@ -118,7 +119,7 @@ class VBRConn:
 
         # Extend with private session ID
         db_cols = list(db_cols)
-        db_cols.append(SESSION_FIELD_NAME)
+        db_cols.append(self.session_field)
         db_values = list(db_values)
         db_values.append(self.session)
 
@@ -140,14 +141,25 @@ class VBRConn:
         with conn:
             with conn.cursor() as cur:
                 logging.debug(cur.mogrify(SQL, db_values))
-                cur.execute(SQL, db_values)
-                # Get last row created
-                # https://stackoverflow.com/a/5247723
-                id_of_new_row = cur.fetchone()[0]
-                conn.commit()
-                logging.debug('Create successful: {0}.{1} = {2}'.format(
-                    db_table, db_pk, id_of_new_row))
-                return str(id_of_new_row)
+                try:
+                    cur.execute(SQL, db_values)
+                    # Get last row created
+                    # https://stackoverflow.com/a/5247723
+                    id_of_new_row = cur.fetchone()[0]
+                    conn.commit()
+                    logging.debug('Create successful: {0}.{1} = {2}'.format(
+                        db_table, db_pk, id_of_new_row))
+                    return str(id_of_new_row)
+                except psycopg2.errors.UniqueViolation:
+                    # TODO check for existence of '*signature_unique' in error string
+                    if isinstance(vbr_object, unique_record.VBRUniqueRecord):
+                        raise errors.DuplicateSignature(
+                            'A record with this distinct signature exists already.'
+                        )
+                    else:
+                        raise
+                except Exception:
+                    raise
 
         # TODO - implement better failure handling
 
@@ -178,9 +190,23 @@ class VBRConn:
         with conn:
             with conn.cursor() as cur:
                 logging.debug(cur.mogrify(SQL, data))
-                cur.execute(SQL, data)
-                conn.commit()
-                logging.debug('Update successful')
+                # TODO - implement check for DuplicateSignature as this will mean that
+                # TODO - the user is trying to update a record that has the same content as
+                # TODO - an existing unique record
+                try:
+                    cur.execute(SQL, data)
+                    conn.commit()
+                    logging.debug('Update successful')
+                except psycopg2.errors.UniqueViolation:
+                    # TODO check for existence of '*signature_unique' in error string
+                    if isinstance(vbr_object, unique_record.VBRUniqueRecord):
+                        raise errors.DuplicateSignature(
+                            'This record was not updated because it would duplicate an existing unique record'
+                        )
+                    else:
+                        raise
+                except Exception:
+                    raise
 
     def delete_record(self, vbr_object: record.VBRRecord) -> NoReturn:
         """Delete a VBR Record from the database
