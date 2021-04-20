@@ -72,7 +72,7 @@ class Dataset(record.VBRRecord):
     PRIMARY_KEY = 'dataset_id'
     FIELDS = [('dataset_id', 'serial', True), ('data_source', 'integer', True),
               ('title', 'varchar', False), ('description', 'varchar', False),
-              ('contained_id', 'integer', False)]
+              ('contained_in', 'integer', False)]
 
 
 class DatasetOrganization(record.VBRRecord):
