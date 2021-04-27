@@ -4,3 +4,5 @@ sdist/
 *.egg-info/
 *__pycache__/
 *.pyc
+.vscode/
+env/

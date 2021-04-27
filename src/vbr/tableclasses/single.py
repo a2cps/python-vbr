@@ -1,31 +1,8 @@
-from . import errors
-from . import record
-from . import unique_record
+from .. import errors
+from .. import record
+from .. import unique_record
 
-from .record import SESSION_FIELD
-
-
-def _classes():
-    """Private: Return the list of tableclasses via Python inspection
-    """
-    import inspect
-    import sys
-    classlist = []
-    for name, obj in inspect.getmembers(sys.modules[__name__]):
-        if inspect.isclass(obj):
-            classlist.append(obj)
-    return tuple(classlist)
-
-
-def class_from_table(table_name: str) -> record.VBRRecord:
-    """Look up and return VBR table class by table name
-    """
-    for c in _classes():
-        if getattr(c, 'TABLE') == table_name:
-            return c
-    raise errors.TableNotSupported(
-        '{0} is not currently supported by the VBR module'.format(table_name))
-
+from ..record import SESSION_FIELD
 
 class BioSample(unique_record.VBRUniqueRecord):
     """VBR biosample

@@ -5,6 +5,7 @@ from typing import Any
 
 from . import constants
 from . import errors
+from .utils import timestring_to_timestamp
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -96,8 +97,8 @@ class VBRRecord:
         self.tz1 = tz1
         self.tz2 = tz2
 
-        if len(self.FIELDS) > 0:
-            for field_name, sql_type, required in self.FIELDS:
+        if len(self.fields()) > 0:
+            for field_name, sql_type, required in self.fields():
                 if required is True and field_name not in kwargs:
                     raise errors.ValidationError(
                         '{0} is required but was not provided'.format(
@@ -108,15 +109,15 @@ class VBRRecord:
                     'Cannot process unknown kwargs: {0}'.format(kwargs))
         logging.debug('VBRRecord: {0}'.format(self._VALUES))
 
-    @property
-    def table_name(self) -> str:
+    @classmethod
+    def table_name(cls) -> str:
         """The name of the VBR table mapped by this class
         """
-        return self.TABLE
+        return cls.TABLE
 
-    @property
-    def primary_key(self) -> str:
-        return self.PRIMARY_KEY
+    @classmethod
+    def primary_key(cls) -> str:
+        return cls.PRIMARY_KEY
 
     @classmethod
     def fields(cls) -> dict:
@@ -127,8 +128,8 @@ class VBRRecord:
         """Ordered names of fields in self.TABLE for use with DBMS
         """
         fnames = []
-        if len(cls.FIELDS) > 0:
-            for field_name, sql_type, required in cls.FIELDS:
+        if len(cls.fields()) > 0:
+            for field_name, sql_type, required in cls.fields():
                 if field_name != cls.PRIMARY_KEY or include_pk is True:
                     fnames.append(field_name)
         return tuple(fnames)
@@ -137,8 +138,8 @@ class VBRRecord:
         """Render record as tuple of values for use with DBMS
         """
         fvals = []
-        if len(self.FIELDS) > 0:
-            for field_name, sql_type, required in self.FIELDS:
+        if len(self.fields()) > 0:
+            for field_name, sql_type, required in self.fields():
                 if field_name != self.PRIMARY_KEY or include_pk is True:
                     func = getattr(self, '_to_' + sql_type)
                     value = func(self._VALUES.get(field_name))
