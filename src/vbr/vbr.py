@@ -7,6 +7,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 __all__ = ['VBR']
 
+
 class VBR(connection.VBRConn):
     def get_key_for_table(self,
                           key_column: str,

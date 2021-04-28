@@ -9,8 +9,10 @@ class ValidationError(GenericRecordError):
 class TableNotSupported(GenericRecordError):
     pass
 
+
 class LinkageNotSupported(GenericRecordError):
     pass
+
 
 class DuplicateSignature(GenericRecordError):
     pass

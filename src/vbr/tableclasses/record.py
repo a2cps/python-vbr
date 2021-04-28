@@ -13,6 +13,7 @@ SESSION_FIELD = 'internal_session'
 
 __all__ = ['VBRRecord', 'SESSION_FIELD']
 
+
 class VBRRecord:
     """A Virtual Biospecimen Repository table record
 

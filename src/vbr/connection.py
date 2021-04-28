@@ -15,6 +15,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 __all__ = ['VBRConn']
 
+
 class VBRConn:
     """Managed connection to a VBR PostgreSQL database
     """

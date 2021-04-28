@@ -1,7 +1,9 @@
 from . import record
 from . import class_from_linkage
 
-def linkage_record_from_vbr_objects(child: record.VBRRecord, parent: record.VBRRecord) -> record.VBRRecord:
+
+def linkage_record_from_vbr_objects(
+        child: record.VBRRecord, parent: record.VBRRecord) -> record.VBRRecord:
     """Instantiate a linkage record from two VBR objects
     """
     table_class = class_from_linkage(child.table_name(), parent.table_name())

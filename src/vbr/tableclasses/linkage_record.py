@@ -2,6 +2,7 @@ from . import record
 
 __all__ = ['LinkageRecord']
 
+
 class LinkageRecord(record.VBRRecord):
     """Extends VBRRecord to represent tables that express parent:child relations
     """
@@ -45,7 +46,7 @@ class LinkageRecord(record.VBRRecord):
             (cls.parent_key(), 'integer', True),
             (cls.child_key(), 'integer', True),
         ]
-    
+
     @classmethod
     def max_parents(cls):
         return cls.MAX_PARENTS
@@ -53,4 +54,3 @@ class LinkageRecord(record.VBRRecord):
     @classmethod
     def min_parents(cls):
         return cls.MIN_PARENTS
-
