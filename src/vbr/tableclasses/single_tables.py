@@ -1,8 +1,5 @@
-from .. import errors
-from .. import record
-from .. import unique_record
-
-from ..record import SESSION_FIELD
+from . import record
+from . import unique_record
 
 class BioSample(unique_record.VBRUniqueRecord):
     """VBR biosample
@@ -48,9 +45,7 @@ class Dataset(record.VBRRecord):
     TABLE = 'dataset'
     PRIMARY_KEY = 'dataset_id'
     FIELDS = [('dataset_id', 'serial', True), ('data_source', 'integer', True),
-              ('title', 'varchar', False), ('description', 'varchar', False),
-              ('contained_id', 'integer', False)]
-
+              ('title', 'varchar', False), ('description', 'varchar', False)]
 
 class DatasetOrganization(record.VBRRecord):
     """VBR dataset_organization

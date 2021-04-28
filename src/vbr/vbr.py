@@ -2,10 +2,10 @@ import logging
 from . import connection
 from . import constants
 from . import errors
-from . import tableclasses
 
 logging.basicConfig(level=logging.DEBUG)
 
+__all__ = ['VBR']
 
 class VBR(connection.VBRConn):
     def get_key_for_table(self,

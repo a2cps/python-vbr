@@ -1,26 +1,26 @@
 """VBR Database Driver
 """
-import psycopg2
 import logging
 import os
 import uuid
 from typing import NoReturn
 
-from . import constants
-from . import errors
-from . import record
-from . import unique_record
-from . import tableclasses
+import psycopg2
+
+from . import constants, errors
+from .tableclasses import (SESSION_FIELD, class_from_linkage, class_from_table,
+                           record, unique_record)
 
 logging.basicConfig(level=logging.DEBUG)
 
+__all__ = ['VBRConn']
 
 class VBRConn:
     """Managed connection to a VBR PostgreSQL database
     """
 
     CONNECT_TIMEOUT = 30
-    SESSION_FIELD_NAME = tableclasses.SESSION_FIELD
+    SESSION_FIELD_NAME = SESSION_FIELD
 
     def __init__(self,
                  config: dict = None,
@@ -70,7 +70,7 @@ class VBRConn:
         """
 
         # Get SQL attributes and data from VBR Record
-        rec_cls = tableclasses.class_from_table(table_name)
+        rec_cls = class_from_table(table_name)
         db_table = rec_cls.TABLE
         db_pk = rec_cls.PRIMARY_KEY
         db_cols = rec_cls.field_names(include_pk=True)

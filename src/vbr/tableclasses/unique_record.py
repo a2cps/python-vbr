@@ -3,6 +3,7 @@ from . import record
 
 SIGNATURE_FIELD = '_signature'
 
+__all__ = ['VBRUniqueRecord', 'SIGNATURE_FIELD']
 
 class VBRUniqueRecord(record.VBRRecord):
     SIGNATURE_FIELDS = []

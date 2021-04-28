@@ -3,14 +3,15 @@ import logging
 import pytz
 from typing import Any
 
-from . import constants
-from . import errors
-from .utils import timestring_to_timestamp
+from .. import constants
+from .. import errors
+from ..utils import timestring_to_timestamp
 
 logging.basicConfig(level=logging.DEBUG)
 
 SESSION_FIELD = 'internal_session'
 
+__all__ = ['VBRRecord', 'SESSION_FIELD']
 
 class VBRRecord:
     """A Virtual Biospecimen Repository table record
