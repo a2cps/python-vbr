@@ -30,6 +30,8 @@ class VBRRecord:
     """
     # Name of the PostgreSQL table mapped by the class
     TABLE = 'default'
+    # Alias for the table, used in PgREST
+    TABLE_ALIAS = None
     # Name of the table's primary, serial key
     PRIMARY_KEY = None
     # Field definitions (name, type, required)
@@ -116,6 +118,15 @@ class VBRRecord:
         """The name of the VBR table mapped by this class
         """
         return cls.TABLE
+
+    @classmethod
+    def table_alias(cls) -> str:
+        """An alias for VBR table mapped by this class
+        """
+        if cls.TABLE_ALIAS is not None:
+            return cls.TABLE_ALIAS
+        else:
+            return cls.TABLE
 
     @classmethod
     def primary_key(cls) -> str:
