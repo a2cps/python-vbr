@@ -48,7 +48,7 @@ class DependencySolver(object):
             for k, v in tdef_cols.items():
                 if v.get('FK', False):
                     if v['reference_table'] not in self.completed:
-                        print('dependency: ' + v['reference_table'])
+                        # print('dependency: ' + v['reference_table'])
                         dep_found = True
                         break
 
@@ -56,15 +56,19 @@ class DependencySolver(object):
                 self.completed.append(tdef_table_name)
                 ordered.append(tdef)
             else:
-                print('Queueing ' + tdef_table_name)
+                # print('Queueing ' + tdef_table_name)
                 # self.to_do.append(tdef)
                 self.to_do.insert(0, tdef)
                 print(len(self.to_do))
 
             iterations = iterations + 1
 
-        print([t['table_name'] for t in self.to_do])
-        print([t['table_name'] for t in ordered])
+        # print([t['table_name'] for t in self.to_do])
+        # print([t['table_name'] for t in ordered])
+        if len(self.to_do) > 0:
+            raise ValueError(
+                'Some tables could not be ordered due to unresolved dependencies'
+            )
 
         return ordered
 

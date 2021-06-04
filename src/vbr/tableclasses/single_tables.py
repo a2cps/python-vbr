@@ -1,29 +1,32 @@
 from .pgrest import *
+from .constants import Constants
 
 PROJECT_NAMESPACE = 'tag:a2cps.org'
 
 
 class Anatomy(Table):
-    anatomy_id = Column(Serial, primary_key=True)
+    """CV: Dictionary of terms locating the origin of a biosample within the physiology of its subject."""
+    anatomy_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String, nullable=True)
     description = Column(String, nullable=True)
 
 
 class AssayType(Table):
-    assay_type_id = Column(Serial, primary_key=True)
+    """CV: Dictionary of terms describing types material that can be biosamples."""
+    assay_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String, nullable=True)
     description = Column(String, nullable=True)
 
 
 class Biosample(Table):
-    id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    local_id = Column(String)
+    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     bs_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
-    biosample_id = Column(Serial, primary_key=True)
-    project_id_namesapace = Column(String, default=PROJECT_NAMESPACE)
-    project_local_id = Column(String)
+    biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
+    project_local_id = Constants.STRING_LOCALID_COLUMN
     bs_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
@@ -32,37 +35,8 @@ class Biosample(Table):
     anatomy = Column(Integer, ForeignKey('anatomy.anatomy_id'))
 
 
-class BiosampleFromSubject(Table):
-    biosample_from_subject_id = Column(Serial, primary_key=True)
-    biosample_id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    biosample_local_id = Column(String)
-    bsfs_biosample_id_namespace_biosample_local_id = UniqueConstraint(
-        'biosample_id_namespace', 'biosample_local_id')
-    biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
-    # TODO - what is the default here?
-    subject_id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    subject_local_id = Column(String)
-    bsfs_subject_id_namespace_subject_local_id = UniqueConstraint(
-        'subject_id_namespace', 'subject_local_id')
-    subject_id = Column(Integer, ForeignKey('subject.subject_id'))
-
-
-class BiosampleInDataset(Table):
-    biosample_in_dataset_id = Column(Serial, primary_key=True)
-    biosample_id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    biosample_local_id = Column(String)
-    bsid_biosample_id_namespace_biosample_local_id = UniqueConstraint(
-        'biosample_id_namespace', 'biosample_local_id')
-    biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
-    dataset_id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    dataset_local_id = Column(String)
-    bsid_dataset_id_namespace_dataset_local_id = UniqueConstraint(
-        'dataset_id_namespace', 'dataset_local_id')
-    dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
-
-
 class Contact(Table):
-    contact_id = Column(Serial, primary_key=True)
+    contact_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     first_name = Column(String)
     last_name = Column(String)
     email = Column(String)
@@ -70,10 +44,10 @@ class Contact(Table):
 
 
 class DataEvent(Table):
-    id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    local_id = Column(String)
+    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     de_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
-    data_event_id = Column(Serial, primary_key=True)
+    data_event_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     protocol = Column(Integer,
                       ForeignKey('protocol.protocol_id'),
                       nullable=True)
@@ -87,14 +61,11 @@ class DataEvent(Table):
     comment = Column(String)
 
 
-# TODO - a bunch of linkage tables
-
-
 class Dataset(Table):
-    id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    local_id = Column(String)
+    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     ds_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
-    dataset_id = Column(Serial, primary_key=True)
+    dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Column(String)
     creation_time = Column(DateTime, nullable=True, default='CREATETIME')
     abbreviation = Column(String, nullable=True)
@@ -102,28 +73,20 @@ class Dataset(Table):
     description = Column(Text, nullable=True)
 
 
-class DatasetDefinedByProject(Table):
-    pass
-
-
-class DatasetInDataset(Table):
-    pass
-
-
 class DataType(Table):
-    data_type_id = Column(Serial, primary_key=True)
+    data_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String)
     description = Column(Text)
 
 
 class File(Table):
-    id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    local_id = Column(String)
+    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     fl_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
-    file_id = Column(Serial, primary_key=True)
-    project_id_namesapace = Column(String, default=PROJECT_NAMESPACE)
-    project_local_id = Column(String)
+    file_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
+    project_local_id = Constants.STRING_LOCALID_COLUMN
     fl_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
@@ -146,35 +109,15 @@ class File(Table):
     mime_type = Column(String, nullable=True)
 
 
-class FileDescribesBiosample(Table):
-    pass
-
-
-class FileDescribesSubject(Table):
-    pass
-
-
 class FileFormat(Table):
-    file_format_id = Column(Serial, primary_key=True)
+    file_format_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String, nullable=True)
     description = Column(Text, nullable=True)
 
 
-class FileInDataEvent(Table):
-    pass
-
-
-class FileInDataset(Table):
-    pass
-
-
-class FileInFile(Table):
-    pass
-
-
 class Location(Table):
-    location_id = Column(Serial, primary_key=True)
+    location_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     location_name = Column(String, nullable=True)
     address1 = Column(String, nullable=True)
     address2 = Column(String, nullable=True)
@@ -186,17 +129,18 @@ class Location(Table):
 
 
 class Organization(Table):
-    organization_id = Column(Serial, primary_key=True)
+    """Data-generating research programs or entities."""
+    organization_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     url = Column(String)
     name = Column(String)
     description = Column(Text)
 
 
 class Project(Table):
-    id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    local_id = Column(String)
+    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     pr_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
-    project_id = Column(Serial, primary_key=True)
+    project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Column(String, nullable=True)
     creation_time = Column(DateTime, nullable=True, default='CREATETIME')
     abbreviation = Column(String, nullable=True)
@@ -205,49 +149,44 @@ class Project(Table):
 
 
 class Protocol(Table):
-    protocol_id = Column(Serial, primary_key=True)
+    protocol_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String, nullable=True)
     name = Column(String, nullable=True)
     description = Column(Text, nullable=True)
 
 
-class ProtocolInProtocol(Table):
-    pass
-
-
 class Reason(Table):
-    reason_id = Column(Serial, primary_key=True)
+    reason_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
-    reason_description = Column(Text)
+    description = Column(Text)
 
 
 class Role(Table):
-    role_id = Column(Serial, primary_key=True)
+    """Defines permissions associated with users of this system."""
+    role_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     url = Column(String)
     name = Column(String)
     description = Column(Text)
 
 
 class Status(Table):
-    status_id = Column(Serial, primary_key=True)
+    status_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
-    status_description = Column(Text)
+    description = Column(Text)
 
 
 class Subject(Table):
-    id_namespace = Column(String, default=PROJECT_NAMESPACE)
-    local_id = Column(String)
+    """The source organism(s) from which a biosample has been generated."""
+    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     sb_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
-    subject_id = Column(Serial, primary_key=True)
-    project_id_namesapace = Column(String, default=PROJECT_NAMESPACE)
-    project_local_id = Column(String)
+    subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
+    project_local_id = Constants.STRING_LOCALID_COLUMN
     sb_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
-    project = Column(Integer, ForeignKey('project.project_id'))
+    project_id = Column(Integer, ForeignKey('project.project_id'))
     persistent_id = Column(String, nullable=True)
     creation_time = Column(DateTime, nullable=True, default='CREATETIME')
+    # Is this a candidate for use of PgREST enumerations?
     granularity = Column(String, nullable=True)
-
-
-class SubjectInDataset(Table):
-    pass

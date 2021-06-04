@@ -2,6 +2,7 @@ from .. import errors
 from . import record
 from .pgrest import Table, DependencySolver
 from .single_tables import *
+from .linkage_tables import *
 
 
 def _classes():
