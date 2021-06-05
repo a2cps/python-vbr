@@ -2,11 +2,17 @@ from typing import Any
 from attrdict import AttrDict
 import json
 import inspect
+import random
 
 
 def camel_to_snake_case(str):
     return ''.join(['_' + i.lower() if i.isupper() else i
                     for i in str]).lstrip('_')
+
+
+def camel_to_kebab_case(str):
+    return ''.join(['-' + i.lower() if i.isupper() else i
+                    for i in str]).lstrip('-')
 
 
 class class_or_instancemethod(classmethod):
@@ -30,7 +36,7 @@ class DependencySolver(object):
     def ordered_emit(self):
 
         ordered = []
-        max_iterations = len(self.to_do) * 2
+        max_iterations = len(self.to_do) * 4
         iterations = 0
 
         while self.to_do and (iterations <= max_iterations):
@@ -38,30 +44,35 @@ class DependencySolver(object):
             # find dependencies
             tdef = self.to_do.pop()
             tdef_table_name = tdef['table_name']
-            print(tdef_table_name)
             tdef_cols = tdef['columns']
 
             # Are any foreign keys defined? If so, do they
             # refer to tables that have not been completed. If
             # so, put the definition back on the queue
+            print('attempt: ' + tdef_table_name)
             dep_found = False
+            deps = []
             for k, v in tdef_cols.items():
                 if v.get('FK', False):
                     if v['reference_table'] not in self.completed:
-                        # print('dependency: ' + v['reference_table'])
+                        # print('dependency: {0} <- {1}'.format(tdef_table_name, v['reference_table']))
                         dep_found = True
-                        break
+                        deps.append(v['reference_table'])
+                        # break
 
             if not dep_found:
                 self.completed.append(tdef_table_name)
+                print('completed: ' + ', '.join(self.completed))
                 ordered.append(tdef)
             else:
-                # print('Queueing ' + tdef_table_name)
                 # self.to_do.append(tdef)
                 self.to_do.insert(0, tdef)
-                print(len(self.to_do))
+                print('deps: ' + ','.join(deps))
+                # print(len(self.to_do))
 
             iterations = iterations + 1
+            print('iteration: ' + str(iterations))
+            random.shuffle(self.to_do)
 
         # print([t['table_name'] for t in self.to_do])
         # print([t['table_name'] for t in ordered])
@@ -112,13 +123,29 @@ class ForeignKey(object):
 
 
 class Constraint(object):
+    TYPE = None
+
     def __init__(self, *args, **kwargs):
+        pass
+
+    def constraint_type(self):
+        return self.TYPE
+
+    def property(self):
         pass
 
 
 class UniqueConstraint(Constraint):
+    TYPE = 'unique'
+
     def __init__(self, *args, **kwargs):
-        pass
+        self.values = []
+        for a in args:
+            if isinstance(a, str):
+                self.values.append(a)
+
+    def property(self):
+        return self.values
 
 
 class Enumeration(object):
@@ -203,6 +230,7 @@ class Column(object):
             unique=False,
             nullable=False,
             default=None,
+            comment=None,
             **kwargs):
 
         # self.cname = cname
@@ -215,6 +243,7 @@ class Column(object):
         self.primary_key = primary_key
         self.unique = unique
         self.nullable = nullable
+        self.comment = comment
         self.relations = []
 
         self.fk = None
@@ -231,6 +260,8 @@ class Column(object):
         if self.unique:
             all_props['unique'] = True
         all_props['null'] = self.nullable
+        if self.comment is not None:
+            all_props['comment'] = self.comment
 
         if self.fk is not None:
             fk_props = self.fk.properties()
@@ -254,7 +285,7 @@ class PgrestSchema(object):
     @property
     def root_url(self):
         if self.parent.__rooturl__ is not None:
-            return self.parent.__rooturl__
+            return camel_to_kebab_case(self.parent.__class__.__name__)
         else:
             return self.table_name
 
@@ -274,12 +305,25 @@ class PgrestSchema(object):
                 defn[k] = v.property()
         return defn
 
+    # @property
+    # def constraints(self):
+    #     defn = {}
+    #     for k, v in self.parent.__class_attrs__.items():
+    #         if isinstance(v, Constraint):
+    #             defn[k] = v.property()
+    #     return defn
+
     @property
     def constraints(self):
         defn = {}
         for k, v in self.parent.__class_attrs__.items():
             if isinstance(v, Constraint):
-                defn[k] = v.property()
+                ctype = v.constraint_type()
+                cvalues = v.property()
+                if ctype not in defn:
+                    defn[ctype] = {}
+                defn[ctype][k] = cvalues
+                # defn[k] = v.property()
         return defn
 
     @property
@@ -296,6 +340,14 @@ class PgrestSchema(object):
             data['enums'] = enums
 
         # TODO - support constraints once pgrest does
+        constraints = self.constraints
+        if constraints != {}:
+            data['constraints'] = constraints
+
+        # TODO - support for requested comment property
+        if self.comment is not None and self.comment != '':
+            data['comment'] = self.comment
+
         return data
 
     @property
@@ -303,7 +355,7 @@ class PgrestSchema(object):
         return inspect.getdoc(self.parent)
 
     def to_json(self):
-        return json.dumps(self.definition, indent=4)
+        return json.dumps(self.definition, indent=4, sort_keys=True)
 
 
 class Table(object):

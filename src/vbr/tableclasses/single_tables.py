@@ -23,11 +23,11 @@ class AssayType(Table):
 class Biosample(Table):
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    bs_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
     project_local_id = Constants.STRING_LOCALID_COLUMN
-    bs_project_id_namespace_project_local_id = UniqueConstraint(
+    uniq_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
     persistent_id = Column(String)
@@ -46,7 +46,7 @@ class Contact(Table):
 class DataEvent(Table):
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    de_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     data_event_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     protocol = Column(Integer,
                       ForeignKey('protocol.protocol_id'),
@@ -64,7 +64,7 @@ class DataEvent(Table):
 class Dataset(Table):
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    ds_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Column(String)
     creation_time = Column(DateTime, nullable=True, default='CREATETIME')
@@ -83,11 +83,11 @@ class DataType(Table):
 class File(Table):
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    fl_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     file_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
     project_local_id = Constants.STRING_LOCALID_COLUMN
-    fl_project_id_namespace_project_local_id = UniqueConstraint(
+    uniq_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
     persistent_id = Column(String)
@@ -139,7 +139,7 @@ class Organization(Table):
 class Project(Table):
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    pr_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Column(String, nullable=True)
     creation_time = Column(DateTime, nullable=True, default='CREATETIME')
@@ -179,11 +179,11 @@ class Subject(Table):
     """The source organism(s) from which a biosample has been generated."""
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    sb_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
     project_local_id = Constants.STRING_LOCALID_COLUMN
-    sb_project_id_namespace_project_local_id = UniqueConstraint(
+    uniq_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
     project_id = Column(Integer, ForeignKey('project.project_id'))
     persistent_id = Column(String, nullable=True)
