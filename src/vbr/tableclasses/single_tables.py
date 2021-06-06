@@ -1,4 +1,4 @@
-from .pgrest import *
+from ..pgrest import *
 from .constants import Constants
 
 PROJECT_NAMESPACE = 'tag:a2cps.org'

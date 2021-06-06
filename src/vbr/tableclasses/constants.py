@@ -1,4 +1,4 @@
-from .pgrest import Column, Serial, String
+from ..pgrest import Column, Serial, String
 
 
 class Constants:
