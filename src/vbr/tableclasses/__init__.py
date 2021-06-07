@@ -1,8 +1,8 @@
 from .. import errors
 # from . import record
-from ..pgrest import Table, DependencySolver
+from ..pgrest import Table, AssociationTable, DependencySolver
 from .single_tables import *
-from .linkage_tables import *
+from .association_tables import *
 
 
 def _classes():
@@ -13,8 +13,11 @@ def _classes():
     classlist = []
     for _, obj in inspect.getmembers(sys.modules[__name__]):
         if inspect.isclass(obj):
-            if Table in obj.__bases__:
-                classlist.append(obj)
+            if Table in obj.__bases__ or AssociationTable in obj.__bases__:
+                # Filter out the spurious table named association_table that
+                # we get from importing AssociationTable
+                if obj.__name__ not in ('Table', 'AssociationTable'):
+                    classlist.append(obj)
     return tuple(classlist)
 
 

@@ -31,7 +31,7 @@ class DependencySolver(object):
             # Are any foreign keys defined? If so, do they
             # refer to tables that have not been completed. If
             # so, put the definition back on the queue
-            print('attempt: ' + tdef_table_name)
+            # print('attempt: ' + tdef_table_name)
             dep_found = False
             deps = []
             for k, v in tdef_cols.items():
@@ -44,20 +44,16 @@ class DependencySolver(object):
 
             if not dep_found:
                 self.completed.append(tdef_table_name)
-                print('completed: ' + ', '.join(self.completed))
+                # print('completed: ' + ', '.join(self.completed))
                 ordered.append(tdef)
             else:
-                # self.to_do.append(tdef)
                 self.to_do.insert(0, tdef)
-                print('deps: ' + ','.join(deps))
-                # print(len(self.to_do))
+                # print('deps: ' + ','.join(deps))
 
             iterations = iterations + 1
-            print('iteration: ' + str(iterations))
-            random.shuffle(self.to_do)
+            # print('iteration: ' + str(iterations))
+            # random.shuffle(self.to_do)
 
-        # print([t['table_name'] for t in self.to_do])
-        # print([t['table_name'] for t in ordered])
         if len(self.to_do) > 0:
             raise ValueError(
                 'Some tables could not be ordered due to unresolved dependencies'

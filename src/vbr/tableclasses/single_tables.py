@@ -1,3 +1,4 @@
+from vbr.pgrest.constraints import Signature
 from ..pgrest import *
 from .constants import Constants
 
@@ -59,6 +60,8 @@ class DataEvent(Table):
     status = Column(Integer, ForeignKey('status.status_id'), nullable=True)
     reason = Column(Integer, ForeignKey('reason.reason_id'), nullable=True)
     comment = Column(String)
+
+    signature = Signature()
 
 
 class Dataset(Table):

@@ -34,6 +34,15 @@ class PgrestSchema(object):
         return defn
 
     @property
+    def column_names(self):
+        defn = []
+        for k, v in self.parent.__class_attrs__.items():
+            if isinstance(v, Column):
+                defn.append(k)
+        defn.sort()
+        return defn
+
+    @property
     def enumerations(self):
         defn = {}
         for k, v in self.parent.__class_attrs__.items():

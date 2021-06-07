@@ -1,4 +1,4 @@
-__all__ = ['Constraint', 'UniqueConstraint']
+__all__ = ['Constraint', 'UniqueConstraint', 'Signature']
 
 
 class Constraint(object):
@@ -25,3 +25,7 @@ class UniqueConstraint(Constraint):
 
     def property(self):
         return self.values
+
+
+class Signature(UniqueConstraint):
+    pass

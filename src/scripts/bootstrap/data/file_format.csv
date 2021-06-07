@@ -1,0 +1,13 @@
+file_format_id,name,description,id,internal_session
+1,json,json,format:3464,NULL
+2,csv,comma separated value,format:2330,NULL
+3,tsv,tab separated value,format:3475,NULL
+4,html,html,format:2331,NULL
+5,dicom,dicom image,format:3548,NULL
+6,dicom_tgz,compressed dicom image set,format:3548+,NULL
+7,pdf,pdf,format:3508,NULL
+8,docx,docx,format:3506,NULL
+9,xlsx,xlsx,format:3620,NULL
+11,jpg,jpg,format:3579,NULL
+10,text,text,format:3671,NULL
+12,png,png,format:3603,NULL

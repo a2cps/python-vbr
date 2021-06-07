@@ -1,8 +1,10 @@
 from ..pgrest import *
 from .constants import Constants
 
+# https://stackoverflow.com/questions/30406808/flask-sqlalchemy-difference-between-association-model-and-association-table-fo
 
-class BiosampleFromSubject(RelationTable):
+
+class BiosampleFromSubject(AssociationTable):
     """Maps biosamples to subjects."""
 
     biosample_from_subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -18,7 +20,7 @@ class BiosampleFromSubject(RelationTable):
     subject_id = Column(Integer, ForeignKey('subject.subject_id'))
 
 
-class BiosampleInDataset(RelationTable):
+class BiosampleInDataset(AssociationTable):
     """Maps biosamples to datasets."""
 
     biosample_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -34,7 +36,7 @@ class BiosampleInDataset(RelationTable):
     dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
 
 
-class DataEventInBiosample(RelationTable):
+class DataEventInBiosample(AssociationTable):
     """Maps data_events to biosamples."""
 
     data_event_in_biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -50,7 +52,7 @@ class DataEventInBiosample(RelationTable):
     biosample_id = Column(Integer, ForeignKey=('biosample.biosample_id'))
 
 
-class DataEventInDataset(RelationTable):
+class DataEventInDataset(AssociationTable):
     """Maps data_events to datasets."""
 
     data_event_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -66,7 +68,7 @@ class DataEventInDataset(RelationTable):
     dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
 
 
-class DataEventInSubject(RelationTable):
+class DataEventInSubject(AssociationTable):
     """Maps data_events associated with each subject."""
 
     data_event_in_subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -80,7 +82,7 @@ class DataEventInSubject(RelationTable):
     subject_id = Column(Integer, ForeignKey('subject.subject_id'))
 
 
-class DatasetDefinedByProject(RelationTable):
+class DatasetDefinedByProject(AssociationTable):
 
     dataset_defined_by_project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     dataset_id_namespace = Constants.STRING_NAMESPACE_COLUMN
@@ -96,7 +98,7 @@ class DatasetDefinedByProject(RelationTable):
 
 
 # TODO - CHECK constraint to avoid self-referencing
-class DatasetInDataset(RelationTable):
+class DatasetInDataset(AssociationTable):
 
     dataset_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     child_dataset_id_namespace = Constants.STRING_NAMESPACE_COLUMN
@@ -111,7 +113,7 @@ class DatasetInDataset(RelationTable):
     parent_dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
 
 
-class FileDescribesBiosample(RelationTable):
+class FileDescribesBiosample(AssociationTable):
 
     file_describes_biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     file_id_namespace = Constants.STRING_NAMESPACE_COLUMN
@@ -126,7 +128,7 @@ class FileDescribesBiosample(RelationTable):
     biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
 
 
-class FileDescribesSubject(RelationTable):
+class FileDescribesSubject(AssociationTable):
 
     file_describes_subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     file_id_namespace = Constants.STRING_NAMESPACE_COLUMN
@@ -141,7 +143,7 @@ class FileDescribesSubject(RelationTable):
     subject_id = Column(Integer, ForeignKey('subject.subject_id'))
 
 
-class FileInDataEvent(RelationTable):
+class FileInDataEvent(AssociationTable):
     """Maps files to data events which create or alter them."""
 
     file_in_data_event_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -157,7 +159,7 @@ class FileInDataEvent(RelationTable):
     data_event_id = Column(Integer, ForeignKey('data_event.data_event_id'))
 
 
-class FileInDataset(RelationTable):
+class FileInDataset(AssociationTable):
     """Maps files to dataset collections."""
 
     file_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -173,7 +175,7 @@ class FileInDataset(RelationTable):
     dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
 
 
-class FileInFile(RelationTable):
+class FileInFile(AssociationTable):
     """Maps files to a tar, zip or container file."""
 
     file_in_file_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -189,7 +191,7 @@ class FileInFile(RelationTable):
     parent_file_id = Column(Integer, ForeignKey('file.file_id'))
 
 
-class ProtocolInProtocol(RelationTable):
+class ProtocolInProtocol(AssociationTable):
     """Maps protocol (event_type) hierarchy and 'cross-cut' collections."""
 
     protocol_in_protocol_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -197,7 +199,7 @@ class ProtocolInProtocol(RelationTable):
     parent_protocol_id = Column(Integer, ForeignKey('protocol.protocol_id'))
 
 
-class SubjectInDataset(RelationTable):
+class SubjectInDataset(AssociationTable):
     """Maps subjects to dataset collections."""
 
     subject_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN

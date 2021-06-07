@@ -1,0 +1,8 @@
+reason_id,name,description,internal_session
+1,reason_not_interested___0,No specific reason,NULL
+2,reason_not_interested___1,Time-related issue or concern,NULL
+3,reason_not_interested___2,Specific study procedure,NULL
+4,reason_not_interested___3,Compensation Insufficient,NULL
+5,reason_not_interested___4,COVID-related,NULL
+6,reason_not_interested___5,Not interested in research,NULL
+7,reason, Consent not given,NULL
