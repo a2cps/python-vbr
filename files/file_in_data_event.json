@@ -11,7 +11,7 @@
         "data_event_id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\u201d,\u201d",
+            "default": "tag:a2cps.org\",\"",
             "null": false
         },
         "data_event_local_id": {
@@ -30,7 +30,7 @@
         "file_id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\u201d,\u201d",
+            "default": "tag:a2cps.org\",\"",
             "null": false
         },
         "file_in_data_event_id": {

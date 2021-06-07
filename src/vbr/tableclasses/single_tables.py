@@ -2,8 +2,6 @@ from vbr.pgrest.constraints import Signature
 from ..pgrest import *
 from .constants import Constants
 
-PROJECT_NAMESPACE = 'tag:a2cps.org'
-
 
 class Anatomy(Table):
     """CV: Dictionary of terms locating the origin of a biosample within the physiology of its subject."""
