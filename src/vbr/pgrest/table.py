@@ -1,9 +1,11 @@
 import json
+import datetime
 
 from .column import Column
 from .constraints import Constraint
 from .enums import Enumeration
 from .schema import PgrestSchema
+from .utils import datetime_to_isodate
 
 __all__ = ['Table', 'AssociationTable']
 
@@ -40,7 +42,11 @@ class Table(object):
     def dict(self):
         dct = {}
         for v in self.__schema__.column_names:
-            dct[v] = getattr(self, v, None)
+            d = getattr(self, v, None)
+            # TODO - genericize this based on property types?
+            if isinstance(d, datetime.datetime):
+                d = datetime_to_isodate(d)
+            dct[v] = d
         return dct
 
     def json(self, indent=0, sort_keys=True, class_name=None):

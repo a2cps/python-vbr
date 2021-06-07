@@ -1,0 +1,25 @@
+{
+    "columns": {
+        "data_type_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "description": {
+            "data_type": "text",
+            "null": false
+        },
+        "id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        }
+    },
+    "root_url": "data_type",
+    "table_name": "data_type"
+}

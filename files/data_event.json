@@ -1,0 +1,77 @@
+{
+    "columns": {
+        "comment": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "data_event_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "event_ts": {
+            "data_type": "datetime",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "performed_by": {
+            "FK": true,
+            "data_type": "integer",
+            "null": true,
+            "on_delete": "cascade",
+            "reference_column": "contact_id",
+            "reference_table": "contact"
+        },
+        "protocol": {
+            "FK": true,
+            "data_type": "integer",
+            "null": true,
+            "on_delete": "cascade",
+            "reference_column": "protocol_id",
+            "reference_table": "protocol"
+        },
+        "rank": {
+            "data_type": "integer",
+            "null": true
+        },
+        "reason": {
+            "FK": true,
+            "data_type": "integer",
+            "null": true,
+            "on_delete": "cascade",
+            "reference_column": "reason_id",
+            "reference_table": "reason"
+        },
+        "status": {
+            "FK": true,
+            "data_type": "integer",
+            "null": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        }
+    },
+    "constraints": {
+        "unique": {
+            "signature": [],
+            "uniq_id_namespace_local_id": [
+                "id_namespace",
+                "local_id"
+            ]
+        }
+    },
+    "root_url": "data_event",
+    "table_name": "data_event"
+}

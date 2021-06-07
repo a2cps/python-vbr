@@ -1,0 +1,25 @@
+{
+    "columns": {
+        "description": {
+            "data_type": "text",
+            "null": true
+        },
+        "file_format_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        }
+    },
+    "root_url": "file_format",
+    "table_name": "file_format"
+}

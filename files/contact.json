@@ -1,0 +1,34 @@
+{
+    "columns": {
+        "contact_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "email": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "first_name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "last_name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "organization": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "organization_id",
+            "reference_table": "organization"
+        }
+    },
+    "root_url": "contact",
+    "table_name": "contact"
+}

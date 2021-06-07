@@ -1,0 +1,62 @@
+{
+    "columns": {
+        "dataset_id": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "dataset_id",
+            "reference_table": "dataset"
+        },
+        "dataset_id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "dataset_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "file_id": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "file_id",
+            "reference_table": "file"
+        },
+        "file_id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "file_in_dataset_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "file_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        }
+    },
+    "comment": "Maps files to dataset collections.",
+    "constraints": {
+        "unique": {
+            "uniq_dataset_id_namespace_dataset_local_id": [
+                "dataset_id_namespace",
+                "dataset_local_id"
+            ],
+            "uniq_file_id_namespace_file_local_id": [
+                "file_id_namespace",
+                "file_local_id"
+            ]
+        }
+    },
+    "root_url": "file_in_dataset",
+    "table_name": "file_in_dataset"
+}

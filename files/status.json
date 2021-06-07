@@ -1,0 +1,20 @@
+{
+    "columns": {
+        "description": {
+            "data_type": "text",
+            "null": false
+        },
+        "name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "status_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        }
+    },
+    "root_url": "status",
+    "table_name": "status"
+}

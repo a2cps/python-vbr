@@ -1,0 +1,25 @@
+{
+    "columns": {
+        "description": {
+            "data_type": "text",
+            "null": true
+        },
+        "id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "protocol_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        }
+    },
+    "root_url": "protocol",
+    "table_name": "protocol"
+}

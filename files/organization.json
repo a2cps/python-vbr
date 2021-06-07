@@ -1,0 +1,26 @@
+{
+    "columns": {
+        "description": {
+            "data_type": "text",
+            "null": false
+        },
+        "name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "organization_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "url": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        }
+    },
+    "comment": "Data-generating research programs or entities.",
+    "root_url": "organization",
+    "table_name": "organization"
+}

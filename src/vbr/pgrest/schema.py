@@ -50,14 +50,6 @@ class PgrestSchema(object):
                 defn[k] = v.property()
         return defn
 
-    # @property
-    # def constraints(self):
-    #     defn = {}
-    #     for k, v in self.parent.__class_attrs__.items():
-    #         if isinstance(v, Constraint):
-    #             defn[k] = v.property()
-    #     return defn
-
     @property
     def constraints(self):
         defn = {}
@@ -68,7 +60,6 @@ class PgrestSchema(object):
                 if ctype not in defn:
                     defn[ctype] = {}
                 defn[ctype][k] = cvalues
-                # defn[k] = v.property()
         return defn
 
     @property

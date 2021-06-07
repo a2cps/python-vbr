@@ -1,0 +1,58 @@
+{
+    "columns": {
+        "data_event_id": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "data_event_id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "data_event_in_subject_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "data_event_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "subject_id": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        },
+        "subject_id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "subject_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        }
+    },
+    "comment": "Maps data_events associated with each subject.",
+    "constraints": {
+        "unique": {
+            "uniq_data_event_id_namespace_data_event_local_id": [
+                "data_event_id_namespace",
+                "data_event_local_id"
+            ]
+        }
+    },
+    "root_url": "data_event_in_subject",
+    "table_name": "data_event_in_subject"
+}

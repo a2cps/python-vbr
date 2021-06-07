@@ -1,0 +1,61 @@
+{
+    "columns": {
+        "dataset_defined_by_project_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "dataset_id": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "dataset_id",
+            "reference_table": "dataset"
+        },
+        "dataset_id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "dataset_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "project_id": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "project_id",
+            "reference_table": "project"
+        },
+        "project_id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "project_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        }
+    },
+    "constraints": {
+        "unique": {
+            "uniq_dataset_id_namespace_dataset_local_id": [
+                "data_event_id_namespace",
+                "data_event_local_id"
+            ],
+            "uniq_project_id_namespace_project_local_id": [
+                "project_id_namespace",
+                "project_local_id"
+            ]
+        }
+    },
+    "root_url": "dataset_defined_by_project",
+    "table_name": "dataset_defined_by_project"
+}

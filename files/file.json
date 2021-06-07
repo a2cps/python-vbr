@@ -1,0 +1,115 @@
+{
+    "columns": {
+        "assay_type": {
+            "FK": true,
+            "data_type": "integer",
+            "null": true,
+            "on_delete": "cascade",
+            "reference_column": "assay_type_id",
+            "reference_table": "assay_type"
+        },
+        "creation_time": {
+            "data_type": "datetime",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_type": {
+            "FK": true,
+            "data_type": "integer",
+            "null": true,
+            "on_delete": "cascade",
+            "reference_column": "data_type_id",
+            "reference_table": "data_type"
+        },
+        "file_format": {
+            "FK": true,
+            "data_type": "integer",
+            "null": true,
+            "on_delete": "cascade",
+            "reference_column": "file_format_id",
+            "reference_table": "file_format"
+        },
+        "file_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "filename": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "md5": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "mime_type": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "project": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "project_id",
+            "reference_table": "project"
+        },
+        "project_id_namesapace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "project_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "sha256": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "size_in_bytes": {
+            "data_type": "integer",
+            "null": true
+        },
+        "uncompressed_size_in_bytes": {
+            "data_type": "integer",
+            "null": true
+        }
+    },
+    "constraints": {
+        "unique": {
+            "uniq_id_namespace_local_id": [
+                "id_namespace",
+                "local_id"
+            ],
+            "uniq_project_id_namespace_project_local_id": [
+                "project_id_namesapace",
+                "project_local_id"
+            ]
+        }
+    },
+    "root_url": "file",
+    "table_name": "file"
+}

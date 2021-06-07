@@ -1,0 +1,54 @@
+{
+    "columns": {
+        "abbreviation": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "creation_time": {
+            "data_type": "datetime",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "dataset_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "description": {
+            "data_type": "text",
+            "null": true
+        },
+        "id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        }
+    },
+    "constraints": {
+        "unique": {
+            "uniq_id_namespace_local_id": [
+                "id_namespace",
+                "local_id"
+            ]
+        }
+    },
+    "root_url": "dataset",
+    "table_name": "dataset"
+}

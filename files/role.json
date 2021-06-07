@@ -1,0 +1,26 @@
+{
+    "columns": {
+        "description": {
+            "data_type": "text",
+            "null": false
+        },
+        "name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "role_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "url": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        }
+    },
+    "comment": "Defines permissions associated with users of this system.",
+    "root_url": "role",
+    "table_name": "role"
+}

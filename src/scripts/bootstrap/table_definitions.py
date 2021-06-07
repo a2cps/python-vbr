@@ -1,11 +1,15 @@
+import argparse
 import json
+import os
 from vbr import tableclasses
 
 
 def main():
-    defs = tableclasses.table_definitions()
-    print(json.dumps(defs, sort_keys=True, indent=4))
-
+    tdefs = tableclasses.table_definitions()
+    for td in tdefs:
+        fname = td['table_name'] + '.json'
+        with open(fname, 'w') as file:
+            json.dump(td, file,sort_keys=True, indent=4)
 
 if __name__ == '__main__':
     main()

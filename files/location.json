@@ -1,0 +1,54 @@
+{
+    "columns": {
+        "address1": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "address2": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "address3": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "city": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "location_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "location_name": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "organization": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "organization_id",
+            "reference_table": "organization"
+        },
+        "state_province_country": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "zip_or_postcode": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        }
+    },
+    "root_url": "location",
+    "table_name": "location"
+}

@@ -1,0 +1,62 @@
+{
+    "columns": {
+        "child_file_id": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "file_id",
+            "reference_table": "file"
+        },
+        "child_file_id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "child_file_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        },
+        "file_in_file_id": {
+            "data_type": "serial",
+            "null": false,
+            "primary_key": true
+        },
+        "parent_file_id": {
+            "FK": true,
+            "data_type": "integer",
+            "null": false,
+            "on_delete": "cascade",
+            "reference_column": "file_id",
+            "reference_table": "file"
+        },
+        "parent_file_id_namespace": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "default": "tag:a2cps.org\u201d,\u201d",
+            "null": false
+        },
+        "parent_file_local_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": false
+        }
+    },
+    "comment": "Maps files to a tar, zip or container file.",
+    "constraints": {
+        "unique": {
+            "uniq_child_file_id_namespace_child_file_local_id": [
+                "child_file_id_namespace",
+                "child_file_local_id"
+            ],
+            "uniq_parent_file_id_namespace_parent_file_local_id": [
+                "parent_file_id_namespace",
+                "parent_file_local_id"
+            ]
+        }
+    },
+    "root_url": "file_in_file",
+    "table_name": "file_in_file"
+}
