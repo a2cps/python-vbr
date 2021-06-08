@@ -148,6 +148,7 @@ class Organization(Table):
 
 
 class Project(Table):
+    """C2M2-defined table uniquely defining projects within the scope of the VBR and broader NIH namespace."""  
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -160,6 +161,7 @@ class Project(Table):
 
 
 class Protocol(Table):
+    """C2M2 proposed future extension: an event-type or defined process."""
     protocol_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String, nullable=True)
     name = Column(String, nullable=True)
@@ -167,13 +169,14 @@ class Protocol(Table):
 
 
 class Reason(Table):
+   """TACC-defined table of reasons for incomplete status to aid analysis of participant dropouts, biosample QA, logistics, and other issues."""  
     reason_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
     description = Column(Text)
 
 
 class Role(Table):
-    """Defines permissions associated with users of this system."""
+    """TACC-defined table: defines permissions associated with users of this system."""
     role_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     url = Column(String)
     name = Column(String)
@@ -181,6 +184,7 @@ class Role(Table):
 
 
 class Status(Table):
+    """TACC-defined table; status_id mirrors the REDCap 0 (incomplete), 1 (partial), and 2 (complete) status with extensibility for additional status definitions."""  
     status_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
     description = Column(Text)
