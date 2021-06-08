@@ -12,7 +12,7 @@ class Anatomy(Table):
 
 
 class AssayType(Table):
-    """CV: Dictionary of terms describing types material that can be biosamples."""
+    """C2M2-defined table: describes types of material that can be biosamples. id is an OBI CV Term ID"""
     assay_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String, nullable=True)
@@ -20,6 +20,7 @@ class AssayType(Table):
 
 
 class Biosample(Table):
+    """C2M2-defined table: each record uniquely identifies a biosample obtained from a subject"""
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
