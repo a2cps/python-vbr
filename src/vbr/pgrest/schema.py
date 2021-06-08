@@ -1,6 +1,7 @@
 import inspect
 import json
 
+from .config import Config
 from .column import Column
 from .constraints import Constraint
 from .enums import Enumeration
@@ -75,14 +76,18 @@ class PgrestSchema(object):
         if enums != {}:
             data['enums'] = enums
 
-        # TODO - support constraints once pgrest does
+        # Feature gate: Support table-level constraints
+        # https://github.com/tapis-project/paas/issues/12
         constraints = self.constraints
-        if constraints != {}:
-            data['constraints'] = constraints
+        if Config.TABLE_CONSTRAINTS:
+            if constraints != {}:
+                data['constraints'] = constraints
 
-        # TODO - support for requested comment property
-        if self.comment is not None and self.comment != '':
-            data['comment'] = self.comment
+        # Feature gate: Support for table comment property
+        # https://github.com/tapis-project/paas/issues/11
+        if Config.TABLE_COMMENTS:
+            if self.comment is not None and self.comment != '':
+                data['comment'] = self.comment
 
         return data
 

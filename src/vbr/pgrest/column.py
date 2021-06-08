@@ -1,3 +1,4 @@
+from .config import Config
 from .foreign_key import ForeignKey
 
 __all__ = ['Column', 'ForeignKey']
@@ -58,6 +59,7 @@ class Column(object):
 
     def property(self):
         all_props = self.ctype.properties()
+
         if self.default is not None:
             all_props['default'] = self.default
         if self.primary_key:
@@ -65,8 +67,12 @@ class Column(object):
         if self.unique:
             all_props['unique'] = True
         all_props['null'] = self.nullable
-        if self.comment is not None:
-            all_props['comment'] = self.comment
+
+        # Feature gate: Support per-column comments
+        # https://github.com/tapis-project/paas/issues/10
+        if Config.COLUMN_COMMENTS:
+            if self.comment is not None:
+                all_props['comment'] = self.comment
 
         if self.fk is not None:
             fk_props = self.fk.properties()
