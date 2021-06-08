@@ -67,8 +67,8 @@ class DataEvent(Table):
 
 class Dataset(Table):
     """C2M2-defined table: a named collection of files and other datasets."""
-    """Within a2cps, an initial dataset will be created for each subject and protocol (event_type) to mirror the data collected via REDCap."""
-    """Additional datasets may be created and mapped using dataset mapping tables to reflect commonly queried cross-sections of data with their associated files."""
+    # Within a2cps, an initial dataset will be created for each subject and protocol (event_type) to mirror the data collected via REDCap."""
+    # Additional datasets may be created and mapped using dataset mapping tables to reflect commonly queried cross-sections of data with their associated files."""
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -169,7 +169,7 @@ class Protocol(Table):
 
 
 class Reason(Table):
-   """TACC-defined table of reasons for incomplete status to aid analysis of participant dropouts, biosample QA, logistics, and other issues."""  
+    """TACC-defined table of reasons for incomplete status to aid analysis of participant dropouts, biosample QA, logistics, and other issues."""  
     reason_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
     description = Column(Text)
