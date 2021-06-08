@@ -12,7 +12,7 @@ class Anatomy(Table):
 
 
 class AssayType(Table):
-    """CV: Dictionary of terms describing types material that can be biosamples."""
+    """C2M2-defined table: describes types of material that can be biosamples. id is an OBI CV Term ID"""
     assay_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String, nullable=True)
@@ -20,6 +20,7 @@ class AssayType(Table):
 
 
 class Biosample(Table):
+    """C2M2-defined table: each record uniquely identifies a biosample obtained from a subject"""
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -35,6 +36,7 @@ class Biosample(Table):
 
 
 class Contact(Table):
+    """TACC-defined table: contains administrative contact information"""
     contact_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     first_name = Column(String)
     last_name = Column(String)
@@ -43,6 +45,7 @@ class Contact(Table):
 
 
 class DataEvent(Table):
+    """C2M2 proposed future extension: logs data events with associated status, issues and comments."""   
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -63,6 +66,9 @@ class DataEvent(Table):
 
 
 class Dataset(Table):
+    """C2M2-defined table: a named collection of files and other datasets."""
+    """Within a2cps, an initial dataset will be created for each subject and protocol (event_type) to mirror the data collected via REDCap."""
+    """Additional datasets may be created and mapped using dataset mapping tables to reflect commonly queried cross-sections of data with their associated files."""
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -75,6 +81,7 @@ class Dataset(Table):
 
 
 class DataType(Table):
+    """C2M2-defined table: provides classifications for data; id is an EDAM CV data term in the form of data:[EDAM#]"""
     data_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String)
@@ -82,6 +89,7 @@ class DataType(Table):
 
 
 class File(Table):
+    """C2M2-defined table: provide unique persistent name and associated information for files"""
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -111,6 +119,7 @@ class File(Table):
 
 
 class FileFormat(Table):
+    """C2M2-defined table containing classifications for file format. id is an EDAM CV format term."""  
     file_format_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String, nullable=True)
@@ -118,6 +127,7 @@ class FileFormat(Table):
 
 
 class Location(Table):
+    """TACC-defined table: contains physical address information for shipping."""
     location_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     location_name = Column(String, nullable=True)
     address1 = Column(String, nullable=True)
@@ -130,7 +140,7 @@ class Location(Table):
 
 
 class Organization(Table):
-    """Data-generating research programs or entities."""
+    """C2M2 proposed future extension: a list of data-generating research programs or entities."""
     organization_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     url = Column(String)
     name = Column(String)
@@ -138,6 +148,7 @@ class Organization(Table):
 
 
 class Project(Table):
+    """C2M2-defined table uniquely defining projects within the scope of the VBR and broader NIH namespace."""  
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -150,6 +161,7 @@ class Project(Table):
 
 
 class Protocol(Table):
+    """C2M2 proposed future extension: an event-type or defined process."""
     protocol_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String, nullable=True)
     name = Column(String, nullable=True)
@@ -157,13 +169,14 @@ class Protocol(Table):
 
 
 class Reason(Table):
+   """TACC-defined table of reasons for incomplete status to aid analysis of participant dropouts, biosample QA, logistics, and other issues."""  
     reason_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
     description = Column(Text)
 
 
 class Role(Table):
-    """Defines permissions associated with users of this system."""
+    """TACC-defined table: defines permissions associated with users of this system."""
     role_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     url = Column(String)
     name = Column(String)
@@ -171,6 +184,7 @@ class Role(Table):
 
 
 class Status(Table):
+    """TACC-defined table; status_id mirrors the REDCap 0 (incomplete), 1 (partial), and 2 (complete) status with extensibility for additional status definitions."""  
     status_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
     description = Column(Text)
