@@ -83,6 +83,7 @@ class DataEventInSubject(AssociationTable):
 
 
 class DatasetDefinedByProject(AssociationTable):
+    """Maps datasets to their associated projects.""" 
 
     dataset_defined_by_project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     dataset_id_namespace = Constants.STRING_NAMESPACE_COLUMN
@@ -99,6 +100,7 @@ class DatasetDefinedByProject(AssociationTable):
 
 # TODO - CHECK constraint to avoid self-referencing
 class DatasetInDataset(AssociationTable):
+    """Maps dataset hierarchy and “cross-cut” collections."""
 
     dataset_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     child_dataset_id_namespace = Constants.STRING_NAMESPACE_COLUMN
@@ -114,6 +116,7 @@ class DatasetInDataset(AssociationTable):
 
 
 class FileDescribesBiosample(AssociationTable):
+    """Maps files to the biosamples they describe."""
 
     file_describes_biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     file_id_namespace = Constants.STRING_NAMESPACE_COLUMN
@@ -129,6 +132,7 @@ class FileDescribesBiosample(AssociationTable):
 
 
 class FileDescribesSubject(AssociationTable):
+    """Maps files to associated subjects."""
 
     file_describes_subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     file_id_namespace = Constants.STRING_NAMESPACE_COLUMN
