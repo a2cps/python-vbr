@@ -81,6 +81,7 @@ class Dataset(Table):
 
 
 class DataType(Table):
+    """C2M2-defined table: provides classifications for data; id is an EDAM CV data term in the form of data:[EDAM#]"""
     data_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String)
@@ -88,6 +89,7 @@ class DataType(Table):
 
 
 class File(Table):
+    """C2M2-defined table: provide unique persistent name and associated information for files"""
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -117,6 +119,7 @@ class File(Table):
 
 
 class FileFormat(Table):
+    """C2M2-defined table containing classifications for file format. id is an EDAM CV format term."""  
     file_format_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String, nullable=True)
@@ -124,6 +127,7 @@ class FileFormat(Table):
 
 
 class Location(Table):
+    """TACC-defined table: contains physical address information for shipping."""
     location_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     location_name = Column(String, nullable=True)
     address1 = Column(String, nullable=True)
@@ -136,7 +140,7 @@ class Location(Table):
 
 
 class Organization(Table):
-    """Data-generating research programs or entities."""
+    """C2M2 proposed future extension: a list of data-generating research programs or entities."""
     organization_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     url = Column(String)
     name = Column(String)
