@@ -11,7 +11,7 @@ from tapipy.tapis import Tapis, TapisResult
 # from .tableclasses import (SESSION_FIELD, class_from_linkage, class_from_table,
 #                            record, unique_record)
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.CRITICAL)
 
 __all__ = ['Connection']
 
