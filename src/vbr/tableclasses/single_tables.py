@@ -100,7 +100,7 @@ class File(Table):
         'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
     persistent_id = Column(String)
-    creation_time = Column(DateTime, nullable=True, default='CREATETIME')
+    creation_time = Column(CreatedTimeStamp, nullable=True)
     size_in_bytes = Column(Integer, nullable=True)
     uncompressed_size_in_bytes = Column(Integer, nullable=True)
     sha256 = Column(String)
@@ -154,7 +154,7 @@ class Project(Table):
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Column(String, nullable=True)
-    creation_time = Column(DateTime, nullable=True, default='CREATETIME')
+    creation_time = Column(CreatedTimeStamp, nullable=True)
     abbreviation = Column(String, nullable=True)
     name = Column(String, nullable=True)
     description = Column(Text, nullable=True)
@@ -202,6 +202,6 @@ class Subject(Table):
         'project_id_namesapace', 'project_local_id')
     project_id = Column(Integer, ForeignKey('project.project_id'))
     persistent_id = Column(String, nullable=True)
-    creation_time = Column(DateTime, nullable=True, default='CREATETIME')
+    creation_time = Column(CreatedTimeStamp, nullable=True)
     # Is this a candidate for use of PgREST enumerations?
     granularity = Column(String, nullable=True)
