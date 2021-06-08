@@ -20,7 +20,6 @@
             "null": false
         }
     },
-    "comment": "Data-generating research programs or entities.",
     "root_url": "organization",
     "table_name": "organization"
 }

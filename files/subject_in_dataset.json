@@ -44,19 +44,6 @@
             "null": false
         }
     },
-    "comment": "Maps subjects to dataset collections.",
-    "constraints": {
-        "unique": {
-            "uniq_dataset_id_namespace_dataset_local_id": [
-                "dataset_id_namespace",
-                "dataset_local_id"
-            ],
-            "uniq_subject_id_namespace_ubject_local_id": [
-                "subject_id_namespace",
-                "subject_local_id"
-            ]
-        }
-    },
     "root_url": "subject_in_dataset",
     "table_name": "subject_in_dataset"
 }

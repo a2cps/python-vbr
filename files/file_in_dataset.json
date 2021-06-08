@@ -44,19 +44,6 @@
             "null": false
         }
     },
-    "comment": "Maps files to dataset collections.",
-    "constraints": {
-        "unique": {
-            "uniq_dataset_id_namespace_dataset_local_id": [
-                "dataset_id_namespace",
-                "dataset_local_id"
-            ],
-            "uniq_file_id_namespace_file_local_id": [
-                "file_id_namespace",
-                "file_local_id"
-            ]
-        }
-    },
     "root_url": "file_in_dataset",
     "table_name": "file_in_dataset"
 }

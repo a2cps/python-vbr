@@ -21,7 +21,6 @@
             "null": true
         }
     },
-    "comment": "CV: Dictionary of terms locating the origin of a biosample within the physiology of its subject.",
     "root_url": "anatomy",
     "table_name": "anatomy"
 }

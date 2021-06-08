@@ -44,19 +44,6 @@
             "null": false
         }
     },
-    "comment": "Maps data_events to datasets.",
-    "constraints": {
-        "unique": {
-            "uniq_data_event_id_namespace_data_event_local_id": [
-                "data_event_id_namespace",
-                "data_event_local_id"
-            ],
-            "uniq_dataset_id_namespace_dataset_local_id": [
-                "data_event_id_namespace",
-                "data_event_local_id"
-            ]
-        }
-    },
     "root_url": "data_event_in_dataset",
     "table_name": "data_event_in_dataset"
 }

@@ -20,7 +20,6 @@
             "null": false
         }
     },
-    "comment": "Defines permissions associated with users of this system.",
     "root_url": "role",
     "table_name": "role"
 }

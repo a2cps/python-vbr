@@ -44,18 +44,6 @@
             "null": false
         }
     },
-    "constraints": {
-        "unique": {
-            "uniq_file_id_namespace_file_local_id": [
-                "file_id_namespace",
-                "file_local_id"
-            ],
-            "uniq_subject_id_namespace_subject_local_id": [
-                "subject_id_namespace",
-                "subject_local_id"
-            ]
-        }
-    },
     "root_url": "file_describes_subject",
     "table_name": "file_describes_subject"
 }

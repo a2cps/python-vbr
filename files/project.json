@@ -6,7 +6,7 @@
             "null": true
         },
         "creation_time": {
-            "data_type": "datetime",
+            "data_type": "timestamp",
             "default": "CREATETIME",
             "null": true
         },
@@ -39,14 +39,6 @@
             "data_type": "serial",
             "null": false,
             "primary_key": true
-        }
-    },
-    "constraints": {
-        "unique": {
-            "uniq_id_namespace_local_id": [
-                "id_namespace",
-                "local_id"
-            ]
         }
     },
     "root_url": "project",

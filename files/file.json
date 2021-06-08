@@ -9,7 +9,7 @@
             "reference_table": "assay_type"
         },
         "creation_time": {
-            "data_type": "datetime",
+            "data_type": "timestamp",
             "default": "CREATETIME",
             "null": true
         },
@@ -96,18 +96,6 @@
         "uncompressed_size_in_bytes": {
             "data_type": "integer",
             "null": true
-        }
-    },
-    "constraints": {
-        "unique": {
-            "uniq_id_namespace_local_id": [
-                "id_namespace",
-                "local_id"
-            ],
-            "uniq_project_id_namespace_project_local_id": [
-                "project_id_namesapace",
-                "project_local_id"
-            ]
         }
     },
     "root_url": "file",

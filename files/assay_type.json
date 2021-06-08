@@ -21,7 +21,6 @@
             "null": true
         }
     },
-    "comment": "CV: Dictionary of terms describing types material that can be biosamples.",
     "root_url": "assay_type",
     "table_name": "assay_type"
 }

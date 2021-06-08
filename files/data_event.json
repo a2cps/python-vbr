@@ -63,15 +63,6 @@
             "reference_table": "status"
         }
     },
-    "constraints": {
-        "unique": {
-            "signature": [],
-            "uniq_id_namespace_local_id": [
-                "id_namespace",
-                "local_id"
-            ]
-        }
-    },
     "root_url": "data_event",
     "table_name": "data_event"
 }

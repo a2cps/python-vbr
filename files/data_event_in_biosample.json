@@ -40,19 +40,6 @@
             "null": false
         }
     },
-    "comment": "Maps data_events to biosamples.",
-    "constraints": {
-        "unique": {
-            "uniq_biosample_id_namespace_biosample_local_id": [
-                "biosample_id_namespace",
-                "biosample_local_id"
-            ],
-            "uniq_data_event_id_namespace_data_event_local_id": [
-                "data_event_id_namespace",
-                "data_event_local_id"
-            ]
-        }
-    },
     "root_url": "data_event_in_biosample",
     "table_name": "data_event_in_biosample"
 }

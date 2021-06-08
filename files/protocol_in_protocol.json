@@ -22,7 +22,6 @@
             "primary_key": true
         }
     },
-    "comment": "Maps protocol (event_type) hierarchy and 'cross-cut' collections.",
     "root_url": "protocol_in_protocol",
     "table_name": "protocol_in_protocol"
 }

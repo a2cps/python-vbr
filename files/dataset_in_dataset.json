@@ -44,18 +44,6 @@
             "null": false
         }
     },
-    "constraints": {
-        "unique": {
-            "uniq_child_dataset_id_namespace_child_dataset_local_id": [
-                "child_dataset_id_namespace",
-                "child_dataset_local_id"
-            ],
-            "uniq_parent_dataset_id_namespace_parent_dataset_local_id": [
-                "parent_dataset_id_namespace",
-                "parent_dataset_local_id"
-            ]
-        }
-    },
     "root_url": "dataset_in_dataset",
     "table_name": "dataset_in_dataset"
 }

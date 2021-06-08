@@ -44,19 +44,6 @@
             "null": false
         }
     },
-    "comment": "Maps biosamples to subjects.",
-    "constraints": {
-        "unique": {
-            "uniq_biosample_id_namespace_biosample_local_id": [
-                "biosample_id_namespace",
-                "biosample_local_id"
-            ],
-            "uniq_subject_id_namespace_subject_local_id": [
-                "subject_id_namespace",
-                "subject_local_id"
-            ]
-        }
-    },
     "root_url": "biosample_from_subject",
     "table_name": "biosample_from_subject"
 }

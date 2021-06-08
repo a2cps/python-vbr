@@ -44,18 +44,6 @@
             "null": false
         }
     },
-    "constraints": {
-        "unique": {
-            "uniq_dataset_id_namespace_dataset_local_id": [
-                "data_event_id_namespace",
-                "data_event_local_id"
-            ],
-            "uniq_project_id_namespace_project_local_id": [
-                "project_id_namespace",
-                "project_local_id"
-            ]
-        }
-    },
     "root_url": "dataset_defined_by_project",
     "table_name": "dataset_defined_by_project"
 }

@@ -1,7 +1,7 @@
 {
     "columns": {
         "creation_time": {
-            "data_type": "datetime",
+            "data_type": "timestamp",
             "default": "CREATETIME",
             "null": true
         },
@@ -49,19 +49,6 @@
             "data_type": "serial",
             "null": false,
             "primary_key": true
-        }
-    },
-    "comment": "The source organism(s) from which a biosample has been generated.",
-    "constraints": {
-        "unique": {
-            "uniq_id_namespace_local_id": [
-                "id_namespace",
-                "local_id"
-            ],
-            "uniq_project_id_namespace_project_local_id": [
-                "project_id_namesapace",
-                "project_local_id"
-            ]
         }
     },
     "root_url": "subject",

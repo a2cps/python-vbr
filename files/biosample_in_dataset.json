@@ -44,19 +44,6 @@
             "null": false
         }
     },
-    "comment": "Maps biosamples to datasets.",
-    "constraints": {
-        "unique": {
-            "uniq_biosample_id_namespace_biosample_local_id": [
-                "biosample_id_namespace",
-                "biosample_local_id"
-            ],
-            "uniq_dataset_id_namespace_dataset_local_id": [
-                "dataset_id_namespace",
-                "dataset_local_id"
-            ]
-        }
-    },
     "root_url": "biosample_in_dataset",
     "table_name": "biosample_in_dataset"
 }

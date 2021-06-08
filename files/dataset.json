@@ -41,14 +41,6 @@
             "null": false
         }
     },
-    "constraints": {
-        "unique": {
-            "uniq_id_namespace_local_id": [
-                "id_namespace",
-                "local_id"
-            ]
-        }
-    },
     "root_url": "dataset",
     "table_name": "dataset"
 }

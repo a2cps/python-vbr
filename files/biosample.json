@@ -53,18 +53,6 @@
             "null": false
         }
     },
-    "constraints": {
-        "unique": {
-            "uniq_id_namespace_local_id": [
-                "id_namespace",
-                "local_id"
-            ],
-            "uniq_project_id_namespace_project_local_id": [
-                "project_id_namesapace",
-                "project_local_id"
-            ]
-        }
-    },
     "root_url": "biosample",
     "table_name": "biosample"
 }

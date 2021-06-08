@@ -44,18 +44,6 @@
             "null": false
         }
     },
-    "constraints": {
-        "unique": {
-            "uniq_file_id_namespace_file_local_id": [
-                "file_id_namespace",
-                "file_local_id"
-            ],
-            "uniq_iosample_id_namespace_biosample_local_id": [
-                "biosample_id_namespace",
-                "biosample_local_id"
-            ]
-        }
-    },
     "root_url": "file_describes_biosample",
     "table_name": "file_describes_biosample"
 }

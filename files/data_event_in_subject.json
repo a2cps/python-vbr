@@ -44,15 +44,6 @@
             "null": false
         }
     },
-    "comment": "Maps data_events associated with each subject.",
-    "constraints": {
-        "unique": {
-            "uniq_data_event_id_namespace_data_event_local_id": [
-                "data_event_id_namespace",
-                "data_event_local_id"
-            ]
-        }
-    },
     "root_url": "data_event_in_subject",
     "table_name": "data_event_in_subject"
 }
