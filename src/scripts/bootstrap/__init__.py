@@ -1,4 +1,5 @@
-from . import table_definitions
+# from . import table_definitions
+# from . import build_load_table_definitions
 from .data import data_loads
 
 # Consult resolved schema order to find order of tables to bootstrap

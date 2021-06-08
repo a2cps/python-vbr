@@ -9,7 +9,8 @@ def main():
     for td in tdefs:
         fname = td['table_name'] + '.json'
         with open(fname, 'w') as file:
-            json.dump(td, file,sort_keys=True, indent=4)
+            json.dump(td, file, sort_keys=True, indent=4)
+
 
 if __name__ == '__main__':
     main()
