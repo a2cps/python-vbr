@@ -4,7 +4,7 @@ from .constants import Constants
 
 
 class Anatomy(Table):
-    """CV: Dictionary of terms locating the origin of a biosample within the physiology of its subject."""
+    """C2M2-defined table: id is an UBERON CV term locating the origin of a biosample within the physiology of its subject."""
     anatomy_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String)
     name = Column(String, nullable=True)
