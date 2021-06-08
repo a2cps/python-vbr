@@ -58,10 +58,17 @@ class Column(object):
                 self.fk = a
 
     def property(self):
+
         all_props = self.ctype.properties()
 
+        # If default is specified for Column, use that
+        # value. Otherwise, if default already was returned
+        # from the items properties() method, use that
+        # value. If no default at all, don't provide a
+        # 'default' value for the column
         if self.default is not None:
             all_props['default'] = self.default
+
         if self.primary_key:
             all_props['primary_key'] = True
         if self.unique:

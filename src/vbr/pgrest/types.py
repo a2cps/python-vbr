@@ -3,7 +3,7 @@ from .utils import class_or_instancemethod
 
 __all__ = [
     'Boolean', 'DateTime', 'Integer', 'IntegerList', 'Serial', 'String',
-    'StringList', 'Text'
+    'StringList', 'Text', 'TimeStamp', 'CreatedTimeStamp', 'UpdatedTimeStamp'
 ]
 
 
@@ -55,3 +55,20 @@ class StringList(PgRestColumn):
 class Text(PgRestColumn):
     DATA_TYPE = 'text'
     PYTHON_TYPE = str
+
+
+class TimeStamp(PgRestColumn):
+    DATA_TYPE = 'timestamp'
+    PYTHON_TYPE = str
+
+
+class CreatedTimeStamp(TimeStamp):
+    @class_or_instancemethod
+    def properties(self_or_cls):
+        return {'data_type': self_or_cls.DATA_TYPE, 'default': 'CREATETIME'}
+
+
+class UpdatedTimeStamp(TimeStamp):
+    @class_or_instancemethod
+    def properties(self_or_cls):
+        return {'data_type': self_or_cls.DATA_TYPE, 'default': 'UPDATETIME'}
