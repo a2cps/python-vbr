@@ -36,6 +36,7 @@ class Biosample(Table):
 
 
 class Contact(Table):
+    """TACC-defined table: contains administrative contact information"""
     contact_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     first_name = Column(String)
     last_name = Column(String)
@@ -44,6 +45,7 @@ class Contact(Table):
 
 
 class DataEvent(Table):
+    """C2M2 proposed future extension: logs data events with associated status, issues and comments."""   
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
@@ -64,6 +66,9 @@ class DataEvent(Table):
 
 
 class Dataset(Table):
+    """C2M2-defined table: a named collection of files and other datasets."""
+    """Within a2cps, an initial dataset will be created for each subject and protocol (event_type) to mirror the data collected via REDCap."""
+    """Additional datasets may be created and mapped using dataset mapping tables to reflect commonly queried cross-sections of data with their associated files."""
     id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
