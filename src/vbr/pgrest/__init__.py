@@ -1,5 +1,5 @@
 from .column import Column
-from .constraints import Constraint, UniqueConstraint
+from .constraints import Constraint, UniqueConstraint, Signature
 from .foreign_key import ForeignKey
 from .solver import DependencySolver
 from .table import AssociationTable, Table
