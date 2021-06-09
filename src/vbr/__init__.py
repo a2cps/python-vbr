@@ -1,5 +1,4 @@
 """Virtual Biospecimen Repository Python API
 """
-# from .vbr import *
-# from .tableclasses import *
-# from .utils import *
+from . import pgrest, tableclasses
+from .client import VBR

@@ -1,19 +1,28 @@
 from typing import NoReturn, Any
-from tapipy.tapis import Tapis, TapisResult
+from tapipy.tapis import TapisResult
+
 
 class DataManager(object):
     """Manages data in PgREST collections
     """
-    def create(self, vbr_obj: Any) -> TapisResult:
-        """Insert a VBR Record into the database
+    def create_from_dict(self, root_url: str,
+                         record_dict: dict) -> TapisResult:
+        """Create a PgREST record from a Python dictionary
         """
-        root_url = vbr_obj.__schema__.root_url
-        resp = self.client.pgrest.create_in_collection(
-            collection=root_url, data=vbr_obj.dict())
-        # I am not sure I want to return a TapisResult
+        resp = self.client.pgrest.create_in_collection(collection=root_url,
+                                                       data=record_dict)
         return resp
 
-    def retrieve(self, pk_value: str, table_name: str) -> Any:
+    def create(self, vbr_obj: Any) -> TapisResult:
+        """Create a PgREST record from a VBR Table instance
+        """
+        root_url = vbr_obj.__schema__.root_url
+        return self.create_from_dict(root_url=root_url, data=vbr_obj.dict())
+
+    def retrieve(self,
+                 pk_value: str,
+                 root_url=None,
+                 table_name=None) -> TapisResult:
         """Retrieve a VBR Record from the database by primary key and table name
         """
         pass

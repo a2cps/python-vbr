@@ -37,7 +37,6 @@ class Connection(object):
         self.client.get_tokens()
 
 
-
 # NOTE - One idea is to implement left/right relations in the connection class.
 #        For example, do a retrieve on an object, then inspect to see if it has
 #        any relations. If so, retrieve the related object and attach it to
