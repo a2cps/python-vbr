@@ -9,6 +9,7 @@ class Anatomy(Table):
     id = Column(String)
     name = Column(String, nullable=True)
     description = Column(String, nullable=True)
+    # TODO - determine if we need a signature (or a single unique on 'name')
 
 
 class AssayType(Table):
@@ -17,6 +18,7 @@ class AssayType(Table):
     id = Column(String)
     name = Column(String, nullable=True)
     description = Column(String, nullable=True)
+    # TODO - determine if we need a signature (or a single unique on 'name')
 
 
 class Biosample(Table):
@@ -33,6 +35,8 @@ class Biosample(Table):
     persistent_id = Column(String)
     creation_time = Column(DateTime)
     anatomy = Column(Integer, ForeignKey('anatomy.anatomy_id'))
+    # TODO - determine what fields form the signature
+    signature = Signature('project', 'anatomy')
 
 
 class Contact(Table):
@@ -42,7 +46,10 @@ class Contact(Table):
     last_name = Column(String)
     email = Column(String)
     organization = Column(Integer, ForeignKey('organization.organization_id'))
-
+    # TODO - confirm fields
+    signature = Signature(
+        'first_name', 'last_name', 'email', 
+        'organization')
 
 class DataEvent(Table):
     """C2M2 proposed future extension: logs data events with associated status, issues and comments."""   
@@ -54,16 +61,20 @@ class DataEvent(Table):
                       ForeignKey('protocol.protocol_id'),
                       nullable=True)
     rank = Column(Integer, nullable=True)
-    event_ts = Column(DateTime, nullable=True, default='CREATETIME')
+    event_ts = Column(DateTime, nullable=True)
     performed_by = Column(Integer,
                           ForeignKey('contact.contact_id'),
                           nullable=True)
     status = Column(Integer, ForeignKey('status.status_id'), nullable=True)
     reason = Column(Integer, ForeignKey('reason.reason_id'), nullable=True)
     comment = Column(String)
-
-    signature = Signature()
-
+    # Enforces record uniqueness. Signature is just syntactic sugar for 
+    # defining a UniqueConstraint
+    # TODO - confirm fields
+    signature = Signature(
+        'protocol', 'rank', 'event_ts', 
+        'performed_by', 'status', 
+        'reason', 'comment')
 
 class Dataset(Table):
     """C2M2-defined table: a named collection of files and other datasets."""
@@ -78,7 +89,7 @@ class Dataset(Table):
     abbreviation = Column(String, nullable=True)
     name = Column(String, nullable=True)
     description = Column(Text, nullable=True)
-
+    # TODO - determine if we need a signature
 
 class DataType(Table):
     """C2M2-defined table: provides classifications for data; id is an EDAM CV data term in the form of data:[EDAM#]"""
@@ -86,6 +97,7 @@ class DataType(Table):
     id = Column(String)
     name = Column(String)
     description = Column(Text)
+    # TODO - determine if we need a signature (or a single unique on 'name')
 
 
 class File(Table):
@@ -116,7 +128,10 @@ class File(Table):
                         ForeignKey('assay_type.assay_type_id'),
                         nullable=True)
     mime_type = Column(String, nullable=True)
-
+    # TODO - determine what fields form the signature
+    signature = Signature(
+        'filename', 'sha256', 'md5', 
+        'size_in_bytes')
 
 class FileFormat(Table):
     """C2M2-defined table containing classifications for file format. id is an EDAM CV format term."""  
@@ -124,6 +139,7 @@ class FileFormat(Table):
     id = Column(String)
     name = Column(String, nullable=True)
     description = Column(Text, nullable=True)
+    # TODO - determine if we need a signature (or a single unique on 'name')
 
 
 class Location(Table):
@@ -137,7 +153,7 @@ class Location(Table):
     zip_or_postcode = Column(String, nullable=True)
     state_province_country = Column(String, nullable=True)
     organization = Column(Integer, ForeignKey('organization.organization_id'))
-
+    # TODO - determine if we need a signature
 
 class Organization(Table):
     """C2M2 proposed future extension: a list of data-generating research programs or entities."""
@@ -145,7 +161,8 @@ class Organization(Table):
     url = Column(String)
     name = Column(String)
     description = Column(Text)
-
+    # TODO - determine what fields form the signature
+    signature = Signature('url', 'name')
 
 class Project(Table):
     """C2M2-defined table uniquely defining projects within the scope of the VBR and broader NIH namespace."""  
@@ -158,7 +175,8 @@ class Project(Table):
     abbreviation = Column(String, nullable=True)
     name = Column(String, nullable=True)
     description = Column(Text, nullable=True)
-
+    # TODO - determine what fields form the signature
+    signature = Signature('abbreviation', 'name')
 
 class Protocol(Table):
     """C2M2 proposed future extension: an event-type or defined process."""
@@ -166,6 +184,7 @@ class Protocol(Table):
     id = Column(String, nullable=True)
     name = Column(String, nullable=True)
     description = Column(Text, nullable=True)
+    # TODO - determine if we need a signature (or a single unique on 'name')
 
 
 class Reason(Table):
@@ -173,6 +192,7 @@ class Reason(Table):
     reason_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
     description = Column(Text)
+    # TODO - determine if we need a signature
 
 
 class Role(Table):
@@ -181,13 +201,15 @@ class Role(Table):
     url = Column(String)
     name = Column(String)
     description = Column(Text)
-
+    # TODO - confirm these fields
+    signature = Signature('url', 'name')
 
 class Status(Table):
     """TACC-defined table; status_id mirrors the REDCap 0 (incomplete), 1 (partial), and 2 (complete) status with extensibility for additional status definitions."""  
     status_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(String)
     description = Column(Text)
+    # TODO - determine if we need a signature (or a single unique on 'name')
 
 
 class Subject(Table):
@@ -205,3 +227,5 @@ class Subject(Table):
     creation_time = Column(CreatedTimeStamp, nullable=True)
     # Is this a candidate for use of PgREST enumerations?
     granularity = Column(String, nullable=True)
+    # TODO - determine what fields form the signature
+    signature = Signature('abbreviation', 'name')
