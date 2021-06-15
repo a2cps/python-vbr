@@ -2,7 +2,7 @@ from .column import PgRestColumn
 from .utils import class_or_instancemethod
 
 __all__ = [
-    'Boolean', 'DateTime', 'Integer', 'IntegerList', 'Serial', 'String',
+    'Boolean', 'Date', 'Integer', 'IntegerList', 'Serial', 'String',
     'StringList', 'Text', 'TimeStamp', 'CreatedTimeStamp', 'UpdatedTimeStamp'
 ]
 
@@ -12,8 +12,9 @@ class Boolean(PgRestColumn):
     PYTHON_TYPE = bool
 
 
-class DateTime(PgRestColumn):
-    DATA_TYPE = 'datetime'
+class Date(PgRestColumn):
+    DATA_TYPE = 'date'
+    # TODO - validate by reading string into a datetime, confirming trailing Z
 
 
 class Integer(PgRestColumn):
@@ -24,7 +25,7 @@ class Integer(PgRestColumn):
 class IntegerList(PgRestColumn):
     DATA_TYPE = 'int[]'
     PYTHON_TYPE = None
-
+    # TODO - validate that contents of data are a list of ints
 
 class Serial(PgRestColumn):
     DATA_TYPE = 'serial'
@@ -50,7 +51,7 @@ class String(PgRestColumn):
 class StringList(PgRestColumn):
     DATA_TYPE = 'varchar[]'
     PYTHON_TYPE = None
-
+    # TODO - validate that contents of data are a list of strings
 
 class Text(PgRestColumn):
     DATA_TYPE = 'text'
@@ -60,6 +61,8 @@ class Text(PgRestColumn):
 class TimeStamp(PgRestColumn):
     DATA_TYPE = 'timestamp'
     PYTHON_TYPE = str
+    # TODO - validate that contents of default are a datetime string
+    #        or are in (CREATETIME, UPDATETIME)
 
 
 class CreatedTimeStamp(TimeStamp):
