@@ -28,10 +28,14 @@ class Table(object):
         # Create regular properties holding values passed in via constructor
         for aname in dir(self):
             attr = getattr(self, aname)
-            if isinstance(attr, (Column, Enumeration, Constraint)):
+            if isinstance(attr, (Enumeration, Constraint)):
                 self.__class_attrs__[aname] = attr
                 # TODO - use validate() from attr
                 setattr(self, aname, kwargs.get(aname, None))
+            if isinstance(attr, Column):
+                self.__class_attrs__[aname] = attr
+                # TODO - use validate() from attr
+                setattr(self, aname, attr.ctype.instantiate(kwargs.get(aname, None)))
 
     def __repr__(self):
         values = []

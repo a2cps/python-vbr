@@ -2,7 +2,6 @@ from vbr.pgrest.constraints import Signature
 from ..pgrest import *
 from .constants import Constants
 
-
 class Anatomy(Table):
     """C2M2-defined table: id is an UBERON CV term locating the origin of a biosample within the physiology of its subject."""
     anatomy_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -57,12 +56,11 @@ class Contact(Table):
     first_name = Column(String, comment="First name")
     last_name = Column(String, comment="Last name")
     email = Column(String,
-                   nullable=True,
                    unique=True,
                    comment="Email address for notifications")
     phone = Column(String,
                    nullable=True,
-                   comment="Phone number for notifications")
+                   comment="Phone number for notifications (optional)")
     organization = Column(Integer,
                           ForeignKey('organization.organization_id'),
                           comment="Organization ID")
@@ -203,10 +201,10 @@ class Project(Table):
     persistent_id = Column(String, nullable=True)
     creation_time = Column(CreatedTimeStamp, nullable=True)
     abbreviation = Column(String, nullable=True)
-    name = Column(String, nullable=True)
+    name = Column(String, unique=True)
     description = Column(Text, nullable=True)
     # TODO - determine what fields form the signature
-    signature = Signature('abbreviation', 'name')
+    # signature = Signature('abbreviation', 'name')
 
 
 class Protocol(Table):

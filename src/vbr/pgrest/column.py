@@ -22,6 +22,10 @@ class PgRestColumn(object):
             return True
         else:
             return isinstance(value, cls.PYTHON_TYPE)
+    
+    @classmethod
+    def instantiate(cls, value):
+        return value
 
 
 class Column(object):

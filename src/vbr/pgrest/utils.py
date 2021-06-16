@@ -23,7 +23,7 @@ class class_or_instancemethod(classmethod):
 def datetime_to_isodate(date_obj):
     """Convert a Python datetime object to ISO-8601
 
-    Example Response: 2021-06-07T18:42:28.062Z
+    Example Response: 2021-06-07 18:42:28.062Z
     """
     d = arrow.get(date_obj).format('YYYY-MM-DD HH:mm:ss.SSS') + 'Z'
     return d
@@ -34,5 +34,5 @@ def datetime_to_date(date_obj):
 
     Example Response: 2021-06-07
     """
-     d = arrow.get(date_obj).format('YYYY-MM-DD')
+    d = arrow.get(date_obj).format('YYYY-MM-DD')
     return d
