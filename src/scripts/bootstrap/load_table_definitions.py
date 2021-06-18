@@ -2,15 +2,14 @@ def main(args):
 
     t = Tapis(base_url=args['base_url'], username=args['username'], password=args['password'])
     v = VBR(tapis_client=t)
-    print([a['table_name'] for a in v.list_tables()])
-    # raise SystemError()
 
-    # tables = tableclasses.table_definitions()
-    # for t in tables:
-    #     try:
-    #         v.create_table_from_definition(t)
-    #     except Exception as exc:
-    #         raise
+    tables = tableclasses.table_definitions()
+    for t in tables:
+        try:
+            print('Creating...' + t['table_name'])
+            v.create_table_from_definition(t)
+        except Exception as exc:
+            print(exc)
 
 if __name__ == '__main__':
 

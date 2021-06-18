@@ -5,7 +5,18 @@ from .types import *
 
 # TODO - Move this outside of the pgrest module
 
-__all__ = ['LocalId']
+__all__ = ['LocalId', 'new_hashid']
+
+HASH_SALT = '*<rjFeB$Fy2#~-H@'
+
+def new_hashid(salt=None):
+    """Return a new, randomly-generated hashid
+    """
+    if salt is None:
+        salt = HASH_SALT
+    hashids = Hashids(salt=salt)
+    _uuid = uuid.uuid1().int >> 64
+    return hashids.encode(_uuid)    
 
 class AutoPopulate(object):
 
@@ -15,16 +26,19 @@ class AutoPopulate(object):
 
 class AutoHashId(AutoPopulate):
 
-    HASH_SALT = '*<rjFeB$Fy2#~-H@'
+    SALT = None
     
     @classmethod
     def autopopulate(cls, value):
         if value is not None:
             return cls.validated(value)
         else:
-            hashids = Hashids(salt=cls.HASH_SALT)
-            _uuid = uuid.uuid1().int >> 64
-            return hashids.encode(_uuid)
+            if cls.SALT is not None:
+                salt = cls.SALT
+            else:
+                salt = HASH_SALT
+            return new_hashid(salt=salt)
+
 
     @classmethod
     def validated(cls, value):

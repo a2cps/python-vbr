@@ -1,10 +1,11 @@
-import argparse
-import json
-import os
-from vbr import tableclasses
-
 
 def main():
+
+    import argparse
+    import json
+    import os
+    from vbr import tableclasses
+
     tdefs = tableclasses.table_definitions()
     for td in tdefs:
         fname = td['table_name'] + '.json'
