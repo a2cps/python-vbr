@@ -6,18 +6,18 @@ class DataManager(object):
     """Manages data in PgREST collections
     """
     def create_from_dict(self, root_url: str,
-                         record_dict: dict) -> TapisResult:
+                         record_data: dict) -> TapisResult:
         """Create a PgREST record from a Python dictionary
         """
         resp = self.client.pgrest.create_in_collection(collection=root_url,
-                                                       data=record_dict)
+                                                       data=record_data)
         return resp
 
     def create(self, vbr_obj: Any) -> TapisResult:
         """Create a PgREST record from a VBR Table instance
         """
         root_url = vbr_obj.__schema__.root_url
-        return self.create_from_dict(root_url=root_url, data=vbr_obj.dict())
+        return self.create_from_dict(root_url=root_url, record_data=vbr_obj.dict())
 
     def retrieve(self,
                  pk_value: str,

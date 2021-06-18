@@ -21,15 +21,23 @@ class Integer(PgRestColumn):
     DATA_TYPE = 'integer'
     PYTHON_TYPE = int
 
+    @classmethod
+    def instantiate(cls, value):
+        if value is not None:
+            return int(value)
+        else:
+            return value
+
 
 class IntegerList(PgRestColumn):
     DATA_TYPE = 'int[]'
     PYTHON_TYPE = None
     # TODO - validate that contents of data are a list of ints
 
-class Serial(PgRestColumn):
+
+class Serial(Integer):
     DATA_TYPE = 'serial'
-    PYTHON_TYPE = int
+    # PYTHON_TYPE = int
 
 
 class String(PgRestColumn):
@@ -53,9 +61,9 @@ class StringList(PgRestColumn):
     PYTHON_TYPE = None
     # TODO - validate that contents of data are a list of strings
 
-class Text(PgRestColumn):
+
+class Text(String):
     DATA_TYPE = 'text'
-    PYTHON_TYPE = str
 
 
 class TimeStamp(PgRestColumn):
