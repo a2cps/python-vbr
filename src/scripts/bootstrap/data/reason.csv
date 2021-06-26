@@ -5,4 +5,4 @@ reason_id,name,description,internal_session
 4,reason_not_interested___3,Compensation Insufficient,NULL
 5,reason_not_interested___4,COVID-related,NULL
 6,reason_not_interested___5,Not interested in research,NULL
-7,reason, Consent not given,NULL
+7,reason,Consent not given,NULL

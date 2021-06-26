@@ -1,31 +1,26 @@
 def main(args):
-
+    
     t = Tapis(base_url=args['base_url'], username=args['username'], password=args['password'])
     v = VBR(tapis_client=t)
 
-    tables = tableclasses.table_definitions()
-    for t in tables:
+    ordered_tables = tableclasses.table_definitions()
+    ordered_data = data_loads(ordered_tables)
+    for od in ordered_data:
         try:
-            print('Creating...' + t['table_name'])
-            v.create_table_from_definition(t)
+            v.create(od)
         except Exception as exc:
             print(exc)
 
-if __name__ == '__main__':
 
-    # Imports are done here because importing Tapis invokes a 
-    # multiprocessing pool to load the specs. This in turn causes
-    # a strange race condition "An attempt has been made to 
-    # start a new process before the current process has finished 
-    # its bootstrapping phase"
+if __name__ == '__main__':
     
     import argparse
-    import json
-    import os
     from vbr import tableclasses
     from vbr.client import VBR
     from tapipy.tapis import Tapis
 
+    from .data import data_loads
+    
     parser = argparse.ArgumentParser()
     parser.add_argument("-H", "--base-url", help="Tapis API url")
     parser.add_argument("-u", "--username", help="Tapis username")
