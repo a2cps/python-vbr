@@ -40,7 +40,7 @@ class Column(object):
             unique=False,
             nullable=False,
             default=None,
-            comment=None,
+            comments=None,
             **kwargs):
 
         # self.cname = cname
@@ -53,7 +53,7 @@ class Column(object):
         self.primary_key = primary_key
         self.unique = unique
         self.nullable = nullable
-        self.comment = comment
+        self.comments = comments
         self.relations = []
 
         self.fk = None
@@ -82,8 +82,8 @@ class Column(object):
         # Feature gate: Support per-column comments
         # https://github.com/tapis-project/paas/issues/10
         if Config.COLUMN_COMMENTS:
-            if self.comment is not None:
-                all_props['comment'] = self.comment
+            if self.comments is not None:
+                all_props['comments'] = self.comments
 
         if self.fk is not None:
             fk_props = self.fk.properties()

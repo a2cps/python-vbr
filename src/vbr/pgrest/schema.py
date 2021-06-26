@@ -87,7 +87,7 @@ class PgrestSchema(object):
         # https://github.com/tapis-project/paas/issues/11
         if Config.TABLE_COMMENTS:
             if self.comment is not None and self.comment != '':
-                data['comment'] = self.comment
+                data['comments'] = self.comment
 
         return data
 

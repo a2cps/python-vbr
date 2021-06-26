@@ -7,28 +7,28 @@ class Anatomy(Table):
     anatomy_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(
         String,
-        comment=
+        comments=
         "UBERON CV term used to locate the origin of a biosample within the physiology of its source."
     )
     name = Column(String,
                   nullable=True,
-                  comment="Short name for this anatomy object")
+                  comments="Short name for this anatomy object")
     description = Column(String,
                          nullable=True,
-                         comment="Description of this anatomy object")
+                         comments="Description of this anatomy object")
     # TODO - determine if we need a signature (or a single unique on 'name')
 
 
 class AssayType(Table):
     """C2M2-defined table: describes types of material that can be biosamples. id is an OBI CV Term ID"""
     assay_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    id = Column(String, comment="OBI CV term ID")
+    id = Column(String, comments="OBI CV term ID")
     name = Column(String,
                   nullable=True,
-                  comment="Short name for the assay_type")
+                  comments="Short name for the assay_type")
     description = Column(String,
                          nullable=True,
-                         comment="Description of the assay_type")
+                         comments="Description of the assay_type")
     # TODO - determine if we need a signature (or a single unique on 'name')
 
 
@@ -53,17 +53,17 @@ class Biosample(Table):
 class Contact(Table):
     """TACC-defined table: contains administrative contact information"""
     contact_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    first_name = Column(String, comment="First name")
-    last_name = Column(String, comment="Last name")
+    first_name = Column(String, comments="First name")
+    last_name = Column(String, comments="Last name")
     email = Column(String,
                    unique=True,
-                   comment="Email address for notifications")
+                   comments="Email address for notifications")
     phone = Column(String,
                    nullable=True,
-                   comment="Phone number for notifications (optional)")
+                   comments="Phone number for notifications (optional)")
     organization = Column(Integer,
                           ForeignKey('organization.organization_id'),
-                          comment="Organization ID")
+                          comments="Organization ID")
     # TODO - confirm fields
     signature = Signature('first_name', 'last_name', 'organization')
 
@@ -89,7 +89,7 @@ class DataEvent(Table):
     # defining a UniqueConstraint
     # TODO - confirm fields
     signature = Signature('protocol', 'rank', 'event_ts', 'performed_by',
-                          'status', 'reason', 'comment')
+                          'status', 'reason', 'comments')
 
 
 class Dataset(Table):
@@ -102,26 +102,26 @@ class Dataset(Table):
     dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Column(String)
     creation_time = Column(CreatedTimeStamp,
-                           comment='When the dataset was created',
+                           comments='When the dataset was created',
                            nullable=True)
     abbreviation = Column(String,
                           nullable=True,
-                          comment='Short display name for the dataset')
+                          comments='Short display name for the dataset')
     name = Column(String,
                   nullable=True,
-                  comment='Short descriptive name for the dataset')
+                  comments='Short descriptive name for the dataset')
     description = Column(Text,
                          nullable=True,
-                         comment='Description of the dataset')
+                         comments='Description of the dataset')
     # TODO - determine if we need a signature
 
 
 class DataType(Table):
     """C2M2-defined table: provides classifications for data; id is an EDAM CV data term in the form of data:[EDAM#]"""
     data_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    id = Column(String, comment='EDAM CV data term “data:[EDAM#]”')
-    name = Column(String, comment='Short name for this data_type')
-    description = Column(Text, comment='Description of the data_type')
+    id = Column(String, comments='EDAM CV data term “data:[EDAM#]”')
+    name = Column(String, comments='Short name for this data_type')
+    description = Column(Text, comments='Description of the data_type')
     # TODO - determine if we need a signature (or a single unique on 'name')
 
 
@@ -139,7 +139,7 @@ class File(Table):
     persistent_id = Column(String)
     creation_time = Column(CreatedTimeStamp,
                            nullable=True,
-                           comment="When the file was created")
+                           comments="When the file was created")
     size_in_bytes = Column(Integer, nullable=True)
     uncompressed_size_in_bytes = Column(Integer, nullable=True)
     sha256 = Column(String)
