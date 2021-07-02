@@ -1,29 +1,30 @@
 {
     "columns": {
         "assay_type": {
-            "FK": true,
             "data_type": "integer",
+            "foreign_key": true,
             "null": true,
             "on_delete": "cascade",
             "reference_column": "assay_type_id",
             "reference_table": "assay_type"
         },
         "creation_time": {
+            "comments": "When the file was created",
             "data_type": "timestamp",
             "default": "CREATETIME",
             "null": true
         },
         "data_type": {
-            "FK": true,
             "data_type": "integer",
+            "foreign_key": true,
             "null": true,
             "on_delete": "cascade",
             "reference_column": "data_type_id",
             "reference_table": "data_type"
         },
         "file_format": {
-            "FK": true,
             "data_type": "integer",
+            "foreign_key": true,
             "null": true,
             "on_delete": "cascade",
             "reference_column": "file_format_id",
@@ -31,29 +32,24 @@
         },
         "file_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "filename": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
         },
         "id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "md5": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
         },
         "mime_type": {
             "char_len": 255,
@@ -63,12 +59,11 @@
         "persistent_id": {
             "char_len": 255,
             "data_type": "varchar",
-            "null": false
+            "null": true
         },
         "project": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "project_id",
             "reference_table": "project"
@@ -76,18 +71,15 @@
         "project_id_namesapace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "project_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "sha256": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
         },
         "size_in_bytes": {
             "data_type": "integer",
@@ -96,6 +88,25 @@
         "uncompressed_size_in_bytes": {
             "data_type": "integer",
             "null": true
+        }
+    },
+    "comments": "C2M2-defined table: provide unique persistent name and associated information for files",
+    "constraints": {
+        "unique": {
+            "signature": [
+                "filename",
+                "sha256",
+                "md5",
+                "size_in_bytes"
+            ],
+            "uniq_id_namespace_local_id": [
+                "id_namespace",
+                "local_id"
+            ],
+            "uniq_project_id_namespace_project_local_id": [
+                "project_id_namesapace",
+                "project_local_id"
+            ]
         }
     },
     "root_url": "file",

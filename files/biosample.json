@@ -1,42 +1,36 @@
 {
     "columns": {
         "anatomy": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "anatomy_id",
             "reference_table": "anatomy"
         },
         "biosample_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "creation_time": {
-            "data_type": "datetime",
-            "null": false
+            "data_type": "date"
         },
         "id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "persistent_id": {
             "char_len": 255,
             "data_type": "varchar",
-            "null": false
+            "null": true
         },
         "project": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "project_id",
             "reference_table": "project"
@@ -44,13 +38,28 @@
         "project_id_namesapace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "project_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
+        }
+    },
+    "comments": "C2M2-defined table: each record uniquely identifies a biosample obtained from a subject",
+    "constraints": {
+        "unique": {
+            "signature": [
+                "project",
+                "anatomy"
+            ],
+            "uniq_id_namespace_local_id": [
+                "id_namespace",
+                "local_id"
+            ],
+            "uniq_project_id_namespace_project_local_id": [
+                "project_id_namesapace",
+                "project_local_id"
+            ]
         }
     },
     "root_url": "biosample",

@@ -13,13 +13,11 @@
         "id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "persistent_id": {
             "char_len": 255,
@@ -27,9 +25,8 @@
             "null": true
         },
         "project_id": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "project_id",
             "reference_table": "project"
@@ -37,18 +34,32 @@
         "project_id_namesapace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "project_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "subject_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
+        }
+    },
+    "comments": "The source organism(s) from which a biosample has been generated.",
+    "constraints": {
+        "unique": {
+            "signature": [
+                "abbreviation",
+                "name"
+            ],
+            "uniq_id_namespace_local_id": [
+                "id_namespace",
+                "local_id"
+            ],
+            "uniq_project_id_namespace_project_local_id": [
+                "project_id_namesapace",
+                "project_local_id"
+            ]
         }
     },
     "root_url": "subject",

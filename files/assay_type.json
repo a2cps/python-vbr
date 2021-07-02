@@ -2,25 +2,27 @@
     "columns": {
         "assay_type_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "description": {
             "char_len": 255,
+            "comments": "Description of the assay_type",
             "data_type": "varchar",
             "null": true
         },
         "id": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "comments": "OBI CV term ID",
+            "data_type": "varchar"
         },
         "name": {
             "char_len": 255,
+            "comments": "Short name for the assay_type",
             "data_type": "varchar",
             "null": true
         }
     },
+    "comments": "C2M2-defined table: describes types of material that can be biosamples. id is an OBI CV Term ID",
     "root_url": "assay_type",
     "table_name": "assay_type"
 }

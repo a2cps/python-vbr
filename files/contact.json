@@ -2,31 +2,47 @@
     "columns": {
         "contact_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "email": {
             "char_len": 255,
+            "comments": "Email address for notifications",
             "data_type": "varchar",
-            "null": false
+            "unique": true
         },
         "first_name": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "comments": "First name",
+            "data_type": "varchar"
         },
         "last_name": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "comments": "Last name",
+            "data_type": "varchar"
         },
         "organization": {
-            "FK": true,
+            "comments": "Organization ID",
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "organization_id",
             "reference_table": "organization"
+        },
+        "phone": {
+            "char_len": 255,
+            "comments": "Phone number for notifications (optional)",
+            "data_type": "varchar",
+            "null": true
+        }
+    },
+    "comments": "TACC-defined table: contains administrative contact information",
+    "constraints": {
+        "unique": {
+            "signature": [
+                "first_name",
+                "last_name",
+                "organization"
+            ]
         }
     },
     "root_url": "contact",

@@ -1,9 +1,8 @@
 {
     "columns": {
         "data_event_id": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "data_event_id",
             "reference_table": "data_event"
@@ -11,18 +10,15 @@
         "data_event_id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "data_event_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "file_id": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "file_id",
             "reference_table": "file"
@@ -30,18 +26,28 @@
         "file_id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "file_in_data_event_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "file_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Maps files to data events which create or alter them.",
+    "constraints": {
+        "unique": {
+            "uniq_ata_event_id_namespace_data_event_local_id": [
+                "data_event_id_namespace",
+                "data_event_local_id"
+            ],
+            "uniq_file_id_namespace_file_local_id": [
+                "file_id_namespace",
+                "file_local_id"
+            ]
         }
     },
     "root_url": "file_in_data_event",

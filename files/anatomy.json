@@ -2,25 +2,27 @@
     "columns": {
         "anatomy_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "description": {
             "char_len": 255,
+            "comments": "Description of this anatomy object",
             "data_type": "varchar",
             "null": true
         },
         "id": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "comments": "UBERON CV term used to locate the origin of a biosample within the physiology of its source.",
+            "data_type": "varchar"
         },
         "name": {
             "char_len": 255,
+            "comments": "Short name for this anatomy object",
             "data_type": "varchar",
             "null": true
         }
     },
+    "comments": "C2M2-defined table: id is an UBERON CV term locating the origin of a biosample within the physiology of its subject.",
     "root_url": "anatomy",
     "table_name": "anatomy"
 }

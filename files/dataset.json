@@ -2,43 +2,54 @@
     "columns": {
         "abbreviation": {
             "char_len": 255,
+            "comments": "Short display name for the dataset",
             "data_type": "varchar",
             "null": true
         },
         "creation_time": {
-            "data_type": "datetime",
+            "comments": "When the dataset was created",
+            "data_type": "timestamp",
             "default": "CREATETIME",
             "null": true
         },
         "dataset_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "description": {
+            "char_len": 255,
+            "comments": "Description of the dataset",
             "data_type": "text",
             "null": true
         },
         "id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "name": {
             "char_len": 255,
+            "comments": "Short descriptive name for the dataset",
             "data_type": "varchar",
             "null": true
         },
         "persistent_id": {
             "char_len": 255,
             "data_type": "varchar",
-            "null": false
+            "null": true
+        }
+    },
+    "comments": "C2M2-defined table: a named collection of files and other datasets.",
+    "constraints": {
+        "unique": {
+            "uniq_id_namespace_local_id": [
+                "id_namespace",
+                "local_id"
+            ]
         }
     },
     "root_url": "dataset",

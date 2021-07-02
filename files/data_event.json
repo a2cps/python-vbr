@@ -2,41 +2,36 @@
     "columns": {
         "comment": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
         },
         "data_event_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "event_ts": {
-            "data_type": "datetime",
-            "default": "CREATETIME",
+            "data_type": "date",
             "null": true
         },
         "id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "performed_by": {
-            "FK": true,
             "data_type": "integer",
+            "foreign_key": true,
             "null": true,
             "on_delete": "cascade",
             "reference_column": "contact_id",
             "reference_table": "contact"
         },
         "protocol": {
-            "FK": true,
             "data_type": "integer",
+            "foreign_key": true,
             "null": true,
             "on_delete": "cascade",
             "reference_column": "protocol_id",
@@ -47,20 +42,38 @@
             "null": true
         },
         "reason": {
-            "FK": true,
             "data_type": "integer",
+            "foreign_key": true,
             "null": true,
             "on_delete": "cascade",
             "reference_column": "reason_id",
             "reference_table": "reason"
         },
         "status": {
-            "FK": true,
             "data_type": "integer",
+            "foreign_key": true,
             "null": true,
             "on_delete": "cascade",
             "reference_column": "status_id",
             "reference_table": "status"
+        }
+    },
+    "comments": "C2M2 proposed future extension: logs data events with associated status, issues and comments.",
+    "constraints": {
+        "unique": {
+            "signature": [
+                "protocol",
+                "rank",
+                "event_ts",
+                "performed_by",
+                "status",
+                "reason",
+                "comments"
+            ],
+            "uniq_id_namespace_local_id": [
+                "id_namespace",
+                "local_id"
+            ]
         }
     },
     "root_url": "data_event",

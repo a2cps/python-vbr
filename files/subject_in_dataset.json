@@ -1,9 +1,8 @@
 {
     "columns": {
         "dataset_id": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "dataset_id",
             "reference_table": "dataset"
@@ -11,18 +10,15 @@
         "dataset_id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "dataset_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "subject_id": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "subject_id",
             "reference_table": "subject"
@@ -30,18 +26,28 @@
         "subject_id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "subject_in_dataset_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "subject_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Maps subjects to dataset collections.",
+    "constraints": {
+        "unique": {
+            "uniq_dataset_id_namespace_dataset_local_id": [
+                "dataset_id_namespace",
+                "dataset_local_id"
+            ],
+            "uniq_subject_id_namespace_ubject_local_id": [
+                "subject_id_namespace",
+                "subject_local_id"
+            ]
         }
     },
     "root_url": "subject_in_dataset",

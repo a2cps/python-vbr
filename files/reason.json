@@ -1,20 +1,19 @@
 {
     "columns": {
         "description": {
-            "data_type": "text",
-            "null": false
+            "char_len": 255,
+            "data_type": "text"
         },
         "name": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
         },
         "reason_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         }
     },
+    "comments": "TACC-defined table of reasons for incomplete status to aid analysis of participant dropouts, biosample QA, logistics, and other issues.",
     "root_url": "reason",
     "table_name": "reason"
 }

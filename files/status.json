@@ -1,20 +1,19 @@
 {
     "columns": {
         "description": {
-            "data_type": "text",
-            "null": false
+            "char_len": 255,
+            "data_type": "text"
         },
         "name": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
         },
         "status_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         }
     },
+    "comments": "TACC-defined table; status_id mirrors the REDCap 0 (incomplete), 1 (partial), and 2 (complete) status with extensibility for additional status definitions.",
     "root_url": "status",
     "table_name": "status"
 }

@@ -1,6 +1,7 @@
 {
     "columns": {
         "description": {
+            "char_len": 255,
             "data_type": "text",
             "null": true
         },
@@ -16,10 +17,10 @@
         },
         "protocol_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         }
     },
+    "comments": "C2M2 proposed future extension: an event-type or defined process.",
     "root_url": "protocol",
     "table_name": "protocol"
 }

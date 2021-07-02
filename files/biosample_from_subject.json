@@ -2,13 +2,11 @@
     "columns": {
         "biosample_from_subject_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "biosample_id": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "biosample_id",
             "reference_table": "biosample"
@@ -16,18 +14,15 @@
         "biosample_id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "biosample_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
         },
         "subject_id": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "subject_id",
             "reference_table": "subject"
@@ -35,13 +30,24 @@
         "subject_id_namespace": {
             "char_len": 255,
             "data_type": "varchar",
-            "default": "tag:a2cps.org\",\"",
-            "null": false
+            "default": "tag:a2cps.org\",\""
         },
         "subject_local_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "char_len": 16,
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Maps biosamples to subjects.",
+    "constraints": {
+        "unique": {
+            "uniq_biosample_id_namespace_biosample_local_id": [
+                "biosample_id_namespace",
+                "biosample_local_id"
+            ],
+            "uniq_subject_id_namespace_subject_local_id": [
+                "subject_id_namespace",
+                "subject_local_id"
+            ]
         }
     },
     "root_url": "biosample_from_subject",

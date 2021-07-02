@@ -1,23 +1,29 @@
 {
     "columns": {
         "description": {
-            "data_type": "text",
-            "null": false
+            "char_len": 255,
+            "data_type": "text"
         },
         "name": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
         },
         "role_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "url": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
+        }
+    },
+    "comments": "TACC-defined table: defines permissions associated with users of this system.",
+    "constraints": {
+        "unique": {
+            "signature": [
+                "url",
+                "name"
+            ]
         }
     },
     "root_url": "role",

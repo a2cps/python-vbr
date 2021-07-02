@@ -1,18 +1,17 @@
 {
     "columns": {
         "description": {
+            "char_len": 255,
             "data_type": "text",
             "null": true
         },
         "file_format_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "id": {
             "char_len": 255,
-            "data_type": "varchar",
-            "null": false
+            "data_type": "varchar"
         },
         "name": {
             "char_len": 255,
@@ -20,6 +19,7 @@
             "null": true
         }
     },
+    "comments": "C2M2-defined table containing classifications for file format. id is an EDAM CV format term.",
     "root_url": "file_format",
     "table_name": "file_format"
 }

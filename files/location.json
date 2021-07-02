@@ -22,7 +22,6 @@
         },
         "location_id": {
             "data_type": "serial",
-            "null": false,
             "primary_key": true
         },
         "location_name": {
@@ -31,9 +30,8 @@
             "null": true
         },
         "organization": {
-            "FK": true,
             "data_type": "integer",
-            "null": false,
+            "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "organization_id",
             "reference_table": "organization"
@@ -49,6 +47,7 @@
             "null": true
         }
     },
+    "comments": "TACC-defined table: contains physical address information for shipping.",
     "root_url": "location",
     "table_name": "location"
 }
