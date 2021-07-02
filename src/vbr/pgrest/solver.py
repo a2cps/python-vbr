@@ -35,7 +35,7 @@ class DependencySolver(object):
             dep_found = False
             deps = []
             for k, v in tdef_cols.items():
-                if v.get('FK', False):
+                if v.get('foreign_key', False):
                     if v['reference_table'] not in self.completed:
                         # print('dependency: {0} <- {1}'.format(tdef_table_name, v['reference_table']))
                         dep_found = True
