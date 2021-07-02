@@ -22,7 +22,7 @@ class PgRestColumn(object):
             return True
         else:
             return isinstance(value, cls.PYTHON_TYPE)
-    
+
     @classmethod
     def instantiate(cls, value):
         return value
@@ -75,9 +75,14 @@ class Column(object):
 
         if self.primary_key:
             all_props['primary_key'] = True
+            # Force nullable to false because PK can't be null
+            self.nullable = False
         if self.unique:
             all_props['unique'] = True
-        all_props['null'] = self.nullable
+
+        # Only include 'null' in table def if need to set it
+        if self.nullable:
+            all_props['null'] = self.nullable
 
         # Feature gate: Support per-column comments
         # https://github.com/tapis-project/paas/issues/10

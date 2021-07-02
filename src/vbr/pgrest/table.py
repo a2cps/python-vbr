@@ -35,7 +35,8 @@ class Table(object):
             if isinstance(attr, Column):
                 self.__class_attrs__[aname] = attr
                 # TODO - use validate() from attr
-                setattr(self, aname, attr.ctype.instantiate(kwargs.get(aname, None)))
+                setattr(self, aname,
+                        attr.ctype.instantiate(kwargs.get(aname, None)))
 
     def __repr__(self):
         values = []

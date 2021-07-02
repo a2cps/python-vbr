@@ -2,6 +2,7 @@ from ..pgrest import PgRestColumn
 
 __all__ = ['LocalId']
 
+
 class LocalId(PgRestColumn):
     DATA_TYPE = 'varchar'
     PYTHON_TYPE = str

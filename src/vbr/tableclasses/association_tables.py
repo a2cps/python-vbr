@@ -83,7 +83,7 @@ class DataEventInSubject(AssociationTable):
 
 
 class DatasetDefinedByProject(AssociationTable):
-    """Maps datasets to their associated projects.""" 
+    """Maps datasets to their associated projects."""
 
     dataset_defined_by_project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     dataset_id_namespace = Constants.STRING_NAMESPACE_COLUMN

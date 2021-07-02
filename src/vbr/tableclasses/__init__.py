@@ -3,6 +3,7 @@ from ..pgrest import Table, AssociationTable, DependencySolver
 from .single_tables import *
 from .association_tables import *
 
+
 def _classes():
     """Private: Return the list of tableclasses via Python inspection
     """

@@ -2,6 +2,7 @@ from vbr.pgrest.constraints import Signature
 from ..pgrest import *
 from .constants import Constants
 
+
 class Anatomy(Table):
     """C2M2-defined table: id is an UBERON CV term locating the origin of a biosample within the physiology of its subject."""
     anatomy_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -43,7 +44,7 @@ class Biosample(Table):
     uniq_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
-    persistent_id = Column(String)
+    persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(Date)
     anatomy = Column(Integer, ForeignKey('anatomy.anatomy_id'))
     # TODO - determine what fields form the signature
@@ -100,7 +101,7 @@ class Dataset(Table):
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    persistent_id = Column(String)
+    persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp,
                            comments='When the dataset was created',
                            nullable=True)
@@ -136,7 +137,7 @@ class File(Table):
     uniq_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
-    persistent_id = Column(String)
+    persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp,
                            nullable=True,
                            comments="When the file was created")
@@ -198,7 +199,7 @@ class Project(Table):
     local_id = Constants.STRING_LOCALID_COLUMN
     uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    persistent_id = Column(String, nullable=True)
+    persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp, nullable=True)
     abbreviation = Column(String, nullable=True)
     name = Column(String, unique=True)
@@ -253,7 +254,7 @@ class Subject(Table):
     uniq_project_id_namespace_project_local_id = UniqueConstraint(
         'project_id_namesapace', 'project_local_id')
     project_id = Column(Integer, ForeignKey('project.project_id'))
-    persistent_id = Column(String, nullable=True)
+    persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp, nullable=True)
     # Is this a candidate for use of PgREST enumerations?
     granularity = Column(String, nullable=True)
