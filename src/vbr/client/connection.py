@@ -7,13 +7,9 @@ from typing import NoReturn, Any
 
 from tapipy.tapis import Tapis, TapisResult
 
-# from . import constants, errors
-# from .tableclasses import (SESSION_FIELD, class_from_linkage, class_from_table,
-#                            record, unique_record)
-
 logging.basicConfig(level=logging.CRITICAL)
 
-__all__ = ['Connection']
+__all__ = ['Connection', 'TapisUserEnv']
 
 
 class Connection(object):
@@ -36,6 +32,16 @@ class Connection(object):
             self.client = tapis_client
         self.client.get_tokens()
 
+
+class TapisUserEnv(Tapis):
+    """Supports initialization of a Tapis user client from env vars
+    """
+    def __init__(self, **kwargs):
+        super().__init__(
+            base_url=os.environ['VBR_HOST'],
+            username=os.environ['VBR_USERNAME'],
+            password=os.environ['VBR_PASSWORD'], 
+            **kwargs)
 
 # NOTE - One idea is to implement left/right relations in the connection class.
 #        For example, do a retrieve on an object, then inspect to see if it has
