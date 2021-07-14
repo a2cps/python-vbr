@@ -1,0 +1,19 @@
+{
+    "columns": {
+        "description": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "name": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "unit_id": {
+            "data_type": "serial",
+            "primary_key": true
+        }
+    },
+    "comments": "Unit of measurement",
+    "root_url": "unit",
+    "table_name": "unit"
+}

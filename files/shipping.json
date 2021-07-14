@@ -1,0 +1,60 @@
+{
+    "columns": {
+        "box_barcode": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "box_type": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "box_type_id",
+            "reference_table": "box_type"
+        },
+        "ship_from": {
+            "char_len": 255,
+            "comments": "Shipment origin",
+            "data_type": "varchar"
+        },
+        "ship_to": {
+            "char_len": 255,
+            "comments": "Destination; default to UCSD",
+            "data_type": "varchar",
+            "default": "UCSD"
+        },
+        "ship_tracking_id": {
+            "char_len": 255,
+            "comments": "Fedex or UPS shipment tracking barcode",
+            "data_type": "varchar"
+        },
+        "shipping_event_id": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "shipping_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "unit": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "unit_id",
+            "reference_table": "unit"
+        },
+        "unit_barcode": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "unit_count": {
+            "data_type": "integer",
+            "default": 1
+        }
+    },
+    "comments": "Provides details for shipping biosamples",
+    "root_url": "shipping",
+    "table_name": "shipping"
+}

@@ -51,6 +51,17 @@ class Biosample(Table):
     signature = Signature('project', 'anatomy')
 
 
+class BoxType(Table):
+    """Definitions for storage and shipping containers"""
+    box_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    name = Column(
+        String,
+        comments="short label for box_type (ex. 'aliquot' or 'paxgene'")
+    description = Column(String,
+                         nullable=True,
+                         comments="short descriptive name used for box_type")
+
+
 class Contact(Table):
     """TACC-defined table: contains administrative contact information"""
     contact_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -235,6 +246,25 @@ class Role(Table):
     signature = Signature('url', 'name')
 
 
+class Shipping(Table):
+    """Provides details for shipping biosamples"""
+    shipping_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    shipping_event_id = Column(Integer, ForeignKey("data_event.data_event_id"))
+    ship_tracking_id = Column(
+        String, comments="Fedex or UPS shipment tracking barcode")
+    ship_to = Column(String,
+                     default="UCSD",
+                     comments="Destination; default to UCSD")
+    ship_from = Column(String, comments="Shipment origin")
+    box_type = Column(Integer, ForeignKey("box_type.box_type_id"))
+    box_barcode = Column(String, "Box barcode")
+    unit = Column(Integer, ForeignKey("unit.unit_id"))
+    unit_barcode = Column(String, comment="Unit barcode")
+    unit_count = Column(Integer,
+                        default=1,
+                        comment="Count of units matching barcode")
+
+
 class Status(Table):
     """TACC-defined table; status_id mirrors the REDCap 0 (incomplete), 1 (partial), and 2 (complete) status with extensibility for additional status definitions."""
     status_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -260,3 +290,15 @@ class Subject(Table):
     granularity = Column(String, nullable=True)
     # TODO - determine what fields form the signature
     signature = Signature('abbreviation', 'name')
+
+
+class Unit(Table):
+    """Unit of measurement"""
+    unit_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    name = Column(
+        String,
+        nullable=False,
+        comment="Short label for unit (ex. 'aliquot', 'paxgene' or 'buffycoat'"
+    )
+    description = Column(String,
+                         comment="Short descriptive name used for the unit ")

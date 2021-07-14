@@ -6,7 +6,7 @@ class DataManager(object):
     """Manages data in PgREST collections
     """
     def create_row_from_dict(self, root_url: str,
-                         record_data: dict) -> TapisResult:
+                             record_data: dict) -> TapisResult:
         """Create a PgREST record from a Python dictionary
         """
         resp = self.client.pgrest.create_in_collection(collection=root_url,
@@ -18,16 +18,17 @@ class DataManager(object):
         """
         root_url = vbr_obj.__schema__.root_url
         return self.create_row_from_dict(root_url=root_url,
-                                     record_data=vbr_obj.dict())
+                                         record_data=vbr_obj.dict())
 
     def retrieve_row(self,
-                 pk_value: str,
-                 root_url=None,
-                 table_name=None,
-                 query=None) -> TapisResult:
+                     pk_value: str,
+                     root_url=None,
+                     table_name=None,
+                     query=None) -> TapisResult:
         """Retrieve a VBR Record from the database by primary key and table name
         """
-        resp = self.client.pgrest.get_in_collection(collection=root_url, item=pk_value)
+        resp = self.client.pgrest.get_in_collection(collection=root_url,
+                                                    item=pk_value)
         return resp
 
     def update_row(self, vbr_obj: Any) -> NoReturn:

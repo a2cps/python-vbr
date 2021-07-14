@@ -6,6 +6,7 @@ from vbr.tableclasses import class_from_table
 from .anatomy import AnatomyData
 from .assay_type import AssayTypeData
 from .biosample import BiosampleData
+from .box_type import BoxTypeData
 from .contact import ContactData
 from .data_event import DataEventData
 from .data_type import DataTypeData
@@ -21,6 +22,7 @@ from .reason import ReasonData
 from .role import RoleData
 from .status import StatusData
 from .subject import SubjectData
+from .unit import UnitData
 
 #__all__ = ['data_loads']
 

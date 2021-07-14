@@ -9,7 +9,7 @@ def main(args):
     ordered_data = data_loads(ordered_tables)
     for od in ordered_data:
         try:
-            v.create(od)
+            v.create_row(od)
         except Exception as exc:
             print(exc)
 
