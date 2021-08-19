@@ -1,0 +1,38 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "early_withdrawal_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "early_withdrawal_v04_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The RedCap Early Withdrawal v04 Instrument.",
+    "root_url": "rcap_early_withdrawal",
+    "table_name": "rcap_early_withdrawal"
+}

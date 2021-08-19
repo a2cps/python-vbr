@@ -1,0 +1,38 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "functional_testing_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "functional_testing_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The Rcap Functional Testing Instrument.",
+    "root_url": "rcap_functional_testing",
+    "table_name": "rcap_functional_testing"
+}

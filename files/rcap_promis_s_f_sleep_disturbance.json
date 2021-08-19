@@ -1,0 +1,38 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "promis_sf_sleep_disturbance_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "promis_sf_v10_sleep_disturbance_6a_sleep_i_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The Rcap Promis SF v10 Sleep Disturbance 6a Instrument.",
+    "root_url": "rcap_promis_s_f_sleep_disturbance",
+    "table_name": "rcap_promis_s_f_sleep_disturbance"
+}

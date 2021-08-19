@@ -1,0 +1,55 @@
+{
+    "columns": {
+        "age": {
+            "data_type": "integer",
+            "null": true
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "dem_race": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "ethnic": {
+            "data_type": "integer",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "patient_demographics_baseline_v03_demographics_i_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "rcap_patient_demographics_baseline_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sex": {
+            "data_type": "integer",
+            "null": true
+        }
+    },
+    "comments": "The Rcap Patient Demographics Baseline v03 instrument.",
+    "root_url": "rcap_patient_demographics_baseline",
+    "table_name": "rcap_patient_demographics_baseline"
+}

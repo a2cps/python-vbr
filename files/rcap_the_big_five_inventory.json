@@ -1,0 +1,38 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "the_big_five_inventory_bfi2s_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "the_big_five_inventory_id": {
+            "data_type": "serial",
+            "primary_key": true
+        }
+    },
+    "comments": "The Rcap Big Five Inventory (BFI2S) Instrument.",
+    "root_url": "rcap_the_big_five_inventory",
+    "table_name": "rcap_the_big_five_inventory"
+}

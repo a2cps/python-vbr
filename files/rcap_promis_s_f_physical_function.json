@@ -1,0 +1,38 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "promis_sf_physical_function_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "promis_sf_v12_physical_function_8b_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The Rcap Promis SF v12 Physical Function 8b Instrument.",
+    "root_url": "rcap_promis_s_f_physical_function",
+    "table_name": "rcap_promis_s_f_physical_function"
+}

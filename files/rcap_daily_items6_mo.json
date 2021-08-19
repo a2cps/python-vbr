@@ -1,0 +1,38 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "daily_items_6_mo_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "daily_items_6_mo_v03_6month_daily_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The Rcap Daily Items 6 Month v03 Instrument.",
+    "root_url": "rcap_daily_items6_mo",
+    "table_name": "rcap_daily_items6_mo"
+}

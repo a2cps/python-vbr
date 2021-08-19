@@ -1,0 +1,38 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "symptom_severity_index_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "symptom_severity_index_v10_ssi_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        }
+    },
+    "comments": "The Rcap Symptom Severity Index v10 Instrument.",
+    "root_url": "rcap_symptom_severity_index",
+    "table_name": "rcap_symptom_severity_index"
+}

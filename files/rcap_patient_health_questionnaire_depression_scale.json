@@ -1,0 +1,38 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "patient_health_questionnaire_depression_scale__id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "patient_health_questionnaire_depression_scale_phq_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The Rcap Patient Health Questionnaire Depression Scale (PHQ) Instrument.",
+    "root_url": "rcap_patient_health_questionnaire_depression_scale",
+    "table_name": "rcap_patient_health_questionnaire_depression_scale"
+}

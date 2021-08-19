@@ -1,0 +1,202 @@
+{
+    "columns": {
+        "blood_sample_collection_and_processing_crf_complete": {
+            "data_type": "integer",
+            "null": true
+        },
+        "bscp_aliq_cnt": {
+            "data_type": "integer",
+            "null": true
+        },
+        "bscp_aliquot_box_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_aliquot_freezer_time": {
+            "data_type": "date",
+            "null": true
+        },
+        "bscp_any_vacc": {
+            "data_type": "boolean",
+            "null": true
+        },
+        "bscp_buffycoat_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_buffycoat_na": {
+            "data_type": "boolean",
+            "null": true
+        },
+        "bscp_caff_cups_amt": {
+            "data_type": "integer",
+            "null": true
+        },
+        "bscp_comments": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_deg_of_hemolysis": {
+            "data_type": "numeric",
+            "null": true
+        },
+        "bscp_dt1": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_dt2": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_dt_3": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_dt_4": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_hrs_since_cafstim": {
+            "data_type": "integer",
+            "null": true
+        },
+        "bscp_hrs_since_food": {
+            "data_type": "integer",
+            "null": true
+        },
+        "bscp_hrs_since_water": {
+            "data_type": "integer",
+            "null": true
+        },
+        "bscp_lav1_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_lav1_centrif_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_lav1_not_obt": {
+            "data_type": "boolean",
+            "null": true
+        },
+        "bscp_no_sample_reason": {
+            "data_type": "integer",
+            "null": true
+        },
+        "bscp_paxg_aliq_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_paxg_aliq_na": {
+            "data_type": "boolean",
+            "null": true
+        },
+        "bscp_paxg_box_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_paxg_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_paxg_not_obt": {
+            "data_type": "boolean",
+            "null": true
+        },
+        "bscp_phleb_by_init": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_plasma_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_plugcap_centrif_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_procby_initials": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_protocol_dev": {
+            "data_type": "boolean",
+            "null": true
+        },
+        "bscp_protocol_dev_reason": {
+            "data_type": "integer",
+            "null": true
+        },
+        "bscp_ra_initials": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_sample_obtained": {
+            "data_type": "boolean",
+            "null": true
+        },
+        "bscp_samplekit_brcd": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "bscp_time_blood_draw": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "bscp_time_centrifuge": {
+            "data_type": "date",
+            "null": true
+        },
+        "bscp_verify_pt": {
+            "data_type": "boolean",
+            "null": true
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "rcap_blood_sample_crf_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The RedCap Blood Sample CRF (bcsp) instrument.",
+    "root_url": "rcap_blood_sample_c_r_f",
+    "table_name": "rcap_blood_sample_c_r_f"
+}

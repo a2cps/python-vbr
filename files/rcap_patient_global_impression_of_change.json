@@ -1,0 +1,42 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "patient_global_impression_of_change_pgic_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "pgicsymptomchangestatval": {
+            "data_type": "integer",
+            "null": true
+        },
+        "rcap_patient_global_impression_of_change_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The Rcap Patient Global Impression of Change (pgic) Instrument.",
+    "root_url": "rcap_patient_global_impression_of_change",
+    "table_name": "rcap_patient_global_impression_of_change"
+}

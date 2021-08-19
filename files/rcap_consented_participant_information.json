@@ -1,0 +1,44 @@
+{
+    "columns": {
+        "consented_participant_information_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "guid": {
+            "char_len": 255,
+            "comments": "REDCap GUID used as the persistent id for the subject",
+            "data_type": "varchar",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "rcap_consented_participant_information_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "The RedCap Blood Sample CRF (bcsp) instrument.",
+    "root_url": "rcap_consented_participant_information",
+    "table_name": "rcap_consented_participant_information"
+}
