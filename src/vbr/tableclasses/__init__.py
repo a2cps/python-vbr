@@ -2,6 +2,8 @@ from .. import errors
 from ..pgrest import Table, AssociationTable, DependencySolver
 from .single_tables import *
 from .association_tables import *
+from .redcap.classes import *
+from .redcap.rcaptable import RcapTable
 
 
 def _classes():
@@ -12,10 +14,11 @@ def _classes():
     classlist = []
     for _, obj in inspect.getmembers(sys.modules[__name__]):
         if inspect.isclass(obj):
-            if Table in obj.__bases__ or AssociationTable in obj.__bases__:
+            if Table in obj.__bases__ or AssociationTable in obj.__bases__ or RcapTable in obj.__bases__:
                 # Filter out the spurious table named association_table that
                 # we get from importing AssociationTable
-                if obj.__name__ not in ('Table', 'AssociationTable'):
+                if obj.__name__ not in ('Table', 'AssociationTable',
+                                        'RcapTable'):
                     classlist.append(obj)
     return tuple(classlist)
 
