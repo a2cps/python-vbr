@@ -2,7 +2,7 @@ from .column import PgRestColumn
 from .utils import class_or_instancemethod
 
 __all__ = [
-    'Boolean', 'Date', 'Integer', 'IntegerList', 'Serial', 'String',
+    'Boolean', 'Date', 'Numeric', 'Integer', 'IntegerList', 'Serial', 'String',
     'StringList', 'Text', 'TimeStamp', 'CreatedTimeStamp', 'UpdatedTimeStamp'
 ]
 
@@ -33,6 +33,19 @@ class IntegerList(PgRestColumn):
     DATA_TYPE = 'int[]'
     PYTHON_TYPE = None
     # TODO - validate that contents of data are a list of ints
+
+
+class Numeric(PgRestColumn):
+    DATA_TYPE = 'numeric'
+    PYTHON_TYPE = float
+
+    # TODO Support numeric(p,s), a real number with p digits with s number after the decimal point.
+    @classmethod
+    def instantiate(cls, value):
+        if value is not None:
+            return float(value)
+        else:
+            return value
 
 
 class Serial(Integer):
