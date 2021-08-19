@@ -22,7 +22,7 @@ class TableManager(object):
     def update_table(self, table_object: Any, table_id: int) -> NoReturn:
         """Update a PgREST table with with a VBR Table (if authorized)"""
         # TODO - back out the str(table_id) since tapipy should be able to handle an int
-        raise NotImplemented('Table updates are not yet supported')
+        raise NotImplementedError('Table updates are not yet supported')
 
     def delete_table(self, table_id: int) -> bool:
         """Delete a PgREST table by id (if authorized)"""

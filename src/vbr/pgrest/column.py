@@ -33,7 +33,6 @@ class Column(object):
     """
     def __init__(
             self,
-    #   cname,
             ctype,
             *args,
             primary_key=False,
