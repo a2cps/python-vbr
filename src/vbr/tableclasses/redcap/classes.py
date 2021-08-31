@@ -13,7 +13,7 @@ from .rcaptable import RcapTable
 
 
 class RcapConsentedParticipantInformation(RcapTable):
-    """The RedCap Blood Sample CRF (bcsp) instrument."""
+    """The RedCap Consented Participant Information CRF instrument."""
     rcap_consented_participant_information_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     guid = REDCapConstants.GUID
     # Rcap-defined status for this instrument 0-2 where 0 = "incomplete", 1 = "partially complete", and 2 = "complete"
@@ -48,9 +48,15 @@ class RcapPatientDemographicsBaseline(RcapTable):
 class RcapOtherPainTreatments(RcapTable):
     """The Rcap Other Pain Treatments v3 Instrument."""
     rcap_other_pain_treatments_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    opt_q5_thera_exer = Column(String, nullable=True)
+    opt_q6_hands_on_trt = Column(String, nullable=True)
+    opt_q7_modality_trt = Column(String, nullable=True)
+    opt_q8_mental_hlth_trt = Column(String, nullable=True)
+    opt_q2_anx_meds = Column(String, nullable=True)
+    opt_q3_ns_pain_meds = Column(String, nullable=True)
+    opt_q4_cbd = Column(String, nullable=True)
     other_pain_treatments_v3_other_treatments_complete = Column(
         Integer, ForeignKey("status.status_id"))
-    # Include other fields? (Rcap fields 48-54 tbd)
 
 
 class RcapOtherMedicalSurgicalTreatments(RcapTable):
