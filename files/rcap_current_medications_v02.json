@@ -1,33 +1,40 @@
 {
     "columns": {
+        "cmc_medhclipids": {
+            "data_type": "integer"
+        },
+        "cmc_medhtcd": {
+            "data_type": "integer"
+        },
+        "cmc_medpainopioid": {
+            "data_type": "integer"
+        },
+        "cmc_medseizadhd": {
+            "data_type": "integer"
+        },
+        "cmc_medsleepdepr": {
+            "data_type": "integer"
+        },
         "creation_time": {
             "data_type": "timestamp",
             "default": "CREATETIME",
             "null": true
         },
-        "last_updated_ts": {
-            "data_type": "timestamp",
-            "default": "UPDATETIME",
-            "null": true
-        },
-        "patient_encounters_complete": {
+        "current_medications_v02_complete": {
             "data_type": "integer",
             "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "status_id",
             "reference_table": "status"
         },
-        "patient_encounters_id": {
+        "current_medications_v02_id": {
             "data_type": "serial",
             "primary_key": true
         },
-        "pe_datetime": {
-            "char_len": 255,
-            "data_type": "varchar"
-        },
-        "pe_staff_init": {
-            "char_len": 255,
-            "data_type": "varchar"
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
         },
         "persistent_id": {
             "char_len": 255,
@@ -40,7 +47,7 @@
             "data_type": "varchar"
         }
     },
-    "comments": "Patient Encounters",
-    "root_url": "rcap_patient_encounters",
-    "table_name": "rcap_patient_encounters"
+    "comments": "Current Medications V02",
+    "root_url": "rcap_current_medications_v02",
+    "table_name": "rcap_current_medications_v02"
 }

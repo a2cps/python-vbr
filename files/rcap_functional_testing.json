@@ -30,9 +30,98 @@
             "char_len": 255,
             "comments": "REDCap record_id identifying subject",
             "data_type": "varchar"
+        },
+        "tstsassist_1": {
+            "data_type": "integer"
+        },
+        "tstsassist_2": {
+            "data_type": "integer"
+        },
+        "tstsassistyn": {
+            "data_type": "boolean"
+        },
+        "tstsbpscreen": {
+            "data_type": "integer"
+        },
+        "tstscompleteyn": {
+            "data_type": "boolean"
+        },
+        "tstsnonreasonyn": {
+            "data_type": "integer"
+        },
+        "tstsnumbrepsyn": {
+            "data_type": "integer"
+        },
+        "tstspostpainscl": {
+            "data_type": "numeric"
+        },
+        "tstspostpainscl1": {
+            "data_type": "numeric"
+        },
+        "tstsprepainscl": {
+            "data_type": "numeric"
+        },
+        "tstsprepainscl1": {
+            "data_type": "numeric"
+        },
+        "tststime": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "tststime1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "walk10assist_cane": {
+            "data_type": "integer"
+        },
+        "walk10assist_crutch": {
+            "data_type": "integer"
+        },
+        "walk10assist_other": {
+            "data_type": "integer"
+        },
+        "walk10assist_othertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "walk10assist_perssuppt": {
+            "data_type": "integer"
+        },
+        "walk10assist_walkder": {
+            "data_type": "integer"
+        },
+        "walk10assistyn": {
+            "data_type": "boolean"
+        },
+        "walk10completeyn": {
+            "data_type": "boolean"
+        },
+        "walk10finalpainscl": {
+            "data_type": "numeric"
+        },
+        "walk10finalpainscl1": {
+            "data_type": "numeric"
+        },
+        "walk10incompletereason": {
+            "data_type": "integer"
+        },
+        "walk10initialpainscl": {
+            "data_type": "numeric"
+        },
+        "walk10initialpainscl1": {
+            "data_type": "numeric"
+        },
+        "walk10time": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "walk10time1": {
+            "char_len": 255,
+            "data_type": "varchar"
         }
     },
-    "comments": "The Rcap Functional Testing Instrument.",
+    "comments": "Functional Testing",
     "root_url": "rcap_functional_testing",
     "table_name": "rcap_functional_testing"
 }

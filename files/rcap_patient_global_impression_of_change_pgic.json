@@ -10,29 +10,24 @@
             "default": "UPDATETIME",
             "null": true
         },
-        "patient_encounters_complete": {
+        "patient_global_impression_of_change_pgic_complete": {
             "data_type": "integer",
             "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "status_id",
             "reference_table": "status"
         },
-        "patient_encounters_id": {
+        "patient_global_impression_of_change_pgic_id": {
             "data_type": "serial",
             "primary_key": true
-        },
-        "pe_datetime": {
-            "char_len": 255,
-            "data_type": "varchar"
-        },
-        "pe_staff_init": {
-            "char_len": 255,
-            "data_type": "varchar"
         },
         "persistent_id": {
             "char_len": 255,
             "data_type": "varchar",
             "null": true
+        },
+        "pgicsymptomchangestatval": {
+            "data_type": "integer"
         },
         "record_id": {
             "char_len": 255,
@@ -40,7 +35,7 @@
             "data_type": "varchar"
         }
     },
-    "comments": "Patient Encounters",
-    "root_url": "rcap_patient_encounters",
-    "table_name": "rcap_patient_encounters"
+    "comments": "Patient Global Impression Of Change Pgic",
+    "root_url": "rcap_patient_global_impression_of_change_pgic",
+    "table_name": "rcap_patient_global_impression_of_change_pgic"
 }

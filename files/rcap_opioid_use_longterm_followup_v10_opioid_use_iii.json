@@ -1,0 +1,197 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "opioid_use_longterm_followup_v10_opioid_use_iii_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "opioid_use_longterm_followup_v10_opioid_use_iii_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "opioiduselfu_meddosecodeine1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosecodeine2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosecodeine3": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosefenta1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosefenta2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosefenta3": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosehydroc1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosehydroc2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosehydroc3": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosehydrom1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosehydrom2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosehydrom3": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosemetha1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosemetha2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosemetha3": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosemorph1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosemorph2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosemorph3": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddoseoxy1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddoseoxy2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddoseoxy3": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosetapen1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosetapen2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosetapen3": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosetram1": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosetram2": {
+            "data_type": "integer"
+        },
+        "opioiduselfu_meddosetram3": {
+            "data_type": "integer"
+        },
+        "opioiduselfud1other": {
+            "data_type": "boolean"
+        },
+        "opioiduselfud2other": {
+            "data_type": "boolean"
+        },
+        "opioiduselfudose_oth1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudose_oth2": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudose_oth3": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug1nm": {
+            "data_type": "integer"
+        },
+        "opioiduselfudrug1quanta": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug1quantb": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug1quantc": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug2nm": {
+            "data_type": "integer"
+        },
+        "opioiduselfudrug2quanta": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug2quantb": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug2quantc": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug3nm": {
+            "data_type": "integer"
+        },
+        "opioiduselfudrug3quanta": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug3quantb": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfudrug3quantc": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfuopds": {
+            "data_type": "boolean"
+        },
+        "opioiduselfuotherdrug1nm": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfuotherdrug2nm": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioiduselfuotherdrug3nm": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Opioid Use Longterm Followup V10 Opioid Use Iii",
+    "root_url": "rcap_opioid_use_longterm_followup_v10_opioid_use_iii",
+    "table_name": "rcap_opioid_use_longterm_followup_v10_opioid_use_iii"
+}

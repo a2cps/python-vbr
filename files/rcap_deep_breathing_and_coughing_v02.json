@@ -5,29 +5,30 @@
             "default": "CREATETIME",
             "null": true
         },
-        "last_updated_ts": {
-            "data_type": "timestamp",
-            "default": "UPDATETIME",
-            "null": true
+        "dbcchestpainrestscl": {
+            "data_type": "integer"
         },
-        "patient_encounters_complete": {
+        "dbcworstpainbreathscl": {
+            "data_type": "integer"
+        },
+        "dbcworstpaincoughscl": {
+            "data_type": "integer"
+        },
+        "deep_breathing_and_coughing_v02_complete": {
             "data_type": "integer",
             "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "status_id",
             "reference_table": "status"
         },
-        "patient_encounters_id": {
+        "deep_breathing_and_coughing_v02_id": {
             "data_type": "serial",
             "primary_key": true
         },
-        "pe_datetime": {
-            "char_len": 255,
-            "data_type": "varchar"
-        },
-        "pe_staff_init": {
-            "char_len": 255,
-            "data_type": "varchar"
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
         },
         "persistent_id": {
             "char_len": 255,
@@ -40,7 +41,7 @@
             "data_type": "varchar"
         }
     },
-    "comments": "Patient Encounters",
-    "root_url": "rcap_patient_encounters",
-    "table_name": "rcap_patient_encounters"
+    "comments": "Deep Breathing And Coughing V02",
+    "root_url": "rcap_deep_breathing_and_coughing_v02",
+    "table_name": "rcap_deep_breathing_and_coughing_v02"
 }

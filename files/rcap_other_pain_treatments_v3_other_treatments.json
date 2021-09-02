@@ -10,24 +10,37 @@
             "default": "UPDATETIME",
             "null": true
         },
-        "patient_encounters_complete": {
+        "opt_q2_anx_meds": {
+            "data_type": "integer"
+        },
+        "opt_q3_ns_pain_meds": {
+            "data_type": "integer"
+        },
+        "opt_q4_cbd": {
+            "data_type": "integer"
+        },
+        "opt_q5_thera_exer": {
+            "data_type": "integer"
+        },
+        "opt_q6_hands_on_trt": {
+            "data_type": "integer"
+        },
+        "opt_q7_modality_trt": {
+            "data_type": "integer"
+        },
+        "opt_q8_mental_hlth_trt": {
+            "data_type": "integer"
+        },
+        "other_pain_treatments_v3_other_treatments_complete": {
             "data_type": "integer",
             "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "status_id",
             "reference_table": "status"
         },
-        "patient_encounters_id": {
+        "other_pain_treatments_v3_other_treatments_id": {
             "data_type": "serial",
             "primary_key": true
-        },
-        "pe_datetime": {
-            "char_len": 255,
-            "data_type": "varchar"
-        },
-        "pe_staff_init": {
-            "char_len": 255,
-            "data_type": "varchar"
         },
         "persistent_id": {
             "char_len": 255,
@@ -40,7 +53,7 @@
             "data_type": "varchar"
         }
     },
-    "comments": "Patient Encounters",
-    "root_url": "rcap_patient_encounters",
-    "table_name": "rcap_patient_encounters"
+    "comments": "Other Pain Treatments V3 Other Treatments",
+    "root_url": "rcap_other_pain_treatments_v3_other_treatments",
+    "table_name": "rcap_other_pain_treatments_v3_other_treatments"
 }

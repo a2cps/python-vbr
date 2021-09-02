@@ -10,24 +10,25 @@
             "default": "UPDATETIME",
             "null": true
         },
-        "patient_encounters_complete": {
+        "opcsamountrxscl": {
+            "data_type": "integer"
+        },
+        "opcspainctrlsatisscl": {
+            "data_type": "integer"
+        },
+        "opcspainctrlscl": {
+            "data_type": "integer"
+        },
+        "opioid_and_pain_control_satisfaction_v02_satisfact_complete": {
             "data_type": "integer",
             "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "status_id",
             "reference_table": "status"
         },
-        "patient_encounters_id": {
+        "opioid_and_pain_control_satisfaction_v02_satisfact_id": {
             "data_type": "serial",
             "primary_key": true
-        },
-        "pe_datetime": {
-            "char_len": 255,
-            "data_type": "varchar"
-        },
-        "pe_staff_init": {
-            "char_len": 255,
-            "data_type": "varchar"
         },
         "persistent_id": {
             "char_len": 255,
@@ -40,7 +41,7 @@
             "data_type": "varchar"
         }
     },
-    "comments": "Patient Encounters",
-    "root_url": "rcap_patient_encounters",
-    "table_name": "rcap_patient_encounters"
+    "comments": "Opioid And Pain Control Satisfaction V02 Satisfact",
+    "root_url": "rcap_opioid_and_pain_control_satisfaction_v02_satisfact",
+    "table_name": "rcap_opioid_and_pain_control_satisfaction_v02_satisfact"
 }

@@ -10,24 +10,16 @@
             "default": "UPDATETIME",
             "null": true
         },
-        "patient_encounters_complete": {
+        "painsleep_duration_sleep_ii_complete": {
             "data_type": "integer",
             "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "status_id",
             "reference_table": "status"
         },
-        "patient_encounters_id": {
+        "painsleep_duration_sleep_ii_id": {
             "data_type": "serial",
             "primary_key": true
-        },
-        "pe_datetime": {
-            "char_len": 255,
-            "data_type": "varchar"
-        },
-        "pe_staff_init": {
-            "char_len": 255,
-            "data_type": "varchar"
         },
         "persistent_id": {
             "char_len": 255,
@@ -38,9 +30,17 @@
             "char_len": 255,
             "comments": "REDCap record_id identifying subject",
             "data_type": "varchar"
+        },
+        "sleepnighthourmindurhrs": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "sleepnighthourmindurmins": {
+            "char_len": 255,
+            "data_type": "varchar"
         }
     },
-    "comments": "Patient Encounters",
-    "root_url": "rcap_patient_encounters",
-    "table_name": "rcap_patient_encounters"
+    "comments": "Painsleep Duration Sleep Ii",
+    "root_url": "rcap_painsleep_duration_sleep_ii",
+    "table_name": "rcap_painsleep_duration_sleep_ii"
 }

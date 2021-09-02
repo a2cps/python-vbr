@@ -1,0 +1,63 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "imaging_items_v01_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "imaging_items_v01_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "img_angry": {
+            "data_type": "integer"
+        },
+        "img_energetic": {
+            "data_type": "integer"
+        },
+        "img_happy": {
+            "data_type": "integer"
+        },
+        "img_hopeful": {
+            "data_type": "integer"
+        },
+        "img_nervous": {
+            "data_type": "integer"
+        },
+        "img_qual_sleep_24": {
+            "data_type": "integer"
+        },
+        "img_sad": {
+            "data_type": "integer"
+        },
+        "imgpainanatsiteareatxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Imaging Items V01",
+    "root_url": "rcap_imaging_items_v01",
+    "table_name": "rcap_imaging_items_v01"
+}

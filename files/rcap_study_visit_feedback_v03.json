@@ -1,0 +1,141 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "study_visit_feedback_v03_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "study_visit_feedback_v03_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "svf_allodynia": {
+            "data_type": "integer"
+        },
+        "svf_allodynia_fb": {
+            "data_type": "integer"
+        },
+        "svf_allodynia_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_anyfeedback": {
+            "data_type": "boolean"
+        },
+        "svf_bdraw": {
+            "data_type": "integer"
+        },
+        "svf_bdraw_fb": {
+            "data_type": "integer"
+        },
+        "svf_bdraw_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_cgh_dbr": {
+            "data_type": "integer"
+        },
+        "svf_cgh_dbr_fb": {
+            "data_type": "integer"
+        },
+        "svf_cgh_dbr_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_coldwb": {
+            "data_type": "integer"
+        },
+        "svf_coldwb_fb": {
+            "data_type": "integer"
+        },
+        "svf_coldwb_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_cuffp": {
+            "data_type": "integer"
+        },
+        "svf_cuffp_fb": {
+            "data_type": "integer"
+        },
+        "svf_cuffp_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_general": {
+            "data_type": "integer"
+        },
+        "svf_general_fb": {
+            "data_type": "integer"
+        },
+        "svf_general_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_mri": {
+            "data_type": "integer"
+        },
+        "svf_mri_fb": {
+            "data_type": "integer"
+        },
+        "svf_mri_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_ppts": {
+            "data_type": "integer"
+        },
+        "svf_ppts_fb": {
+            "data_type": "integer"
+        },
+        "svf_ppts_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_surveys": {
+            "data_type": "integer"
+        },
+        "svf_surveys_fb": {
+            "data_type": "integer"
+        },
+        "svf_surveys_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "svf_walksts": {
+            "data_type": "integer"
+        },
+        "svf_walksts_fb": {
+            "data_type": "integer"
+        },
+        "svf_walksts_other": {
+            "char_len": 255,
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Study Visit Feedback V03",
+    "root_url": "rcap_study_visit_feedback_v03",
+    "table_name": "rcap_study_visit_feedback_v03"
+}

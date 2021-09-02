@@ -1,0 +1,123 @@
+{
+    "columns": {
+        "bpi_mbm_z1_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z1_rate": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z2_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z2_rate": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z3_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z3_rate": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z4_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z4_rate": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z5_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z5_rate": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z6_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z6_rate": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z7_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z7_rate": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z8_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z8_rate": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z9_dur": {
+            "data_type": "integer"
+        },
+        "bpi_mbm_z9_rate": {
+            "data_type": "integer"
+        },
+        "bpipainanatsiteareatxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bpipainenjoymntintrfrscl": {
+            "data_type": "integer"
+        },
+        "bpipainintfrgnrlactvtyscl": {
+            "data_type": "integer"
+        },
+        "bpipainintfrmoodscl": {
+            "data_type": "integer"
+        },
+        "bpipainintfrwlkablscl": {
+            "data_type": "integer"
+        },
+        "bpipainnrmlwrkintrfrscl": {
+            "data_type": "integer"
+        },
+        "bpipainrelationsintrfrscl": {
+            "data_type": "integer"
+        },
+        "bpipainsleepintrfrscl": {
+            "data_type": "integer"
+        },
+        "bpisf_the_brief_pain_inventory_v23_short_form_bpi_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "bpisf_the_brief_pain_inventory_v23_short_form_bpi_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "bpiworstpainratingexclss": {
+            "data_type": "integer"
+        },
+        "bpiworstpainratingss": {
+            "data_type": "integer"
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Bpisf The Brief Pain Inventory V23 Short Form Bpi",
+    "root_url": "rcap_bpisf_the_brief_pain_inventory_v23_short_form_bpi",
+    "table_name": "rcap_bpisf_the_brief_pain_inventory_v23_short_form_bpi"
+}

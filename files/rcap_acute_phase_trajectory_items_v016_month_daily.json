@@ -1,0 +1,78 @@
+{
+    "columns": {
+        "acute_phase_trajectory_items_v01_6month_daily_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "acute_phase_trajectory_items_v01_6month_daily_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "traj24avgpainscl": {
+            "data_type": "integer"
+        },
+        "traj24medlist1otc": {
+            "data_type": "boolean"
+        },
+        "traj24medlist2opioid": {
+            "data_type": "boolean"
+        },
+        "traj24medlist3thc": {
+            "data_type": "boolean"
+        },
+        "traj24medlist4gaba": {
+            "data_type": "boolean"
+        },
+        "traj24medlist5dulox": {
+            "data_type": "boolean"
+        },
+        "traj24medlist6other": {
+            "data_type": "boolean"
+        },
+        "traj24medyn": {
+            "data_type": "boolean"
+        },
+        "traj24painintfactivscl": {
+            "data_type": "integer"
+        },
+        "traj24physactscl": {
+            "data_type": "integer"
+        },
+        "traj24sleepscl": {
+            "data_type": "integer"
+        },
+        "traj24wkenterdate": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "traj24worstpainscl": {
+            "data_type": "integer"
+        }
+    },
+    "comments": "Acute Phase Trajectory Items V01 6Month Daily",
+    "root_url": "rcap_acute_phase_trajectory_items_v016_month_daily",
+    "table_name": "rcap_acute_phase_trajectory_items_v016_month_daily"
+}

@@ -1,0 +1,74 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "knee_injury_osteoarthritis_outcome_score_koos12_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "knee_injury_osteoarthritis_outcome_score_koos12_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "koosfuncdiffcarscl": {
+            "data_type": "integer"
+        },
+        "koosfuncdiffrisesitscl": {
+            "data_type": "integer"
+        },
+        "koosfuncdiffstandscl": {
+            "data_type": "integer"
+        },
+        "koosfunctwistpivotscl": {
+            "data_type": "integer"
+        },
+        "koospainfreqscl": {
+            "data_type": "integer"
+        },
+        "koospainsitlyingscl": {
+            "data_type": "integer"
+        },
+        "koospainstairsscl": {
+            "data_type": "integer"
+        },
+        "koospainwalkflatscl": {
+            "data_type": "integer"
+        },
+        "koosqolconfidencescl": {
+            "data_type": "integer"
+        },
+        "koosqolkneeawarescl": {
+            "data_type": "integer"
+        },
+        "koosqolkneedifficultyscl": {
+            "data_type": "integer"
+        },
+        "koosqollifestylemodscl": {
+            "data_type": "integer"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Knee Injury Osteoarthritis Outcome Score Koos12",
+    "root_url": "rcap_knee_injury_osteoarthritis_outcome_score_koos12",
+    "table_name": "rcap_knee_injury_osteoarthritis_outcome_score_koos12"
+}

@@ -1,0 +1,65 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "rapa_flex": {
+            "data_type": "boolean"
+        },
+        "rapa_light": {
+            "data_type": "boolean"
+        },
+        "rapa_lightweekly": {
+            "data_type": "boolean"
+        },
+        "rapa_mod": {
+            "data_type": "boolean"
+        },
+        "rapa_modweekly": {
+            "data_type": "boolean"
+        },
+        "rapa_rarly": {
+            "data_type": "boolean"
+        },
+        "rapa_strength": {
+            "data_type": "boolean"
+        },
+        "rapa_vig": {
+            "data_type": "boolean"
+        },
+        "rapa_vigweekly": {
+            "data_type": "boolean"
+        },
+        "rapid_assessment_of_physical_activity_v10_rapa_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "rapid_assessment_of_physical_activity_v10_rapa_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Rapid Assessment Of Physical Activity V10 Rapa",
+    "root_url": "rcap_rapid_assessment_of_physical_activity_v10_rapa",
+    "table_name": "rcap_rapid_assessment_of_physical_activity_v10_rapa"
+}

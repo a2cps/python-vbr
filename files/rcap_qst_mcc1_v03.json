@@ -1,0 +1,578 @@
+{
+    "columns": {
+        "cpmbathrangeyn": {
+            "data_type": "integer"
+        },
+        "cpmcoldwaterpain30": {
+            "data_type": "numeric"
+        },
+        "cpmcoldwaterpain30_d": {
+            "data_type": "numeric"
+        },
+        "cpmcoldwaterpain30sscl": {
+            "data_type": "numeric"
+        },
+        "cpmcoldwaterpain30sscl1": {
+            "data_type": "numeric"
+        },
+        "cpmcoldwaterpain60": {
+            "data_type": "numeric"
+        },
+        "cpmcoldwaterpain60_d": {
+            "data_type": "numeric"
+        },
+        "cpmcoldwaterpain60sscl": {
+            "data_type": "numeric"
+        },
+        "cpmcoldwaterpain60sscl1": {
+            "data_type": "numeric"
+        },
+        "cpmcoldwatertemp": {
+            "data_type": "boolean"
+        },
+        "cpmcoldwatertempc": {
+            "data_type": "boolean"
+        },
+        "cpmcompleteyn": {
+            "data_type": "boolean"
+        },
+        "cpmoutrangetime": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmppt1val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmppt1val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmppt2val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmppt2val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmppt3val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmppt3val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmpptremr1val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmpptremr1val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmpptremr2val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmpptremr2val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmpptremr3val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cpmpptremr3val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "cuffpfmricontraindyn": {
+            "data_type": "boolean"
+        },
+        "cuffpfmrinondomleg": {
+            "data_type": "integer"
+        },
+        "cuffpfmripressure": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "cuffpfmripressure_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "dmacontr1pain": {
+            "data_type": "numeric"
+        },
+        "dmacontr1pain_d": {
+            "data_type": "numeric"
+        },
+        "dmacontr2pain": {
+            "data_type": "numeric"
+        },
+        "dmacontr2pain_d": {
+            "data_type": "numeric"
+        },
+        "dmacontr3pain": {
+            "data_type": "numeric"
+        },
+        "dmacontr3pain_d": {
+            "data_type": "numeric"
+        },
+        "dmacontr4pain": {
+            "data_type": "numeric"
+        },
+        "dmacontr4pain_d": {
+            "data_type": "numeric"
+        },
+        "dmacontr5pain": {
+            "data_type": "numeric"
+        },
+        "dmacontr5pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaindxr1pain": {
+            "data_type": "numeric"
+        },
+        "dmaindxr1pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaindxr2pain": {
+            "data_type": "numeric"
+        },
+        "dmaindxr2pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaindxr3pain": {
+            "data_type": "numeric"
+        },
+        "dmaindxr3pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaindxr4pain": {
+            "data_type": "numeric"
+        },
+        "dmaindxr4pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaindxr5pain": {
+            "data_type": "numeric"
+        },
+        "dmaindxr5pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr1pain": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr1pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr2pain": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr2pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr3pain": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr3pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr4pain": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr4pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr5pain": {
+            "data_type": "numeric"
+        },
+        "dmaptcontr5pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr1pain": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr1pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr2pain": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr2pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr3pain": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr3pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr4pain": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr4pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr5pain": {
+            "data_type": "numeric"
+        },
+        "dmaptindxr5pain_d": {
+            "data_type": "numeric"
+        },
+        "dmaptsenscompare": {
+            "data_type": "integer"
+        },
+        "dmaptspecsite": {
+            "data_type": "integer"
+        },
+        "dmasenscompare": {
+            "data_type": "integer"
+        },
+        "dmatestcompwhich": {
+            "data_type": "integer"
+        },
+        "dmatestcompyn": {
+            "data_type": "integer"
+        },
+        "fmricuffcalfpressure": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "fmricuffcalfpressure2": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "fmricuffcontrayn": {
+            "data_type": "boolean"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "pmachgchestpainyn": {
+            "data_type": "boolean"
+        },
+        "pmahighestloc": {
+            "data_type": "integer"
+        },
+        "pmalowestloc": {
+            "data_type": "integer"
+        },
+        "pmamostpain": {
+            "data_type": "integer"
+        },
+        "pmapainregion": {
+            "data_type": "integer"
+        },
+        "pptcompleteyn": {
+            "data_type": "integer"
+        },
+        "pptindex1val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindex1val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindex2val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindex2val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindex3val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindex3val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindxr1val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindxr1val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindxr2val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindxr2val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindxr3val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptindxr3val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptpainlocation": {
+            "data_type": "integer"
+        },
+        "pptremote1val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremote1val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremote2val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremote2val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremote3val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremote3val1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremoter1val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremoter1val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremoter2val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremoter2val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremoter3val": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "pptremoter3val_d": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "qst_mcc1_v03_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "qst_mcc1_v03_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "tscompleted": {
+            "data_type": "integer"
+        },
+        "tsfinalpainindafts15": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "tsfinalpainindafts30": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "tsfinalpainindexscl1r2": {
+            "data_type": "numeric"
+        },
+        "tsfinalpainindexscl1r3": {
+            "data_type": "numeric"
+        },
+        "tsfinalpainindexsclr2": {
+            "data_type": "numeric"
+        },
+        "tsfinalpainindexsclr3": {
+            "data_type": "numeric"
+        },
+        "tsfinalpainremafts15": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "tsfinalpainremafts30": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "tsfinalpainremafts31": {
+            "data_type": "numeric"
+        },
+        "tsfinalpainremscl1r3": {
+            "data_type": "numeric"
+        },
+        "tsfinalpainremsclr3": {
+            "data_type": "numeric"
+        },
+        "tsindxafter15": {
+            "data_type": "numeric"
+        },
+        "tsindxafter30": {
+            "data_type": "numeric"
+        },
+        "tsindxr1final": {
+            "data_type": "numeric"
+        },
+        "tsindxr1final_d": {
+            "data_type": "numeric"
+        },
+        "tsindxr1initial": {
+            "data_type": "numeric"
+        },
+        "tsindxr1initial_d": {
+            "data_type": "numeric"
+        },
+        "tsindxr2final": {
+            "data_type": "numeric"
+        },
+        "tsindxr2final_d": {
+            "data_type": "numeric"
+        },
+        "tsindxr2initial": {
+            "data_type": "numeric"
+        },
+        "tsindxr2initial_d": {
+            "data_type": "numeric"
+        },
+        "tsindxr3final": {
+            "data_type": "numeric"
+        },
+        "tsindxr3final_d": {
+            "data_type": "numeric"
+        },
+        "tsindxr3initial": {
+            "data_type": "numeric"
+        },
+        "tsindxr3initial_d": {
+            "data_type": "numeric"
+        },
+        "tsinitialpainindexscl1r2": {
+            "data_type": "numeric"
+        },
+        "tsinitialpainindexscl1r3": {
+            "data_type": "numeric"
+        },
+        "tsinitialpainindexsclr2": {
+            "data_type": "numeric"
+        },
+        "tsinitialpainindexsclr3": {
+            "data_type": "numeric"
+        },
+        "tsinitialpainremscl1r3": {
+            "data_type": "numeric"
+        },
+        "tsinitialpainremsclr3": {
+            "data_type": "numeric"
+        },
+        "tsremoteafter15": {
+            "data_type": "numeric"
+        },
+        "tsremoter1final": {
+            "data_type": "numeric"
+        },
+        "tsremoter1final_d": {
+            "data_type": "numeric"
+        },
+        "tsremoter1initial": {
+            "data_type": "numeric"
+        },
+        "tsremoter1initial_d": {
+            "data_type": "numeric"
+        },
+        "tsremoter2final": {
+            "data_type": "numeric"
+        },
+        "tsremoter2final_d": {
+            "data_type": "numeric"
+        },
+        "tsremoter2initial": {
+            "data_type": "numeric"
+        },
+        "tsremoter2initial_d": {
+            "data_type": "numeric"
+        },
+        "tsremoter3final": {
+            "data_type": "numeric"
+        },
+        "tsremoter3final_d": {
+            "data_type": "numeric"
+        },
+        "tsremoter3initial": {
+            "data_type": "numeric"
+        },
+        "tsremoter3initial_d": {
+            "data_type": "numeric"
+        },
+        "tsrep1finalpainindex": {
+            "data_type": "numeric"
+        },
+        "tsrep1finalpainindex_d": {
+            "data_type": "numeric"
+        },
+        "tsrep1finalpainrem": {
+            "data_type": "numeric"
+        },
+        "tsrep1finalpainrem_d": {
+            "data_type": "numeric"
+        },
+        "tsrep1initialpainindex": {
+            "data_type": "numeric"
+        },
+        "tsrep1initialpainindex_d": {
+            "data_type": "numeric"
+        },
+        "tsrep1initialpainrem": {
+            "data_type": "numeric"
+        },
+        "tsrep1initialpainrem_d": {
+            "data_type": "numeric"
+        },
+        "tsrep2finalpainrem": {
+            "data_type": "numeric"
+        },
+        "tsrep2finalpainrem_d": {
+            "data_type": "numeric"
+        },
+        "tsrep2initialpainrem": {
+            "data_type": "numeric"
+        },
+        "tsrep2initialpainrem_d": {
+            "data_type": "numeric"
+        }
+    },
+    "comments": "Qst Mcc1 V03",
+    "root_url": "rcap_qst_mcc1_v03",
+    "table_name": "rcap_qst_mcc1_v03"
+}

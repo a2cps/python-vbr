@@ -1,0 +1,206 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "opioid_use_baseline_v10_opioid_use_i_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "opioid_use_baseline_v10_opioid_use_i_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "opioidusebsln_meddosecodeine1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosecodeine2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosecodeine3": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosefenta1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosefenta2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosefenta3": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosehydroc1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosehydroc2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosehydroc3": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosehydrom1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosehydrom2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosehydrom3": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosemetha1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosemetha2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosemetha3": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosemorph1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosemorph2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosemorph3": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddoseoxy1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddoseoxy2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddoseoxy3": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosetapen1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosetapen2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosetapen3": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosetram1": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosetram2": {
+            "data_type": "integer"
+        },
+        "opioidusebsln_meddosetram3": {
+            "data_type": "integer"
+        },
+        "opioidusebslnd1other": {
+            "data_type": "boolean"
+        },
+        "opioidusebslnd2other": {
+            "data_type": "boolean"
+        },
+        "opioidusebslndose_oth1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndose_oth2": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndose_oth3": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrtnopd": {
+            "data_type": "integer"
+        },
+        "opioidusebslndrug1nm": {
+            "data_type": "integer"
+        },
+        "opioidusebslndrug1quanta": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrug1quantb": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrug1quantc": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrug2nm": {
+            "data_type": "integer"
+        },
+        "opioidusebslndrug2quanta": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrug2quantb": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrug2quantc": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrug3nm": {
+            "data_type": "integer"
+        },
+        "opioidusebslndrug3quanta": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrug3quantb": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslndrug3quantc": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslnexprncopd": {
+            "data_type": "integer"
+        },
+        "opioidusebslnlsttmopd": {
+            "data_type": "integer"
+        },
+        "opioidusebslnopds": {
+            "data_type": "boolean"
+        },
+        "opioidusebslnotherdrug1nm": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslnotherdrug2nm": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "opioidusebslnotherdrug3nm": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Opioid Use Baseline V10 Opioid Use I",
+    "root_url": "rcap_opioid_use_baseline_v10_opioid_use_i",
+    "table_name": "rcap_opioid_use_baseline_v10_opioid_use_i"
+}

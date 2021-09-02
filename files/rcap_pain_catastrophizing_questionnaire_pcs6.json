@@ -10,24 +10,34 @@
             "default": "UPDATETIME",
             "null": true
         },
-        "patient_encounters_complete": {
+        "pain_catastrophizing_questionnaire_pcs6_complete": {
             "data_type": "integer",
             "foreign_key": true,
             "on_delete": "cascade",
             "reference_column": "status_id",
             "reference_table": "status"
         },
-        "patient_encounters_id": {
+        "pain_catastrophizing_questionnaire_pcs6_id": {
             "data_type": "serial",
             "primary_key": true
         },
-        "pe_datetime": {
-            "char_len": 255,
-            "data_type": "varchar"
+        "pcqafraidpainworsescl": {
+            "data_type": "integer"
         },
-        "pe_staff_init": {
-            "char_len": 255,
-            "data_type": "varchar"
+        "pcqfeelcantwithstandscl": {
+            "data_type": "integer"
+        },
+        "pcqhurtscl": {
+            "data_type": "integer"
+        },
+        "pcqpainawfulovrwhlmscl": {
+            "data_type": "integer"
+        },
+        "pcqpainstopscl": {
+            "data_type": "integer"
+        },
+        "pcqseriousscl": {
+            "data_type": "integer"
         },
         "persistent_id": {
             "char_len": 255,
@@ -40,7 +50,7 @@
             "data_type": "varchar"
         }
     },
-    "comments": "Patient Encounters",
-    "root_url": "rcap_patient_encounters",
-    "table_name": "rcap_patient_encounters"
+    "comments": "Pain Catastrophizing Questionnaire Pcs6",
+    "root_url": "rcap_pain_catastrophizing_questionnaire_pcs6",
+    "table_name": "rcap_pain_catastrophizing_questionnaire_pcs6"
 }

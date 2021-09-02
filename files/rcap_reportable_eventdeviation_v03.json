@@ -1,0 +1,150 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "erep_add_doc_yn": {
+            "data_type": "boolean"
+        },
+        "erep_ae_date": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_ae_relation": {
+            "data_type": "integer"
+        },
+        "erep_ae_serious": {
+            "data_type": "boolean"
+        },
+        "erep_ae_severity": {
+            "data_type": "integer"
+        },
+        "erep_ae_yn": {
+            "data_type": "boolean"
+        },
+        "erep_file_descript_1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_10": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_11": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_12": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_2": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_3": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_4": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_5": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_6": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_7": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_8": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_file_descript_9": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_initials": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_local_dtime": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_oe": {
+            "data_type": "boolean"
+        },
+        "erep_oe_date": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_onset_date": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_prot_dev": {
+            "data_type": "boolean"
+        },
+        "erep_protdev_type": {
+            "data_type": "integer"
+        },
+        "erep_rel_covid19": {
+            "data_type": "boolean"
+        },
+        "erep_resolution_date": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_submit_user": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "erep_unant_prob": {
+            "data_type": "boolean"
+        },
+        "erep_visit_inv": {
+            "data_type": "integer"
+        },
+        "erep_whereavail": {
+            "data_type": "integer"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "reportable_eventdeviation_v03_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "reportable_eventdeviation_v03_id": {
+            "data_type": "serial",
+            "primary_key": true
+        }
+    },
+    "comments": "Reportable Eventdeviation V03",
+    "root_url": "rcap_reportable_eventdeviation_v03",
+    "table_name": "rcap_reportable_eventdeviation_v03"
+}

@@ -1,0 +1,62 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "ftdbccoughfinalscl": {
+            "data_type": "numeric"
+        },
+        "ftdbccoughfinalscl2": {
+            "data_type": "numeric"
+        },
+        "ftdbcdeepbrthfinalscl": {
+            "data_type": "numeric"
+        },
+        "ftdbcdeepbrthfinalscl2": {
+            "data_type": "numeric"
+        },
+        "ftdbcdeepbrthinitscl": {
+            "data_type": "numeric"
+        },
+        "ftdbcdeepbrthinitscl2": {
+            "data_type": "numeric"
+        },
+        "ftdbctestcmpltno": {
+            "data_type": "integer"
+        },
+        "ftdbctestcmpltyn": {
+            "data_type": "boolean"
+        },
+        "functional_testing_mcc2_v01_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "functional_testing_mcc2_v01_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Functional Testing Mcc2 V01",
+    "root_url": "rcap_functional_testing_mcc2_v01",
+    "table_name": "rcap_functional_testing_mcc2_v01"
+}

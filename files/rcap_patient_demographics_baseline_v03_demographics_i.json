@@ -1,0 +1,62 @@
+{
+    "columns": {
+        "age": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "brthdtc": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "dem_race": {
+            "data_type": "integer"
+        },
+        "ethnic": {
+            "data_type": "integer"
+        },
+        "genident": {
+            "data_type": "integer"
+        },
+        "genidentoth": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "patient_demographics_baseline_v03_demographics_i_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "patient_demographics_baseline_v03_demographics_i_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sex": {
+            "data_type": "integer"
+        }
+    },
+    "comments": "Patient Demographics Baseline V03 Demographics I",
+    "root_url": "rcap_patient_demographics_baseline_v03_demographics_i",
+    "table_name": "rcap_patient_demographics_baseline_v03_demographics_i"
+}

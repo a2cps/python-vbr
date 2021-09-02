@@ -1,0 +1,95 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "opioid_side_effects_and_likeability_v03_side_effec_complete": {
+            "data_type": "integer",
+            "foreign_key": true,
+            "on_delete": "cascade",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "opioid_side_effects_and_likeability_v03_side_effec_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "osel_concentrate": {
+            "data_type": "integer"
+        },
+        "osel_confusion": {
+            "data_type": "integer"
+        },
+        "osel_constipation": {
+            "data_type": "integer"
+        },
+        "osel_dizziness": {
+            "data_type": "integer"
+        },
+        "osel_dreamy": {
+            "data_type": "boolean"
+        },
+        "osel_drowsiness": {
+            "data_type": "integer"
+        },
+        "osel_drymouth": {
+            "data_type": "integer"
+        },
+        "osel_fatigue": {
+            "data_type": "integer"
+        },
+        "osel_happy": {
+            "data_type": "boolean"
+        },
+        "osel_headache": {
+            "data_type": "integer"
+        },
+        "osel_itchy": {
+            "data_type": "boolean"
+        },
+        "osel_memsharper": {
+            "data_type": "boolean"
+        },
+        "osel_moody": {
+            "data_type": "boolean"
+        },
+        "osel_nausea": {
+            "data_type": "integer"
+        },
+        "osel_opeffect": {
+            "data_type": "integer"
+        },
+        "osel_urgetouse": {
+            "data_type": "integer"
+        },
+        "osel_urination": {
+            "data_type": "integer"
+        },
+        "osel_vomit": {
+            "data_type": "integer"
+        },
+        "oseltakeop7dyn": {
+            "data_type": "boolean"
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Opioid Side Effects And Likeability V03 Side Effec",
+    "root_url": "rcap_opioid_side_effects_and_likeability_v03_side_effec",
+    "table_name": "rcap_opioid_side_effects_and_likeability_v03_side_effec"
+}
