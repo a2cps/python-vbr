@@ -30,7 +30,7 @@
             "data_type": "varchar"
         },
         "bscp_buffycoat_na": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "bscp_caff_cups_amt": {
             "data_type": "integer"
@@ -59,7 +59,7 @@
             "data_type": "varchar"
         },
         "bscp_lav1_not_obt": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "bscp_no_sample_reason": {
             "data_type": "integer"
@@ -69,7 +69,7 @@
             "data_type": "varchar"
         },
         "bscp_paxg_aliq_na": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "bscp_paxg_box_brcd": {
             "char_len": 255,
@@ -80,7 +80,7 @@
             "data_type": "varchar"
         },
         "bscp_paxg_not_obt": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "bscp_phleb_by_init": {
             "char_len": 255,
@@ -109,7 +109,7 @@
             "data_type": "varchar"
         },
         "bscp_sample_obtained": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "bscp_samplekit_brcd": {
             "char_len": 255,

@@ -32,10 +32,10 @@
             "data_type": "varchar"
         },
         "tstsassist_1": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "tstsassist_2": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "tstsassistyn": {
             "data_type": "boolean"
@@ -73,23 +73,23 @@
             "data_type": "varchar"
         },
         "walk10assist_cane": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "walk10assist_crutch": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "walk10assist_other": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "walk10assist_othertxt": {
             "char_len": 255,
             "data_type": "varchar"
         },
         "walk10assist_perssuppt": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "walk10assist_walkder": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "walk10assistyn": {
             "data_type": "boolean"

@@ -46,7 +46,7 @@ def choices_are_boolean(choices_str: str) -> bool:
             values.append(res)
         except ValueError:
             return False
-    if len(values) != 2:
+    if len(values) > 2 or len(values) < 1:
         return False
     for v in values:
         if v not in [0, 1]:

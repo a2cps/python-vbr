@@ -32,7 +32,7 @@
             "primary_key": true
         },
         "svf_allodynia": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_allodynia_fb": {
             "data_type": "integer"
@@ -45,7 +45,7 @@
             "data_type": "boolean"
         },
         "svf_bdraw": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_bdraw_fb": {
             "data_type": "integer"
@@ -55,7 +55,7 @@
             "data_type": "varchar"
         },
         "svf_cgh_dbr": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_cgh_dbr_fb": {
             "data_type": "integer"
@@ -65,7 +65,7 @@
             "data_type": "varchar"
         },
         "svf_coldwb": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_coldwb_fb": {
             "data_type": "integer"
@@ -75,7 +75,7 @@
             "data_type": "varchar"
         },
         "svf_cuffp": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_cuffp_fb": {
             "data_type": "integer"
@@ -85,7 +85,7 @@
             "data_type": "varchar"
         },
         "svf_general": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_general_fb": {
             "data_type": "integer"
@@ -95,7 +95,7 @@
             "data_type": "varchar"
         },
         "svf_mri": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_mri_fb": {
             "data_type": "integer"
@@ -105,7 +105,7 @@
             "data_type": "varchar"
         },
         "svf_ppts": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_ppts_fb": {
             "data_type": "integer"
@@ -115,7 +115,7 @@
             "data_type": "varchar"
         },
         "svf_surveys": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_surveys_fb": {
             "data_type": "integer"
@@ -125,7 +125,7 @@
             "data_type": "varchar"
         },
         "svf_walksts": {
-            "data_type": "integer"
+            "data_type": "boolean"
         },
         "svf_walksts_fb": {
             "data_type": "integer"
