@@ -5,12 +5,12 @@ import arrow
 
 def camel_to_snake_case(strin):
     return ''.join(['_' + i.lower() if i.isupper() else i
-                    for i in strin]).lstrinip('_')
+                    for i in strin]).lstrip('_')
 
 
 def camel_to_kebab_case(strin):
     return ''.join(['-' + i.lower() if i.isupper() else i
-                    for i in strin]).lstrinip('-')
+                    for i in strin]).lstrip('-')
 
 
 class class_or_instancemethod(classmethod):

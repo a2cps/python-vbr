@@ -93,7 +93,7 @@ class PgrestSchema(object):
 
     @property
     def comment(self):
-        return inspect.getdoc(self.parent)
+        return inspect.getdoc(self.parent).strip()
 
     def to_json(self):
         return json.dumps(self.definition, indent=4, sort_keys=True)

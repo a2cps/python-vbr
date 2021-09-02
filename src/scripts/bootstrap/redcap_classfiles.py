@@ -215,6 +215,7 @@ def main(args):
             # Strip trailing whitespace
             col_label = col_label.rstrip('\n')
 
+            # Comments list is turned into source code comments in classfile
             col_comments.append(col_label)
             col_comments.append('Field Type: {0}'.format(
                 col_config.get('field_type')))
@@ -222,6 +223,7 @@ def main(args):
                 col_choices = 'N/A'
             col_comments.append('Choices: {0}'.format(col_choices))
 
+            # Template rendering data
             keyvals['columns'][col_name] = {
                 'comments': col_comments,
                 'docstring': col_label,
@@ -229,6 +231,7 @@ def main(args):
                 'type': col_type
             }
 
+        # Render and write the class file from Jinja template
         with open(os.path.join(TEMPLATES_DIR, CLASS_TEMPLATE)) as tf:
             template = Template(tf.read())
         output = template.render(**keyvals)
@@ -240,13 +243,11 @@ def main(args):
         # Supports writing 'from <submodule> import <classname> in __init__.py
         init_dict[submodule_name] = class_name
 
-    # Now, write __init__.py with imports
+    # Render and write the submodule __init__.py from Jinja template
     with open(os.path.join(TEMPLATES_DIR, INIT_TEMPLATE)) as initt:
         template = Template(initt.read())
-
     # Sort imports before writing
     init_dict = collections.OrderedDict(sorted(init_dict.items()))
-
     keyvals = {'imports': init_dict, 'module_docstring': autogen_string}
     output = template.render(**keyvals)
     with open(os.path.join(DEST_DIR, '__init__.py'), 'w') as initf:
@@ -273,8 +274,7 @@ if __name__ == '__main__':
 
     CLASS_TEMPLATE = 'redcap_tableclass.py.j2'
     INIT_TEMPLATE = 'redcap_tableclasses_init.py.j2'
-    SUPPORTED_FIELD_TYPES = ('descriptive', 'text', 'radio', 'dropdown',
-                             'checkbox', 'yesno')
+    SUPPORTED_FIELD_TYPES = ('text', 'radio', 'dropdown', 'checkbox', 'yesno')
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-H", "--base-url", help="Tapis API url")
