@@ -1,5 +1,8 @@
 arrow
 hashids
+pylint
 pytz
 pytest
+simplejson
 tapipy
+Jinja2

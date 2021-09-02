@@ -8,7 +8,8 @@ class Anatomy(Table):
     anatomy_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(
         String,
-        comments="UBERON CV term used to locate the origin of a biosample within the physiology of its source."
+        comments=
+        "UBERON CV term used to locate the origin of a biosample within the physiology of its source."
     )
     name = Column(String,
                   nullable=True,

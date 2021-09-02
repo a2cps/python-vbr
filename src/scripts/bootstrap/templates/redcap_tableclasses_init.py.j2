@@ -1,0 +1,5 @@
+"""{{ module_docstring }}
+"""
+
+{%- for submodule, class_name in imports.items() %}
+from .{{ submodule }} import {{ class_name }}{% endfor %}

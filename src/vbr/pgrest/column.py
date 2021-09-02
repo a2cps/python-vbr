@@ -31,16 +31,15 @@ class PgRestColumn(object):
 class Column(object):
     """PgREST Column
     """
-    def __init__(
-            self,
-            ctype,
-            *args,
-            primary_key=False,
-            unique=False,
-            nullable=False,
-            default=None,
-            comments=None,
-            **kwargs):
+    def __init__(self,
+                 ctype,
+                 *args,
+                 primary_key=False,
+                 unique=False,
+                 nullable=False,
+                 default=None,
+                 comments=None,
+                 **kwargs):
 
         # self.cname = cname
         self.ctype = ctype

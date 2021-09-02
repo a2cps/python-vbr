@@ -2,8 +2,9 @@ from .column import PgRestColumn
 from .utils import class_or_instancemethod
 
 __all__ = [
-    'Boolean', 'Date', 'Numeric', 'Integer', 'IntegerList', 'Serial', 'String',
-    'StringList', 'Text', 'TimeStamp', 'CreatedTimeStamp', 'UpdatedTimeStamp'
+    'Boolean', 'Date', 'Numeric', 'GUID', 'Integer', 'IntegerList', 'Serial',
+    'String', 'StringList', 'Text', 'TimeStamp', 'CreatedTimeStamp',
+    'UpdatedTimeStamp'
 ]
 
 
@@ -77,6 +78,11 @@ class StringList(PgRestColumn):
 
 class Text(String):
     DATA_TYPE = 'text'
+
+
+class GUID(String):
+    # Placeholder for GUID dedicated type
+    pass
 
 
 class TimeStamp(PgRestColumn):

@@ -1,4 +1,6 @@
+import glob
 import inspect
+import os
 
 from vbr.pgrest import table
 from vbr.tableclasses import class_from_table
@@ -54,7 +56,7 @@ def class_from_name(table_name: str) -> TableData:
             pass
 
 
-def data_classes(table_definitions: list):
+def data_classes(table_definitions: list) -> list:
     ordered = []
     for t in table_definitions:
         tdef_name = t['table_name']
@@ -65,7 +67,7 @@ def data_classes(table_definitions: list):
     return ordered
 
 
-def data_loads(table_definition: list):
+def data_loads(table_definition: list) -> list:
     """Return dependency-ordered list of data objects to load
     """
     ordered = []
@@ -74,3 +76,10 @@ def data_loads(table_definition: list):
         for rec in c().records:
             ordered.append(rec)
     return ordered
+
+
+def redcap_data_dictionaries() -> list:
+    """Return paths to REDcap *DataDictionary* files from 'data' directory
+    """
+    base = os.path.dirname(__file__)
+    return glob.glob(os.path.join(base, '*DataDictionary*'), recursive=False)

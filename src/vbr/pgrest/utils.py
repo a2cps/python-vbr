@@ -3,14 +3,14 @@
 import arrow
 
 
-def camel_to_snake_case(str):
+def camel_to_snake_case(strin):
     return ''.join(['_' + i.lower() if i.isupper() else i
-                    for i in str]).lstrip('_')
+                    for i in strin]).lstrinip('_')
 
 
-def camel_to_kebab_case(str):
+def camel_to_kebab_case(strin):
     return ''.join(['-' + i.lower() if i.isupper() else i
-                    for i in str]).lstrip('-')
+                    for i in strin]).lstrinip('-')
 
 
 class class_or_instancemethod(classmethod):
@@ -36,3 +36,19 @@ def datetime_to_date(date_obj):
     """
     d = arrow.get(date_obj).format('YYYY-MM-DD')
     return d
+
+
+def snake_to_camel_case(strin, include_first_word=True):
+    temp = strin.split('_')
+    if include_first_word:
+        return ''.join(ele.title() for ele in temp)
+    else:
+        return temp[0] + ''.join(ele.title() for ele in temp[1:])
+
+
+def snake_to_title_string(strin, include_first_word=True):
+    temp = strin.split('_')
+    if include_first_word:
+        return ' '.join(ele.title() for ele in temp)
+    else:
+        return temp[0] + ' '.join(ele.title() for ele in temp[1:])
