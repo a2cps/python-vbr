@@ -1,6 +1,6 @@
 
 deps:
-	pip install pytest flake8
+	pip install pytest flake8 yapf
 
 lint: deps
 	# stop the build if there are Python syntax errors or undefined names
@@ -12,3 +12,21 @@ pytest: deps
 	python -m pytest
 
 tests: lint pytest
+
+reformat: lint
+	yapf -i --recursive src/vbr
+
+classfiles-clean:
+	cd src ; python -m scripts.bootstrap.redcap_classfiles clean
+
+
+classfiles: classfiles-clean
+	cd src ; python -m scripts.bootstrap.redcap_classfiles build
+
+definitions:
+	cd src ; python -m scripts.bootstrap.definitions; mv *.json  ../files/
+
+definitions-clean:
+	rm files/*.json
+
+clean: definitions-clean

@@ -1,6 +1,5 @@
 arrow
 hashids
-pylint
 pytz
 pytest
 simplejson
