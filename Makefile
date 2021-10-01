@@ -30,3 +30,6 @@ definitions-clean:
 	rm files/*.json
 
 clean: definitions-clean
+
+create_tables:
+	cd src ; python -m scripts.bootstrap.create_tables --base-url https://a2cps.tapis.io --username vaughn --password 'Teddy2021!'
