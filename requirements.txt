@@ -4,5 +4,5 @@ pylint
 pytz
 pytest
 simplejson
-tapipy
+tapipy>=1.0.2
 Jinja2
