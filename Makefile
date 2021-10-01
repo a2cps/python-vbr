@@ -23,7 +23,7 @@ classfiles-clean:
 classfiles: classfiles-clean
 	cd src ; python -m scripts.bootstrap.redcap_classfiles build
 
-definitions:
+definitions: definitions-clean
 	cd src ; python -m scripts.bootstrap.definitions; mv *.json  ../files/
 
 definitions-clean:
