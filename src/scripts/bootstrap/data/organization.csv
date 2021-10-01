@@ -1,14 +1,14 @@
-organization_id,url,name,description,internal_session,_signature
-2,uic.edu,UI,University of Illinois at Chicago,NULL,NULL
-4,chicagoitm.org,ITM,Institute for Translational Medicine,NULL,NULL
-5,uchicagomedicine.org,UCMC,University of Chicago Medical Center,NULL,NULL
-6,northshore.org,NS,NorthShore ,NULL,NULL
-7,umich.edu,UMICH,University of Michigan,NULL,NULL
-8,uiowa.edu,UIOWA,University of Iowa,NULL,NULL
-9,pnnl.gov,PNNL,Pacific Northwest National Laboratory,NULL,NULL
-10,ucsd.edu,UCSD,University of California San Diego,NULL,NULL
-11,wfu.edu,WFU,Wake Forest University,NULL,NULL
-12,jhu.edu,JHU,Johns Hopkins University,NULL,NULL
-13,dartmouth.edu,DC,Dartmouth College,NULL,NULL
-3,rush.edu,RUSH,Rush University Medical Center,NULL,NULL
-1,tacc.utexas.edu,TACC,Texas Advanced Computing Center,NULL,NULL
+organization_id,url,name,description
+2,uic.edu,UI,University of Illinois at Chicago
+4,chicagoitm.org,ITM,Institute for Translational Medicine
+5,uchicagomedicine.org,UCMC,University of Chicago Medical Center
+6,northshore.org,NS,NorthShore 
+7,umich.edu,UMICH,University of Michigan
+8,uiowa.edu,UIOWA,University of Iowa
+9,pnnl.gov,PNNL,Pacific Northwest National Laboratory
+10,ucsd.edu,UCSD,University of California San Diego
+11,wfu.edu,WFU,Wake Forest University
+12,jhu.edu,JHU,Johns Hopkins University
+13,dartmouth.edu,DC,Dartmouth College
+3,rush.edu,RUSH,Rush University Medical Center
+1,tacc.utexas.edu,TACC,Texas Advanced Computing Center

@@ -1,45 +1,45 @@
-protocol_id,name,description,internal_session,id
-1,screening,participant screening,NULL,NULL
-2,informed_consent,participant informed consent,NULL,NULL
-3,baseline_visit,baseline visit,NULL,NULL
-4,3_days_preop,3 days preop,NULL,NULL
-5,day_4_postop,day 4 postop,NULL,NULL
-6,day_5_postop,day 5 postop,NULL,NULL
-7,day_6_postop,day 6 postop,NULL,NULL
-8,day_7_postop,day 7 postop,NULL,NULL
-9,day_8_postop,day 8 postop,NULL,NULL
-10,day_9_postop,day 9 postop,NULL,NULL
-11,day_10_postop,day 10 postop,NULL,NULL
-12,day_11_postop,day 11 postop,NULL,NULL
-13,day_12_postop,day 12 postop,NULL,NULL
-14,day_13_postop,day 13 postop,NULL,NULL
-15,day_14_postop,day 14 postop,NULL,NULL
-16,day_15_postop,day 15 postop,NULL,NULL
-17,day_16_postop,day 16 postop,NULL,NULL
-18,day_17_postop,day 17 postop,NULL,NULL
-19,day_18_postop,day 18 postop,NULL,NULL
-20,day_19_postop,day 19 postop,NULL,NULL
-21,day_20_postop,day 20 postop,NULL,NULL
-22,day_21_postop,day_21_postop,NULL,NULL
-23,day_22_postop,day 22 postop,NULL,NULL
-24,day_23_postop,day 23 postop,NULL,NULL
-25,day_24_postop,day 24 postop,NULL,NULL
-26,day_25_postop,day 25 postop,NULL,NULL
-27,day_26_postop,day 26 postop,NULL,NULL
-28,day_27_postop,day 27 postop,NULL,NULL
-29,day_28_postop,day 28 postop,NULL,NULL
-30,6wks_postop,6 weeks postop,NULL,NULL
-31,3mo_postop,3 month postop,NULL,NULL
-32,6mo_postop,6 month postop,NULL,NULL
-33,12mo_postop,12 month postop,NULL,NULL
-34,event_reporting,event reporting,NULL,NULL
-38,image pipeline,image pipeline,NULL,NULL
-39,image upload,source image upload,NULL,NULL
-40,heudiconv,image heudiconv to BIDs processing,NULL,NULL
-41,mriqc,image mriqc processing,NULL,NULL
-42,fmriprep,fmriprep to final image ,NULL,NULL
-35,econsent,participant electronic consent,NULL,NULL
-36,consent_collection_form,participant consent collection forms ,NULL,NULL
-37,consent_process_form,participant consent form processing,NULL,NULL
-43,shipment_sent,tracked shipment sent,NULL,NULL
-44,shipment_received,tracked shipment received,NULL,NULL
+protocol_id,name,description
+1,screening,participant screening
+2,informed_consent,participant informed consent
+3,baseline_visit,baseline visit
+4,3_days_preop,3 days preop
+5,day_4_postop,day 4 postop
+6,day_5_postop,day 5 postop
+7,day_6_postop,day 6 postop
+8,day_7_postop,day 7 postop
+9,day_8_postop,day 8 postop
+10,day_9_postop,day 9 postop
+11,day_10_postop,day 10 postop
+12,day_11_postop,day 11 postop
+13,day_12_postop,day 12 postop
+14,day_13_postop,day 13 postop
+15,day_14_postop,day 14 postop
+16,day_15_postop,day 15 postop
+17,day_16_postop,day 16 postop
+18,day_17_postop,day 17 postop
+19,day_18_postop,day 18 postop
+20,day_19_postop,day 19 postop
+21,day_20_postop,day 20 postop
+22,day_21_postop,day_21_postop
+23,day_22_postop,day 22 postop
+24,day_23_postop,day 23 postop
+25,day_24_postop,day 24 postop
+26,day_25_postop,day 25 postop
+27,day_26_postop,day 26 postop
+28,day_27_postop,day 27 postop
+29,day_28_postop,day 28 postop
+30,6wks_postop,6 weeks postop
+31,3mo_postop,3 month postop
+32,6mo_postop,6 month postop
+33,12mo_postop,12 month postop
+34,event_reporting,event reporting
+38,image pipeline,image pipeline
+39,image upload,source image upload
+40,heudiconv,image heudiconv to BIDs processing
+41,mriqc,image mriqc processing
+42,fmriprep,fmriprep to final image 
+35,econsent,participant electronic consent
+36,consent_collection_form,participant consent collection forms 
+37,consent_process_form,participant consent form processing
+43,shipment_sent,tracked shipment sent
+44,shipment_received,tracked shipment received
