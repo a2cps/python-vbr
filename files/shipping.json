@@ -6,8 +6,9 @@
         },
         "box_type": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "box_type_id",
             "reference_table": "box_type"
         },
@@ -29,8 +30,9 @@
         },
         "shipping_event_id": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "data_event_id",
             "reference_table": "data_event"
         },
@@ -40,8 +42,9 @@
         },
         "unit": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "unit_id",
             "reference_table": "unit"
         },

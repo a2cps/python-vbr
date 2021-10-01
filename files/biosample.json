@@ -2,8 +2,9 @@
     "columns": {
         "anatomy": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "anatomy_id",
             "reference_table": "anatomy"
         },
@@ -30,8 +31,9 @@
         },
         "project": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "project_id",
             "reference_table": "project"
         },

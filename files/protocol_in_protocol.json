@@ -2,15 +2,17 @@
     "columns": {
         "child_protocol_id": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "protocol_id",
             "reference_table": "protocol"
         },
         "parent_protocol_id": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "protocol_id",
             "reference_table": "protocol"
         },

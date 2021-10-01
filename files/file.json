@@ -2,9 +2,10 @@
     "columns": {
         "assay_type": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "assay_type_id",
             "reference_table": "assay_type"
         },
@@ -16,17 +17,19 @@
         },
         "data_type": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "data_type_id",
             "reference_table": "data_type"
         },
         "file_format": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "file_format_id",
             "reference_table": "file_format"
         },
@@ -63,8 +66,9 @@
         },
         "project": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "project_id",
             "reference_table": "project"
         },

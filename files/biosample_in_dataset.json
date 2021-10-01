@@ -2,8 +2,9 @@
     "columns": {
         "biosample_id": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "biosample_id",
             "reference_table": "biosample"
         },
@@ -22,8 +23,9 @@
         },
         "dataset_id": {
             "data_type": "integer",
+            "event_action": "CASCADE",
             "foreign_key": true,
-            "on_delete": "cascade",
+            "on_event": "ON UPDATE",
             "reference_column": "dataset_id",
             "reference_table": "dataset"
         },
