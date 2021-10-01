@@ -9,8 +9,8 @@ class DataManager(object):
                              record_data: dict) -> TapisResult:
         """Create a PgREST record from a Python dictionary
         """
-        resp = self.client.pgrest.create_in_collection(collection=root_url,
-                                                       data=record_data)
+        resp = self.client.pgrest.add_table_row(collection=root_url,
+                                                data=record_data)
         return resp
 
     def create_row(self, vbr_obj: Any) -> TapisResult:
@@ -27,21 +27,24 @@ class DataManager(object):
                      query=None) -> TapisResult:
         """Retrieve a VBR Record from the database by primary key and table name
         """
-        resp = self.client.pgrest.get_in_collection(collection=root_url,
-                                                    item=pk_value)
+        resp = self.client.pgrest.get_table_row(collection=root_url,
+                                                item=pk_value)
         return resp
 
     def update_row(self, vbr_obj: Any) -> NoReturn:
         """Update a VBR Record in the database
         """
+        # update_table_row
         pass
 
     def delete_row(self, vbr_obj: Any) -> NoReturn:
         """Delete a VBR Record from the database
         """
+        # delete_table_row
         pass
 
     def list_rows(self, root_url, limit=None, offset=None):
         """Lists rows
         """
+        # get_table
         pass

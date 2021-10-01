@@ -46,6 +46,6 @@ class TableManager(object):
     def get_table(self, table_id: int, details: bool = True) -> TapisResult:
         """Return a PgREST tables by id (if authorized)"""
         # TODO - back out the str(table_id) since tapipy should be able to handle an int
-        resp = self.client.pgrest.get_table(table_id=str(table_id),
-                                            details=True)
+        resp = self.client.pgrest.get_manage_table(table_id=str(table_id),
+                                                   details=True)
         return resp
