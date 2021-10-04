@@ -13,7 +13,7 @@ from .rcaptable import RcapTable
 
 
 class RcapConsentedParticipantInformation(RcapTable):
-    """The RedCap Blood Sample CRF (bcsp) instrument."""
+    """The RedCap Consented Participant Information CRF instrument."""
     rcap_consented_participant_information_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     guid = REDCapConstants.GUID
     # Rcap-defined status for this instrument 0-2 where 0 = "incomplete", 1 = "partially complete", and 2 = "complete"
@@ -35,10 +35,10 @@ class RcapPatientDemographicsBaseline(RcapTable):
     rcap_patient_demographics_baseline_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     age = Column(Integer, nullable=True)
     # Sex at birth selector 1-4 where 1=?, 2=?, 3=?, and 4=? (recheck Rcap for allowed values)
-    sex = Column(Integer, nullable=True)
-    # Ethnic selector 1-4 where 1=?, 2=?, 3=?, and 4=? (recheck Rcap for allowed values)
-    ethnic = Column(Integer, nullable=True)
-    # Dem_race allows selection of multiple integer values 1-7 where 1=?, 2=?, 3=?, 4=?, 5=?, 6=?, 7=?. Propose treating as a string.
+    sex = Column(String, nullable=True)
+    # Ethnicity selector 1-4 with descriptions
+    ethnic = Column(String, nullable=True)
+    # Dem_race allows selection of multiple integer values 1-7 with descriptions
     dem_race = Column(String, nullable=True)
     # Rcap-defined status for this instrument 0-2 where 0 = "incomplete", 1 = "partially complete", and 2 = "complete"
     patient_demographics_baseline_v03_demographics_i_complete = Column(
@@ -48,9 +48,15 @@ class RcapPatientDemographicsBaseline(RcapTable):
 class RcapOtherPainTreatments(RcapTable):
     """The Rcap Other Pain Treatments v3 Instrument."""
     rcap_other_pain_treatments_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    opt_q5_thera_exer = Column(String, nullable=True)
+    opt_q6_hands_on_trt = Column(String, nullable=True)
+    opt_q7_modality_trt = Column(String, nullable=True)
+    opt_q8_mental_hlth_trt = Column(String, nullable=True)
+    opt_q2_anx_meds = Column(String, nullable=True)
+    opt_q3_ns_pain_meds = Column(String, nullable=True)
+    opt_q4_cbd = Column(String, nullable=True)
     other_pain_treatments_v3_other_treatments_complete = Column(
         Integer, ForeignKey("status.status_id"))
-    # Include other fields? (Rcap fields 48-54 tbd)
 
 
 class RcapOtherMedicalSurgicalTreatments(RcapTable):
@@ -65,8 +71,8 @@ class RcapOtherMedicalSurgicalTreatments(RcapTable):
 class RcapPatientGlobalImpressionOfChange(RcapTable):
     """The Rcap Patient Global Impression of Change (pgic) Instrument."""
     rcap_patient_global_impression_of_change_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    # pgicsymptomchangestatval selector 0-6 where 0=?,1=?, 2=?, 3=?, 4=?, 5=? and 6=? (recheck Rcap for allowed values)
-    pgicsymptomchangestatval = Column(Integer, nullable=True)
+    # pgicsymptomchangestatval selector 0-6 with descriptions
+    pgicsymptomchangestatval = Column(String, nullable=True)
     # pgicsymptomchangestatval (84, integer selector 0-6)
     patient_global_impression_of_change_pgic_complete = Column(
         Integer, ForeignKey("status.status_id"))
