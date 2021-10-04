@@ -24,10 +24,10 @@ classfiles: classfiles-clean
 	cd src ; python -m scripts.bootstrap.redcap_classfiles build
 
 definitions: definitions-clean
-	cd src ; python -m scripts.bootstrap.definitions; mv *.json  ../files/
+	cd src ; python -m scripts.bootstrap.definitions; mv -f *.json  ../files/
 
 definitions-clean:
-	rm files/*.json
+	rm -f files/*.json
 
 clean: definitions-clean
 
