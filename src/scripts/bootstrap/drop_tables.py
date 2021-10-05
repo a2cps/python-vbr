@@ -4,25 +4,28 @@ def main(args):
               username=args['username'],
               password=args['password'])
     v = VBR(tapis_client=t)
-    tables = v.list_tables()
-    for t in tables:
-        print('Deleting {0}'.format(t['table_id']))
-        v.delete_table(t['table_id'])
+
+    if len(args['table_id']) > 0:
+        to_drop = args['table_id']
+    else:
+        to_drop = [t['table_id'] for t in v.list_tables()]
+
+    for t in to_drop:
+        print('Deleting {0}'.format(t))
+        v.delete_table(t)
 
 
 if __name__ == '__main__':
 
-    import argparse
     from vbr import tableclasses
     from vbr.client import VBR
     from tapipy.tapis import Tapis
 
+    from .cli import get_parser
     from .data import data_loads
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-H", "--base-url", help="Tapis API url")
-    parser.add_argument("-u", "--username", help="Tapis username")
-    parser.add_argument("-p", "--password", help="Tapis password")
+    parser = get_parser()
+    parser.add_argument('table_id', nargs='*', help='Optional: Table ID(s)')
     args = parser.parse_args()
 
     main(vars(args))

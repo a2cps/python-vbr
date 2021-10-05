@@ -8,9 +8,10 @@ def main(args):
     tables = tableclasses.table_definitions()
     for t in tables:
         try:
-            print('Creating...' + t['table_name'])
-            v.create_table_from_definition(t)
-            time.sleep(1)
+            if len(args['table_name']) == 0 or t['table_name'] in args['table_name']:
+                print('Creating...' + t['table_name'])
+                v.create_table_from_definition(t)
+                time.sleep(0.125)
         except Exception as exc:
             print(exc)
 
@@ -23,18 +24,16 @@ if __name__ == '__main__':
     # start a new process before the current process has finished
     # its bootstrapping phase"
 
-    import argparse
     import json
     import os
     import time
     from vbr import tableclasses
     from vbr.client import VBR
     from tapipy.tapis import Tapis
+    from .cli import get_parser
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-H", "--base-url", help="Tapis API url")
-    parser.add_argument("-u", "--username", help="Tapis username")
-    parser.add_argument("-p", "--password", help="Tapis password")
+    parser = get_parser()
+    parser.add_argument('table_name', nargs='*', help='Optional: Table name(s)')
     args = parser.parse_args()
 
     main(vars(args))

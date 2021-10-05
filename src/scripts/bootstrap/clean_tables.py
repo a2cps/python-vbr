@@ -1,22 +1,10 @@
 def main(args):
-
     t = Tapis(base_url=args['base_url'],
               username=args['username'],
               password=args['password'])
     v = VBR(tapis_client=t)
 
-    if len(args['table_name']) == 0:
-        ordered_tables = tableclasses.table_definitions()
-    else:
-        ordered_tables = [{'table_name': t} for t in args['table_name']]
-    ordered_data = data_loads(ordered_tables)
-
-    for od in ordered_data:
-        try:
-            v.create_row(od)
-        except Exception as exc:
-            print(exc)
-
+    print(v.list_rows('organization'))
 
 if __name__ == '__main__':
 

@@ -305,16 +305,14 @@ if __name__ == '__main__':
     from vbr.tableclasses import redcap
     from vbr.pgrest.utils import snake_to_camel_case, snake_to_title_string
 
+    from .cli import get_parser
     from .data import redcap_data_dictionaries
 
     CLASS_TEMPLATE = 'redcap_tableclass.py.j2'
     INIT_TEMPLATE = 'redcap_tableclasses_init.py.j2'
     SUPPORTED_FIELD_TYPES = ('text', 'radio', 'dropdown', 'checkbox', 'yesno')
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-H", "--base-url", help="Tapis API url")
-    parser.add_argument("-u", "--username", help="Tapis username")
-    parser.add_argument("-p", "--password", help="Tapis password")
+    parser = get_parser()
     parser.add_argument('cmd', nargs='?', choices=['build', 'clean'], default='build', help='Command')
     args = parser.parse_args()
 
