@@ -1,3 +1,6 @@
+API ?= https://a2cps.tapis.io
+USERNAME ?= $(A2CPS_USERNAME)
+PASSWORD ?= $(A2CPS_PASSWORD)
 
 deps:
 	pip install pytest flake8 yapf
@@ -13,12 +16,11 @@ pytest: deps
 
 tests: lint pytest
 
-reformat: lint
+reformat:
 	yapf -i --recursive src/vbr
 
 classfiles-clean:
 	cd src ; python -m scripts.bootstrap.redcap_classfiles clean
-
 
 classfiles: classfiles-clean
 	cd src ; python -m scripts.bootstrap.redcap_classfiles build
@@ -32,4 +34,16 @@ definitions-clean:
 clean: definitions-clean
 
 create_tables:
-	cd src ; python -m scripts.bootstrap.create_tables --base-url https://a2cps.tapis.io --username vaughn --password 'Teddy2021!'
+	cd src ; python -m scripts.bootstrap.create_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+
+drop_tables:
+	cd src ; python -m scripts.bootstrap.drop_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+
+load_tables:
+	cd src ; python -m scripts.bootstrap.load_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+
+export_tables:
+	cd src; echo "Exporting $(SCRIPT_ARGS)"
+
+clean_tables:
+	cd src; echo "Cleaning: $(SCRIPT_ARGS)"
