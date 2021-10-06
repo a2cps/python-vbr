@@ -98,7 +98,7 @@ class DataEvent(Table):
                           nullable=True)
     status = Column(Integer, ForeignKey('status.status_id'), nullable=True)
     reason = Column(Integer, ForeignKey('reason.reason_id'), nullable=True)
-    comment = Column(String)
+    comment = Column(String, nullable=True)
     # Enforces record uniqueness. Signature is just syntactic sugar for
     # defining a UniqueConstraint
     signature = Signature('protocol', 'rank', 'event_ts', 'performed_by',
