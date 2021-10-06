@@ -11,7 +11,9 @@
         },
         "id": {
             "char_len": 255,
-            "data_type": "varchar"
+            "comments": "EDAM CV format: term",
+            "data_type": "varchar",
+            "unique": true
         },
         "name": {
             "char_len": 255,

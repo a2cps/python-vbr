@@ -2,7 +2,8 @@
     "columns": {
         "description": {
             "char_len": 255,
-            "data_type": "text"
+            "data_type": "text",
+            "null": true
         },
         "name": {
             "char_len": 255,
@@ -14,7 +15,8 @@
         },
         "url": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "unique": true
         }
     },
     "comments": "C2M2 proposed future extension: a list of data-generating research programs or entities.",

@@ -7,7 +7,8 @@
         "description": {
             "char_len": 255,
             "comments": "Description of the data_type",
-            "data_type": "text"
+            "data_type": "text",
+            "null": true
         },
         "id": {
             "char_len": 255,
@@ -21,6 +22,14 @@
         }
     },
     "comments": "C2M2-defined table: provides classifications for data; id is an EDAM CV data term in the form of data:[EDAM#]",
+    "constraints": {
+        "unique": {
+            "signature": [
+                "id",
+                "name"
+            ]
+        }
+    },
     "root_url": "data_type",
     "table_name": "data_type"
 }

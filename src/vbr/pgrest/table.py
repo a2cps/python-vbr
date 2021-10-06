@@ -45,13 +45,24 @@ class Table(object):
         return '{0}: {1}'.format(self.__class__.__name__, ','.join(values))
 
     def dict(self):
+        """Return a dict filtered for use in row insert or update operations
+        """
         dct = {}
         for v in self.__schema__.column_names:
             d = getattr(self, v, None)
             # TODO - genericize this based on property types?
             if isinstance(d, datetime.datetime):
                 d = datetime_to_isodate(d)
-            dct[v] = d
+
+            # Do not populate dict with None values where attribute is a primary key
+            # Do not populate dict with None values if attribute is nullable
+            nullable = self.__class_attrs__[v].nullable
+            is_pk = self.__class_attrs__[v].primary_key
+            # pk = self.__class_attrs__[v]
+            if d is not None:
+                dct[v] = d
+            elif nullable is False and is_pk is False:
+                dct[v] = d
         return dct
 
     def json(self, indent=0, sort_keys=True, class_name=None):

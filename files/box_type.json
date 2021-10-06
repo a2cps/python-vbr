@@ -13,7 +13,8 @@
         "name": {
             "char_len": 255,
             "comments": "short label for box_type (ex. 'aliquot' or 'paxgene'",
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "unique": true
         }
     },
     "comments": "Definitions for storage and shipping containers",

@@ -16,7 +16,7 @@ class AnatomyData(TableData):
         'anatomy_id': 3,
         'name': 'urine',
         'description': 'urine sample',
-        'id': 'UBERON:0001088 UBERON:0001988 UBERON:0001037 UBERON:0001088'
+        'id': 'UBERON:0001088'
     }, {
         'anatomy_id': 4,
         'name': 'feces',

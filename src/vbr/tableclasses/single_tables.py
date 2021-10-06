@@ -23,7 +23,7 @@ class Anatomy(Table):
 class AssayType(Table):
     """C2M2-defined table: describes types of material that can be biosamples. id is an OBI CV Term ID"""
     assay_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    id = Column(String, comments="OBI CV term ID")
+    id = Column(String, comments="OBI CV term ID", unique=True)
     name = Column(String,
                   nullable=True,
                   comments="Short name for the assay_type")
@@ -35,20 +35,21 @@ class AssayType(Table):
 
 class Biosample(Table):
     """C2M2-defined table: each record uniquely identifies a biosample obtained from a subject"""
-    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    # id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    # uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
-    project_local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_project_id_namespace_project_local_id = UniqueConstraint(
-        'project_id_namesapace', 'project_local_id')
+    # project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
+    # project_local_id = Constants.STRING_LOCALID_COLUMN
+    # uniq_project_id_namespace_project_local_id = UniqueConstraint(
+    #     'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
-    persistent_id = Constants.STRING_PERSISTENT_ID
+    # Source: Redcap
+    persistent_id = Column(String, comments='ID assigned to sample when collected', unique=True)
     creation_time = Column(Date)
     anatomy = Column(Integer, ForeignKey('anatomy.anatomy_id'))
     # TODO - determine what fields form the signature
-    signature = Signature('project', 'anatomy')
+    # signature = Signature('project', 'anatomy')
 
 
 class BoxType(Table):
@@ -56,6 +57,7 @@ class BoxType(Table):
     box_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(
         String,
+        unique=True,
         comments="short label for box_type (ex. 'aliquot' or 'paxgene'")
     description = Column(String,
                          nullable=True,
@@ -76,15 +78,15 @@ class Contact(Table):
     organization = Column(Integer,
                           ForeignKey('organization.organization_id'),
                           comments="Organization ID")
-    # TODO - confirm fields
-    signature = Signature('first_name', 'last_name', 'organization')
+    # Do not allow multiple instances of same email in same organization
+    signature = Signature('email', 'organization')
 
 
 class DataEvent(Table):
     """C2M2 proposed future extension: logs data events with associated status, issues and comments."""
-    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    # id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    # uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     data_event_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     protocol = Column(Integer,
                       ForeignKey('protocol.protocol_id'),
@@ -99,18 +101,17 @@ class DataEvent(Table):
     comment = Column(String)
     # Enforces record uniqueness. Signature is just syntactic sugar for
     # defining a UniqueConstraint
-    # TODO - confirm fields
     signature = Signature('protocol', 'rank', 'event_ts', 'performed_by',
-                          'status', 'reason', 'comments')
+                          'status', 'reason')
 
 
 class Dataset(Table):
     """C2M2-defined table: a named collection of files and other datasets."""
     # Within a2cps, an initial dataset will be created for each subject and protocol (event_type) to mirror the data collected via REDCap."""
     # Additional datasets may be created and mapped using dataset mapping tables to reflect commonly queried cross-sections of data with their associated files."""
-    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    # id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    # uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp,
@@ -133,20 +134,21 @@ class DataType(Table):
     data_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String, comments='EDAM CV data term “data:[EDAM#]”')
     name = Column(String, comments='Short name for this data_type')
-    description = Column(Text, comments='Description of the data_type')
-    # TODO - determine if we need a signature (or a single unique on 'name')
+    description = Column(Text, comments='Description of the data_type', nullable=True)
+    # Enforce unique combination of id and name
+    signature = Signature('id', 'name')
 
 
 class File(Table):
     """C2M2-defined table: provide unique persistent name and associated information for files"""
-    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    # id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    # uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     file_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
-    project_local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_project_id_namespace_project_local_id = UniqueConstraint(
-        'project_id_namesapace', 'project_local_id')
+    # project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
+    # project_local_id = Constants.STRING_LOCALID_COLUMN
+    # uniq_project_id_namespace_project_local_id = UniqueConstraint(
+    #     'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
     persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp,
@@ -156,6 +158,7 @@ class File(Table):
     uncompressed_size_in_bytes = Column(Integer, nullable=True)
     sha256 = Column(String)
     md5 = Column(String)
+    # TODO - determine root level for filenames
     filename = Column(String)
     file_format = Column(Integer,
                          ForeignKey('file_format.file_format_id'),
@@ -166,6 +169,7 @@ class File(Table):
     assay_type = Column(Integer,
                         ForeignKey('assay_type.assay_type_id'),
                         nullable=True)
+    # TODO - set a default
     mime_type = Column(String, nullable=True)
     # TODO - determine what fields form the signature
     signature = Signature('filename', 'sha256', 'md5', 'size_in_bytes')
@@ -174,7 +178,7 @@ class File(Table):
 class FileFormat(Table):
     """C2M2-defined table containing classifications for file format. id is an EDAM CV format term."""
     file_format_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    id = Column(String)
+    id = Column(String, unique=True, comments='EDAM CV format: term')
     name = Column(String, nullable=True)
     description = Column(Text, nullable=True)
     # TODO - determine if we need a signature (or a single unique on 'name')
@@ -197,19 +201,18 @@ class Location(Table):
 class Organization(Table):
     """C2M2 proposed future extension: a list of data-generating research programs or entities."""
     organization_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    url = Column(String)
+    url = Column(String, unique=True)
     name = Column(String)
-    description = Column(Text)
-    # TODO - determine what fields form the signature
+    description = Column(Text, nullable=True)
     signature = Signature('url', 'name')
 
 
 class Project(Table):
     """C2M2-defined table uniquely defining projects within the scope of the VBR and broader NIH namespace."""
-    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    # id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
-    project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    # uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    # project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp, nullable=True)
     abbreviation = Column(String, nullable=True)
@@ -222,8 +225,8 @@ class Project(Table):
 class Protocol(Table):
     """C2M2 proposed future extension: an event-type or defined process."""
     protocol_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    id = Column(String, nullable=True)
-    name = Column(String, nullable=True)
+    persistent_id = Column(String, nullable=True)
+    name = Column(String, nullable=False)
     description = Column(Text, nullable=True)
     # TODO - determine if we need a signature (or a single unique on 'name')
 
@@ -275,21 +278,23 @@ class Status(Table):
 
 class Subject(Table):
     """The source organism(s) from which a biosample has been generated."""
-    id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    # id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
+    # uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    project_id_namesapace = Constants.STRING_NAMESPACE_COLUMN
-    project_local_id = Constants.STRING_LOCALID_COLUMN
-    uniq_project_id_namespace_project_local_id = UniqueConstraint(
-        'project_id_namesapace', 'project_local_id')
+    # project_id_namespace = Constants.STRING_NAMESPACE_COLUMN
+    # # Autogenerated
+    # project_local_id = Constants.STRING_LOCALID_COLUMN
+    # uniq_project_id_namespace_project_local_id = UniqueConstraint(
+    #     'project_id_namesapace', 'project_local_id')
     project_id = Column(Integer, ForeignKey('project.project_id'))
-    persistent_id = Constants.STRING_PERSISTENT_ID
+    # A subject's persistent ID is the GUID assigned by REDcap
+    persistent_id = Column(String, comments='GUID assigned to subject at intake', unique=True)
     creation_time = Column(CreatedTimeStamp, nullable=True)
     # Is this a candidate for use of PgREST enumerations?
-    granularity = Column(String, nullable=True)
-    # TODO - determine what fields form the signature
-    signature = Signature('abbreviation', 'name')
+    # granularity = Column(String, nullable=True)
+    # Combine project and persistent id into uniqueness signature
+    # signature = Signature('project_id', 'persistent_id')
 
 
 class Unit(Table):
@@ -297,6 +302,7 @@ class Unit(Table):
     unit_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(
         String,
+        unique=True,
         nullable=False,
         comment="Short label for unit (ex. 'aliquot', 'paxgene' or 'buffycoat'"
     )

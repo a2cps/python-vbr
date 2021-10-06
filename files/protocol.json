@@ -5,12 +5,11 @@
             "data_type": "text",
             "null": true
         },
-        "id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": true
-        },
         "name": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "persistent_id": {
             "char_len": 255,
             "data_type": "varchar",
             "null": true
