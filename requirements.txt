@@ -1,7 +1,0 @@
-arrow
-hashids
-pytz
-pytest
-simplejson
-tapipy>=1.0.1
-Jinja2
