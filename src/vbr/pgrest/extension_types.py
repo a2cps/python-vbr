@@ -59,6 +59,7 @@ class LocalId(String, AutoHashId):
     DATA_TYPE = 'varchar'
     PYTHON_TYPE = str
     CHAR_LEN = 16
+    HASH_SALT = '*<rjFeB$Fy2#~-H@'
 
     @classmethod
     def instantiate(cls, value):
