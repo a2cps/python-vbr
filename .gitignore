@@ -6,3 +6,4 @@ sdist/
 *.pyc
 .vscode/
 env/
+exports/*.csv

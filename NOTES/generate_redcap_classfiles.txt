@@ -1,0 +1,31 @@
+# Programmatic generation of Redcap Table Classes from Data Dictionary
+
+Maintain dict of class definitions d
+
+d[$B][$A] = {
+                'field_type': $D
+                'field_label': $E,
+                'values': $F,
+                'identifier': $K
+            }
+
+
+Use Jinja template 
+One file per class.. add comparison (hash?) before regenerating class file. Throw exception if generated code differs from code on disk
+
+class {{class_name}}({{parent_class_name}})
+    serial_id
+    complete
+    generated_properties...
+
+Use PyLint to validate output
+
+snake_case to CamelCase for class name
+
+Embed comments from source file into generated code
+
+Generate usage information
+
+Support subclassing
+
+Probably need to mark the source of the class as a read-only attribute

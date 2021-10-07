@@ -8,7 +8,8 @@ def main(args):
     tables = tableclasses.table_definitions()
     for t in tables:
         try:
-            if len(args['table_name']) == 0 or t['table_name'] in args['table_name']:
+            if len(args['table_name']
+                   ) == 0 or t['table_name'] in args['table_name']:
                 print('Creating...' + t['table_name'])
                 v.create_table_from_definition(t)
                 time.sleep(0.125)
@@ -33,7 +34,9 @@ if __name__ == '__main__':
     from .cli import get_parser
 
     parser = get_parser()
-    parser.add_argument('table_name', nargs='*', help='Optional: Table name(s)')
+    parser.add_argument('table_name',
+                        nargs='*',
+                        help='Optional: Table name(s)')
     args = parser.parse_args()
 
     main(vars(args))

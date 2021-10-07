@@ -20,13 +20,13 @@ reformat:
 	yapf -i --recursive src/vbr
 
 classfiles-clean:
-	cd src ; python -m scripts.bootstrap.redcap_classfiles clean
+	cd src ; python -m scripts.redcap_classfiles clean
 
 classfiles: classfiles-clean
-	cd src ; python -m scripts.bootstrap.redcap_classfiles build
+	cd src ; python -m scripts.redcap_classfiles build
 
-definitions: definitions-clean
-	cd src ; python -m scripts.bootstrap.definitions; mv -f *.json  ../files/
+definitions:
+	cd src ; python -m scripts.definitions; mv -f *.json  ../files/
 
 definitions-clean:
 	rm -f files/*.json
@@ -34,18 +34,21 @@ definitions-clean:
 clean: definitions-clean
 
 create_tables:
-	cd src ; python -m scripts.bootstrap.create_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+	cd src ; python -m scripts.create_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
 drop_tables:
-	cd src ; python -m scripts.bootstrap.drop_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+	cd src ; python -m scripts.drop_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
-load_tables:
-	cd src ; python -m scripts.bootstrap.load_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+bootstrap_tables:
+	cd src ; python -m scripts.bootstrap_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
-export_tables:
-	cd src; echo "Exporting $(SCRIPT_ARGS)"
+export_tables: 
+	cd src ; python -m scripts.export_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+
+export_tables-clean:
+	cd exports; rm *.csv
 
 clean_tables:
 	cd src; echo "Cleaning: $(SCRIPT_ARGS)"
 
-reset: drop_tables create_tables load_tables definitions
+reset: drop_tables create_tables load_tables

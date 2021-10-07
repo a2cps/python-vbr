@@ -270,10 +270,14 @@ def clean(args):
     for pyfile in glob.glob(DEST_DIR + '/*.py'):
         os.unlink(pyfile)
 
-    # Write empty __init__.py 
+    # Write empty __init__.py
     with open(os.path.join(TEMPLATES_DIR, INIT_TEMPLATE)) as tf:
         template = Template(tf.read())
-    imports = {'module_docstring': 'Intentionally empty as class files have not been generated', 'imports': {}}
+    imports = {
+        'module_docstring':
+        'Intentionally empty as class files have not been generated',
+        'imports': {}
+    }
     output = template.render(imports)
     with open(os.path.join(DEST_DIR, '__init__.py'), 'w') as cf:
         cf.write(output)
@@ -287,6 +291,7 @@ def main(args):
         build(args)
     elif args['cmd'] == 'clean':
         clean(args)
+
 
 if __name__ == '__main__':
 
@@ -313,7 +318,11 @@ if __name__ == '__main__':
     SUPPORTED_FIELD_TYPES = ('text', 'radio', 'dropdown', 'checkbox', 'yesno')
 
     parser = get_parser()
-    parser.add_argument('cmd', nargs='?', choices=['build', 'clean'], default='build', help='Command')
+    parser.add_argument('cmd',
+                        nargs='?',
+                        choices=['build', 'clean'],
+                        default='build',
+                        help='Command')
     args = parser.parse_args()
 
     main(vars(args))

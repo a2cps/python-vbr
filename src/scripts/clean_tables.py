@@ -6,6 +6,7 @@ def main(args):
 
     print(v.list_rows('organization'))
 
+
 if __name__ == '__main__':
 
     import argparse
@@ -17,7 +18,9 @@ if __name__ == '__main__':
     from .data import data_loads
 
     parser = get_parser()
-    parser.add_argument('table_name', nargs='*', help='Optional: Table name(s)')
+    parser.add_argument('table_name',
+                        nargs='*',
+                        help='Optional: Table name(s)')
     args = parser.parse_args()
 
     main(vars(args))
