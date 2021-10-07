@@ -45,7 +45,7 @@ class AutoHashId(AutoPopulate):
     def validated(cls, value):
         """Returns value if valid, raises ValueError if not
         """
-        hashids = Hashids(salt=cls.HASH_SALT)
+        hashids = Hashids(salt=cls.SALT)
         dec = hashids.decode(value)
         if len(dec) > 0:
             return value
@@ -59,7 +59,7 @@ class LocalId(String, AutoHashId):
     DATA_TYPE = 'varchar'
     PYTHON_TYPE = str
     CHAR_LEN = 16
-    HASH_SALT = '*<rjFeB$Fy2#~-H@'
+    SALT = '*<rjFeB$Fy2#~-H@'
 
     @classmethod
     def instantiate(cls, value):
