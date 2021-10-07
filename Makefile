@@ -45,6 +45,9 @@ bootstrap_tables:
 export_tables: 
 	cd src ; python -m scripts.export_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
+import_tables: 
+	cd src ; python -m scripts.import_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+
 export_tables-clean:
 	cd exports; rm *.csv
 
