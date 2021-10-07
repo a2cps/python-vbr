@@ -9,7 +9,7 @@ EVENT_ACTION_ALLOWED = [
 
 
 class ForeignKey(object):
-    def __init__(self, source, on_event='ON UPDATE', event_action='CASCADE'):
+    def __init__(self, source, on_event='ON DELETE', event_action='CASCADE'):
         self.foreign_key = True
         (self.reference_table, self.reference_column) = source.split('.')
 
