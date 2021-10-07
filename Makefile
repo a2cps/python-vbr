@@ -47,3 +47,5 @@ export_tables:
 
 clean_tables:
 	cd src; echo "Cleaning: $(SCRIPT_ARGS)"
+
+reset: drop_tables create_tables load_tables definitions
