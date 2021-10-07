@@ -4,7 +4,7 @@
             "data_type": "integer",
             "event_action": "CASCADE",
             "foreign_key": true,
-            "on_event": "ON UPDATE",
+            "on_event": "ON DELETE",
             "reference_column": "biosample_id",
             "reference_table": "biosample"
         },
@@ -16,7 +16,7 @@
             "data_type": "integer",
             "event_action": "CASCADE",
             "foreign_key": true,
-            "on_event": "ON UPDATE",
+            "on_event": "ON DELETE",
             "reference_column": "file_id",
             "reference_table": "file"
         }

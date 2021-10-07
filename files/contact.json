@@ -25,7 +25,7 @@
             "data_type": "integer",
             "event_action": "CASCADE",
             "foreign_key": true,
-            "on_event": "ON UPDATE",
+            "on_event": "ON DELETE",
             "reference_column": "organization_id",
             "reference_table": "organization"
         },

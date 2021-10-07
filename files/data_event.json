@@ -2,14 +2,16 @@
     "columns": {
         "comment": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "data_event_id": {
             "data_type": "serial",
             "primary_key": true
         },
         "event_ts": {
-            "data_type": "date",
+            "data_type": "timestamp",
+            "default": "CREATETIME",
             "null": true
         },
         "local_id": {
@@ -22,7 +24,7 @@
             "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
-            "on_event": "ON UPDATE",
+            "on_event": "ON DELETE",
             "reference_column": "contact_id",
             "reference_table": "contact"
         },
@@ -31,7 +33,7 @@
             "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
-            "on_event": "ON UPDATE",
+            "on_event": "ON DELETE",
             "reference_column": "protocol_id",
             "reference_table": "protocol"
         },
@@ -44,7 +46,7 @@
             "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
-            "on_event": "ON UPDATE",
+            "on_event": "ON DELETE",
             "reference_column": "reason_id",
             "reference_table": "reason"
         },
@@ -53,7 +55,7 @@
             "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
-            "on_event": "ON UPDATE",
+            "on_event": "ON DELETE",
             "reference_column": "status_id",
             "reference_table": "status"
         }

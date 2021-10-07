@@ -45,7 +45,9 @@ class Biosample(Table):
     #     'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
     # Source: Redcap
-    persistent_id = Column(String, comments='ID assigned to sample when collected', unique=True)
+    persistent_id = Column(String,
+                           comments='ID assigned to sample when collected',
+                           unique=True)
     creation_time = Column(Date)
     anatomy = Column(Integer, ForeignKey('anatomy.anatomy_id'))
     # TODO - determine what fields form the signature
@@ -92,7 +94,7 @@ class DataEvent(Table):
                       ForeignKey('protocol.protocol_id'),
                       nullable=True)
     rank = Column(Integer, nullable=True)
-    event_ts = Column(Date, nullable=True)
+    event_ts = Column(CreatedTimeStamp, nullable=True)
     performed_by = Column(Integer,
                           ForeignKey('contact.contact_id'),
                           nullable=True)
@@ -134,7 +136,9 @@ class DataType(Table):
     data_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     id = Column(String, comments='EDAM CV data term “data:[EDAM#]”')
     name = Column(String, comments='Short name for this data_type')
-    description = Column(Text, comments='Description of the data_type', nullable=True)
+    description = Column(Text,
+                         comments='Description of the data_type',
+                         nullable=True)
     # Enforce unique combination of id and name
     signature = Signature('id', 'name')
 
@@ -289,7 +293,9 @@ class Subject(Table):
     #     'project_id_namesapace', 'project_local_id')
     project_id = Column(Integer, ForeignKey('project.project_id'))
     # A subject's persistent ID is the GUID assigned by REDcap
-    persistent_id = Column(String, comments='GUID assigned to subject at intake', unique=True)
+    persistent_id = Column(String,
+                           comments='GUID assigned to subject at intake',
+                           unique=True)
     creation_time = Column(CreatedTimeStamp, nullable=True)
     # Is this a candidate for use of PgREST enumerations?
     # granularity = Column(String, nullable=True)
