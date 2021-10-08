@@ -10,15 +10,15 @@ def main(args):
     else:
         to_export = [t['table_name'] for t in v.list_tables()]
 
-    output_dir = args.get('output_dir', None)
-    if output_dir is None:
+    dumps_dir = args.get('dumps_dir', None)
+    if dumps_dir is None:
         # target is "exports" directory at top level of python-vbr
-        output_dir = exports_directory()
+        dumps_dir = exports_directory()
 
     for t in to_export:
         print('Exporting {0}'.format(t))
 
-        filename = os.path.join(output_dir, '.'.join([t, 'csv']))
+        filename = os.path.join(dumps_dir, '.'.join([t, 'csv']))
 
         data = [r.dict() for r in v.list_rows(root_url=t, limit=100000)]
         if len(data) > 0:
@@ -43,9 +43,9 @@ if __name__ == '__main__':
 
     parser = get_parser()
     parser.add_argument('-O',
-                        '--export-dir',
-                        dest='output_dir',
-                        help='Export directory [$pwd]')
+                        '--dumps-dir',
+                        dest='dumps_dir',
+                        help='Dumps directory [exports]')
     parser.add_argument('table_name',
                         nargs='*',
                         help='Optional: Table Name(s)')

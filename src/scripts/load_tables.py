@@ -13,7 +13,7 @@ def main(args):
     else:
         ordered_tables = args['table_name']
 
-    import_dir = args.get('output_dir', None)
+    import_dir = args.get('dumps_dir', None)
     if import_dir is None:
         # target is "exports" directory at top level of python-vbr
         import_dir = exports_directory()
@@ -60,9 +60,9 @@ if __name__ == '__main__':
 
     parser = get_parser()
     parser.add_argument('-O',
-                        '--import-dir',
-                        dest='output_dir',
-                        help='Imports directory [$pwd]')
+                        '--dumps-dir',
+                        dest='dumps_dir',
+                        help='Dumps directory [exports]')
     parser.add_argument('table_name',
                         nargs='*',
                         help='Optional: Table name(s)')

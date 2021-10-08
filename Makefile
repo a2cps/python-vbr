@@ -42,11 +42,11 @@ drop_tables:
 bootstrap_tables:
 	cd src ; python -m scripts.bootstrap_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
-export_tables: 
-	cd src ; python -m scripts.export_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+dump_tables: 
+	cd src ; python -m scripts.dump_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
-import_tables: 
-	cd src ; python -m scripts.import_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
+load_tables: 
+	cd src ; python -m scripts.load_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
 export_tables-clean:
 	cd exports; rm *.csv
@@ -54,4 +54,4 @@ export_tables-clean:
 clean_tables:
 	cd src; echo "Cleaning: $(SCRIPT_ARGS)"
 
-reset: drop_tables create_tables load_tables
+reset: drop_tables create_tables bootstrap_tables
