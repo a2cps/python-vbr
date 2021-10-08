@@ -298,7 +298,7 @@ class Subject(Table):
                            unique=True)
     creation_time = Column(CreatedTimeStamp, nullable=True)
     # Is this a candidate for use of PgREST enumerations?
-    # granularity = Column(String, nullable=True)
+    granularity = Column(String, default='cfde_subject_granularity:0', nullable=True)
     # Combine project and persistent id into uniqueness signature
     # signature = Signature('project_id', 'persistent_id')
 
