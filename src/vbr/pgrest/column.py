@@ -39,6 +39,7 @@ class Column(object):
                  nullable=False,
                  default=None,
                  comments=None,
+                 identifier=False,
                  **kwargs):
 
         # self.cname = cname
@@ -52,6 +53,7 @@ class Column(object):
         self.unique = unique
         self.nullable = nullable
         self.comments = comments
+        self.identifier = identifier
         self.relations = []
 
         self.fk = None

@@ -296,9 +296,16 @@ class Subject(Table):
     persistent_id = Column(String,
                            comments='GUID assigned to subject at intake',
                            unique=True)
+    source_subject_id = Column(
+        String,
+        comments='REDCap record_id or EHRR case reference',
+        unique=False,
+        identifier=True)
     creation_time = Column(CreatedTimeStamp, nullable=True)
     # Is this a candidate for use of PgREST enumerations?
-    granularity = Column(String, default='cfde_subject_granularity:0', nullable=True)
+    granularity = Column(String,
+                         default='cfde_subject_granularity:0',
+                         nullable=True)
     # Combine project and persistent id into uniqueness signature
     # signature = Signature('project_id', 'persistent_id')
 
