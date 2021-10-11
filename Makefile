@@ -48,7 +48,7 @@ dump_tables:
 load_tables: 
 	cd src ; python -m scripts.load_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
-export_tables-clean:
+dump_tables-clean:
 	cd exports; rm *.csv
 
 clean_tables:

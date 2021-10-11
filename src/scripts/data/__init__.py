@@ -8,7 +8,8 @@ from vbr.tableclasses import class_from_table
 from .anatomy import AnatomyData
 from .assay_type import AssayTypeData
 from .biosample import BiosampleData
-from .box_type import BoxTypeData
+# from .box_type import BoxTypeData
+from .container_type import ContainerTypeData
 from .contact import ContactData
 from .data_event import DataEventData
 from .data_type import DataTypeData
@@ -17,6 +18,7 @@ from .file import FileData
 from .file_format import FileFormatData
 from .loader import TableData
 from .location import LocationData
+from .measurement_type import MeasurementTypeData
 from .organization import OrganizationData
 from .project import ProjectData
 from .protocol import ProtocolData

@@ -1,0 +1,27 @@
+{
+    "columns": {
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "data_event_in_shipment_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "shipment_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "shipment_id",
+            "reference_table": "shipment"
+        }
+    },
+    "comments": "Maps data_events associated with shipments.",
+    "root_url": "data_event_in_shipment",
+    "table_name": "data_event_in_shipment"
+}

@@ -5,4 +5,19 @@ reason_id,name,description
 4,reason_not_interested___3,Compensation Insufficient
 5,reason_not_interested___4,COVID-related
 6,reason_not_interested___5,Not interested in research
-7,reason,Consent not given
+7,not_consented,Consent not given
+20,subject_encounter,Research subject encounter
+21,sample_handling,Routine sample handling
+22,sample_spoiled,Sample spoiled or damaged
+23,sample_depleted,Sample depleted
+24,sample_lost,Sample lost
+30,shipment_sent,Shipment sent by parcel service
+31,shipment_delivered,Shipment delivered by parcel service
+32,shipment_delayed,Shipment delayed by parcel service
+33,shipment_delayed_other,Shipment delayed for other reason
+34,shipment_lost,Shipment lost in transit
+35,shipment_validated,Shipment contents match manifest
+36,shipment_invalid,Shipment contents does not match manifest
+40,biosample_collected,Biosample collected as intended
+41,biosample_collected_with_deviation,Biosample collected with protocol deviation
+42,biosample_not_collected,Biosample unable to be collected as intended

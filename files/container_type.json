@@ -1,23 +1,23 @@
 {
     "columns": {
-        "box_type_id": {
+        "container_type_id": {
             "data_type": "serial",
             "primary_key": true
         },
         "description": {
             "char_len": 255,
-            "comments": "short descriptive name used for box_type",
+            "comments": "Descriptive name",
             "data_type": "varchar",
             "null": true
         },
         "name": {
             "char_len": 255,
-            "comments": "short label for box_type (ex. 'aliquot' or 'paxgene'",
+            "comments": "Short label (ex. 'aliquot' or 'paxgene'",
             "data_type": "varchar",
             "unique": true
         }
     },
-    "comments": "Definitions for storage and shipping containers",
-    "root_url": "box_type",
-    "table_name": "box_type"
+    "comments": "Definitions for storage, shipping, and other containers",
+    "root_url": "container_type",
+    "table_name": "container_type"
 }

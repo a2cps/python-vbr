@@ -30,6 +30,11 @@
             "reference_column": "project_id",
             "reference_table": "project"
         },
+        "source_subject_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id or EHRR case reference",
+            "data_type": "varchar"
+        },
         "subject_id": {
             "data_type": "serial",
             "primary_key": true

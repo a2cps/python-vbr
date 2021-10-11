@@ -14,7 +14,7 @@
             "primary_key": true
         }
     },
-    "comments": "Unit of measurement",
+    "comments": "Physical unit for measurements",
     "root_url": "unit",
     "table_name": "unit"
 }

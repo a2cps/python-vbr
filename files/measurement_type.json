@@ -1,0 +1,23 @@
+{
+    "columns": {
+        "description": {
+            "char_len": 255,
+            "comments": "Descriptive name",
+            "data_type": "varchar",
+            "null": true
+        },
+        "measurement_type_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "name": {
+            "char_len": 255,
+            "comments": "Short label (ex. 'plasma' or 'paxgene'",
+            "data_type": "varchar",
+            "unique": true
+        }
+    },
+    "comments": "Definitions for types of measurement",
+    "root_url": "measurement_type",
+    "table_name": "measurement_type"
+}

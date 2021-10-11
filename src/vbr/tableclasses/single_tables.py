@@ -54,16 +54,24 @@ class Biosample(Table):
     # signature = Signature('project', 'anatomy')
 
 
-class BoxType(Table):
-    """Definitions for storage and shipping containers"""
-    box_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    name = Column(
-        String,
-        unique=True,
-        comments="short label for box_type (ex. 'aliquot' or 'paxgene'")
-    description = Column(String,
-                         nullable=True,
-                         comments="short descriptive name used for box_type")
+class Container(Table):
+    """TACC defined extension: a generic container class"""
+    container_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
+    persistent_id = Column(String,
+                           comments='ID assigned to container when populated',
+                           unique=True)
+    container_type: Column(Integer,
+                           ForeignKey('container_type.container_type_id'))
+
+
+class ContainerType(Table):
+    """Definitions for storage, shipping, and other containers"""
+    container_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    name = Column(String,
+                  unique=True,
+                  comments="Short label (ex. 'aliquot' or 'paxgene'")
+    description = Column(String, nullable=True, comments="Descriptive name")
 
 
 class Contact(Table):
@@ -202,6 +210,25 @@ class Location(Table):
     # TODO - determine if we need a signature
 
 
+class Measurement(Table):
+    """TACC-defined extension: contains sub-divisions of a biosample."""
+    measurement_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    measurement_type: Column(Integer, ForeignKey('measurement.measurement_id'))
+    unit: Column(Integer, ForeignKey('unit.unit_id'))
+    local_id = Constants.STRING_LOCALID_COLUMN
+    biosample_id: Column(Integer, ForeignKey('biosample.biosample_id'))
+    status: Column(Integer, ForeignKey('status.status_id'))
+
+
+class MeasurementType(Table):
+    """Definitions for types of measurement"""
+    measurement_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    name = Column(String,
+                  unique=True,
+                  comments="Short label (ex. 'plasma' or 'paxgene'")
+    description = Column(String, nullable=True, comments="Descriptive name")
+
+
 class Organization(Table):
     """C2M2 proposed future extension: a list of data-generating research programs or entities."""
     organization_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
@@ -253,23 +280,16 @@ class Role(Table):
     signature = Signature('url', 'name')
 
 
-class Shipping(Table):
+class Shipment(Table):
     """Provides details for shipping biosamples"""
-    shipping_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    shipment_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
+    shipment_tracking_id = Column(
+        String, unique=True, comments="Fedex or UPS shipment tracking barcode")
+    ship_to = Column(Integer, ForeignKey("contact.contact_id"))
+    # Default is mtaub@jhsph.edu
+    ship_from = Column(Integer, ForeignKey("contact.contact_id"), default=6)
     shipping_event_id = Column(Integer, ForeignKey("data_event.data_event_id"))
-    ship_tracking_id = Column(
-        String, comments="Fedex or UPS shipment tracking barcode")
-    ship_to = Column(String,
-                     default="UCSD",
-                     comments="Destination; default to UCSD")
-    ship_from = Column(String, comments="Shipment origin")
-    box_type = Column(Integer, ForeignKey("box_type.box_type_id"))
-    box_barcode = Column(String, "Box barcode")
-    unit = Column(Integer, ForeignKey("unit.unit_id"))
-    unit_barcode = Column(String, comment="Unit barcode")
-    unit_count = Column(Integer,
-                        default=1,
-                        comment="Count of units matching barcode")
 
 
 class Status(Table):
@@ -311,13 +331,14 @@ class Subject(Table):
 
 
 class Unit(Table):
-    """Unit of measurement"""
+    """Physical unit for measurements"""
     unit_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     name = Column(
         String,
         unique=True,
         nullable=False,
-        comment="Short label for unit (ex. 'aliquot', 'paxgene' or 'buffycoat'"
+        comment=
+        "Short label for unit (ex. '1ml_tube', 'microscope_slide' or 'tissue_punch'"
     )
     description = Column(String,
                          comment="Short descriptive name used for the unit ")

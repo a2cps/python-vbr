@@ -36,6 +36,27 @@ class BiosampleInDataset(AssociationTable):
     dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
 
 
+class ContainerInContainer(AssociationTable):
+    """Maps containers inside other containers."""
+    container_in_container_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    # Constrained to be unique so that a container can only be directly inside ONE other
+    container_id = Column(Integer,
+                          ForeignKey('container.container_id'),
+                          unique=True)
+    enclosing_container_id = Column(Integer,
+                                    ForeignKey('container.container_id'))
+
+
+class ContainerInShipment(AssociationTable):
+    """Maps containers inside other shipments."""
+    container_in_shipment_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    # Constrained to be unique so that a container can only be directly inside ONE shipment
+    container_id = Column(Integer,
+                          ForeignKey('container.container_id'),
+                          unique=True)
+    shipment_id = Column(Integer, ForeignKey('shipment.shipment_id'))
+
+
 class DataEventInBiosample(AssociationTable):
     """Maps data_events to biosamples."""
 
@@ -66,6 +87,20 @@ class DataEventInDataset(AssociationTable):
     # uniq_dataset_id_namespace_dataset_local_id = UniqueConstraint(
     #     'data_event_id_namespace', 'data_event_local_id')
     dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
+
+
+class DataEventInMeasurement(AssociationTable):
+    """Maps data_events associated with measurements."""
+    data_event_in_measurement_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    data_event_id = Column(Integer, ForeignKey('data_event.data_event_id'))
+    measurement_id = Column(Integer, ForeignKey('measurement.measurement_id'))
+
+
+class DataEventInShipment(AssociationTable):
+    """Maps data_events associated with shipments."""
+    data_event_in_shipment_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    data_event_id = Column(Integer, ForeignKey('data_event.data_event_id'))
+    shipment_id = Column(Integer, ForeignKey('shipment.shipment_id'))
 
 
 class DataEventInSubject(AssociationTable):
@@ -193,6 +228,13 @@ class FileInFile(AssociationTable):
     # uniq_parent_file_id_namespace_parent_file_local_id = UniqueConstraint(
     #     'parent_file_id_namespace', 'parent_file_local_id')
     parent_file_id = Column(Integer, ForeignKey('file.file_id'))
+
+
+class MeasurementInBiosample(AssociationTable):
+    """Maps measurements to biosamples."""
+    measurement_in_biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    measurement_id = Column(Integer, ForeignKey('measurement.measurement_id'))
+    biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
 
 
 class ProtocolInProtocol(AssociationTable):

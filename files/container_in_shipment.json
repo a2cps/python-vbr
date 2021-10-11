@@ -1,0 +1,28 @@
+{
+    "columns": {
+        "container_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "container_id",
+            "reference_table": "container",
+            "unique": true
+        },
+        "container_in_shipment_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "shipment_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "shipment_id",
+            "reference_table": "shipment"
+        }
+    },
+    "comments": "Maps containers inside other shipments.",
+    "root_url": "container_in_shipment",
+    "table_name": "container_in_shipment"
+}
