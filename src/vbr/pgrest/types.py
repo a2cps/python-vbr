@@ -1,5 +1,5 @@
 from .column import PgRestColumn
-from .utils import class_or_instancemethod
+from .utils import class_or_instancemethod, datetime_to_isodate
 
 __all__ = [
     'Boolean', 'Date', 'Numeric', 'GUID', 'Integer', 'IntegerList', 'Serial',
@@ -12,10 +12,27 @@ class Boolean(PgRestColumn):
     DATA_TYPE = 'boolean'
     PYTHON_TYPE = bool
 
+    @classmethod
+    def cast(cls, value):
+        if value is None:
+            return None
+        else:
+            return bool(int(value))
+
 
 class Date(PgRestColumn):
     DATA_TYPE = 'date'
     # TODO - validate by reading string into a datetime, confirming trailing Z
+
+    @classmethod
+    def cast(cls, value):
+        if value is None:
+            return None
+        else:
+            if isinstance(value, datetime.datetime):
+                value = datetime_to_isodate(value)
+            # TODO - other date transformations
+            return value
 
 
 class Integer(PgRestColumn):
@@ -28,6 +45,13 @@ class Integer(PgRestColumn):
             return int(value)
         else:
             return value
+
+    @classmethod
+    def cast(cls, value):
+        if value is None:
+            return None
+        else:
+            return int(value)
 
 
 class IntegerList(PgRestColumn):
@@ -47,6 +71,13 @@ class Numeric(PgRestColumn):
             return float(value)
         else:
             return value
+
+    @classmethod
+    def cast(cls, value):
+        if value is None:
+            return None
+        else:
+            return float(value)
 
 
 class Serial(Integer):
@@ -68,6 +99,13 @@ class String(PgRestColumn):
             'data_type': self_or_cls.DATA_TYPE,
             'char_len': self_or_cls.CHAR_LEN
         }
+
+    @classmethod
+    def cast(cls, value):
+        if value is None:
+            return None
+        else:
+            return str(value)
 
 
 class StringList(PgRestColumn):

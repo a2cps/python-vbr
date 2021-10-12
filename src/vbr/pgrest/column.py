@@ -96,3 +96,8 @@ class Column(object):
             all_props = {**all_props, **fk_props}
 
         return all_props
+
+    @classmethod
+    def cast(cls, value):
+        """Stub for column-type specific casting behavior"""
+        return value

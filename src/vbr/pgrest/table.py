@@ -63,6 +63,8 @@ class Table(object):
                 dct[v] = d
             elif nullable is False and is_pk is False:
                 dct[v] = d
+            # Cast to proper Python type
+            d = self.__class_attrs__[v].cast(d)
         return dct
 
     def json(self, indent=0, sort_keys=True, class_name=None):

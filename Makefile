@@ -22,7 +22,7 @@ reformat:
 classfiles-clean:
 	cd src ; python -m scripts.redcap_classfiles clean
 
-classfiles: classfiles-clean
+classfiles:
 	cd src ; python -m scripts.redcap_classfiles build
 
 definitions:
