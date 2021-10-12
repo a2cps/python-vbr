@@ -53,7 +53,7 @@ class Table(object):
 
             # Cast to proper Python type
             d = self.__class_attrs__[v].ctype.cast(_d)
-            
+
             # Do not populate dict with None values where attribute is a primary key
             # Do not populate dict with None values if attribute is nullable
             nullable = self.__class_attrs__[v].nullable
