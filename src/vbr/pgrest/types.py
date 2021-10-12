@@ -14,7 +14,7 @@ class Boolean(PgRestColumn):
 
     @classmethod
     def cast(cls, value):
-        if value is None:
+        if value is None or value == '':
             return None
         else:
             return bool(int(value))
@@ -26,7 +26,7 @@ class Date(PgRestColumn):
 
     @classmethod
     def cast(cls, value):
-        if value is None:
+        if value is None or value == '':
             return None
         else:
             if isinstance(value, datetime.datetime):
@@ -48,7 +48,7 @@ class Integer(PgRestColumn):
 
     @classmethod
     def cast(cls, value):
-        if value is None:
+        if value is None or value == '':
             return None
         else:
             return int(value)
@@ -74,7 +74,7 @@ class Numeric(PgRestColumn):
 
     @classmethod
     def cast(cls, value):
-        if value is None:
+        if value is None or value == '':
             return None
         else:
             return float(value)
