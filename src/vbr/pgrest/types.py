@@ -1,3 +1,4 @@
+import datetime
 from .column import PgRestColumn
 from .utils import class_or_instancemethod, datetime_to_isodate
 
