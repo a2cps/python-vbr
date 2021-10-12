@@ -58,6 +58,7 @@ class Container(Table):
     """TACC defined extension: a generic container class"""
     container_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
+    # Currently forcing these to be unique
     persistent_id = Column(String,
                            comments='ID assigned to container when populated',
                            unique=True)
@@ -218,6 +219,11 @@ class Measurement(Table):
     local_id = Constants.STRING_LOCALID_COLUMN
     biosample_id: Column(Integer, ForeignKey('biosample.biosample_id'))
     status: Column(Integer, ForeignKey('status.status_id'))
+    # Currently forcing these to be unique
+    persistent_id = Column(
+        String,
+        comments='Identifier assigned to measurement at creation',
+        unique=True)
 
 
 class MeasurementType(Table):

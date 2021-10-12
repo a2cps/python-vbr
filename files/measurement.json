@@ -8,6 +8,12 @@
         "measurement_id": {
             "data_type": "serial",
             "primary_key": true
+        },
+        "persistent_id": {
+            "char_len": 255,
+            "comments": "Identifier assigned to measurement at creation",
+            "data_type": "varchar",
+            "unique": true
         }
     },
     "comments": "TACC-defined extension: contains sub-divisions of a biosample.",
