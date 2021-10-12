@@ -1,0 +1,78 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "early_withdrawal_v04_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "early_withdrawal_v04_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "ewdateterm": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "ewdisreasons": {
+            "data_type": "integer"
+        },
+        "ewpireason": {
+            "data_type": "integer"
+        },
+        "ewprimaryreason": {
+            "data_type": "integer"
+        },
+        "ewstudypinit": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Early Withdrawal V04",
+    "root_url": "rcap_early_withdrawal_v04",
+    "table_name": "rcap_early_withdrawal_v04"
+}

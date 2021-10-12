@@ -1,0 +1,150 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "functional_testing_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "functional_testing_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        },
+        "tstsassist_1": {
+            "data_type": "boolean"
+        },
+        "tstsassist_2": {
+            "data_type": "boolean"
+        },
+        "tstsassistyn": {
+            "data_type": "boolean"
+        },
+        "tstsbpscreen": {
+            "data_type": "integer"
+        },
+        "tstscompleteyn": {
+            "data_type": "boolean"
+        },
+        "tstsnonreasonyn": {
+            "data_type": "integer"
+        },
+        "tstsnumbrepsyn": {
+            "data_type": "integer"
+        },
+        "tstspostpainscl": {
+            "data_type": "numeric"
+        },
+        "tstspostpainscl1": {
+            "data_type": "numeric"
+        },
+        "tstsprepainscl": {
+            "data_type": "numeric"
+        },
+        "tstsprepainscl1": {
+            "data_type": "numeric"
+        },
+        "tststime": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "tststime1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "walk10assist_cane": {
+            "data_type": "boolean"
+        },
+        "walk10assist_crutch": {
+            "data_type": "boolean"
+        },
+        "walk10assist_other": {
+            "data_type": "boolean"
+        },
+        "walk10assist_othertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "walk10assist_perssuppt": {
+            "data_type": "boolean"
+        },
+        "walk10assist_walkder": {
+            "data_type": "boolean"
+        },
+        "walk10assistyn": {
+            "data_type": "boolean"
+        },
+        "walk10completeyn": {
+            "data_type": "boolean"
+        },
+        "walk10finalpainscl": {
+            "data_type": "numeric"
+        },
+        "walk10finalpainscl1": {
+            "data_type": "numeric"
+        },
+        "walk10incompletereason": {
+            "data_type": "integer"
+        },
+        "walk10initialpainscl": {
+            "data_type": "numeric"
+        },
+        "walk10initialpainscl1": {
+            "data_type": "numeric"
+        },
+        "walk10time": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "walk10time1": {
+            "char_len": 255,
+            "data_type": "varchar"
+        }
+    },
+    "comments": "Functional Testing",
+    "root_url": "rcap_functional_testing",
+    "table_name": "rcap_functional_testing"
+}

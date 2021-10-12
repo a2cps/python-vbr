@@ -1,0 +1,85 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "patient_health_questionnaire_depression_scale_phq_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "patient_health_questionnaire_depression_scale_phq_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "phqabnrmldietscore": {
+            "data_type": "integer"
+        },
+        "phqconcntrtnimprmntscore": {
+            "data_type": "integer"
+        },
+        "phqdeprssnscore": {
+            "data_type": "integer"
+        },
+        "phqflngfailrscore": {
+            "data_type": "integer"
+        },
+        "phqlitintrstscore": {
+            "data_type": "integer"
+        },
+        "phqmovmntspchimprmntscore": {
+            "data_type": "integer"
+        },
+        "phqsleepimpairscore": {
+            "data_type": "integer"
+        },
+        "phqtirdlittleenrgyscore": {
+            "data_type": "integer"
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Patient Health Questionnaire Depression Scale Phq",
+    "root_url": "rcap_patient_health_questionnaire_depression_scale_phq",
+    "table_name": "rcap_patient_health_questionnaire_depression_scale_phq"
+}

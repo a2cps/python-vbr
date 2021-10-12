@@ -1,0 +1,114 @@
+{
+    "columns": {
+        "acute_phase_trajectory_items_v05_acute_daily_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "acute_phase_trajectory_items_v05_acute_daily_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        },
+        "traj04angryscl": {
+            "data_type": "integer"
+        },
+        "traj04avgpainscl": {
+            "data_type": "integer"
+        },
+        "traj04medlist1otc": {
+            "data_type": "boolean"
+        },
+        "traj04medlist2opioid": {
+            "data_type": "boolean"
+        },
+        "traj04medlist3thc": {
+            "data_type": "boolean"
+        },
+        "traj04medlist4gaba": {
+            "data_type": "boolean"
+        },
+        "traj04medlist5dulox": {
+            "data_type": "boolean"
+        },
+        "traj04medlist6other": {
+            "data_type": "boolean"
+        },
+        "traj04medlist6othertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "traj04medyn": {
+            "data_type": "boolean"
+        },
+        "traj04nervousscl": {
+            "data_type": "integer"
+        },
+        "traj04painintfactivscl": {
+            "data_type": "integer"
+        },
+        "traj04physactscl": {
+            "data_type": "integer"
+        },
+        "traj04sadscl": {
+            "data_type": "integer"
+        },
+        "traj04sleepscl": {
+            "data_type": "integer"
+        },
+        "traj04wkenterdate": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "traj04worstpainscl": {
+            "data_type": "integer"
+        }
+    },
+    "comments": "Acute Phase Trajectory Items V05 Acute Daily",
+    "root_url": "rcap_acute_phase_trajectory_items_v05_acute_daily",
+    "table_name": "rcap_acute_phase_trajectory_items_v05_acute_daily"
+}

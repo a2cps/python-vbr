@@ -1,0 +1,210 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "oms1chemoyn": {
+            "data_type": "boolean"
+        },
+        "oms1radtxyn": {
+            "data_type": "boolean"
+        },
+        "oms1relinfection": {
+            "data_type": "boolean"
+        },
+        "oms1relmanipultn": {
+            "data_type": "boolean"
+        },
+        "oms1relother": {
+            "data_type": "boolean"
+        },
+        "oms1relothertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "oms1relrevision": {
+            "data_type": "boolean"
+        },
+        "oms1relvisit": {
+            "data_type": "boolean"
+        },
+        "oms1relvisited": {
+            "data_type": "boolean"
+        },
+        "oms1relvisitoffice": {
+            "data_type": "boolean"
+        },
+        "oms1relvisitother": {
+            "data_type": "boolean"
+        },
+        "oms1relvisitothertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "oms1surgrel": {
+            "data_type": "boolean"
+        },
+        "oms1surgunr": {
+            "data_type": "boolean"
+        },
+        "oms1surgyn": {
+            "data_type": "boolean"
+        },
+        "oms1timeframe": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "oms1unrother": {
+            "data_type": "boolean"
+        },
+        "oms1unrotherknee": {
+            "data_type": "boolean"
+        },
+        "oms1unrothertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "oms1unrsurgother": {
+            "data_type": "boolean"
+        },
+        "oms1unrvisit": {
+            "data_type": "boolean"
+        },
+        "oms1unrvisited": {
+            "data_type": "boolean"
+        },
+        "oms1unrvisitoffice": {
+            "data_type": "boolean"
+        },
+        "oms1unrvisitother": {
+            "data_type": "boolean"
+        },
+        "oms1unrvisitothertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "oms1visityn": {
+            "data_type": "boolean"
+        },
+        "oms2chemodiff": {
+            "data_type": "boolean"
+        },
+        "oms2chemosame": {
+            "data_type": "boolean"
+        },
+        "oms2chemoyn": {
+            "data_type": "boolean"
+        },
+        "oms2radtxdiff": {
+            "data_type": "boolean"
+        },
+        "oms2radtxsame": {
+            "data_type": "boolean"
+        },
+        "oms2radtxyn": {
+            "data_type": "boolean"
+        },
+        "oms2relvisit": {
+            "data_type": "boolean"
+        },
+        "oms2relvisited": {
+            "data_type": "boolean"
+        },
+        "oms2relvisitoffice": {
+            "data_type": "boolean"
+        },
+        "oms2relvisitother": {
+            "data_type": "boolean"
+        },
+        "oms2relvisitothertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "oms2surgrel": {
+            "data_type": "boolean"
+        },
+        "oms2surgunr": {
+            "data_type": "boolean"
+        },
+        "oms2surgyn": {
+            "data_type": "boolean"
+        },
+        "oms2timeframe": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "oms2unrvisit": {
+            "data_type": "boolean"
+        },
+        "oms2unrvisited": {
+            "data_type": "boolean"
+        },
+        "oms2unrvisitoffice": {
+            "data_type": "boolean"
+        },
+        "oms2unrvisitother": {
+            "data_type": "boolean"
+        },
+        "oms2unrvisitothertxt": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "oms2visityn": {
+            "data_type": "boolean"
+        },
+        "other_medical_surgical_treatments_ii_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "other_medical_surgical_treatments_ii_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Other Medical Surgical Treatments Ii",
+    "root_url": "rcap_other_medical_surgical_treatments_ii",
+    "table_name": "rcap_other_medical_surgical_treatments_ii"
+}

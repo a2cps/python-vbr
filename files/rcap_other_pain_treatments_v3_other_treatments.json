@@ -1,0 +1,82 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "opt_q2_anx_meds": {
+            "data_type": "integer"
+        },
+        "opt_q3_ns_pain_meds": {
+            "data_type": "integer"
+        },
+        "opt_q4_cbd": {
+            "data_type": "integer"
+        },
+        "opt_q5_thera_exer": {
+            "data_type": "integer"
+        },
+        "opt_q6_hands_on_trt": {
+            "data_type": "integer"
+        },
+        "opt_q7_modality_trt": {
+            "data_type": "integer"
+        },
+        "opt_q8_mental_hlth_trt": {
+            "data_type": "integer"
+        },
+        "other_pain_treatments_v3_other_treatments_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "other_pain_treatments_v3_other_treatments_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Other Pain Treatments V3 Other Treatments",
+    "root_url": "rcap_other_pain_treatments_v3_other_treatments",
+    "table_name": "rcap_other_pain_treatments_v3_other_treatments"
+}

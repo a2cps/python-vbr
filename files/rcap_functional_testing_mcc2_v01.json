@@ -1,0 +1,85 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "ftdbccoughfinalscl": {
+            "data_type": "numeric"
+        },
+        "ftdbccoughfinalscl2": {
+            "data_type": "numeric"
+        },
+        "ftdbcdeepbrthfinalscl": {
+            "data_type": "numeric"
+        },
+        "ftdbcdeepbrthfinalscl2": {
+            "data_type": "numeric"
+        },
+        "ftdbcdeepbrthinitscl": {
+            "data_type": "numeric"
+        },
+        "ftdbcdeepbrthinitscl2": {
+            "data_type": "numeric"
+        },
+        "ftdbctestcmpltno": {
+            "data_type": "integer"
+        },
+        "ftdbctestcmpltyn": {
+            "data_type": "boolean"
+        },
+        "functional_testing_mcc2_v01_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "functional_testing_mcc2_v01_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Functional Testing Mcc2 V01",
+    "root_url": "rcap_functional_testing_mcc2_v01",
+    "table_name": "rcap_functional_testing_mcc2_v01"
+}

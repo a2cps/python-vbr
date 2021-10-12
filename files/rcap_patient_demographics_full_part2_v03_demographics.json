@@ -1,0 +1,104 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "disabinsind": {
+            "data_type": "boolean"
+        },
+        "dom_hand": {
+            "data_type": "integer"
+        },
+        "edulevel": {
+            "data_type": "integer"
+        },
+        "empstat": {
+            "data_type": "integer"
+        },
+        "height_ft_part": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "height_inches_part": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "incmlvl": {
+            "data_type": "integer"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "maristat": {
+            "data_type": "integer"
+        },
+        "paindur": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "patient_demographics_full_part_2_v03_demographics_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "patient_demographics_full_part_2_v03_demographics_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "prev_covid19_dx": {
+            "data_type": "boolean"
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        },
+        "surg_delayed": {
+            "data_type": "boolean"
+        },
+        "weight_lbs": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "who_dx_in_hh": {
+            "data_type": "integer"
+        }
+    },
+    "comments": "Patient Demographics Full Part 2 V03 Demographics",
+    "root_url": "rcap_patient_demographics_full_part2_v03_demographics",
+    "table_name": "rcap_patient_demographics_full_part2_v03_demographics"
+}

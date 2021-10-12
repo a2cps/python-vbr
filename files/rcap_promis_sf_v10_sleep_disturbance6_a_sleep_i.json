@@ -1,0 +1,79 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "promis_sf_v10_sleep_disturbance_6a_sleep_i_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "promis_sf_v10_sleep_disturbance_6a_sleep_i_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "promisdifficltfallaslpscl": {
+            "data_type": "integer"
+        },
+        "promisproblemwithslpscl": {
+            "data_type": "integer"
+        },
+        "promissleepqualityscl": {
+            "data_type": "integer"
+        },
+        "promissleepwasrefreshscl": {
+            "data_type": "integer"
+        },
+        "promisslpwasrestlessscl": {
+            "data_type": "integer"
+        },
+        "promistryhardgettoslpscl": {
+            "data_type": "integer"
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Promis Sf V10 Sleep Disturbance 6A Sleep I",
+    "root_url": "rcap_promis_sf_v10_sleep_disturbance6_a_sleep_i",
+    "table_name": "rcap_promis_sf_v10_sleep_disturbance6_a_sleep_i"
+}

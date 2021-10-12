@@ -1,0 +1,176 @@
+{
+    "columns": {
+        "blood_sample_collection_and_processing_crf_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "blood_sample_collection_and_processing_crf_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "bscp_aliq_cnt": {
+            "data_type": "integer"
+        },
+        "bscp_aliquot_box_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_aliquot_freezer_time": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_any_vacc": {
+            "data_type": "boolean"
+        },
+        "bscp_buffycoat_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_buffycoat_na": {
+            "data_type": "boolean"
+        },
+        "bscp_caff_cups_amt": {
+            "data_type": "integer"
+        },
+        "bscp_deg_of_hemolysis": {
+            "data_type": "numeric"
+        },
+        "bscp_hrs_since_cafstim": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_hrs_since_food": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_hrs_since_water": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_lav1_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_lav1_centrif_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_lav1_not_obt": {
+            "data_type": "boolean"
+        },
+        "bscp_no_sample_reason": {
+            "data_type": "integer"
+        },
+        "bscp_paxg_aliq_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_paxg_aliq_na": {
+            "data_type": "boolean"
+        },
+        "bscp_paxg_box_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_paxg_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_paxg_not_obt": {
+            "data_type": "boolean"
+        },
+        "bscp_phleb_by_init": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_plasma_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_plugcap_centrif_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_procby_initials": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_protocol_dev": {
+            "data_type": "boolean"
+        },
+        "bscp_protocol_dev_reason": {
+            "data_type": "integer"
+        },
+        "bscp_ra_initials": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_sample_obtained": {
+            "data_type": "boolean"
+        },
+        "bscp_samplekit_brcd": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_time_blood_draw": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_time_centrifuge": {
+            "char_len": 255,
+            "data_type": "varchar"
+        },
+        "bscp_verify_pt": {
+            "data_type": "boolean"
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Blood Sample Collection And Processing Crf",
+    "root_url": "rcap_blood_sample_collection_and_processing_crf",
+    "table_name": "rcap_blood_sample_collection_and_processing_crf"
+}

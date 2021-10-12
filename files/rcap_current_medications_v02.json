@@ -1,0 +1,76 @@
+{
+    "columns": {
+        "cmc_medhclipids": {
+            "data_type": "integer"
+        },
+        "cmc_medhtcd": {
+            "data_type": "integer"
+        },
+        "cmc_medpainopioid": {
+            "data_type": "integer"
+        },
+        "cmc_medseizadhd": {
+            "data_type": "integer"
+        },
+        "cmc_medsleepdepr": {
+            "data_type": "integer"
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "current_medications_v02_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "current_medications_v02_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Current Medications V02",
+    "root_url": "rcap_current_medications_v02",
+    "table_name": "rcap_current_medications_v02"
+}

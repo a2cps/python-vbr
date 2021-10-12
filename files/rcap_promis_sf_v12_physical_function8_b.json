@@ -1,0 +1,85 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "pfadochoresscl": {
+            "data_type": "integer"
+        },
+        "pfagrocliftlimitscl": {
+            "data_type": "integer"
+        },
+        "pfaheavyworklimitscl": {
+            "data_type": "integer"
+        },
+        "pfamodwrklimitscl": {
+            "data_type": "integer"
+        },
+        "pfaphyslaborlimitscl": {
+            "data_type": "integer"
+        },
+        "pfarunerrandsscl": {
+            "data_type": "integer"
+        },
+        "pfastairsscl": {
+            "data_type": "integer"
+        },
+        "pfawalkscl": {
+            "data_type": "integer"
+        },
+        "promis_sf_v12_physical_function_8b_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "promis_sf_v12_physical_function_8b_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Promis Sf V12 Physical Function 8B",
+    "root_url": "rcap_promis_sf_v12_physical_function8_b",
+    "table_name": "rcap_promis_sf_v12_physical_function8_b"
+}

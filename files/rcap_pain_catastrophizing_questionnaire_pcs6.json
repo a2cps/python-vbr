@@ -1,0 +1,79 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "pain_catastrophizing_questionnaire_pcs6_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "pain_catastrophizing_questionnaire_pcs6_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "pcqafraidpainworsescl": {
+            "data_type": "integer"
+        },
+        "pcqfeelcantwithstandscl": {
+            "data_type": "integer"
+        },
+        "pcqhurtscl": {
+            "data_type": "integer"
+        },
+        "pcqpainawfulovrwhlmscl": {
+            "data_type": "integer"
+        },
+        "pcqpainstopscl": {
+            "data_type": "integer"
+        },
+        "pcqseriousscl": {
+            "data_type": "integer"
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Pain Catastrophizing Questionnaire Pcs6",
+    "root_url": "rcap_pain_catastrophizing_questionnaire_pcs6",
+    "table_name": "rcap_pain_catastrophizing_questionnaire_pcs6"
+}

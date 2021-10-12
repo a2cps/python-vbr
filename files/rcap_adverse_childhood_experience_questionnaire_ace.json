@@ -1,0 +1,91 @@
+{
+    "columns": {
+        "aceadinhmhfroff18yrincode": {
+            "data_type": "boolean"
+        },
+        "aceadphyabsinfr18yrincode": {
+            "data_type": "boolean"
+        },
+        "acealdruslvfr18yrincode": {
+            "data_type": "boolean"
+        },
+        "acedpmnischsmbfr18yincode": {
+            "data_type": "boolean"
+        },
+        "acefllcemspoffr18yrincode": {
+            "data_type": "boolean"
+        },
+        "aceflngdhproffr18yrincode": {
+            "data_type": "boolean"
+        },
+        "acehsmmprfr18yrincode": {
+            "data_type": "boolean"
+        },
+        "acemtdmvlfr18yrincode": {
+            "data_type": "boolean"
+        },
+        "aceprevspdvfr18yrincode": {
+            "data_type": "boolean"
+        },
+        "acesxlabsfr18yrincode": {
+            "data_type": "boolean"
+        },
+        "adverse_childhood_experience_questionnaire_ace_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "adverse_childhood_experience_questionnaire_ace_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Adverse Childhood Experience Questionnaire Ace",
+    "root_url": "rcap_adverse_childhood_experience_questionnaire_ace",
+    "table_name": "rcap_adverse_childhood_experience_questionnaire_ace"
+}

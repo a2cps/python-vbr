@@ -1,0 +1,112 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "danish_thoracic_surgery_questionnaire_v02_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "danish_thoracic_surgery_questionnaire_v02_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "dtscarryingscl": {
+            "data_type": "integer"
+        },
+        "dtscleaningscl": {
+            "data_type": "integer"
+        },
+        "dtscoughingscl": {
+            "data_type": "integer"
+        },
+        "dtscyclingscl": {
+            "data_type": "integer"
+        },
+        "dtsdrivingscl": {
+            "data_type": "integer"
+        },
+        "dtskneelingscl": {
+            "data_type": "integer"
+        },
+        "dtslyingopsidescl": {
+            "data_type": "integer"
+        },
+        "dtsoutofbedscl": {
+            "data_type": "integer"
+        },
+        "dtsrunningscl": {
+            "data_type": "integer"
+        },
+        "dtssittingscl": {
+            "data_type": "integer"
+        },
+        "dtssleepscl": {
+            "data_type": "integer"
+        },
+        "dtsstairsscl": {
+            "data_type": "integer"
+        },
+        "dtsstandingscl": {
+            "data_type": "integer"
+        },
+        "dtsswimmingscl": {
+            "data_type": "integer"
+        },
+        "dtswalkingscl": {
+            "data_type": "integer"
+        },
+        "dtswashingscl": {
+            "data_type": "integer"
+        },
+        "dtswatchtvscl": {
+            "data_type": "integer"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Danish Thoracic Surgery Questionnaire V02",
+    "root_url": "rcap_danish_thoracic_surgery_questionnaire_v02",
+    "table_name": "rcap_danish_thoracic_surgery_questionnaire_v02"
+}

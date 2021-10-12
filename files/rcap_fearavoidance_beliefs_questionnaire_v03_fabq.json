@@ -1,0 +1,73 @@
+{
+    "columns": {
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "fabqphysactvtycnntdoscl": {
+            "data_type": "integer"
+        },
+        "fabqphysactvtyshldntdoscl": {
+            "data_type": "integer"
+        },
+        "fabqphysclactvtybckhrmscl": {
+            "data_type": "integer"
+        },
+        "fabqphysclactvtywrsscl": {
+            "data_type": "integer"
+        },
+        "fearavoidance_beliefs_questionnaire_v03_fabq_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "fearavoidance_beliefs_questionnaire_v03_fabq_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Fearavoidance Beliefs Questionnaire V03 Fabq",
+    "root_url": "rcap_fearavoidance_beliefs_questionnaire_v03_fabq",
+    "table_name": "rcap_fearavoidance_beliefs_questionnaire_v03_fabq"
+}

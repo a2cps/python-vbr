@@ -1,0 +1,94 @@
+{
+    "columns": {
+        "commbormedpast30dayscl": {
+            "data_type": "integer"
+        },
+        "commemecalapppast30dayscl": {
+            "data_type": "integer"
+        },
+        "commemergrmpast30dayscl": {
+            "data_type": "integer"
+        },
+        "commhanmedworpast30dayscl": {
+            "data_type": "integer"
+        },
+        "commopithkpast30dayscl": {
+            "data_type": "integer"
+        },
+        "commothphyscmedpst30dyscl": {
+            "data_type": "integer"
+        },
+        "commothsympast30dayscl": {
+            "data_type": "integer"
+        },
+        "commothworrypast30dayscl": {
+            "data_type": "integer"
+        },
+        "commsomelsmedpast30dayscl": {
+            "data_type": "integer"
+        },
+        "commtakmeddifpast30dayscl": {
+            "data_type": "integer"
+        },
+        "commtakmormedpast30dayscl": {
+            "data_type": "integer"
+        },
+        "creation_time": {
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "current_opioid_misuse_v02_comm_complete": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
+        "current_opioid_misuse_v02_comm_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "last_updated_ts": {
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        },
+        "record_id": {
+            "char_len": 255,
+            "comments": "REDCap record_id identifying subject",
+            "data_type": "varchar"
+        },
+        "sample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
+        "subject_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "subject_id",
+            "reference_table": "subject"
+        }
+    },
+    "comments": "Current Opioid Misuse V02 Comm",
+    "root_url": "rcap_current_opioid_misuse_v02_comm",
+    "table_name": "rcap_current_opioid_misuse_v02_comm"
+}
