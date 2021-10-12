@@ -27,6 +27,11 @@ class PgRestColumn(object):
     def instantiate(cls, value):
         return value
 
+    @classmethod
+    def cast(cls, value):
+        """Stub for column-type specific casting behavior"""
+        return value
+
 
 class Column(object):
     """PgREST Column
@@ -96,8 +101,3 @@ class Column(object):
             all_props = {**all_props, **fk_props}
 
         return all_props
-
-    @classmethod
-    def cast(cls, value):
-        """Stub for column-type specific casting behavior"""
-        return value

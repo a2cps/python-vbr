@@ -38,8 +38,9 @@ class DataManager(object):
         """Create a PgREST record from a VBR Table instance
         """
         root_url = vbr_obj.__schema__.root_url
+        data_dict = vbr_obj.dict()
         return self.create_row_from_dict(root_url=root_url,
-                                         record_data=vbr_obj.dict())
+                                         record_data=data_dict)
 
     def retrieve_row(self,
                      pk_value: str,

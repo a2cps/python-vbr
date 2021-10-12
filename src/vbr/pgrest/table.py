@@ -49,22 +49,20 @@ class Table(object):
         """
         dct = {}
         for v in self.__schema__.column_names:
-            d = getattr(self, v, None)
-            # TODO - genericize this based on property types?
-            if isinstance(d, datetime.datetime):
-                d = datetime_to_isodate(d)
+            _d = getattr(self, v, None)
 
+            # Cast to proper Python type
+            d = self.__class_attrs__[v].ctype.cast(_d)
+            
             # Do not populate dict with None values where attribute is a primary key
             # Do not populate dict with None values if attribute is nullable
             nullable = self.__class_attrs__[v].nullable
             is_pk = self.__class_attrs__[v].primary_key
-            # pk = self.__class_attrs__[v]
             if d is not None:
                 dct[v] = d
             elif nullable is False and is_pk is False:
                 dct[v] = d
-            # Cast to proper Python type
-            d = self.__class_attrs__[v].cast(d)
+
         return dct
 
     def json(self, indent=0, sort_keys=True, class_name=None):
