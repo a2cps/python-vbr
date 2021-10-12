@@ -62,8 +62,8 @@ class Container(Table):
     persistent_id = Column(String,
                            comments='ID assigned to container when populated',
                            unique=True)
-    container_type: Column(Integer,
-                           ForeignKey('container_type.container_type_id'))
+    container_type = Column(Integer,
+                            ForeignKey('container_type.container_type_id'))
 
 
 class ContainerType(Table):
@@ -214,16 +214,19 @@ class Location(Table):
 class Measurement(Table):
     """TACC-defined extension: contains sub-divisions of a biosample."""
     measurement_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    measurement_type: Column(Integer, ForeignKey('measurement.measurement_id'))
-    unit: Column(Integer, ForeignKey('unit.unit_id'))
+    measurement_type = Column(
+        Integer, ForeignKey('measurement_type.measurement_type_id'))
+    unit = Column(Integer, ForeignKey('unit.unit_id'))
     local_id = Constants.STRING_LOCALID_COLUMN
-    biosample_id: Column(Integer, ForeignKey('biosample.biosample_id'))
-    status: Column(Integer, ForeignKey('status.status_id'))
-    # Currently forcing these to be unique
+    biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
+    # Optional. Allows physical Measurement assets to be associated with a physical Container
+    container_id = Column(Integer,
+                          ForeignKey('container.container_id'),
+                          nullable=True)
+    status = Column(Integer, ForeignKey('status.status_id'))
+    # Currently cannot be unique in case persistent_id are reused
     persistent_id = Column(
-        String,
-        comments='Identifier assigned to measurement at creation',
-        unique=True)
+        String, comments='Identifier assigned to measurement at creation')
 
 
 class MeasurementType(Table):

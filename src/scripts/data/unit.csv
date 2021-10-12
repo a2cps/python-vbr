@@ -1,5 +1,5 @@
 unit_id,name,description
 1,generic_tube,NULL
 2,plasma_aliquot_tube,NULL
-3,paxgen_tube,NULL
+3,paxgene_tube,NULL
 4,buffycoat_tube,NULL

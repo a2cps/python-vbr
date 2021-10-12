@@ -55,8 +55,9 @@ class DependencySolver(object):
             # random.shuffle(self.to_do)
 
         if len(self.to_do) > 0:
+            fails = ','.join([t['table_name'] for t in self.to_do])
             raise ValueError(
-                'Some tables could not be ordered due to unresolved dependencies'
-            )
+                'Some tables could not be ordered due to unresolved dependencies: {0}'
+                .format(fails))
 
         return ordered
