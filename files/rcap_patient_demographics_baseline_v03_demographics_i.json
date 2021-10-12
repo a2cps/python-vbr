@@ -2,11 +2,13 @@
     "columns": {
         "age": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "brthdtc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "creation_time": {
             "data_type": "timestamp",
@@ -23,17 +25,21 @@
             "reference_table": "data_event"
         },
         "dem_race": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "ethnic": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "genident": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "genidentoth": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",
@@ -67,7 +73,8 @@
             "reference_table": "biosample"
         },
         "sex": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "subject_id": {
             "data_type": "integer",

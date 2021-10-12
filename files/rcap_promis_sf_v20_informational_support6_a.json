@@ -15,22 +15,28 @@
             "reference_table": "data_event"
         },
         "issfchoreshelpscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "issfconfinedbedscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "issfdoctorvisitscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "issferrandshelpscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "issfmealprepscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "issfresponsiblescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",

@@ -15,13 +15,16 @@
             "reference_table": "data_event"
         },
         "eor_funct_ability": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "eor_surg_relieve_pain": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "eor_surg_relieve_pain_2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "expectation_items_v12_complete": {
             "data_type": "integer",

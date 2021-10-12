@@ -20,28 +20,36 @@
             "null": true
         },
         "pfadochoresscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pfagrocliftlimitscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pfaheavyworklimitscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pfamodwrklimitscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pfaphyslaborlimitscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pfarunerrandsscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pfastairsscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pfawalkscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "promis_sf_v12_physical_function_8b_complete": {
             "data_type": "integer",

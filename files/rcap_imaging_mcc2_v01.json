@@ -15,162 +15,213 @@
             "reference_table": "data_event"
         },
         "fmri_magnet_name": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fmricuff_initials": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "fmricuffcalfpressurerecal": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "fmricuffcalfpressurerecal2": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "fmricuffcompletescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fmricuffcontrarecal": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmricuffcurrpainaftfirstscancuff": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffcurrpainaftfirstscancuff2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffcurrpainaftfirstscanovrall": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffcurrpainaftfirstscanovrall2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffcurrpainaftfirstscanss": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffcurrpainaftfirstscanss2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffdicupdate": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "fmricuffdicuploaded": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmricuffdwiyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmricuffipyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmricuffleg": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fmricuffpainaftlastscanany": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainaftlastscanany2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainaftlastscanss": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainaftlastscanss2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainbegin": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainbegin2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpaincpbegin": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpaincpbegin2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpaincpend": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpaincpend2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpaincpmid": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpaincpmid2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainend": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainend2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainmid": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainmid2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainrestscanbegin": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainrestscanbegin2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainrestscanend": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainrestscanend2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainrestscanmid": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffpainrestscanmid2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffrest1yn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmricuffrest2yn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmricuffrestpainovrall": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffrestpainovrall2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffrestpainss": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffrestpainss2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "fmricuffspyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmricufft1repeated": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmricufft1techrating": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fmricufft1techrating2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fmricufft1yn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "fmripatientname": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "imaging_mcc2_v01_complete": {
             "data_type": "integer",

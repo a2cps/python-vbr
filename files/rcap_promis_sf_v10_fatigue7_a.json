@@ -15,25 +15,32 @@
             "reference_table": "data_event"
         },
         "fat7abathscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fat7aexercisescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fat7aexhaustionscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fat7anoenergytscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fat7athinkclearscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fat7atiredscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fat7aworklimitscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",

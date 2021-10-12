@@ -55,107 +55,138 @@
             "reference_table": "subject"
         },
         "svf_allodynia": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_allodynia_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_allodynia_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_anyfeedback": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_bdraw": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_bdraw_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_bdraw_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_cgh_dbr": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_cgh_dbr_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_cgh_dbr_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_coldwb": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_coldwb_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_coldwb_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_cuffp": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_cuffp_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_cuffp_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_general": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_general_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_general_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_mri": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_mri_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_mri_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_ppts": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_ppts_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_ppts_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_surveys": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_surveys_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_surveys_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "svf_walksts": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "svf_walksts_fb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "svf_walksts_other": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         }
     },
     "comments": "Study Visit Feedback V03",

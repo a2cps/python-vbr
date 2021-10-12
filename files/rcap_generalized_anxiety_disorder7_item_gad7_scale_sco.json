@@ -15,28 +15,36 @@
             "reference_table": "data_event"
         },
         "gad2feelnervscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "gad2notstopwryscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "gad7difficulttowork": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "gad7easyannoyedscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "gad7feelafrdscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "gad7rstlessscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "gad7troubrelxscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "gad7wrytoomchscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "generalized_anxiety_disorder_7_item_gad7_scale_sco_complete": {
             "data_type": "integer",

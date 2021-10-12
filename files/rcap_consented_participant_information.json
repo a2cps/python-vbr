@@ -13,7 +13,8 @@
             "primary_key": true
         },
         "contact_method": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "creation_time": {
             "data_type": "timestamp",
@@ -30,23 +31,28 @@
             "reference_table": "data_event"
         },
         "downtime202108": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "first_name": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "guid": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "home_phone_number": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "last_name": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",
@@ -54,19 +60,23 @@
             "null": true
         },
         "maintcomp202108": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "mobile_phone_number": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "patient_email": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "record_id": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "sample_id": {
             "data_type": "integer",
@@ -79,7 +89,8 @@
         },
         "screening_id": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "subject_id": {
             "data_type": "integer",

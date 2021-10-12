@@ -32,46 +32,60 @@
             "primary_key": true
         },
         "prsavoidnegativescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsbackoutscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prscontworkscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsfindjoyscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsfocuspositivescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prshopefulscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsnotaffecthappyscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsnotgetdownscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsnotupsetscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsposattitudescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prspushthroughscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsstayactivescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsstayrelaxscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "prsworkgoalsscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

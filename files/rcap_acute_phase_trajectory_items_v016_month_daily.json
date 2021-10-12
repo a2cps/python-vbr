@@ -55,44 +55,57 @@
             "reference_table": "subject"
         },
         "traj24avgpainscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj24medlist1otc": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj24medlist2opioid": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj24medlist3thc": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj24medlist4gaba": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj24medlist5dulox": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj24medlist6other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj24medyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj24painintfactivscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj24physactscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj24sleepscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj24wkenterdate": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "traj24worstpainscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         }
     },
     "comments": "Acute Phase Trajectory Items V01 6Month Daily",

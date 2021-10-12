@@ -55,57 +55,74 @@
             "reference_table": "subject"
         },
         "traj04angryscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj04avgpainscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj04medlist1otc": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj04medlist2opioid": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj04medlist3thc": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj04medlist4gaba": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj04medlist5dulox": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj04medlist6other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj04medlist6othertxt": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "traj04medyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "traj04nervousscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj04painintfactivscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj04physactscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj04sadscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj04sleepscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "traj04wkenterdate": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "traj04worstpainscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         }
     },
     "comments": "Acute Phase Trajectory Items V05 Acute Daily",

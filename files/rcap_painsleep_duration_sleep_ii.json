@@ -47,11 +47,13 @@
         },
         "sleepnighthourmindurhrs": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "sleepnighthourmindurmins": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "subject_id": {
             "data_type": "integer",

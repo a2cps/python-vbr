@@ -20,31 +20,40 @@
             "null": true
         },
         "rapa_flex": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapa_light": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapa_lightweekly": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapa_mod": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapa_modweekly": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapa_rarly": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapa_strength": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapa_vig": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapa_vigweekly": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rapid_assessment_of_physical_activity_v10_rapa_complete": {
             "data_type": "integer",

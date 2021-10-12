@@ -37,78 +37,102 @@
             "data_type": "varchar"
         },
         "rfu12avgchestpainscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "rfu12avgkneepainscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "rfu12chestpaininterscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "rfu12kneepaininterscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "rfu12medchestcannabid": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medchestdulox": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medchestgaba": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medchestopioid": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medchestotc": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medchestother": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medchestothertxt": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "rfu12medchestpainyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medkneecannabid": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medkneedulox": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medkneegaba": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medkneeopioid": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medkneeotc": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medkneeother": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12medkneeothertxt": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "rfu12medkneepainyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "rfu12physactscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "rfu12sleepqualscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "rfu12worstchestpainscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "rfu12worstkneepainscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "sample_id": {
             "data_type": "integer",

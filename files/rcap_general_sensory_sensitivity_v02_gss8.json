@@ -27,28 +27,36 @@
             "primary_key": true
         },
         "gss8balance": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "gss8flavorsensitiv": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "gss8nausea": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "gss8odorsensitiv": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "gss8phonophobia": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "gss8photophobia": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "gss8rapidhr": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "gss8touchsensitiv": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",

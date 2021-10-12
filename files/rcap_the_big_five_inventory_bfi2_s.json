@@ -1,94 +1,124 @@
 {
     "columns": {
         "bfi2sassumingbestscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2scarelessscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2scompassionatescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sdepressedscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sdifficultstartscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sdisorganizedscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sdominantscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2senergyscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sfascinatedscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sfaultwithothersscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sfewartinterestscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2slessactivescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2slittlecreativityscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sllittleinterestscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2soriginalscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2soutgoingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2spersistentscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2squietscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2srelaxedscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sreliablescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2srespectfulscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2srudescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2ssecurescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sstableemotionscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2stakechargescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2stemperamentalscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sthinkerscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2stidyscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2suncaringscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bfi2sworriesscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "creation_time": {
             "data_type": "timestamp",

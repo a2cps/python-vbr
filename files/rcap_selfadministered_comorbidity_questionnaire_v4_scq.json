@@ -34,135 +34,178 @@
             "reference_table": "biosample"
         },
         "scqanxdis": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqanxdistreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqblooddx": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqblooddxtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqcancer": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqcancertreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqcerebrovdx": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqcerebrovdxtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqcpcond": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqdepressn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqdepressntreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqdm": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqdmtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqgastro": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqgastrotreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqhchol": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqhcholtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqheartdx": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqheartdxtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqhtndx": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqhtntreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqkidneydx": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqkidneydxtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqliverdx": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqliverdxtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqlungdx": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqlungdxtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqneurodis": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqneurodistreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqneuropathy": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqneuropathytreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqother1": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqother1name": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "scqother1treat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqother2": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqother2name": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "scqother2treat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqpconds": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "scqpcondstreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqra": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqratreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqthyroid": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "scqthyroidtreat": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "selfadministered_comorbidity_questionnaire_v4_scq_complete": {
             "data_type": "integer",

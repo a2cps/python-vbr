@@ -32,163 +32,211 @@
             "primary_key": true
         },
         "opioiduselfu_meddosecodeine1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosecodeine2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosecodeine3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosefenta1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosefenta2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosefenta3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosehydroc1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosehydroc2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosehydroc3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosehydrom1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosehydrom2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosehydrom3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosemetha1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosemetha2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosemetha3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosemorph1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosemorph2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosemorph3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddoseoxy1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddoseoxy2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddoseoxy3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosetapen1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosetapen2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosetapen3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosetram1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosetram2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfu_meddosetram3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfud1other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioiduselfud2other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioiduselfudose_oth1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudose_oth2": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudose_oth3": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug1nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfudrug1quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug1quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug1quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug2nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfudrug2quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug2quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug2quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug3nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduselfudrug3quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug3quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfudrug3quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfuopds": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioiduselfuotherdrug1nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfuotherdrug2nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduselfuotherdrug3nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

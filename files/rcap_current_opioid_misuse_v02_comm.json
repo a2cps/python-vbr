@@ -1,37 +1,48 @@
 {
     "columns": {
         "commbormedpast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commemecalapppast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commemergrmpast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commhanmedworpast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commopithkpast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commothphyscmedpst30dyscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commothsympast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commothworrypast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commsomelsmedpast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commtakmeddifpast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "commtakmormedpast30dayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "creation_time": {
             "data_type": "timestamp",

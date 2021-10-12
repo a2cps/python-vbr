@@ -33,11 +33,13 @@
         },
         "pe_datetime": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pe_staff_init": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

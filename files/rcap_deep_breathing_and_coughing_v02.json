@@ -15,13 +15,16 @@
             "reference_table": "data_event"
         },
         "dbcchestpainrestscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dbcworstpainbreathscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dbcworstpaincoughscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "deep_breathing_and_coughing_v02_complete": {
             "data_type": "integer",

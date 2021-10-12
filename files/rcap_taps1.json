@@ -55,23 +55,29 @@
             "primary_key": true
         },
         "tapsalcoholusefemalescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tapsalcoholusemalescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tapsdrugusescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tapsprescriptionmedusescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tapstobaccoproductscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tapstobaccoproductscl_yrs": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         }
     },
     "comments": "Taps1",

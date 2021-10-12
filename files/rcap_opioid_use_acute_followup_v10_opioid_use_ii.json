@@ -32,163 +32,211 @@
             "primary_key": true
         },
         "opioiduseafu_meddosecodeine1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosecodeine2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosecodeine3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosefenta1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosefenta2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosefenta3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosehydroc1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosehydroc2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosehydroc3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosehydrom1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosehydrom2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosehydrom3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosemetha1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosemetha2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosemetha3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosemorph1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosemorph2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosemorph3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddoseoxy1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddoseoxy2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddoseoxy3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosetapen1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosetapen2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosetapen3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosetram1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosetram2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafu_meddosetram3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafud1other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioiduseafud2other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioiduseafudose_oth1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudose_oth2": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudose_oth3": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug1nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafudrug1quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug1quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug1quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug2nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafudrug2quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug2quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug2quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug3nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioiduseafudrug3quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug3quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafudrug3quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafuopds": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioiduseafuotherdrug1nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafuotherdrug2nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioiduseafuotherdrug3nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

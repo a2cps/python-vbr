@@ -15,16 +15,20 @@
             "reference_table": "data_event"
         },
         "fabqphysactvtycnntdoscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fabqphysactvtyshldntdoscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fabqphysclactvtybckhrmscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fabqphysclactvtywrsscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fearavoidance_beliefs_questionnaire_v03_fabq_complete": {
             "data_type": "integer",

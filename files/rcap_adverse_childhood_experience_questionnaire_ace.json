@@ -1,34 +1,44 @@
 {
     "columns": {
         "aceadinhmhfroff18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "aceadphyabsinfr18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "acealdruslvfr18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "acedpmnischsmbfr18yincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "acefllcemspoffr18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "aceflngdhproffr18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "acehsmmprfr18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "acemtdmvlfr18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "aceprevspdvfr18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "acesxlabsfr18yrincode": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "adverse_childhood_experience_questionnaire_ace_complete": {
             "data_type": "integer",

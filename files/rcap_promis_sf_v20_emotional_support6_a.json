@@ -15,22 +15,28 @@
             "reference_table": "data_event"
         },
         "essffeelappreciatscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "essfsomeoneconfidescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "essfsomeonelistenscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "essftalkbaddayscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "essftalkfeelingsscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "essfunderstandprobscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",

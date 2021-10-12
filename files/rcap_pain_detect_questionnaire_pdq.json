@@ -32,35 +32,45 @@
             "primary_key": true
         },
         "pdbathwtr": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pdburnsens": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pdlttouch": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pdnumb": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pdqassessdate": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pdqpaincourse": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pdradiateregions": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "pdslightpress": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pdsudpanatt": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pdtinglsens": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

@@ -28,20 +28,25 @@
         },
         "ewdateterm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "ewdisreasons": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "ewpireason": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "ewprimaryreason": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "ewstudypinit": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",

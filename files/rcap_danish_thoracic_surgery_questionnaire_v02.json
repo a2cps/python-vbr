@@ -27,55 +27,72 @@
             "reference_table": "data_event"
         },
         "dtscarryingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtscleaningscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtscoughingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtscyclingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtsdrivingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtskneelingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtslyingopsidescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtsoutofbedscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtsrunningscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtssittingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtssleepscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtsstairsscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtsstandingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtsswimmingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtswalkingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtswashingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dtswatchtvscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",

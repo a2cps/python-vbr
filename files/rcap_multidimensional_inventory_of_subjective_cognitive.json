@@ -20,34 +20,44 @@
             "null": true
         },
         "misciattentionscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "misciconcentratescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "misciexpressscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "miscilearnscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "miscimindsharpscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "misciplanningscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "miscirememberscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "miscirightwordsscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "miscishiftactivscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "miscithinkclrscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "multidimensional_inventory_of_subjective_cognitive_complete": {
             "data_type": "integer",

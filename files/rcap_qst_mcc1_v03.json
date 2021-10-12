@@ -1,92 +1,117 @@
 {
     "columns": {
         "cpmbathrangeyn": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "cpmcoldwaterpain30": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "cpmcoldwaterpain30_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "cpmcoldwaterpain30sscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "cpmcoldwaterpain30sscl1": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "cpmcoldwaterpain60": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "cpmcoldwaterpain60_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "cpmcoldwaterpain60sscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "cpmcoldwaterpain60sscl1": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "cpmcoldwatertemp": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "cpmcoldwatertempc": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "cpmcompleteyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "cpmoutrangetime": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmppt1val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmppt1val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmppt2val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmppt2val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmppt3val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmppt3val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmpptremr1val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmpptremr1val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmpptremr2val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmpptremr2val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmpptremr3val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cpmpptremr3val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "creation_time": {
             "data_type": "timestamp",
@@ -94,18 +119,22 @@
             "null": true
         },
         "cuffpfmricontraindyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "cuffpfmrinondomleg": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "cuffpfmripressure": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "cuffpfmripressure_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "data_event_id": {
             "data_type": "integer",
@@ -117,150 +146,198 @@
             "reference_table": "data_event"
         },
         "dmacontr1pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr1pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr2pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr2pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr3pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr3pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr4pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr4pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr5pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmacontr5pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr1pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr1pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr2pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr2pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr3pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr3pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr4pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr4pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr5pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaindxr5pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr1pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr1pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr2pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr2pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr3pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr3pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr4pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr4pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr5pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptcontr5pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr1pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr1pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr2pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr2pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr3pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr3pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr4pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr4pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr5pain": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptindxr5pain_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "dmaptsenscompare": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dmaptspecsite": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dmasenscompare": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dmatestcompwhich": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "dmatestcompyn": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "fmricuffcalfpressure": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "fmricuffcalfpressure2": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "fmricuffcontrayn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",
@@ -268,121 +345,152 @@
             "null": true
         },
         "pmachgchestpainyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "pmahighestloc": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pmalowestloc": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pmamostpain": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pmapainregion": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pptcompleteyn": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pptindex1val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindex1val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindex2val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindex2val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindex3val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindex3val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindxr1val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindxr1val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindxr2val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindxr2val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindxr3val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptindxr3val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptpainlocation": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pptremote1val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremote1val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremote2val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremote2val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremote3val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremote3val1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremoter1val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremoter1val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremoter2val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremoter2val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremoter3val": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "pptremoter3val_d": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "qst_mcc1_v03_complete": {
             "data_type": "integer",
@@ -420,179 +528,236 @@
             "reference_table": "subject"
         },
         "tscompleted": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tsfinalpainindafts15": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "tsfinalpainindafts30": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "tsfinalpainindexscl1r2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsfinalpainindexscl1r3": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsfinalpainindexsclr2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsfinalpainindexsclr3": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsfinalpainremafts15": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "tsfinalpainremafts30": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "tsfinalpainremafts31": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsfinalpainremscl1r3": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsfinalpainremsclr3": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxafter15": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxafter30": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr1final": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr1final_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr1initial": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr1initial_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr2final": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr2final_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr2initial": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr2initial_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr3final": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr3final_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr3initial": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsindxr3initial_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsinitialpainindexscl1r2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsinitialpainindexscl1r3": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsinitialpainindexsclr2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsinitialpainindexsclr3": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsinitialpainremscl1r3": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsinitialpainremsclr3": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoteafter15": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter1final": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter1final_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter1initial": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter1initial_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter2final": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter2final_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter2initial": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter2initial_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter3final": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter3final_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter3initial": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsremoter3initial_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep1finalpainindex": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep1finalpainindex_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep1finalpainrem": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep1finalpainrem_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep1initialpainindex": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep1initialpainindex_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep1initialpainrem": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep1initialpainrem_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep2finalpainrem": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep2finalpainrem_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep2initialpainrem": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tsrep2initialpainrem_d": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         }
     },
     "comments": "Qst Mcc1 V03",

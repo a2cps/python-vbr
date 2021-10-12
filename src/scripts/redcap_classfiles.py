@@ -157,9 +157,9 @@ def build(args):
             # Translation rules #
             #####################
 
-            # Columns are never nullable (at leasr
-            # until we decide what columns CAN be)
-            col_nullable = 'False'
+            # Columns are always nullable (at least
+            # until we decide what columns are mandatory)
+            col_nullable = 'True'
 
             # Empty default comment
             col_comments = []

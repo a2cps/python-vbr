@@ -32,7 +32,8 @@
             "primary_key": true
         },
         "pgicsymptomchangestatval": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

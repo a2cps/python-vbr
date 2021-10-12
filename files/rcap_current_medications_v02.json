@@ -1,19 +1,24 @@
 {
     "columns": {
         "cmc_medhclipids": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "cmc_medhtcd": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "cmc_medpainopioid": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "cmc_medseizadhd": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "cmc_medsleepdepr": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "creation_time": {
             "data_type": "timestamp",

@@ -34,25 +34,32 @@
             "reference_table": "biosample"
         },
         "ssi_abdpainyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "ssi_chronicyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "ssi_cognitive": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "ssi_depressyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "ssi_fatigue": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "ssi_headacheyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "ssi_tired": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "subject_id": {
             "data_type": "integer",

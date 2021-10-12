@@ -27,40 +27,52 @@
             "primary_key": true
         },
         "koosfuncdiffcarscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koosfuncdiffrisesitscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koosfuncdiffstandscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koosfunctwistpivotscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koospainfreqscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koospainsitlyingscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koospainstairsscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koospainwalkflatscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koosqolconfidencescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koosqolkneeawarescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koosqolkneedifficultyscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "koosqollifestylemodscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",

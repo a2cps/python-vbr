@@ -15,28 +15,36 @@
             "reference_table": "data_event"
         },
         "ftdbccoughfinalscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "ftdbccoughfinalscl2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "ftdbcdeepbrthfinalscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "ftdbcdeepbrthfinalscl2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "ftdbcdeepbrthinitscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "ftdbcdeepbrthinitscl2": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "ftdbctestcmpltno": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "ftdbctestcmpltyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "functional_testing_mcc2_v01_complete": {
             "data_type": "integer",

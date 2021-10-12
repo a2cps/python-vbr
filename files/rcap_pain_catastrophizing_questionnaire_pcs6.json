@@ -32,22 +32,28 @@
             "primary_key": true
         },
         "pcqafraidpainworsescl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pcqfeelcantwithstandscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pcqhurtscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pcqpainawfulovrwhlmscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pcqpainstopscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "pcqseriousscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

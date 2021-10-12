@@ -32,172 +32,223 @@
             "primary_key": true
         },
         "opioidusebsln_meddosecodeine1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosecodeine2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosecodeine3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosefenta1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosefenta2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosefenta3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosehydroc1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosehydroc2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosehydroc3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosehydrom1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosehydrom2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosehydrom3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosemetha1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosemetha2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosemetha3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosemorph1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosemorph2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosemorph3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddoseoxy1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddoseoxy2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddoseoxy3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosetapen1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosetapen2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosetapen3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosetram1": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosetram2": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebsln_meddosetram3": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebslnd1other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioidusebslnd2other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioidusebslndose_oth1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndose_oth2": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndose_oth3": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrtnopd": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebslndrug1nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebslndrug1quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrug1quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrug1quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrug2nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebslndrug2quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrug2quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrug2quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrug3nm": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebslndrug3quanta": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrug3quantb": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslndrug3quantc": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslnexprncopd": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebslnlsttmopd": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioidusebslnopds": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "opioidusebslnotherdrug1nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslnotherdrug2nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "opioidusebslnotherdrug3nm": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

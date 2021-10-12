@@ -32,28 +32,36 @@
             "primary_key": true
         },
         "phqabnrmldietscore": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "phqconcntrtnimprmntscore": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "phqdeprssnscore": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "phqflngfailrscore": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "phqlitintrstscore": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "phqmovmntspchimprmntscore": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "phqsleepimpairscore": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "phqtirdlittleenrgyscore": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "record_id": {
             "char_len": 255,

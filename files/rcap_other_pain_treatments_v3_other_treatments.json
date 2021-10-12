@@ -20,25 +20,32 @@
             "null": true
         },
         "opt_q2_anx_meds": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opt_q3_ns_pain_meds": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opt_q4_cbd": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opt_q5_thera_exer": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opt_q6_hands_on_trt": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opt_q7_modality_trt": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opt_q8_mental_hlth_trt": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "other_pain_treatments_v3_other_treatments_complete": {
             "data_type": "integer",

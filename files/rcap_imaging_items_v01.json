@@ -27,29 +27,37 @@
             "primary_key": true
         },
         "img_angry": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "img_energetic": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "img_happy": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "img_hopeful": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "img_nervous": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "img_qual_sleep_24": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "img_sad": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "imgpainanatsiteareatxt": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "last_updated_ts": {
             "data_type": "timestamp",

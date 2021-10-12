@@ -20,13 +20,16 @@
             "null": true
         },
         "opcsamountrxscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opcspainctrlsatisscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opcspainctrlscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "opioid_and_pain_control_satisfaction_v02_satisfact_complete": {
             "data_type": "integer",

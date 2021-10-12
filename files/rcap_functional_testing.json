@@ -55,93 +55,121 @@
             "reference_table": "subject"
         },
         "tstsassist_1": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "tstsassist_2": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "tstsassistyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "tstsbpscreen": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tstscompleteyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "tstsnonreasonyn": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tstsnumbrepsyn": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "tstspostpainscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tstspostpainscl1": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tstsprepainscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tstsprepainscl1": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "tststime": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "tststime1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "walk10assist_cane": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "walk10assist_crutch": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "walk10assist_other": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "walk10assist_othertxt": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "walk10assist_perssuppt": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "walk10assist_walkder": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "walk10assistyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "walk10completeyn": {
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "null": true
         },
         "walk10finalpainscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "walk10finalpainscl1": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "walk10incompletereason": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "walk10initialpainscl": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "walk10initialpainscl1": {
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "null": true
         },
         "walk10time": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "walk10time1": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         }
     },
     "comments": "Functional Testing",

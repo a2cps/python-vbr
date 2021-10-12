@@ -1,83 +1,109 @@
 {
     "columns": {
         "bpi_mbm_z1_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z1_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z2_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z2_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z3_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z3_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z4_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z4_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z5_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z5_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z6_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z6_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z7_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z7_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z8_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z8_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z9_dur": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpi_mbm_z9_rate": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpipainanatsiteareatxt": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "null": true
         },
         "bpipainenjoymntintrfrscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpipainintfrgnrlactvtyscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpipainintfrmoodscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpipainintfrwlkablscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpipainnrmlwrkintrfrscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpipainrelationsintrfrscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpipainsleepintrfrscl": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpisf_the_brief_pain_inventory_v23_short_form_bpi_complete": {
             "data_type": "integer",
@@ -92,10 +118,12 @@
             "primary_key": true
         },
         "bpiworstpainratingexclss": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "bpiworstpainratingss": {
-            "data_type": "integer"
+            "data_type": "integer",
+            "null": true
         },
         "creation_time": {
             "data_type": "timestamp",
