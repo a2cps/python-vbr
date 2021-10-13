@@ -7,17 +7,33 @@ reason_id,name,description
 6,reason_not_interested___5,Not interested in research
 7,not_consented,Consent not given
 20,subject_encounter,Research subject encounter
-21,sample_handling,Routine sample handling
-22,sample_spoiled,Sample spoiled or damaged
-23,sample_depleted,Sample depleted
-24,sample_lost,Sample lost
-30,shipment_sent,Shipment sent by parcel service
-31,shipment_delivered,Shipment delivered by parcel service
-32,shipment_delayed,Shipment delayed by parcel service
-33,shipment_delayed_other,Shipment delayed for other reason
-34,shipment_lost,Shipment lost in transit
-35,shipment_validated,Shipment contents match manifest
-36,shipment_invalid,Shipment contents does not match manifest
+30,shipment_delay_ups,UPS carrier delay
+31,shipment_delay_fedex,Fedex carrier delay
+32,shipment_delay_other,Other carrier delay
+33,shipment_missed_delivery,Receiver missed carrier delivery
+34,shipment_missed_pickup,Sender missed carrier pickup window
+35,shipment_damaged,Shipment contents damaged during transit
+35,shipment_lost,Shipment lost during transit
 40,biosample_collected,Biosample collected as intended
 41,biosample_collected_with_deviation,Biosample collected with protocol deviation
 42,biosample_not_collected,Biosample unable to be collected as intended
+50,liquid specimen routine handling,Routine specimen handling
+51,liquid specimen analysis,Documented specimen analysis
+52,liquid specimen spoiled,Specimen spoiled
+53,liquid specimen lost,Specimen lost
+54,liquid specimen depleted,Specimen used up
+55,liquid specimen aliquoted,Specimen subdivided
+60,container damaged,Container was damaged
+61,container lost,Container was accidentally lost or destroyed
+62,container retired,Container is longer in use
+90,equipment failure, Laboratory equipment failed
+91,equipment malfunction, Laboratory equipment malfunctioned
+92,technician error,Error caused by laboratory technician
+100,user error,Error caused by computer user
+101,hardware failure,Computer hardware failed
+102,hardware failure,Computer hardware failed
+103,network failure,Computer network failed
+104,system failure,Computer system failed
+105,computation failure,Computer process failed
+200,data validation error,Data is present but invalid
+201,missing data,Data is missing
