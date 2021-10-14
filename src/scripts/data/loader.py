@@ -51,5 +51,10 @@ class TableData(object):
         if len(self.DATA) == 0:
             self.DATA = self.load_csv()
         for d in self.DATA:
-            self.objects.append(cl(**d))
+            try:
+                obj = cl(**d)
+            except Exception:
+                print(obj)
+                raise
+            self.objects.append(obj)
         return self.objects

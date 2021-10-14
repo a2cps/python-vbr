@@ -50,11 +50,11 @@ protocol_id,name,description
 201,shipment transit,shipment transit
 202,shipment validation,validation of shipment contents
 210,biosample collection,biosample collection as per protocol
-210,biosample analysis,biosample analysis as per protocol
+211,biosample analysis,biosample analysis as per protocol
 220,liquid specimen collection,liquid specimen collection as per protocol
 221,liquid specimen storage,liquid specimen stored or retrieved
 222,liquid specimen handling,general liquid specimen handling
-223,liquid specimen partitioning,sub-aliquoting of a liquid specimen
-224,liquid specimen destruction, liquid specimen depleted, spoiled, lost or intentionally destroyed
+223,liquid specimen partitioning,partitioning liquid specimen into subaliquots
+224,liquid specimen destruction, liquid specimen depleted/spoiled/lost/intentionally destroyed
 300,container creation,container comissioned
 301,container destruction,container decomissioned or destroyed
