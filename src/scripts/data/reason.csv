@@ -6,6 +6,9 @@ reason_id,name,description
 5,reason_not_interested___4,COVID-related
 6,reason_not_interested___5,Not interested in research
 7,not_consented,Consent not given
+10,rename_repackage,Asset renamed for repackaging
+11,rename_prov,Asset renamed to address a provenance error
+12,rename_other,Asset renamed for other reason
 20,subject_encounter,Research subject encounter
 30,shipment_delay_ups,UPS carrier delay
 31,shipment_delay_fedex,Fedex carrier delay
@@ -13,7 +16,7 @@ reason_id,name,description
 33,shipment_missed_delivery,Receiver missed carrier delivery
 34,shipment_missed_pickup,Sender missed carrier pickup window
 35,shipment_damaged,Shipment contents damaged during transit
-35,shipment_lost,Shipment lost during transit
+36,shipment_lost,Shipment lost during transit
 40,biosample_collected,Biosample collected as intended
 41,biosample_collected_with_deviation,Biosample collected with protocol deviation
 42,biosample_not_collected,Biosample unable to be collected as intended

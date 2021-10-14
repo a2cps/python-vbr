@@ -38,6 +38,7 @@ protocol_id,name,description
 37,consent_process_form,participant consent form processing
 50,crf completed,case report form marked complete
 51,crf reopened,case report form reopened
+90,renamed,asset renamed or relabeled
 100,imaging upload,source image upload
 101,imaging pipeline started,imaging pipeline started
 102,imaging pipeline finished,imaging pipeline finished
