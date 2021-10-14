@@ -32,6 +32,10 @@ class DataManager(object):
         """
         resp = self.client.pgrest.add_table_row(collection=root_url,
                                                 data=record_data)
+        if isinstance(resp, list):
+            return [r._tapis_result_to_vbr(r, root_url) for r in resp]
+        else:
+            return r._tapis_result_to_vbr(r, root_url)
         return resp
 
     def create_row(self, vbr_obj: Any) -> TapisResult:
