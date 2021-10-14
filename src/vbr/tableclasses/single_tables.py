@@ -227,6 +227,7 @@ class Measurement(Table):
     # Currently cannot be unique in case persistent_id are reused
     persistent_id = Column(
         String, comments='Identifier assigned to measurement at creation')
+    creation_time = Column(CreatedTimeStamp, nullable=True)
 
 
 class MeasurementType(Table):
