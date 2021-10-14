@@ -36,38 +36,25 @@ protocol_id,name,description
 35,econsent,participant electronic consent
 36,consent_collection_form,participant consent collection forms 
 37,consent_process_form,participant consent form processing
-50,crf completed,case report form marked complete
-51,crf reopened,case report form reopened
-90,renamed,asset renamed or relabeled
+50,crf complete,generic case report form marked completion
+51,crf reopen,generic case report form reopening
+90,rename entity,changing of an entity persistent id
+91,free text comment,generic commenting on an entity
 100,imaging upload,source image upload
-101,imaging pipeline started,imaging pipeline started
-102,imaging pipeline finished,imaging pipeline finished
-103,imaging pipeline failed,imaging pipeline failed
-110,heudiconv started,heudiconv processing started
-111,heudiconv finished,heudiconv processing finished
-112,heudiconv failed,heudiconv processing failed
-120,mriqc started,image mriqc processing started
-121,mriqc finished,image mriqc processing finished
-122,mriqc failed,image mriqc processing failed
-130,bids started,image bids processing started
-131,bids finished,image bids processing finished
-132,bids failed,image bids processing failed
-140,fmriprep started,fmriprep to final image started
-141,fmriprep finished,fmriprep to final image finished
-142,fmriprep failed,fmriprep to final image failed
-200,shipment packaged,shipment packaged
-201,shipment sent,shipment sent
-202,shipment received,shipment received
-203,shipment validated,shipment contents validated
-204,shipment delayed,shipment delayed in transit
-205,shipment lost,shipment lost or destroyed
-210,biosample collected, sample collected
-220,liquid specimen collected, liquid specimen collected and processed
-222,liquid specimen frozen, liquid specimen frozen
-223,liquid specimen thawed, liquid specimen thawed
-224,liquid specimen refrigerated, liquid specimen refrigerated
-225,liquid specimen partioned, liquid specimen partioned
-226,liquid specimen destroyed, liquid specimen destroyed
-300,container comissioned,container comissioned
-301,container decomissioned,container decomissioned
-303,container malfunctioned,container malfunctioned
+101,imaging pipeline started,generic imaging pipeline
+102,heudiconv pipeline,heudiconv processing
+103,mriqc pipeline,mriqc processing
+104,bids pipeline,bids processing
+105,fmriprep pipeline,fmriprep processing
+200,shipment packaging,shipment packaging
+201,shipment transit,shipment transit
+202,shipment validation,validation of shipment contents
+210,biosample collection,biosample collection as per protocol
+210,biosample analysis,biosample analysis as per protocol
+220,liquid specimen collection,liquid specimen collection as per protocol
+221,liquid specimen storage,liquid specimen stored or retrieved
+222,liquid specimen handling,general liquid specimen handling
+223,liquid specimen partitioning,sub-aliquoting of a liquid specimen
+224,liquid specimen destruction, liquid specimen depleted, spoiled, lost or intentionally destroyed
+300,container creation,container comissioned
+301,container destruction,container decomissioned or destroyed

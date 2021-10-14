@@ -17,26 +17,26 @@ class StatusData(TableData):
     },
     {
         'status_id': 10,
-        'name': 'sample.collected',
-        'description': 'Sample collected'
+        'name': 'liquid_sample.collected',
+        'description': 'Liquid sample collected'
     },{
         'status_id': 11,
-        'name': 'sample.frozen',
-        'description': 'Sample frozen'
+        'name': 'liquid_sample.frozen',
+        'description': 'Liquid sample frozen'
     },{
         'status_id': 12,
-        'name': 'sample.thawed',
-        'description': 'Sample thawed'
+        'name': 'liquid_sample.thawed',
+        'description': 'Liquid sample thawed'
     },
     {
         'status_id': 13,
-        'name': 'sample.retired',
-        'description': 'Sample retired'
+        'name': 'liquid_sample.retired',
+        'description': 'Liquid sample retired'
     },
     {
         'status_id': 14,
-        'name': 'sample.depleted',
-        'description': 'Sample depleted'
+        'name': 'liquid_sample.depleted',
+        'description': 'Liquid sample depleted'
     },
     {
         'status_id': 20,
@@ -46,32 +46,32 @@ class StatusData(TableData):
     {
         'status_id': 21,
         'name': 'shipment.shipped',
-        'description': 'Shipment shipped'
+        'description': 'Shipment accepted by carrier'
     },
     {
         'status_id': 22,
         'name': 'shipment.in_transit',
-        'description': 'Shipment in transit'
+        'description': 'Shipment in transit via carrier'
     },
     {
         'status_id': 23,
         'name': 'shipment.delayed',
-        'description': 'Shipment in transit'
+        'description': 'Shipment delayed by carrier'
     },
     {
         'status_id': 24,
-        'name': 'shipment.arrived',
-        'description': 'Shipment arrived'
+        'name': 'shipment.delivered',
+        'description': 'Shipment delivered by carrier'
     },
     {
         'status_id': 25,
         'name': 'shipment.recieved',
-        'description': 'Shipment recieved'
+        'description': 'Shipment recieved by project personnel'
     },
     {
         'status_id': 26,
         'name': 'shipment.validated',
-        'description': 'Shipment validated'
+        'description': 'Shipment contents validated'
     },
     {
         'status_id': 27,
@@ -80,7 +80,7 @@ class StatusData(TableData):
     },
     {
         'status_id': 28,
-        'name': 'shipment.lost',
-        'description': 'Shipment lost'
+        'name': 'shipment.destroyed',
+        'description': 'Shipment lost in transit'
     }
     ]

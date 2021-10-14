@@ -21,8 +21,7 @@ reason_id,name,description
 41,biosample_collected_with_deviation,Biosample collected with protocol deviation
 42,biosample_not_collected,Biosample unable to be collected as intended
 50,liquid specimen routine handling,Routine specimen handling
-51,liquid specimen analysis,Documented specimen analysis
-52,liquid specimen spoiled,Specimen spoiled
+51,liquid specimen spoiled,Specimen spoiled or damaged
 53,liquid specimen lost,Specimen lost
 54,liquid specimen depleted,Specimen used up
 55,liquid specimen aliquoted,Specimen subdivided
