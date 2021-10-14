@@ -22,6 +22,6 @@
         }
     },
     "comments": "Maps datasets to their associated projects.",
-    "root_url": "dataset_defined_by_project",
-    "table_name": "dataset_defined_by_project"
+    "root_url": "dataset_in_project",
+    "table_name": "dataset_in_project"
 }

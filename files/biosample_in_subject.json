@@ -22,6 +22,6 @@
         }
     },
     "comments": "Maps biosamples to subjects.",
-    "root_url": "biosample_from_subject",
-    "table_name": "biosample_from_subject"
+    "root_url": "biosample_in_subject",
+    "table_name": "biosample_in_subject"
 }

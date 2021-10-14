@@ -1,0 +1,22 @@
+{
+    "columns": {
+        "container_id": {
+            "data_type": "integer"
+        },
+        "data_event_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "data_event_id",
+            "reference_table": "data_event"
+        },
+        "data_event_in_container_id": {
+            "data_type": "serial",
+            "primary_key": true
+        }
+    },
+    "comments": "Maps data_events to containers.",
+    "root_url": "data_event_in_container",
+    "table_name": "data_event_in_container"
+}

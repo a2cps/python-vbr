@@ -13,7 +13,7 @@
             "data_type": "serial",
             "primary_key": true
         },
-        "enclosing_container_id": {
+        "parent_container_id": {
             "data_type": "integer",
             "event_action": "CASCADE",
             "foreign_key": true,
