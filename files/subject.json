@@ -22,7 +22,7 @@
             "data_type": "varchar",
             "unique": true
         },
-        "project_id": {
+        "project": {
             "data_type": "integer",
             "event_action": "CASCADE",
             "foreign_key": true,

@@ -218,11 +218,12 @@ class Measurement(Table):
         Integer, ForeignKey('measurement_type.measurement_type_id'))
     unit = Column(Integer, ForeignKey('unit.unit_id'))
     local_id = Constants.STRING_LOCALID_COLUMN
-    biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
+    biosample = Column(Integer, ForeignKey('biosample.biosample_id'))
     # Optional. Allows physical Measurement assets to be associated with a physical Container
-    container_id = Column(Integer,
-                          ForeignKey('container.container_id'),
-                          nullable=True)
+    container = Column(Integer,
+                       ForeignKey('container.container_id'),
+                       nullable=True)
+    project = Column(Integer, ForeignKey('project.project_id'))
     status = Column(Integer, ForeignKey('status.status_id'))
     # Currently cannot be unique in case persistent_id are reused
     persistent_id = Column(
@@ -300,6 +301,7 @@ class Shipment(Table):
     # Default is mtaub@jhsph.edu
     ship_from = Column(Integer, ForeignKey("contact.contact_id"), default=6)
     shipping_event_id = Column(Integer, ForeignKey("data_event.data_event_id"))
+    project = Column(Integer, ForeignKey('project.project_id'))
 
 
 class Status(Table):
@@ -321,7 +323,7 @@ class Subject(Table):
     # project_local_id = Constants.STRING_LOCALID_COLUMN
     # uniq_project_id_namespace_project_local_id = UniqueConstraint(
     #     'project_id_namesapace', 'project_local_id')
-    project_id = Column(Integer, ForeignKey('project.project_id'))
+    project = Column(Integer, ForeignKey('project.project_id'))
     # A subject's persistent ID is the GUID assigned by REDcap
     persistent_id = Column(String,
                            comments='GUID assigned to subject at intake',

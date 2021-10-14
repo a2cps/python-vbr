@@ -1,6 +1,6 @@
 {
     "columns": {
-        "biosample_id": {
+        "biosample": {
             "data_type": "integer",
             "event_action": "CASCADE",
             "foreign_key": true,
@@ -8,7 +8,7 @@
             "reference_column": "biosample_id",
             "reference_table": "biosample"
         },
-        "container_id": {
+        "container": {
             "data_type": "integer",
             "event_action": "CASCADE",
             "foreign_key": true,
@@ -43,6 +43,14 @@
             "char_len": 255,
             "comments": "Identifier assigned to measurement at creation",
             "data_type": "varchar"
+        },
+        "project": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "project_id",
+            "reference_table": "project"
         },
         "status": {
             "data_type": "integer",
