@@ -1,3 +1,4 @@
+import copy
 import json
 import datetime
 
@@ -47,6 +48,10 @@ class Table(object):
         for v in self.__schema__.column_names:
             values.append('{0}={1}'.format(v, getattr(self, v, None)))
         return '{0}: {1}'.format(self.__class__.__name__, ','.join(values))
+
+    def clone(self):
+        """Return a mutable clone of this VBR object."""
+        return copy.deepcopy(self)
 
     def dict(self):
         """Return a dict filtered for use in row insert or update operations

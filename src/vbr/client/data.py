@@ -60,11 +60,33 @@ class DataManager(object):
                                                 item=pk_value)
         return self._tapis_result_to_vbr(resp, root_url)
 
-    def update_row(self, vbr_obj: Table) -> Table:
+    def update_row(self, vbr_obj: Table, vbr_obj_updated: Table) -> Table:
         """Update a VBR Record in the database
         """
+        # Make sure they are same table in database
+        assert vbr_obj.__schema__.root_url == vbr_obj_updated.__schema__.root_url, 'Objects are not of the same type'
+        # Make sure _pkid match
+        assert vbr_obj._pkid == vbr_obj_updated._pkid, 'Object primary keys do not match'
         # update_table_row
-        pass
+        pk_value = str(vbr_obj._pkid)
+        root_url = vbr_obj.__schema__.root_url
+        payload = {}
+        for k, v in vbr_obj.dict().items():
+            if getattr(vbr_obj_updated, k) != v:
+                payload[k] = getattr(vbr_obj_updated, k)
+        # Only attempt the update if the payload indicates a difference between
+        # the two records. Otherwise, pgrest throws an error.
+        # TODO - report this as an issue with pgrest
+        if len(payload.items()) > 0:
+            payload = {'data': payload}
+            resp = self.client.pgrest.update_table_row(collection=root_url,
+                                                       item=pk_value,
+                                                       request_body=payload)[0]
+            return self._tapis_result_to_vbr(resp, root_url)
+        else:
+            # No change, return original VBR object
+            # I think this is the right thing to do...
+            return vbr_obj
 
     def delete_row(self, vbr_obj: Table) -> NoReturn:
         """Delete a VBR Record from the database
