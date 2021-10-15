@@ -42,10 +42,10 @@ class Integer(PgRestColumn):
 
     @classmethod
     def instantiate(cls, value):
-        if value is not None:
-            return int(value)
+        if value is None or value == '':
+            return None
         else:
-            return value
+            return int(value)
 
     @classmethod
     def cast(cls, value):
@@ -68,10 +68,10 @@ class Numeric(PgRestColumn):
     # TODO Support numeric(p,s), a real number with p digits with s number after the decimal point.
     @classmethod
     def instantiate(cls, value):
-        if value is not None:
-            return float(value)
+        if value is None or value == '':
+            return None
         else:
-            return value
+            return float(value)
 
     @classmethod
     def cast(cls, value):
