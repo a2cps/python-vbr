@@ -38,6 +38,10 @@ class Table(object):
                 setattr(self, aname,
                         attr.ctype.instantiate(kwargs.get(aname, None)))
 
+        # Set _pkid
+        # Helpful for update and other maintenance tasks
+        setattr(self, '_pkid', kwargs.get('_pkid', None))
+
     def __repr__(self):
         values = []
         for v in self.__schema__.column_names:

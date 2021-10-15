@@ -112,9 +112,10 @@ class DataManager(object):
         resp = client.get(path=api_path)
         rows = []
         for r in resp:
-            try:
-                del r['_pkid']
-            except KeyError:
-                pass
+            # This is commented out because we now keep _pkid as a private property
+            # try:
+            #     del r['_pkid']
+            # except KeyError:
+            #     pass
             rows.append(self._dict_result_to_vbr(r, root_url))
         return rows
