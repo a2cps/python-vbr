@@ -251,10 +251,8 @@ class Organization(Table):
 
 class Project(Table):
     """C2M2-defined table uniquely defining projects within the scope of the VBR and broader NIH namespace."""
-    # id_namespace = Constants.STRING_NAMESPACE_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    # uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
-    # project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     persistent_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp, nullable=True)
     abbreviation = Column(String, nullable=True)
