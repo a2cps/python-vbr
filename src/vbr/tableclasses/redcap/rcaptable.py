@@ -18,14 +18,15 @@ class RcapTable(Table):
                            ForeignKey("data_event.data_event_id"),
                            nullable=True)
     biosample_id = Column(Integer,
-                    ForeignKey("biosample.biosample_id"),
-                    nullable=True)
+                          ForeignKey("biosample.biosample_id"),
+                          nullable=True)
     measurement_id = Column(Integer,
-                    ForeignKey("measurement.measurement_id"),
-                    nullable=True)
+                            ForeignKey("measurement.measurement_id"),
+                            nullable=True)
     subject_id = Column(Integer,
                         ForeignKey("subject.subject_id"),
                         nullable=True)
+
     @classmethod
     def _links(cls):
         # Update this with any new linkages established by adding FK constraints above
