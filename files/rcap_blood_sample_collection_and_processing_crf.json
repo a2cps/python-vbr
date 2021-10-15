@@ -53,7 +53,7 @@
             "null": true
         },
         "bscp_deg_of_hemolysis": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "bscp_hrs_since_cafstim": {

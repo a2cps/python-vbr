@@ -92,19 +92,19 @@
             "null": true
         },
         "tstspostpainscl": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "tstspostpainscl1": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "tstsprepainscl": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "tstsprepainscl1": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "tststime": {
@@ -151,11 +151,11 @@
             "null": true
         },
         "walk10finalpainscl": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "walk10finalpainscl1": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "walk10incompletereason": {
@@ -163,11 +163,11 @@
             "null": true
         },
         "walk10initialpainscl": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "walk10initialpainscl1": {
-            "data_type": "numeric",
+            "data_type": "varchar",
             "null": true
         },
         "walk10time": {

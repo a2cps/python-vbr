@@ -61,8 +61,29 @@ class IntegerList(PgRestColumn):
     # TODO - validate that contents of data are a list of ints
 
 
+# class Numeric(PgRestColumn):
+#     DATA_TYPE = 'numeric'
+#     PYTHON_TYPE = float
+
+#     # TODO Support numeric(p,s), a real number with p digits with s number after the decimal point.
+#     @classmethod
+#     def instantiate(cls, value):
+#         if value is None or value == '':
+#             return None
+#         else:
+#             return float(value)
+
+#     @classmethod
+#     def cast(cls, value):
+#         if value is None or value == '':
+#             return None
+#         else:
+#             return float(value)
+
+
 class Numeric(PgRestColumn):
-    DATA_TYPE = 'numeric'
+    # NOTE - this is currently implemented as a postgresql varchar because PgREST doesn't support numeric type
+    DATA_TYPE = 'varchar'
     PYTHON_TYPE = float
 
     # TODO Support numeric(p,s), a real number with p digits with s number after the decimal point.
@@ -71,14 +92,14 @@ class Numeric(PgRestColumn):
         if value is None or value == '':
             return None
         else:
-            return float(value)
+            return str(float(value))
 
     @classmethod
     def cast(cls, value):
         if value is None or value == '':
             return None
         else:
-            return float(value)
+            return str(float(value))
 
 
 class Serial(Integer):
