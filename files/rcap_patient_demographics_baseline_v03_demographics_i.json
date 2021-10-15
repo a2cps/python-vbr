@@ -5,6 +5,15 @@
             "data_type": "varchar",
             "null": true
         },
+        "biosample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
         "brthdtc": {
             "char_len": 255,
             "data_type": "varchar",
@@ -46,6 +55,15 @@
             "default": "UPDATETIME",
             "null": true
         },
+        "measurement_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "measurement_id",
+            "reference_table": "measurement"
+        },
         "patient_demographics_baseline_v03_demographics_i_complete": {
             "data_type": "integer",
             "event_action": "CASCADE",
@@ -62,15 +80,6 @@
             "char_len": 255,
             "comments": "REDCap record_id identifying subject",
             "data_type": "varchar"
-        },
-        "sample_id": {
-            "data_type": "integer",
-            "event_action": "CASCADE",
-            "foreign_key": true,
-            "null": true,
-            "on_event": "ON DELETE",
-            "reference_column": "biosample_id",
-            "reference_table": "biosample"
         },
         "sex": {
             "data_type": "integer",

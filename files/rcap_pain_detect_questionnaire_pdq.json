@@ -1,5 +1,14 @@
 {
     "columns": {
+        "biosample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
         "creation_time": {
             "data_type": "timestamp",
             "default": "CREATETIME",
@@ -18,6 +27,15 @@
             "data_type": "timestamp",
             "default": "UPDATETIME",
             "null": true
+        },
+        "measurement_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "measurement_id",
+            "reference_table": "measurement"
         },
         "pain_detect_questionnaire_pdq_complete": {
             "data_type": "integer",
@@ -76,15 +94,6 @@
             "char_len": 255,
             "comments": "REDCap record_id identifying subject",
             "data_type": "varchar"
-        },
-        "sample_id": {
-            "data_type": "integer",
-            "event_action": "CASCADE",
-            "foreign_key": true,
-            "null": true,
-            "on_event": "ON DELETE",
-            "reference_column": "biosample_id",
-            "reference_table": "biosample"
         },
         "subject_id": {
             "data_type": "integer",

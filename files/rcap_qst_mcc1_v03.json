@@ -1,5 +1,14 @@
 {
     "columns": {
+        "biosample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
         "cpmbathrangeyn": {
             "data_type": "integer",
             "null": true
@@ -344,6 +353,15 @@
             "default": "UPDATETIME",
             "null": true
         },
+        "measurement_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "measurement_id",
+            "reference_table": "measurement"
+        },
         "pmachgchestpainyn": {
             "data_type": "boolean",
             "null": true
@@ -508,15 +526,6 @@
             "char_len": 255,
             "comments": "REDCap record_id identifying subject",
             "data_type": "varchar"
-        },
-        "sample_id": {
-            "data_type": "integer",
-            "event_action": "CASCADE",
-            "foreign_key": true,
-            "null": true,
-            "on_event": "ON DELETE",
-            "reference_column": "biosample_id",
-            "reference_table": "biosample"
         },
         "subject_id": {
             "data_type": "integer",

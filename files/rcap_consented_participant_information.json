@@ -1,5 +1,14 @@
 {
     "columns": {
+        "biosample_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "biosample_id",
+            "reference_table": "biosample"
+        },
         "consented_participant_information_complete": {
             "data_type": "integer",
             "event_action": "CASCADE",
@@ -63,6 +72,15 @@
             "data_type": "boolean",
             "null": true
         },
+        "measurement_id": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "measurement_id",
+            "reference_table": "measurement"
+        },
         "mobile_phone_number": {
             "char_len": 255,
             "data_type": "varchar",
@@ -77,15 +95,6 @@
             "char_len": 255,
             "data_type": "varchar",
             "null": true
-        },
-        "sample_id": {
-            "data_type": "integer",
-            "event_action": "CASCADE",
-            "foreign_key": true,
-            "null": true,
-            "on_event": "ON DELETE",
-            "reference_column": "biosample_id",
-            "reference_table": "biosample"
         },
         "screening_id": {
             "char_len": 255,
