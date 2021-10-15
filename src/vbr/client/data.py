@@ -1,13 +1,15 @@
 from typing import NoReturn, Any
 from tapipy.tapis import TapisResult
-from vbr.tableclasses import class_from_table
+from vbr.tableclasses import class_from_table, Table
 from vbr.client.connection import TapisDirectClient
 
 
 class DataManager(object):
     """Manages data in PgREST collections
     """
-    def _table_root_or_name_to_root(self, table_name=None, root_url=None):
+    def _table_root_or_name_to_root(self,
+                                    table_name=None,
+                                    root_url=None) -> str:
         if root_url is not None:
             return root_url
         else:
@@ -18,16 +20,15 @@ class DataManager(object):
             raise ValueError(
                 'Failed to resolve table with name == {0}'.format(table_name))
 
-    def _tapis_result_to_vbr(self, tres: TapisResult, root_url: str) -> object:
+    def _tapis_result_to_vbr(self, tres: TapisResult, root_url: str) -> Table:
         cl = class_from_table(root_url)
         return cl(**tres.__dict__)
 
-    def _dict_result_to_vbr(self, dres: dict, root_url: str) -> object:
+    def _dict_result_to_vbr(self, dres: dict, root_url: str) -> Table:
         cl = class_from_table(root_url)
         return cl(**dres)
 
-    def create_row_from_dict(self, root_url: str,
-                             record_data: dict) -> TapisResult:
+    def create_row_from_dict(self, root_url: str, record_data: dict) -> Table:
         """Create a PgREST record from a Python dictionary
         """
         resp = self.client.pgrest.add_table_row(collection=root_url,
@@ -38,7 +39,7 @@ class DataManager(object):
             return self._tapis_result_to_vbr(r, root_url)
         return resp
 
-    def create_row(self, vbr_obj: Any) -> TapisResult:
+    def create_row(self, vbr_obj: Table) -> Table:
         """Create a PgREST record from a VBR Table instance
         """
         root_url = vbr_obj.__schema__.root_url
@@ -50,7 +51,7 @@ class DataManager(object):
                      pk_value: str,
                      root_url: str = None,
                      table_name: str = None,
-                     query: str = None) -> TapisResult:
+                     query: str = None) -> Table:
         """Retrieve a VBR Record from the database by primary key and table name
         """
         # TODO - support either root_url or table_name
@@ -59,13 +60,13 @@ class DataManager(object):
                                                 item=pk_value)
         return self._tapis_result_to_vbr(resp, root_url)
 
-    def update_row(self, vbr_obj: Any) -> NoReturn:
+    def update_row(self, vbr_obj: Table) -> Table:
         """Update a VBR Record in the database
         """
         # update_table_row
         pass
 
-    def delete_row(self, vbr_obj: Any) -> NoReturn:
+    def delete_row(self, vbr_obj: Table) -> NoReturn:
         """Delete a VBR Record from the database
         """
         # delete_table_row
@@ -74,7 +75,7 @@ class DataManager(object):
     def list_rows(self,
                   root_url: str,
                   limit: int = None,
-                  offset: int = None) -> TapisResult:
+                  offset: int = None) -> list:
         """Lists VBR Records in table
         """
         resp = self.client.pgrest.get_table(collection=root_url,
@@ -88,7 +89,7 @@ class DataManager(object):
                    root_url: str,
                    query: dict = None,
                    limit: int = None,
-                   offset: int = None):
+                   offset: int = None) -> list:
         client = TapisDirectClient(self.client)
         client.setup(service_name='pgrest', api_path='data')
         api_path = root_url
