@@ -85,6 +85,14 @@ class Numeric(PgRestColumn):
     # NOTE - this is currently implemented as a postgresql varchar because PgREST doesn't support numeric type
     DATA_TYPE = 'varchar'
     PYTHON_TYPE = float
+    CHAR_LEN = 32
+
+    @class_or_instancemethod
+    def properties(self_or_cls):
+        return {
+            'data_type': self_or_cls.DATA_TYPE,
+            'char_len': self_or_cls.CHAR_LEN
+        }
 
     # TODO Support numeric(p,s), a real number with p digits with s number after the decimal point.
     @classmethod
