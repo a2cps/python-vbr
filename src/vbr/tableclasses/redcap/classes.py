@@ -62,7 +62,7 @@ class RcapOtherPainTreatments(RcapTable):
 class RcapOtherMedicalSurgicalTreatments(RcapTable):
     """The Rcap Other Medical Surgical Treatments ii Instrument."""
     rcap_other_medical_surgical_treatments_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    # persistent_id (subject GUID)
+    # tracking_id (subject GUID)
     other_medical_surgical_treatments_ii_complete = Column(
         Integer, ForeignKey("status.status_id"))
     # Include other fields? (Rcap fields 56-82 tbd)

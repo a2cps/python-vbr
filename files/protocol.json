@@ -9,14 +9,14 @@
             "char_len": 255,
             "data_type": "varchar"
         },
-        "persistent_id": {
-            "char_len": 255,
-            "data_type": "varchar",
-            "null": true
-        },
         "protocol_id": {
             "data_type": "serial",
             "primary_key": true
+        },
+        "tracking_id": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
         }
     },
     "comments": "C2M2 proposed future extension: an event-type or defined process.",

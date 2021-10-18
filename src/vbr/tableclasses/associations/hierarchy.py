@@ -2,18 +2,19 @@ from ...pgrest import *
 from ..constants import Constants
 
 __all__ = [
-    'BiosampleInSubject', 'BiosampleInDataset', 'ContainerInShipment',
-    'DatasetInProject', 'FileInDataEvent', 'FileInDataset',
-    'MeasurementInBiosample', 'SubjectInDataset'
+    'BiosampleInDataset', 'ContainerInShipment', 'DatasetInProject',
+    'FileInDataEvent', 'FileInDataset',
+    'SubjectInDataset'
 ]
 
+# Not needed. Each Biosample is derived from exactly one subject
+# and so can be mapped by biosample.subject -> subject.subject_id
+# class BiosampleInSubject(AssociationTable):
+#     """Maps biosamples to subjects."""
 
-class BiosampleInSubject(AssociationTable):
-    """Maps biosamples to subjects."""
-
-    biosample_from_subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
-    subject_id = Column(Integer, ForeignKey('subject.subject_id'))
+#     biosample_from_subject_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+#     biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
+#     subject_id = Column(Integer, ForeignKey('subject.subject_id'))
 
 
 class BiosampleInDataset(AssociationTable):
@@ -57,11 +58,13 @@ class FileInDataset(AssociationTable):
     dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
 
 
-class MeasurementInBiosample(AssociationTable):
-    """Maps measurements to biosamples."""
-    measurement_in_biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    measurement_id = Column(Integer, ForeignKey('measurement.measurement_id'))
-    biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
+# Not needed. Each Measurement is derived from exactly one Biosample
+# and so can be mapped by measurement.biosample -> biosample.biosample_id
+# class MeasurementInBiosample(AssociationTable):
+#     """Maps measurements to biosamples."""
+#     measurement_in_biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+#     measurement_id = Column(Integer, ForeignKey('measurement.measurement_id'))
+#     biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
 
 
 class SubjectInDataset(AssociationTable):

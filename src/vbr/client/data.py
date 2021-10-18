@@ -36,7 +36,7 @@ class DataManager(object):
         if isinstance(resp, list):
             return [self._tapis_result_to_vbr(r, root_url) for r in resp]
         else:
-            return self._tapis_result_to_vbr(r, root_url)
+            return self._tapis_result_to_vbr(resp, root_url)
         return resp
 
     def create_row(self, vbr_obj: Table) -> Table:
@@ -57,25 +57,32 @@ class DataManager(object):
         # TODO - support either root_url or table_name
         # TODO - support query
         resp = self.client.pgrest.get_table_row(collection=root_url,
-                                                item=pk_value)
-        return self._tapis_result_to_vbr(resp, root_url)
+                                                item=pk_value)[0]
+        if isinstance(resp, list):
+            return [self._tapis_result_to_vbr(r, root_url) for r in resp]
+        else:
+            return self._tapis_result_to_vbr(resp, root_url)
+        return resp
 
-    def update_row(self, vbr_obj: Table, vbr_obj_updated: Table) -> Table:
-        """Update a VBR Record in the database
+    def update_row(self, vbr_obj: Table) -> Table:
+        """Update a VBR Record in the database.
         """
-        # Make sure they are same table in database
-        assert vbr_obj.__schema__.root_url == vbr_obj_updated.__schema__.root_url, 'Objects are not of the same type'
-        # Make sure _pkid match
-        assert vbr_obj._pkid == vbr_obj_updated._pkid, 'Object primary keys do not match'
-        # update_table_row
+        # Valid _pkid probably signifies means object was created by Class(**row_dict)
+        # assert vbr_obj._pkid is not None,
+        #     'VBR object is not derived from a VBR database record. Create it first before updating it.'
+
         pk_value = str(vbr_obj._pkid)
         root_url = vbr_obj.__schema__.root_url
+
+        # Assemble differences into an update payload
         payload = {}
-        for k, v in vbr_obj.dict().items():
-            if getattr(vbr_obj_updated, k) != v:
-                payload[k] = getattr(vbr_obj_updated, k)
-        # Only attempt the update if the payload indicates a difference between
-        # the two records. Otherwise, pgrest throws an error.
+        for k, v in vbr_obj.updates().items():
+            # Get new value for k
+            # TODO - only do this if new and old values are different
+            payload[k] = getattr(vbr_obj, k)
+
+        # Only attempt the update if the payload is not empty.
+        # Otherwise, pgrest throws an error.
         # TODO - report this as an issue with pgrest
         if len(payload.items()) > 0:
             payload = {'data': payload}
@@ -85,14 +92,29 @@ class DataManager(object):
             return self._tapis_result_to_vbr(resp, root_url)
         else:
             # No change, return original VBR object
-            # I think this is the right thing to do...
+            # I think this is the right thing to do.
             return vbr_obj
 
-    def delete_row(self, vbr_obj: Table) -> NoReturn:
-        """Delete a VBR Record from the database
+    def delete_row(self,
+                   vbr_obj: Table,
+                   root_url: str = None,
+                   pk_value: str = None) -> NoReturn:
+        """Delete a VBR Record from the database.
         """
         # delete_table_row
-        pass
+        # Use either details from VBR object OR passed parameters to
+        # specify which row to delete
+        if vbr_obj._pkid is not None:
+            pk_value = str(vbr_obj._pkid)
+            root_url = vbr_obj.__schema__.root_url
+        else:
+            pk_value = str(pk_value)
+            root_url = str(root_url)
+        # assert pk_value is not None, 'Either a fully-formed VBR object or root_url and pk_value parameters must be provided.'
+        self.client.pgrest.delete_table_row(collection=root_url, item=pk_value)
+        # Mark the VBR object as not being attached to a real record
+        vbr_obj._pkid = None
+        # No return!
 
     def list_rows(self,
                   root_url: str,
@@ -112,33 +134,38 @@ class DataManager(object):
                    query: dict = None,
                    limit: int = None,
                    offset: int = None) -> list:
+
+        # This sets up direct HTTP API client because tapipy does not
+        # yet support pgrest where constructs
         client = TapisDirectClient(self.client)
         client.setup(service_name='pgrest', api_path='data')
         api_path = root_url
         url_params = ''
+
+        # Limit, Offset, and Where are implemented in the pgrest
+        # API as URL parameters. These are bundled into a list
+        # param_els then appended to the table data API URL
         param_els = []
         # Limit and offset
         if limit is not None:
             param_els.append('limit={}'.format(limit))
         if offset is not None:
             param_els.append('offset={}'.format(offset))
-        # where clause
+
+        # Tranform query, expressed as a where dict, into a
+        # list of where parameters
         if isinstance(query, dict):
             for k, v in query.items():
-                param_els.append('where_' + k + v.get('operator') +
-                                 v.get('value'))
+                param_els.append('where_{0}{1}{2}'.format(
+                    k, v.get('operator'), v.get('value')))
 
-        # Extend api_path if needed
+        # Extend api_path with where parameter
         if len(param_els) > 0:
             api_path = api_path + '?' + '&'.join(param_els)
 
+        # Perform and return the API call
         resp = client.get(path=api_path)
         rows = []
         for r in resp:
-            # This is commented out because we now keep _pkid as a private property
-            # try:
-            #     del r['_pkid']
-            # except KeyError:
-            #     pass
             rows.append(self._dict_result_to_vbr(r, root_url))
         return rows

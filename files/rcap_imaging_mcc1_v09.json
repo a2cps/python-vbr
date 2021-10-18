@@ -51,26 +51,32 @@
             "null": true
         },
         "fmricuffcurrpainaftfirstscancp": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffcurrpainaftfirstscancp2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffcurrpainaftfirstscanovrall": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffcurrpainaftfirstscanovrall2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffcurrpainaftfirstscanss": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffcurrpainaftfirstscanss2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
@@ -96,90 +102,112 @@
             "null": true
         },
         "fmricuffpainaftlastscanany": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainaftlastscanany2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainaftlastscanss": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainaftlastscanss2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainbegin": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainbegin2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpaincpbegin": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpaincpbegin2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpaincpend": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpaincpend2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpaincpmid": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpaincpmid2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainend": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainend2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainmid": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainmid2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainrestscanbegin": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainrestscanbegin2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainrestscanend": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainrestscanend2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainrestscanmid": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffpainrestscanmid2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
@@ -192,18 +220,22 @@
             "null": true
         },
         "fmricuffrestpainovrall": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffrestpainovrall2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffrestpainss": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "fmricuffrestpainss2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },

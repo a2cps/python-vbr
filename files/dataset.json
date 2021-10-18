@@ -33,7 +33,7 @@
             "data_type": "varchar",
             "null": true
         },
-        "persistent_id": {
+        "tracking_id": {
             "char_len": 255,
             "data_type": "varchar",
             "null": true

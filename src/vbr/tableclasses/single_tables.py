@@ -45,11 +45,12 @@ class Biosample(Table):
     #     'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
     # Source: Redcap
-    persistent_id = Column(String,
-                           comments='ID assigned to sample when collected',
-                           unique=True)
+    tracking_id = Column(String,
+                         comments='ID assigned to sample when collected',
+                         unique=True)
     creation_time = Column(Date)
     anatomy = Column(Integer, ForeignKey('anatomy.anatomy_id'))
+    subject = Column(Integer, ForeignKey('subject.subject_id'))
     # TODO - determine what fields form the signature
     # signature = Signature('project', 'anatomy')
 
@@ -59,11 +60,12 @@ class Container(Table):
     container_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
     # Currently forcing these to be unique
-    persistent_id = Column(String,
-                           comments='ID assigned to container when populated',
-                           unique=True)
+    tracking_id = Column(String,
+                         comments='Tracking ID assigned to container',
+                         unique=True)
     container_type = Column(Integer,
                             ForeignKey('container_type.container_type_id'))
+    location_id = Column(Integer, ForeignKey('location.location_id'))
 
 
 class ContainerType(Table):
@@ -124,7 +126,7 @@ class Dataset(Table):
     local_id = Constants.STRING_LOCALID_COLUMN
     # uniq_id_namespace_local_id = UniqueConstraint('id_namespace', 'local_id')
     dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    persistent_id = Constants.STRING_PERSISTENT_ID
+    tracking_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp,
                            comments='When the dataset was created',
                            nullable=True)
@@ -163,7 +165,7 @@ class File(Table):
     # uniq_project_id_namespace_project_local_id = UniqueConstraint(
     #     'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
-    persistent_id = Constants.STRING_PERSISTENT_ID
+    tracking_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp,
                            nullable=True,
                            comments="When the file was created")
@@ -200,15 +202,18 @@ class FileFormat(Table):
 class Location(Table):
     """TACC-defined table: contains physical address information for shipping."""
     location_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    location_name = Column(String, nullable=True)
+    local_id = Constants.STRING_LOCALID_COLUMN
+    location_name = Column(String, nullable=False)
     address1 = Column(String, nullable=True)
     address2 = Column(String, nullable=True)
     address3 = Column(String, nullable=True)
     city = Column(String, nullable=True)
     zip_or_postcode = Column(String, nullable=True)
     state_province_country = Column(String, nullable=True)
-    organization = Column(Integer, ForeignKey('organization.organization_id'))
-    # TODO - determine if we need a signature
+    # Nullable to allow for addresses not mapped to a VBR organization
+    organization = Column(Integer,
+                          ForeignKey('organization.organization_id'),
+                          nullable=True)
 
 
 class Measurement(Table):
@@ -225,8 +230,8 @@ class Measurement(Table):
                        nullable=True)
     project = Column(Integer, ForeignKey('project.project_id'))
     status = Column(Integer, ForeignKey('status.status_id'))
-    # Currently cannot be unique in case persistent_id are reused
-    persistent_id = Column(
+    # Currently cannot be unique in case tracking_id are reused
+    tracking_id = Column(
         String, comments='Identifier assigned to measurement at creation')
     creation_time = Column(CreatedTimeStamp, nullable=True)
 
@@ -253,7 +258,7 @@ class Project(Table):
     """C2M2-defined table uniquely defining projects within the scope of the VBR and broader NIH namespace."""
     local_id = Constants.STRING_LOCALID_COLUMN
     project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    persistent_id = Constants.STRING_PERSISTENT_ID
+    tracking_id = Constants.STRING_PERSISTENT_ID
     creation_time = Column(CreatedTimeStamp, nullable=True)
     abbreviation = Column(String, nullable=True)
     name = Column(String, unique=True)
@@ -265,7 +270,7 @@ class Project(Table):
 class Protocol(Table):
     """C2M2 proposed future extension: an event-type or defined process."""
     protocol_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    persistent_id = Column(String, nullable=True)
+    tracking_id = Column(String, nullable=True)
     name = Column(String, nullable=False)
     description = Column(Text, nullable=True)
     # TODO - determine if we need a signature (or a single unique on 'name')
@@ -323,9 +328,9 @@ class Subject(Table):
     #     'project_id_namesapace', 'project_local_id')
     project = Column(Integer, ForeignKey('project.project_id'))
     # A subject's persistent ID is the GUID assigned by REDcap
-    persistent_id = Column(String,
-                           comments='GUID assigned to subject at intake',
-                           unique=True)
+    tracking_id = Column(String,
+                         comments='GUID assigned to subject',
+                         unique=True)
     source_subject_id = Column(
         String,
         comments='REDCap record_id or EHRR case reference',
@@ -337,7 +342,7 @@ class Subject(Table):
                          default='cfde_subject_granularity:0',
                          nullable=True)
     # Combine project and persistent id into uniqueness signature
-    # signature = Signature('project_id', 'persistent_id')
+    # signature = Signature('project_id', 'tracking_id')
 
 
 class Unit(Table):

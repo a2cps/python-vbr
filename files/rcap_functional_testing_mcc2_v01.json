@@ -24,26 +24,32 @@
             "reference_table": "data_event"
         },
         "ftdbccoughfinalscl": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "ftdbccoughfinalscl2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "ftdbcdeepbrthfinalscl": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "ftdbcdeepbrthfinalscl2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "ftdbcdeepbrthinitscl": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "ftdbcdeepbrthinitscl2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },

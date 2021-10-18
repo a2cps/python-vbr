@@ -5,7 +5,7 @@ class ProjectData(TableData):
     DATA = [{
         'id_namespace': 'tag:a2cps","',
         'project_id': 1,
-        'persistent_id': 'https://a2cps.org',
+        'tracking_id': 'https://a2cps.org',
         'creation_time': '2020-09-01T00:00:00.000Z',
         'abbreviation': 'A2CPS',
         'name': 'A2CPS Main',

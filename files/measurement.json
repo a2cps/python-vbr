@@ -39,11 +39,6 @@
             "reference_column": "measurement_type_id",
             "reference_table": "measurement_type"
         },
-        "persistent_id": {
-            "char_len": 255,
-            "comments": "Identifier assigned to measurement at creation",
-            "data_type": "varchar"
-        },
         "project": {
             "data_type": "integer",
             "event_action": "CASCADE",
@@ -59,6 +54,11 @@
             "on_event": "ON DELETE",
             "reference_column": "status_id",
             "reference_table": "status"
+        },
+        "tracking_id": {
+            "char_len": 255,
+            "comments": "Identifier assigned to measurement at creation",
+            "data_type": "varchar"
         },
         "unit": {
             "data_type": "integer",

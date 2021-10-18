@@ -14,34 +14,42 @@
             "null": true
         },
         "cpmcoldwaterpain30": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "cpmcoldwaterpain30_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "cpmcoldwaterpain30sscl": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "cpmcoldwaterpain30sscl1": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "cpmcoldwaterpain60": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "cpmcoldwaterpain60_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "cpmcoldwaterpain60sscl": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "cpmcoldwaterpain60sscl1": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
@@ -155,162 +163,202 @@
             "reference_table": "data_event"
         },
         "dmacontr1pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr1pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr2pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr2pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr3pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr3pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr4pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr4pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr5pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmacontr5pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr1pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr1pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr2pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr2pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr3pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr3pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr4pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr4pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr5pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaindxr5pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr1pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr1pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr2pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr2pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr3pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr3pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr4pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr4pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr5pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptcontr5pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr1pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr1pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr2pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr2pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr3pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr3pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr4pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr4pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr5pain": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "dmaptindxr5pain_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
@@ -551,18 +599,22 @@
             "null": true
         },
         "tsfinalpainindexscl1r2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsfinalpainindexscl1r3": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsfinalpainindexsclr2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsfinalpainindexsclr3": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
@@ -577,194 +629,242 @@
             "null": true
         },
         "tsfinalpainremafts31": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsfinalpainremscl1r3": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsfinalpainremsclr3": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxafter15": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxafter30": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr1final": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr1final_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr1initial": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr1initial_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr2final": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr2final_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr2initial": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr2initial_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr3final": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr3final_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr3initial": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsindxr3initial_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsinitialpainindexscl1r2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsinitialpainindexscl1r3": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsinitialpainindexsclr2": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsinitialpainindexsclr3": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsinitialpainremscl1r3": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsinitialpainremsclr3": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoteafter15": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter1final": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter1final_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter1initial": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter1initial_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter2final": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter2final_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter2initial": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter2initial_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter3final": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter3final_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter3initial": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsremoter3initial_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep1finalpainindex": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep1finalpainindex_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep1finalpainrem": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep1finalpainrem_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep1initialpainindex": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep1initialpainindex_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep1initialpainrem": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep1initialpainrem_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep2finalpainrem": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep2finalpainrem_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep2initialpainrem": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },
         "tsrep2initialpainrem_d": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         }

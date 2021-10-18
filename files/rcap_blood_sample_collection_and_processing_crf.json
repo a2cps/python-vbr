@@ -53,6 +53,7 @@
             "null": true
         },
         "bscp_deg_of_hemolysis": {
+            "char_len": 32,
             "data_type": "varchar",
             "null": true
         },

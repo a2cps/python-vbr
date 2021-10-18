@@ -24,6 +24,8 @@ class Table(object):
         self.__table_id__ = table_id
         self.__class_attrs__ = {}
         self.__schema__ = PgrestSchema(self)
+        # This supports logging the original value for attrs implemented in __setattr__ below
+        self.__original_attrs__ = {}
 
         # Move class-defined attributes into a private var
         # Create regular properties holding values passed in via constructor
@@ -48,6 +50,23 @@ class Table(object):
         for v in self.__schema__.column_names:
             values.append('{0}={1}'.format(v, getattr(self, v, None)))
         return '{0}: {1}'.format(self.__class__.__name__, ','.join(values))
+
+    def __setattr__(self, key, value):
+        """Capture original attribute values specified at instantiation before allowing them to be updated."""
+        # This supports the ability to know what attributes
+        # have changed in support of doing a vbr.update_row(object)
+        try:
+            current = getattr(self, key)
+            if not isinstance(current, Column):
+                if key not in self.__original_attrs__:
+                    self.__original_attrs__[key] = current
+        except Exception:
+            pass
+        super().__setattr__(key, value)
+
+    def updates(self) -> dict:
+        """Return a dict of attributes updated since instantation."""
+        return self.__original_attrs__
 
     def clone(self):
         """Return a mutable clone of this VBR object."""
