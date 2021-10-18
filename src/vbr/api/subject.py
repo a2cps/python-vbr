@@ -28,6 +28,33 @@ class SubjectApi(object):
         query = {'source_subject_id': {'operator': '=', 'value': record_id}}
         return self._get_row_from_table_with_query('subject', query)
 
+    # vbr_subject = Subject(
+    #     project=vbr_project_id,
+    #     source_subject_id=record_id,
+    #     tracking_id=vbr_subject_tracking_id)
+
+    def create_subject(self, tracking_id: str, project_id: int,
+                       source_subject_id: str) -> Subject:
+        """Create a new Subject."""
+        # TODO - Add a data_event marking the creation
+        sbj = Subject(tracking_id=tracking_id,
+                      project=project_id,
+                      source_subject_id=source_subject_id)
+        try:
+            return self.vbr_client.create_row(sbj)[0]
+        except Exception:
+            raise
+
+    def create_or_get_subject_by_tracking_id(
+            self, tracking_id: str, project_id: int,
+            source_subject_id: str) -> Subject:
+        """Create a Subject or return existing with specified tracking_id."""
+        try:
+            return self.create_subject(tracking_id, project_id,
+                                       source_subject_id)
+        except Exception:
+            return self.get_subject_by_tracking_id(tracking_id)
+
     def relabel_subject(self, local_id: str, new_tracking_id: str) -> Subject:
         """Update the tracking_id for a Subject by local_id."""
         # 1. Query for row matching local_id
