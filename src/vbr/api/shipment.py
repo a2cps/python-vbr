@@ -19,7 +19,8 @@ class ShipmentApi(object):
 
     def create_shipment(self, tracking_id: str, project_id: int, name: str,
                         sender_name: str, source_record_id: str,
-                        ship_to_id: int, ship_from_id: int) -> Shipment:
+                        ship_to_id: int, ship_from_id: int,
+                        status_id: int) -> Shipment:
         """Create a new Shipment."""
         sh = Shipment(tracking_id=tracking_id,
                       project=project_id,
@@ -27,7 +28,8 @@ class ShipmentApi(object):
                       sender_name=sender_name,
                       source_record_id=source_record_id,
                       ship_to=ship_to_id,
-                      ship_from=ship_from_id)
+                      ship_from=ship_from_id,
+                      status=status_id)
         try:
             return self.vbr_client.create_row(sh)[0]
         except Exception:
@@ -38,11 +40,12 @@ class ShipmentApi(object):
                                               sender_name: str,
                                               source_record_id: str,
                                               ship_to_id: int,
-                                              ship_from_id: int) -> Shipment:
+                                              ship_from_id: int,
+                                              status_id: int) -> Shipment:
         """Create a Shipment or return existing with specified tracking_id."""
         try:
             return self.create_shipment(tracking_id, project_id, name,
                                         sender_name, source_record_id,
-                                        ship_to_id, ship_from_id)
+                                        ship_to_id, ship_from_id, status_id)
         except Exception:
             return self.get_shipment_by_tracking_id(tracking_id)
