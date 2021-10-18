@@ -301,13 +301,30 @@ class Shipment(Table):
     """Provides details for shipping biosamples"""
     shipment_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     local_id = Constants.STRING_LOCALID_COLUMN
-    shipment_tracking_id = Column(
-        String, unique=True, comments="Fedex or UPS shipment tracking barcode")
-    ship_to = Column(Integer, ForeignKey("contact.contact_id"))
+    tracking_id = Column(String,
+                         unique=True,
+                         comments="Fedex or UPS shipment tracking barcode")
+    # e.g. Shipment from Rush 10/18/2021
+    name = Column(String, nullable=True, comments="Free text name of shipment")
+    # e.g. mcc
+    # shipment_notes = Column(String, nullable=True, comments="Free text description of shipment")
+    # e.g. Bill Miller
+    sender_name = Column(String,
+                         nullable=True,
+                         comments="Free text name of sender")
+    # e.g. 31-5
+    source_record_id = Column(String,
+                              nullable=True,
+                              comments='REDCap record_id for shipment')
+    ship_to = Column(Integer, ForeignKey("contact.contact_id"), nullable=True)
     # Default is mtaub@jhsph.edu
-    ship_from = Column(Integer, ForeignKey("contact.contact_id"), default=6)
-    shipping_event_id = Column(Integer, ForeignKey("data_event.data_event_id"))
+    ship_from = Column(Integer,
+                       ForeignKey("contact.contact_id"),
+                       default=6,
+                       nullable=True)
+    # shipping_event_id = Column(Integer, ForeignKey("data_event.data_event_id"))
     project = Column(Integer, ForeignKey('project.project_id'))
+    status = Column(Integer, ForeignKey('status.status_id'))
 
 
 class Status(Table):

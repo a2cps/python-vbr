@@ -8,6 +8,7 @@ from .location import LocationApi
 from .measurement import MeasurementApi
 from .project import ProjectApi
 from .redcap import RcapTableApi
+from .shipment import ShipmentApi
 from .subject import SubjectApi
 from .composite import CompositeApi
 
@@ -57,6 +58,6 @@ class ApiBase(object):
 
 
 class VBR_Api(ApiBase, BiosampleApi, ContainerApi, DataEventApi, LocationApi,
-              MeasurementApi, ProjectApi, RcapTableApi, SubjectApi,
-              CompositeApi):
+              MeasurementApi, ProjectApi, RcapTableApi, ShipmentApi,
+              SubjectApi, CompositeApi):
     pass
