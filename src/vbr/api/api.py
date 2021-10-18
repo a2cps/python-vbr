@@ -40,7 +40,7 @@ class ApiBase(object):
     def _get_row_from_table_with_tracking_id(self, root_url: str,
                                              tracking_id: str) -> Table:
         """Get a row from table root_url by tracking_id"""
-        query = {'local_id': {'operator': '=', 'value': tracking_id}}
+        query = {'tracking_id': {'operator': '=', 'value': tracking_id}}
         return self._get_row_from_table_with_query(root_url=root_url,
                                                    query=query)
 
