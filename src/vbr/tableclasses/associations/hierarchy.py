@@ -3,8 +3,7 @@ from ..constants import Constants
 
 __all__ = [
     'BiosampleInDataset', 'ContainerInShipment', 'DatasetInProject',
-    'FileInDataEvent', 'FileInDataset',
-    'SubjectInDataset'
+    'FileInDataEvent', 'FileInDataset', 'SubjectInDataset'
 ]
 
 # Not needed. Each Biosample is derived from exactly one subject

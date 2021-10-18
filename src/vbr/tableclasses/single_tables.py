@@ -65,7 +65,10 @@ class Container(Table):
                          unique=True)
     container_type = Column(Integer,
                             ForeignKey('container_type.container_type_id'))
-    location_id = Column(Integer, ForeignKey('location.location_id'))
+    # Allowing null value permits Container location to be assigned after creation
+    location = Column(Integer,
+                      ForeignKey('location.location_id'),
+                      nullable=True)
 
 
 class ContainerType(Table):
