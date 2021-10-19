@@ -44,7 +44,7 @@ class ContainerApi(object):
             return self.create_container(tracking_id, project_id,
                                          container_type_id, location_id)
         except Exception:
-            raise
+            return self.get_container_by_tracking_id(tracking_id)
 
     def relabel_container(self, local_id: str,
                           new_tracking_id: str) -> Container:

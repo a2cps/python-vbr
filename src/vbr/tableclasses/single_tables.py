@@ -63,8 +63,11 @@ class Container(Table):
     tracking_id = Column(String,
                          comments='Tracking ID assigned to container',
                          unique=True)
-    container_type = Column(Integer,
-                            ForeignKey('container_type.container_type_id'))
+    container_type = Column(
+        Integer,
+        ForeignKey('container_type.container_type_id'),
+    # 0 is default virtual container
+        default=0)
     # Allowing null value permits Container location to be assigned after creation
     location = Column(Integer,
                       ForeignKey('location.location_id'),
@@ -73,6 +76,8 @@ class Container(Table):
     parent_container_id = Column(
         Integer,
         nullable=True,
+    # 0 is the system base container
+        default=0,
         comments="Parent container_id. Permits nesting relationships.")
 
 

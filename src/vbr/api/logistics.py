@@ -36,26 +36,18 @@ class LogisticsApi(object):
         return meas
 
     def relocate_container(self,
-                           local_id: str,
-                           location_local_id: str = None,
-                           location_id: int = None) -> Container:
+                           container: Container,
+                           location: Location,
+                           sync: bool = True) -> Container:
         """Move a Container to a Location."""
-        # TODO Create and link a 'relocate' data_event
-        # TODO Account for ContainerInContainer relationships
-        if location_id is None and location_local_id is None:
-            raise ValueError(
-                'Either location_id or location_local_id must be provided')
-        if location_id is not None:
-            loc = LocationApi.get_location(self, location_id)
-        else:
-            loc = LocationApi.get_location_by_local_id(location_local_id)
-        cont = ContainerApi.get_container_by_local_id(local_id)
-        cont.location = loc.location_id
-        # TODO - relocated data event?
-        cont = self.vbr_client.update_row(cont)
-        return cont
+        container.location = location.location_id
+        container = self.vbr_client.update_row(container)
+        if sync:
+            self._sync_child_container_locations(container)
+        return container
 
     def _sync_child_container_locations(self, container: Container) -> None:
+        """Synchronize locations of child Containers with their parent."""
         # Iterate thru get_container_children(container) setting location
         # for each to its parent
         # TODO - Make this recursive. Probably good enough for now
@@ -64,59 +56,48 @@ class LogisticsApi(object):
             # TODO - relocated data event?
             self.vbr_client.update_row(child)
 
-    def attach_container_to_parent(
-            self,
-            container: Container = None,
-            container_id: int = None,
-            container_parent: Container = None,
-            container_parent_id: int = None) -> Container:
+    def _sync_container_location_with_parent(
+            self, container: Container) -> Container:
+        """Synchronize locations of a Container with its parent."""
+        parent = self.get_container_parent(container)
+        container.location = parent.location
+        # TODO - relocated data event?
+        return self.vbr_client.update_row(container)
+
+    def attach_container_to_parent(self,
+                                   container: Container,
+                                   parent: Container,
+                                   sync: bool = True) -> Container:
         """Attach a Container to a parent Container."""
-        if container is None:
-            container = self.get_container(container_id)
-        if container_parent is None:
-            container_parent = self.get_container(container_parent_id)
-        container.parent_container_id = container_parent.container_id
+        container.parent_container_id = parent.container_id
+        container = self.vbr_client.update_row(container)
+        if sync:
+            container = self._sync_container_location_with_parent(container)
+        return container
+
+    def detach_container_from_parent(self, container: Container) -> Container:
+        """Detach a Container from a parent Container."""
+        # if container is None:
+        #     container = self.get_container(container_id)
+        # 0 is the system base container
+        container.parent_container_id = 0
         return self.vbr_client.update_row(container)
 
-    def detach_container_from_parent(self,
-                                     container: Container = None,
-                                     container_id: int = None) -> Container:
-        """Detach a Container from its parent Container."""
-        if container is None:
-            container = self.get_container(container_id)
-        container.parent_container_id = None
-        return self.vbr_client.update_row(container)
-
-    def get_container_parent(self,
-                             container: Container = None,
-                             container_id: int = None) -> Container:
+    def get_container_parent(self, container: Container) -> Container:
         """Retrieve parent Container of a Container."""
-        if container is None:
-            container = self.get_container(container_id)
+        # if container is None:
+        #     container = self.get_container(container_id)
         if container.parent_container_id is None:
             return None
         else:
             return self.get_container(container.parent_container_id)
 
-    def get_container_children(self,
-                               container: Container = None,
-                               container_id: int = None) -> list:
+    def get_container_children(self, container: Container) -> list:
         """Retrieve child Containers for a Container."""
-        if container is not None:
-            query = {
-                'parent_container_id': {
-                    'operator': '=',
-                    'value': container.container_id
-                }
+        query = {
+            'parent_container_id': {
+                'operator': '=',
+                'value': container.container_id
             }
-        elif container_id is not None:
-            query = {
-                'parent_container_id': {
-                    'operator': '=',
-                    'value': str(container_id)
-                }
-            }
-        else:
-            raise ValueError(
-                'Either a Container object or container_id must be provided.')
+        }
         return self.vbr_client.query_rows(root_url='container', query=query)
