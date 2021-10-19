@@ -2,7 +2,8 @@ from typing import NoReturn, Any
 from tapipy.tapis import TapisResult
 from vbr.tableclasses import class_from_table, Table
 from vbr.client.connection import TapisDirectClient
-
+from functools import lru_cache
+from vbr.hashable import picklecache
 
 class DataManager(object):
     """Manages data in PgREST collections
@@ -20,10 +21,12 @@ class DataManager(object):
             raise ValueError(
                 'Failed to resolve table with name == {0}'.format(table_name))
 
+    @picklecache.mcache(lru_cache(maxsize=128))
     def _tapis_result_to_vbr(self, tres: TapisResult, root_url: str) -> Table:
         cl = class_from_table(root_url)
         return cl(**tres.__dict__)
 
+    @picklecache.mcache(lru_cache(maxsize=128))
     def _dict_result_to_vbr(self, dres: dict, root_url: str) -> Table:
         cl = class_from_table(root_url)
         return cl(**dres)

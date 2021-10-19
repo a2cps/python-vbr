@@ -12,6 +12,9 @@ from .shipment import ShipmentApi
 from .subject import SubjectApi
 from .logistics import LogisticsApi
 
+from functools import lru_cache
+from vbr.hashable import picklecache
+
 __all__ = ['new_vbr_client', 'VBR_Api']
 
 
@@ -24,6 +27,7 @@ class ApiBase(object):
     def __init__(self, tapis_client):
         self.vbr_client = VBR(tapis_client)
 
+    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_id(self, root_url: str, pkid: str):
         """Get a row from table root_url by primary key identifier"""
         search_key = root_url + '_id'
@@ -31,6 +35,7 @@ class ApiBase(object):
         return self._get_row_from_table_with_query(root_url=root_url,
                                                    query=query)
 
+    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_local_id(self, root_url: str,
                                           local_id: str) -> Table:
         """Get a row from table root_url by local_id"""
@@ -38,6 +43,7 @@ class ApiBase(object):
         return self._get_row_from_table_with_query(root_url=root_url,
                                                    query=query)
 
+    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_tracking_id(self, root_url: str,
                                              tracking_id: str) -> Table:
         """Get a row from table root_url by tracking_id"""
@@ -45,6 +51,7 @@ class ApiBase(object):
         return self._get_row_from_table_with_query(root_url=root_url,
                                                    query=query)
 
+    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_query(self, root_url: str,
                                        query: dict) -> Table:
         """Get a row by table root_url and pgrest 'where' query"""
