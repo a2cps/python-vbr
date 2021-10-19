@@ -6,6 +6,7 @@
         },
         "container_type": {
             "data_type": "integer",
+            "default": 0,
             "event_action": "CASCADE",
             "foreign_key": true,
             "on_event": "ON DELETE",
@@ -25,6 +26,12 @@
             "on_event": "ON DELETE",
             "reference_column": "location_id",
             "reference_table": "location"
+        },
+        "parent_container_id": {
+            "comments": "Parent container_id. Permits nesting relationships.",
+            "data_type": "integer",
+            "default": 0,
+            "null": true
         },
         "tracking_id": {
             "char_len": 255,
