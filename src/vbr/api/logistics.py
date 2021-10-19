@@ -75,7 +75,7 @@ class LogisticsApi(object):
             container = self.get_container(container_id)
         if container_parent is None:
             container_parent = self.get_container(container_parent_id)
-        container.parent_id = container_parent.container_id
+        container.parent_container_id = container_parent.container_id
         return self.vbr_client.update_row(container)
 
     def detach_container_from_parent(self,
@@ -84,7 +84,7 @@ class LogisticsApi(object):
         """Detach a Container from its parent Container."""
         if container is None:
             container = self.get_container(container_id)
-        container.parent_id = None
+        container.parent_container_id = None
         return self.vbr_client.update_row(container)
 
     def get_container_parent(self,
