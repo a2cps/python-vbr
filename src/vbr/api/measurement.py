@@ -72,4 +72,3 @@ class MeasurementApi(object):
         meas.tracking_id = new_tracking_id
         meas = self.vbr_client.update_row(meas)
         return meas
-

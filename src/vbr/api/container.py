@@ -58,10 +58,4 @@ class ContainerApi(object):
         cont = self.vbr_client.update_row(cont)
         return cont
 
-    def get_containers_in_container(self,
-                                    local_id: str = None,
-                                    container_id: int = None) -> list:
-        """Retrieve Containers located in a Container."""
-        raise NotImplemented()
-
     # Update status

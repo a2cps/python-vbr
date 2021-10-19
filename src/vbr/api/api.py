@@ -10,7 +10,7 @@ from .project import ProjectApi
 from .redcap import RcapTableApi
 from .shipment import ShipmentApi
 from .subject import SubjectApi
-from .composite import CompositeApi
+from .logistics import LogisticsApi
 
 __all__ = ['new_vbr_client', 'VBR_Api']
 
@@ -59,5 +59,5 @@ class ApiBase(object):
 
 class VBR_Api(ApiBase, BiosampleApi, ContainerApi, DataEventApi, LocationApi,
               MeasurementApi, ProjectApi, RcapTableApi, ShipmentApi,
-              SubjectApi, CompositeApi):
+              SubjectApi, LogisticsApi):
     pass
