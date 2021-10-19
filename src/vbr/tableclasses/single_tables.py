@@ -69,6 +69,11 @@ class Container(Table):
     location = Column(Integer,
                       ForeignKey('location.location_id'),
                       nullable=True)
+    # TODO - implement as ForeignKey('container.container_id') but first update pgrest.solver to address self-refererence case
+    parent_container_id = Column(
+        Integer,
+        nullable=True,
+        comments="Parent container_id. Permits nesting relationships.")
 
 
 class ContainerType(Table):
