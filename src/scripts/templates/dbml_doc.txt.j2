@@ -1,0 +1,7 @@
+Project project_name {
+  database_type: 'pgrest'
+  Note: 'Virtual Biospecimen Repository'
+}
+
+{% for table in tables %}{{table}}
+{% endfor -%}

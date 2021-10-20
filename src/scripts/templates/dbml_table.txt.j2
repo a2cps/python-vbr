@@ -1,0 +1,5 @@
+Table {{name}} {
+  {% for col in columns %}{{col.column_name}} {{col.column_type}} {% if col.column_settings %}[{{ col.column_settings | join(", ") }}]{% endif %}
+  {% endfor -%}
+  Note: {{note}}
+}
