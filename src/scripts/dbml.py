@@ -91,6 +91,20 @@ def build(args):
         cf.write(output)
         cf.close()
 
+    # Requires @mwvaughn fork of dbml2dot
+    # pip install git+https://github.com/mwvaughn/dbml2dot.git
+    if args['dotfile']:
+        import pydbml.classes
+        from dbml2dot.generators import generate_graph_from_dbml
+
+        with open(os.path.join(DEST_DIR, 'dbml.txt'), 'r') as f:
+            input_data = f.read()
+        dbml = pydbml.PyDBML(input_data)
+        graph = generate_graph_from_dbml(dbml)
+
+        with open(os.path.join(DEST_DIR, 'dbml.dot'), "w") as f:
+            f.write(graph.to_string())
+
 
 def clean(args):
     pass
@@ -125,6 +139,9 @@ if __name__ == '__main__':
                         choices=['build', 'clean'],
                         default='build',
                         help='Command')
+    parser.add_argument('--dotfile',
+                        action='store_true',
+                        help='Also generate a dotfile output')
     args = parser.parse_args()
 
     main(vars(args))

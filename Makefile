@@ -55,3 +55,6 @@ clean_tables:
 	cd src; echo "Cleaning: $(SCRIPT_ARGS)"
 
 reset: drop_tables create_tables bootstrap_tables
+
+dbml:
+	mkdir -p files-dbml; cd src; python -m scripts.dbml build --dotfile; mv -f dbml.* ../files-dbml/

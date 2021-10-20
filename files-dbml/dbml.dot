@@ -1,0 +1,193 @@
+digraph G {
+node [fontname="Bitstream Vera Sans", fontsize=8, shape=none];
+edge [color=grey, fontname="Bitstream Vera Sans", fontsize=8, labeldistance=2];
+graph [rankdir=LR];
+unit [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>unit</B></TD></TR><HR></HR>
+	        <TR><TD align="left">description? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>unit_id</B> : int</TD></TR>
+	        </TABLE>>];
+status [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>status</B></TD></TR><HR></HR>
+	        <TR><TD align="left">description? : varchar(255)</TD></TR>
+	<TR><TD align="left">name? : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>status_id</B> : int</TD></TR>
+	        </TABLE>>];
+reason [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>reason</B></TD></TR><HR></HR>
+	        <TR><TD align="left">description? : varchar(255)</TD></TR>
+	<TR><TD align="left">name? : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>reason_id</B> : int</TD></TR>
+	        </TABLE>>];
+protocol [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>protocol</B></TD></TR><HR></HR>
+	        <TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left">name? : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>protocol_id</B> : int</TD></TR>
+	<TR><TD align="left">tracking_id : varchar(255)</TD></TR>
+	        </TABLE>>];
+project [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>project</B></TD></TR><HR></HR>
+	        <TR><TD align="left">abbreviation : varchar(255)</TD></TR>
+	<TR><TD align="left">creation_time : timestamp</TD></TR>
+	<TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
+	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>project_id</B> : int</TD></TR>
+	<TR><TD align="left">tracking_id : varchar(255)</TD></TR>
+	        </TABLE>>];
+organization [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>organization</B></TD></TR><HR></HR>
+	        <TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left">name? : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>organization_id</B> : int</TD></TR>
+	<TR><TD align="left"><I>url?</I> : varchar(255)</TD></TR>
+	        </TABLE>>];
+measurement_type [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>measurement_type</B></TD></TR><HR></HR>
+	        <TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>measurement_type_id</B> : int</TD></TR>
+	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
+	        </TABLE>>];
+location [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>location</B></TD></TR><HR></HR>
+	        <TR><TD align="left">address1 : varchar(255)</TD></TR>
+	<TR><TD align="left">address2 : varchar(255)</TD></TR>
+	<TR><TD align="left">address3 : varchar(255)</TD></TR>
+	<TR><TD align="left">city : varchar(255)</TD></TR>
+	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
+	<TR><TD align="left"><B>location_id</B> : int</TD></TR>
+	<TR><TD align="left">location_name? : varchar(255)</TD></TR>
+	<TR><TD align="left">organization : int</TD></TR>
+	<TR><TD align="left">state_province_country : varchar(255)</TD></TR>
+	<TR><TD align="left">zip_or_postcode : varchar(255)</TD></TR>
+	        </TABLE>>];
+container_type [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>container_type</B></TD></TR><HR></HR>
+	        <TR><TD align="left"><B>container_type_id</B> : int</TD></TR>
+	<TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
+	        </TABLE>>];
+container [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>container</B></TD></TR><HR></HR>
+	        <TR><TD align="left"><B>container_id</B> : int</TD></TR>
+	<TR><TD align="left">container_type? : int</TD></TR>
+	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
+	<TR><TD align="left">location : int</TD></TR>
+	<TR><TD align="left">parent_container_id : int</TD></TR>
+	<TR><TD align="left"><I>tracking_id?</I> : varchar(255)</TD></TR>
+	        </TABLE>>];
+contact [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>contact</B></TD></TR><HR></HR>
+	        <TR><TD align="left"><B>contact_id</B> : int</TD></TR>
+	<TR><TD align="left"><I>email?</I> : varchar(255)</TD></TR>
+	<TR><TD align="left">first_name? : varchar(255)</TD></TR>
+	<TR><TD align="left">last_name? : varchar(255)</TD></TR>
+	<TR><TD align="left">organization? : int</TD></TR>
+	<TR><TD align="left">phone : varchar(255)</TD></TR>
+	        </TABLE>>];
+anatomy [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>anatomy</B></TD></TR><HR></HR>
+	        <TR><TD align="left"><B>anatomy_id</B> : int</TD></TR>
+	<TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left">id? : varchar(255)</TD></TR>
+	<TR><TD align="left">name : varchar(255)</TD></TR>
+	        </TABLE>>];
+subject [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>subject</B></TD></TR><HR></HR>
+	        <TR><TD align="left">creation_time : timestamp</TD></TR>
+	<TR><TD align="left">granularity : varchar(255)</TD></TR>
+	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
+	<TR><TD align="left">project? : int</TD></TR>
+	<TR><TD align="left">source_subject_id? : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>subject_id</B> : int</TD></TR>
+	<TR><TD align="left"><I>tracking_id?</I> : varchar(255)</TD></TR>
+	        </TABLE>>];
+shipment [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>shipment</B></TD></TR><HR></HR>
+	        <TR><TD align="left">local_id? : varchar(16)</TD></TR>
+	<TR><TD align="left">name : varchar(255)</TD></TR>
+	<TR><TD align="left">project? : int</TD></TR>
+	<TR><TD align="left">sender_name : varchar(255)</TD></TR>
+	<TR><TD align="left">ship_from : int</TD></TR>
+	<TR><TD align="left">ship_to : int</TD></TR>
+	<TR><TD align="left"><B>shipment_id</B> : int</TD></TR>
+	<TR><TD align="left">source_record_id : varchar(255)</TD></TR>
+	<TR><TD align="left">status? : int</TD></TR>
+	<TR><TD align="left"><I>tracking_id?</I> : varchar(255)</TD></TR>
+	        </TABLE>>];
+data_event [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>data_event</B></TD></TR><HR></HR>
+	        <TR><TD align="left">comment : varchar(255)</TD></TR>
+	<TR><TD align="left"><B>data_event_id</B> : int</TD></TR>
+	<TR><TD align="left">event_ts : timestamp</TD></TR>
+	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
+	<TR><TD align="left">performed_by : int</TD></TR>
+	<TR><TD align="left">protocol : int</TD></TR>
+	<TR><TD align="left">rank : int</TD></TR>
+	<TR><TD align="left">reason : int</TD></TR>
+	<TR><TD align="left">status : int</TD></TR>
+	        </TABLE>>];
+container_in_shipment [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>container_in_shipment</B></TD></TR><HR></HR>
+	        <TR><TD align="left"><I>container_id?</I> : int</TD></TR>
+	<TR><TD align="left"><B>container_in_shipment_id</B> : int</TD></TR>
+	<TR><TD align="left">shipment_id? : int</TD></TR>
+	        </TABLE>>];
+container_in_container [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>container_in_container</B></TD></TR><HR></HR>
+	        <TR><TD align="left"><I>container_id?</I> : int</TD></TR>
+	<TR><TD align="left"><B>container_in_container_id</B> : int</TD></TR>
+	<TR><TD align="left">parent_container_id? : int</TD></TR>
+	        </TABLE>>];
+biosample [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>biosample</B></TD></TR><HR></HR>
+	        <TR><TD align="left">anatomy? : int</TD></TR>
+	<TR><TD align="left"><B>biosample_id</B> : int</TD></TR>
+	<TR><TD align="left">creation_time? : date</TD></TR>
+	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
+	<TR><TD align="left">project? : int</TD></TR>
+	<TR><TD align="left">subject? : int</TD></TR>
+	<TR><TD align="left"><I>tracking_id?</I> : varchar(255)</TD></TR>
+	        </TABLE>>];
+measurement [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>measurement</B></TD></TR><HR></HR>
+	        <TR><TD align="left">biosample? : int</TD></TR>
+	<TR><TD align="left">container : int</TD></TR>
+	<TR><TD align="left">creation_time : timestamp</TD></TR>
+	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
+	<TR><TD align="left"><B>measurement_id</B> : int</TD></TR>
+	<TR><TD align="left">measurement_type? : int</TD></TR>
+	<TR><TD align="left">project? : int</TD></TR>
+	<TR><TD align="left">status? : int</TD></TR>
+	<TR><TD align="left">tracking_id? : varchar(255)</TD></TR>
+	<TR><TD align="left">unit? : int</TD></TR>
+	        </TABLE>>];
+location -> organization  [headlabel=organization_id, minlen=3, taillabel=organization, xlabel="                                                      "];
+container -> container_type  [headlabel=container_type_id, minlen=4, taillabel=container_type, xlabel="                                                              "];
+container -> location  [headlabel=location_id, minlen=3, taillabel=location, xlabel="                                      "];
+contact -> organization  [headlabel=organization_id, minlen=3, taillabel=organization, xlabel="                                                      "];
+subject -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
+shipment -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
+shipment -> contact  [headlabel=contact_id, minlen=3, taillabel=ship_from, xlabel="                                      "];
+shipment -> contact  [headlabel=contact_id, minlen=3, taillabel=ship_to, xlabel="                                  "];
+shipment -> status  [headlabel=status_id, minlen=2, taillabel=status, xlabel="                              "];
+data_event -> contact  [headlabel=contact_id, minlen=3, taillabel=performed_by, xlabel="                                            "];
+data_event -> protocol  [headlabel=protocol_id, minlen=3, taillabel=protocol, xlabel="                                      "];
+data_event -> reason  [headlabel=reason_id, minlen=2, taillabel=reason, xlabel="                              "];
+data_event -> status  [headlabel=status_id, minlen=2, taillabel=status, xlabel="                              "];
+container_in_shipment -> container  [headlabel=container_id, minlen=3, taillabel=container_id, xlabel="                                                "];
+container_in_shipment -> shipment  [headlabel=shipment_id, minlen=3, taillabel=shipment_id, xlabel="                                            "];
+container_in_container -> container  [headlabel=container_id, minlen=3, taillabel=container_id, xlabel="                                                "];
+container_in_container -> container  [headlabel=container_id, minlen=4, taillabel=parent_container_id, xlabel="                                                              "];
+biosample -> anatomy  [headlabel=anatomy_id, minlen=3, taillabel=anatomy, xlabel="                                  "];
+biosample -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
+biosample -> subject  [headlabel=subject_id, minlen=3, taillabel=subject, xlabel="                                  "];
+measurement -> biosample  [headlabel=biosample_id, minlen=3, taillabel=biosample, xlabel="                                          "];
+measurement -> container  [headlabel=container_id, minlen=3, taillabel=container, xlabel="                                          "];
+measurement -> measurement_type  [headlabel=measurement_type_id, minlen=4, taillabel=measurement_type, xlabel="                                                                      "];
+measurement -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
+measurement -> status  [headlabel=status_id, minlen=2, taillabel=status, xlabel="                              "];
+measurement -> unit  [headlabel=unit_id, minlen=2, taillabel=unit, xlabel="                      "];
+}
