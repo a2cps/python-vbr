@@ -5,6 +5,7 @@ from vbr.client.connection import TapisDirectClient
 from functools import lru_cache
 from vbr.hashable import picklecache
 
+
 class DataManager(object):
     """Manages data in PgREST collections
     """

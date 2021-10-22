@@ -17,6 +17,7 @@ Serialized = namedtuple('Serialized', 'payload')
 #             return str(o)
 #         return json.JSONEncoder.default(self, o)
 
+
 def mcache(cache):
     def hashable_cache_internal(func):
         def deserialize(value):
@@ -36,8 +37,7 @@ def mcache(cache):
         def hashable_cached_func(*args, **kwargs):
             _args = tuple([
                 Serialized(dumps(arg, protocol=HIGHEST_PROTOCOL))
-                if type(arg) in (list, dict) else arg
-                for arg in args
+                if type(arg) in (list, dict) else arg for arg in args
             ])
             _kwargs = {
                 k: Serialized(dumps(v, protocol=HIGHEST_PROTOCOL))
@@ -45,9 +45,9 @@ def mcache(cache):
                 for k, v in kwargs.items()
             }
             return cached_func(*_args, **_kwargs)
+
         hashable_cached_func.cache_info = cached_func.cache_info
         hashable_cached_func.cache_clear = cached_func.cache_clear
         return hashable_cached_func
 
     return hashable_cache_internal
-
