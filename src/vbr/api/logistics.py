@@ -1,5 +1,7 @@
 from vbr.tableclasses import (Biosample, Container, Location, Measurement,
-                              Project, Subject)
+                              Project, Shipment, Subject)
+from vbr.tableclasses import (ContainerInShipment)
+
 from .biosample import BiosampleApi
 from .container import ContainerApi
 from .location import LocationApi
@@ -69,7 +71,7 @@ class LogisticsApi(object):
                                    parent: Container,
                                    sync: bool = True) -> Container:
         """Attach a Container to a parent Container."""
-        container.parent_container_id = parent.container_id
+        container.parent_container = parent.container_id
         container = self.vbr_client.update_row(container)
         if sync:
             container = self._sync_container_location_with_parent(container)
@@ -80,24 +82,57 @@ class LogisticsApi(object):
         # if container is None:
         #     container = self.get_container(container_id)
         # 0 is the system base container
-        container.parent_container_id = 0
+        container.parent_container = 0
         return self.vbr_client.update_row(container)
 
     def get_container_parent(self, container: Container) -> Container:
         """Retrieve parent Container of a Container."""
         # if container is None:
         #     container = self.get_container(container_id)
-        if container.parent_container_id is None:
+        if container.parent_container is None:
             return None
         else:
-            return self.get_container(container.parent_container_id)
+            return self.get_container(container.parent_container)
 
     def get_container_children(self, container: Container) -> list:
         """Retrieve child Containers for a Container."""
         query = {
-            'parent_container_id': {
+            'parent_container': {
                 'operator': '=',
                 'value': container.container_id
             }
         }
         return self.vbr_client.query_rows(root_url='container', query=query)
+
+    def get_shipment_for_container(self, container: Container) -> Shipment:
+        """Retrieve the Shipment (if any) for a container (not recursive)."""
+        raise NotImplemented()
+
+    def attach_container_to_shipment(self,
+                                     container: Container,
+                                     shipment: Shipment,
+                                     sync: bool = True) -> ContainerInShipment:
+        """Attach a Container to a Shipment."""
+        conshp = ContainerInShipment(container=container.container_id,
+                                     shipment=shipment.shipment_id)
+        # ContainerInShipment needs a constraint such that there can only be
+        # one combination of container_id and shipment_id.
+        try:
+            resp = self.vbr_client.create_row(conshp)
+            return resp
+        except Exception:
+            raise ValueError('Unable to attach container to shipment')
+
+    def detach_container_from_shipment(self, container: Container) -> None:
+        """Detach a Container from its Shipment."""
+        # Retrieve the relevant ContainerInShipment
+        query = {
+            'container': {
+                'operator': '=',
+                'value': container.container_id
+            }
+        }
+        # Assumption is single row. Die if not!
+        conshp = self._get_row_from_table_with_query('container_in_shipment',
+                                                     query)
+        self.vbr_client.delete_row(conshp)

@@ -66,8 +66,8 @@ class DataEventApi(object):
 
         # Create a DataEventIn<Class> entry
         data = {
-            left_table_id_name: left_table_id_value,
-            right_table_id_name: right_table_id_value
+            left_table_name: left_table_id_value,
+            right_table_name: right_table_id_value
         }
         de = table_class(**data)
         try:

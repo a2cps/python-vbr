@@ -1,3 +1,5 @@
+"""Represent hiearchical relationships between types.
+"""
 from ...pgrest import *
 from ..constants import Constants
 
@@ -20,41 +22,42 @@ class BiosampleInDataset(AssociationTable):
     """Maps biosamples to datasets."""
 
     biosample_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    biosample_id = Column(Integer, ForeignKey('biosample.biosample_id'))
-    dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
+    biosample = Column(Integer, ForeignKey('biosample.biosample_id'))
+    dataset = Column(Integer, ForeignKey('dataset.dataset_id'))
 
 
 class ContainerInShipment(AssociationTable):
     """Maps containers inside other shipments."""
     container_in_shipment_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     # Constrained to be unique so that a container can only be directly inside ONE other shipment
-    container_id = Column(Integer,
-                          ForeignKey('container.container_id'),
-                          unique=True)
-    shipment_id = Column(Integer, ForeignKey('shipment.shipment_id'))
+    container = Column(Integer,
+                       ForeignKey('container.container_id'),
+                       unique=True)
+    shipment = Column(Integer, ForeignKey('shipment.shipment_id'))
+    signature = Signature('container_id', 'shipment_id')
 
 
 class DatasetInProject(AssociationTable):
     """Maps datasets to their associated projects."""
 
-    dataset_defined_by_project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
-    project_id = Column(Integer, ForeignKey('project.project_id'))
+    dataset_in_project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    dataset = Column(Integer, ForeignKey('dataset.dataset_id'))
+    project = Column(Integer, ForeignKey('project.project_id'))
 
 
 class FileInDataEvent(AssociationTable):
     """Maps files to data events which create or alter them."""
 
     file_in_data_event_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    file_id = Column(Integer, ForeignKey('file.file_id'))
-    data_event_id = Column(Integer, ForeignKey('data_event.data_event_id'))
+    file = Column(Integer, ForeignKey('file.file_id'))
+    data_event = Column(Integer, ForeignKey('data_event.data_event_id'))
 
 
 class FileInDataset(AssociationTable):
     """Maps files to dataset collections."""
     file_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    file_id = Column(Integer, ForeignKey('file.file_id'))
-    dataset_id = Column(Integer, ForeignKey('dataset.dataset_id'))
+    file = Column(Integer, ForeignKey('file.file_id'))
+    dataset = Column(Integer, ForeignKey('dataset.dataset_id'))
 
 
 # Not needed. Each Measurement is derived from exactly one Biosample

@@ -1,4 +1,5 @@
 from .event import *
 from .describe import *
 from .hierarchy import *
-from .selfclass import *
+from .self_in import *
+from .self_from import *
