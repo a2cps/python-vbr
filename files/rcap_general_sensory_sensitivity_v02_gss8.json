@@ -2,7 +2,7 @@
     "columns": {
         "biosample_id": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -16,7 +16,7 @@
         },
         "data_event_id": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -25,7 +25,7 @@
         },
         "general_sensory_sensitivity_v02_gss8_complete": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "status_id",
@@ -74,7 +74,7 @@
         },
         "measurement_id": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -88,7 +88,7 @@
         },
         "subject_id": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",

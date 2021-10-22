@@ -1,8 +1,8 @@
 {
     "columns": {
-        "biosample_id": {
+        "biosample": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "biosample_id",
@@ -12,9 +12,9 @@
             "data_type": "serial",
             "primary_key": true
         },
-        "dataset_id": {
+        "dataset": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "dataset_id",

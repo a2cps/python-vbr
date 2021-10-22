@@ -1,20 +1,20 @@
 {
     "columns": {
-        "dataset_defined_by_project_id": {
-            "data_type": "serial",
-            "primary_key": true
-        },
-        "dataset_id": {
+        "dataset": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "dataset_id",
             "reference_table": "dataset"
         },
-        "project_id": {
+        "dataset_in_project_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "project": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "project_id",

@@ -2,7 +2,7 @@
     "columns": {
         "anatomy": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "anatomy_id",
@@ -22,7 +22,7 @@
         },
         "project": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "project_id",
@@ -30,7 +30,7 @@
         },
         "subject": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "subject_id",

@@ -1,8 +1,8 @@
 {
     "columns": {
-        "file_id": {
+        "file": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "file_id",
@@ -12,9 +12,9 @@
             "data_type": "serial",
             "primary_key": true
         },
-        "parent_file_id": {
+        "parent_file": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "file_id",

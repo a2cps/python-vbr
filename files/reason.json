@@ -6,7 +6,8 @@
         },
         "name": {
             "char_len": 255,
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "unique": true
         },
         "reason_id": {
             "data_type": "serial",

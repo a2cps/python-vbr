@@ -13,7 +13,7 @@
         },
         "project": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "project_id",
@@ -28,7 +28,7 @@
         "ship_from": {
             "data_type": "integer",
             "default": 6,
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -37,7 +37,7 @@
         },
         "ship_to": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -56,7 +56,7 @@
         },
         "status": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "status_id",

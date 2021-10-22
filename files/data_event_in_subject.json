@@ -1,8 +1,8 @@
 {
     "columns": {
-        "data_event_id": {
+        "data_event": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "data_event_id",
@@ -12,9 +12,9 @@
             "data_type": "serial",
             "primary_key": true
         },
-        "subject_id": {
+        "subject": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "subject_id",

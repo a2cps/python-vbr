@@ -2,7 +2,7 @@
     "columns": {
         "biosample_id": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -11,7 +11,7 @@
         },
         "blood_sample_collection_and_processing_crf_complete": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "status_id",
@@ -176,7 +176,7 @@
         },
         "data_event_id": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -190,7 +190,7 @@
         },
         "measurement_id": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -204,7 +204,7 @@
         },
         "subject_id": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",

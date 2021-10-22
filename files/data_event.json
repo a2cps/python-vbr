@@ -21,7 +21,7 @@
         },
         "performed_by": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -30,7 +30,7 @@
         },
         "protocol": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -43,7 +43,7 @@
         },
         "reason": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -52,7 +52,7 @@
         },
         "status": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -61,18 +61,6 @@
         }
     },
     "comments": "C2M2 proposed future extension: logs data events with associated status, issues and comments.",
-    "constraints": {
-        "unique": {
-            "signature": [
-                "protocol",
-                "rank",
-                "event_ts",
-                "performed_by",
-                "status",
-                "reason"
-            ]
-        }
-    },
     "root_url": "data_event",
     "table_name": "data_event"
 }

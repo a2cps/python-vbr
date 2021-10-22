@@ -1,20 +1,20 @@
 {
     "columns": {
-        "file_describes_subject_id": {
-            "data_type": "serial",
-            "primary_key": true
-        },
-        "file_id": {
+        "file": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "file_id",
             "reference_table": "file"
         },
-        "subject_id": {
+        "file_describes_subject_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "subject": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "subject_id",

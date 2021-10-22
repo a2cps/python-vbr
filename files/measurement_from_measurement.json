@@ -1,19 +1,19 @@
 {
     "columns": {
-        "container": {
+        "measurement": {
             "data_type": "integer",
             "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
-            "reference_column": "container_id",
-            "reference_table": "container",
+            "reference_column": "measurement_id",
+            "reference_table": "measurement",
             "unique": true
         },
-        "container_in_container_id": {
+        "measurement_from_measurement_id": {
             "data_type": "serial",
             "primary_key": true
         },
-        "parent_container": {
+        "source_measurement": {
             "data_type": "integer",
             "event_action": "RESTRICT",
             "foreign_key": true,
@@ -22,7 +22,7 @@
             "reference_table": "container"
         }
     },
-    "comments": "Maps containers inside other containers.",
-    "root_url": "container_in_container",
-    "table_name": "container_in_container"
+    "comments": "Maps measurements derived from another measurement.",
+    "root_url": "measurement_from_measurement",
+    "table_name": "measurement_from_measurement"
 }

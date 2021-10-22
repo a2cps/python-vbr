@@ -1,27 +1,27 @@
 {
     "columns": {
-        "data_event": {
+        "file": {
             "data_type": "integer",
             "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
-            "reference_column": "data_event_id",
-            "reference_table": "data_event"
+            "reference_column": "file_id",
+            "reference_table": "file"
         },
-        "data_event_in_shipment_id": {
+        "file_from_file_id": {
             "data_type": "serial",
             "primary_key": true
         },
-        "shipment": {
+        "source_file": {
             "data_type": "integer",
             "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
-            "reference_column": "shipment_id",
-            "reference_table": "shipment"
+            "reference_column": "file_id",
+            "reference_table": "file"
         }
     },
-    "comments": "Maps data_events associated with shipments.",
-    "root_url": "data_event_in_shipment",
-    "table_name": "data_event_in_shipment"
+    "comments": "Maps files derived from other files.",
+    "root_url": "file_from_file",
+    "table_name": "file_from_file"
 }

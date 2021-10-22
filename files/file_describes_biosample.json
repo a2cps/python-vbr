@@ -1,24 +1,24 @@
 {
     "columns": {
-        "biosample_id": {
+        "biosample": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "biosample_id",
             "reference_table": "biosample"
         },
-        "file_describes_biosample_id": {
-            "data_type": "serial",
-            "primary_key": true
-        },
-        "file_id": {
+        "file": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "file_id",
             "reference_table": "file"
+        },
+        "file_describes_biosample_id": {
+            "data_type": "serial",
+            "primary_key": true
         }
     },
     "comments": "Maps files to the biosamples they describe.",

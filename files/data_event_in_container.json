@@ -1,11 +1,11 @@
 {
     "columns": {
-        "container_id": {
+        "container": {
             "data_type": "integer"
         },
-        "data_event_id": {
+        "data_event": {
             "data_type": "integer",
-            "event_action": "CASCADE",
+            "event_action": "RESTRICT",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "data_event_id",
