@@ -1,4 +1,5 @@
 reason_id,name,description
+0,unspecified,NULL
 1,reason_not_interested___0,No specific reason
 2,reason_not_interested___1,Time-related issue or concern
 3,reason_not_interested___2,Specific study procedure

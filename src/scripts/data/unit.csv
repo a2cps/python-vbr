@@ -3,3 +3,4 @@ unit_id,name,description
 2,plasma_aliquot_tube,NULL
 3,paxgene_tube,NULL
 4,buffycoat_tube,NULL
+5,microcentrifuge_tube,NULL
