@@ -11,13 +11,13 @@ unit [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 status [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>status</B></TD></TR><HR></HR>
 	        <TR><TD align="left">description? : varchar(255)</TD></TR>
-	<TR><TD align="left">name? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
 	<TR><TD align="left"><B>status_id</B> : int</TD></TR>
 	        </TABLE>>];
 reason [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>reason</B></TD></TR><HR></HR>
 	        <TR><TD align="left">description? : varchar(255)</TD></TR>
-	<TR><TD align="left">name? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
 	<TR><TD align="left"><B>reason_id</B> : int</TD></TR>
 	        </TABLE>>];
 protocol [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
@@ -56,9 +56,9 @@ location [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	<TR><TD align="left">address2 : varchar(255)</TD></TR>
 	<TR><TD align="left">address3 : varchar(255)</TD></TR>
 	<TR><TD align="left">city : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>display_name?</I> : varchar(255)</TD></TR>
 	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
 	<TR><TD align="left"><B>location_id</B> : int</TD></TR>
-	<TR><TD align="left">location_name? : varchar(255)</TD></TR>
 	<TR><TD align="left">organization : int</TD></TR>
 	<TR><TD align="left">state_province_country : varchar(255)</TD></TR>
 	<TR><TD align="left">zip_or_postcode : varchar(255)</TD></TR>
@@ -75,7 +75,7 @@ container [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	<TR><TD align="left">container_type? : int</TD></TR>
 	<TR><TD align="left">local_id? : varchar(16)</TD></TR>
 	<TR><TD align="left">location : int</TD></TR>
-	<TR><TD align="left">parent_container_id : int</TD></TR>
+	<TR><TD align="left">parent_container : int</TD></TR>
 	<TR><TD align="left"><I>tracking_id?</I> : varchar(255)</TD></TR>
 	        </TABLE>>];
 contact [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
@@ -131,15 +131,15 @@ data_event [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        </TABLE>>];
 container_in_shipment [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>container_in_shipment</B></TD></TR><HR></HR>
-	        <TR><TD align="left"><I>container_id?</I> : int</TD></TR>
+	        <TR><TD align="left"><I>container?</I> : int</TD></TR>
 	<TR><TD align="left"><B>container_in_shipment_id</B> : int</TD></TR>
-	<TR><TD align="left">shipment_id? : int</TD></TR>
+	<TR><TD align="left">shipment? : int</TD></TR>
 	        </TABLE>>];
 container_in_container [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>container_in_container</B></TD></TR><HR></HR>
-	        <TR><TD align="left"><I>container_id?</I> : int</TD></TR>
+	        <TR><TD align="left"><I>container?</I> : int</TD></TR>
 	<TR><TD align="left"><B>container_in_container_id</B> : int</TD></TR>
-	<TR><TD align="left">parent_container_id? : int</TD></TR>
+	<TR><TD align="left">parent_container? : int</TD></TR>
 	        </TABLE>>];
 biosample [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>biosample</B></TD></TR><HR></HR>
@@ -177,10 +177,10 @@ data_event -> contact  [headlabel=contact_id, minlen=3, taillabel=performed_by, 
 data_event -> protocol  [headlabel=protocol_id, minlen=3, taillabel=protocol, xlabel="                                      "];
 data_event -> reason  [headlabel=reason_id, minlen=2, taillabel=reason, xlabel="                              "];
 data_event -> status  [headlabel=status_id, minlen=2, taillabel=status, xlabel="                              "];
-container_in_shipment -> container  [headlabel=container_id, minlen=3, taillabel=container_id, xlabel="                                                "];
-container_in_shipment -> shipment  [headlabel=shipment_id, minlen=3, taillabel=shipment_id, xlabel="                                            "];
-container_in_container -> container  [headlabel=container_id, minlen=3, taillabel=container_id, xlabel="                                                "];
-container_in_container -> container  [headlabel=container_id, minlen=4, taillabel=parent_container_id, xlabel="                                                              "];
+container_in_shipment -> container  [headlabel=container_id, minlen=3, taillabel=container, xlabel="                                          "];
+container_in_shipment -> shipment  [headlabel=shipment_id, minlen=3, taillabel=shipment, xlabel="                                      "];
+container_in_container -> container  [headlabel=container_id, minlen=3, taillabel=container, xlabel="                                          "];
+container_in_container -> container  [headlabel=container_id, minlen=3, taillabel=parent_container, xlabel="                                                        "];
 biosample -> anatomy  [headlabel=anatomy_id, minlen=3, taillabel=anatomy, xlabel="                                  "];
 biosample -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
 biosample -> subject  [headlabel=subject_id, minlen=3, taillabel=subject, xlabel="                                  "];
