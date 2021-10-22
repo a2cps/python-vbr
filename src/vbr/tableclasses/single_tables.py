@@ -63,10 +63,11 @@ class Container(Table):
     # Allowing null value permits Container location to be assigned after creation
     # But.. setting to 0 by default forces location to default "system" container
     #
-    # ForeignKey event_action='RESTRICT' prevents deletion of a location that 
+    # ForeignKey event_action='RESTRICT' prevents deletion of a location that
     # holds Containers without relocating them first
     location = Column(Integer,
-                      ForeignKey('location.location_id', event_action='RESTRICT'),
+                      ForeignKey('location.location_id',
+                                 event_action='RESTRICT'),
                       nullable=True,
                       default=0)
     # TODO - implement as ForeignKey('container.container_id') but first update pgrest.solver to address self-refererence case
@@ -101,8 +102,6 @@ class Contact(Table):
     organization = Column(Integer,
                           ForeignKey('organization.organization_id'),
                           comments="Organization ID")
-    # Do not allow multiple instances of same email in same organization
-    signature = Signature('email', 'organization')
 
 
 class DataEvent(Table):
@@ -314,6 +313,7 @@ class Shipment(Table):
     source_record_id = Column(String,
                               nullable=True,
                               comments='REDCap record_id for shipment')
+    # Shipment 
     project = Column(Integer, ForeignKey('project.project_id'))
     ship_to = Column(Integer, ForeignKey("contact.contact_id"), nullable=True)
     # Default is mtaub@jhsph.edu

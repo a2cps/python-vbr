@@ -35,9 +35,9 @@ reason_id,name,description
 92,technician error,Error caused by laboratory technician
 100,user error,Error caused by computer user
 101,hardware failure,Computer hardware failed
-102,hardware failure,Computer hardware failed
+102,hardware unavailable,Computer hardware was unavailable
 103,network failure,Computer network failed
-104,system failure,Computer system failed
-105,computation failure,Computer process failed
+104,subsystem failure,Computer subsystem failed
+105,program failure,Computer program failed
 200,data validation error,Data is present but invalid
 201,missing data,Data is missing
