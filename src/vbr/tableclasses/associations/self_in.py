@@ -3,17 +3,16 @@
 from ...pgrest import *
 from ..constants import Constants
 
-__all__ = ['ContainerInContainer', 'DatasetInDataset', 'FileInFile']
+__all__ = ['DatasetInDataset', 'FileInFile']
 
-
-class ContainerInContainer(AssociationTable):
-    """Maps containers inside other containers."""
-    container_in_container_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    # Constrained to be unique so that a container can only be directly inside ONE other
-    container = Column(Integer,
-                       ForeignKey('container.container_id'),
-                       unique=True)
-    parent_container = Column(Integer, ForeignKey('container.container_id'))
+# class ContainerInContainer(AssociationTable):
+#     """Maps containers inside other containers."""
+#     container_in_container_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+#     # Constrained to be unique so that a container can only be directly inside ONE other
+#     container = Column(Integer,
+#                        ForeignKey('container.container_id'),
+#                        unique=True)
+#     parent_container = Column(Integer, ForeignKey('container.container_id'))
 
 
 class DatasetInDataset(AssociationTable):

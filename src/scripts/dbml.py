@@ -130,7 +130,10 @@ if __name__ == '__main__':
         'anatomy', 'biosample', 'contact', 'container', 'container_type',
         'container_in_container', 'data_event', 'location', 'measurement',
         'measurement_type', 'organization', 'project', 'protocol', 'reason',
-        'shipment', 'status', 'subject', 'unit', 'container_in_shipment'
+        'shipment', 'status', 'subject', 'unit', 'container_in_shipment', 
+        'data_event_in_subject', 'data_event_in_biosample', 'data_event_in_measurement',
+        'data_event_in_shipment', 'measurement_from_measurement',
+        'rcap_consented_participant_information', 'blood_sample_collection_and_processing_crf'
     ]
 
     parser = get_parser()
