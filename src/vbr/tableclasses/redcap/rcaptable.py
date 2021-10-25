@@ -11,12 +11,21 @@ class RcapTable(Table):
     creation_time = Column(CreatedTimeStamp, nullable=True)
     # Get timestamp for last update; check if next code line is correct.
     last_updated_ts = Column(UpdatedTimeStamp, nullable=True)
+
+    # Store record, protocol (which maps to redcap event), and status
+    # (which maps to redcap status)
     # RCap record_id identifying subject
     record_id = REDCapConstants.RECORD_ID
-    # TODO - Do we need a uniqueness constraint on the set of id fields?
-    data_event_id = Column(Integer,
-                           ForeignKey("data_event.data_event_id"),
-                           nullable=True)
+    # Mandatory
+    protocol_id = Column(Integer,
+                         ForeignKey("protocol.protocol_id"),
+                         comments="VBR protocol")
+    # Mandatory
+    status_id = Column(Integer,
+                       ForeignKey("status.status_id"),
+                       comments="VBR status")
+
+    # Optionally, join to biosample, measurement, or subject
     biosample_id = Column(Integer,
                           ForeignKey("biosample.biosample_id"),
                           nullable=True)
