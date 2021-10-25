@@ -9,20 +9,20 @@ __all__ = [
 ]
 
 
-class DataEventInContainer(AssociationTable):
-    """Maps data_events to containers."""
-
-    data_event_in_container_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    data_event = Column(Integer, ForeignKey('data_event.data_event_id'))
-    container = Column(Integer, ForeignKey=('container.container_id'))
-
-
 class DataEventInBiosample(AssociationTable):
     """Maps data_events to biosamples."""
 
     data_event_in_biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     data_event = Column(Integer, ForeignKey('data_event.data_event_id'))
     biosample = Column(Integer, ForeignKey=('biosample.biosample_id'))
+
+
+class DataEventInContainer(AssociationTable):
+    """Maps data_events to containers."""
+
+    data_event_in_container_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    data_event = Column(Integer, ForeignKey('data_event.data_event_id'))
+    container = Column(Integer, ForeignKey=('container.container_id'))
 
 
 class DataEventInMeasurement(AssociationTable):

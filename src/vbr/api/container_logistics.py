@@ -44,19 +44,19 @@ class ContainerLogisticsApi(object):
         # TODO - relocated data event?
         return self.vbr_client.update_row(container)
 
-    def attach_container_to_parent(self,
+    def put_container_in_container(self,
                                    container: Container,
                                    parent: Container,
                                    sync: bool = True) -> Container:
-        """Attach a Container to a parent Container."""
+        """Put a Container inside a parent Container."""
         container.parent_container = parent.container_id
         container = self.vbr_client.update_row(container)
         if sync:
             container = self._sync_container_location_with_parent(container)
         return container
 
-    def detach_container_from_parent(self, container: Container) -> Container:
-        """Detach a Container from a parent Container."""
+    def remove_container_from_parent(self, container: Container) -> Container:
+        """Remove a Container from its parent Container."""
         # if container is None:
         #     container = self.get_container(container_id)
         # 0 is the system base container
@@ -86,11 +86,12 @@ class ContainerLogisticsApi(object):
         """Retrieve the Shipment (if any) for a container (not recursive)."""
         raise NotImplemented()
 
-    def attach_container_to_shipment(self,
-                                     container: Container,
-                                     shipment: Shipment,
-                                     sync: bool = True) -> ContainerInShipment:
-        """Attach a Container to a Shipment."""
+    def associate_container_with_shipment(
+            self,
+            container: Container,
+            shipment: Shipment,
+            sync: bool = True) -> ContainerInShipment:
+        """Associate a Container with a Shipment."""
         conshp = ContainerInShipment(container=container.container_id,
                                      shipment=shipment.shipment_id)
         # ContainerInShipment needs a constraint such that there can only be
@@ -101,8 +102,9 @@ class ContainerLogisticsApi(object):
         except Exception:
             raise ValueError('Unable to attach container to shipment')
 
-    def detach_container_from_shipment(self, container: Container) -> None:
-        """Detach a Container from its Shipment."""
+    def disassociate_container_from_shipment(self,
+                                             container: Container) -> None:
+        """Disassociate a Container from its Shipment."""
         # Retrieve the relevant ContainerInShipment
         query = {
             'container': {

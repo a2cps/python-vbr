@@ -17,6 +17,20 @@ class ContainerApi(object):
         return self._get_row_from_table_with_tracking_id(
             'container', tracking_id)
 
+    def relabel_container_by_local_id(self, local_id: str,
+                                      new_tracking_id: str) -> Container:
+        """Update the tracking_id for a Container by local_id."""
+        # 1. Query for row matching local_id
+        # 2. Set the new value
+        # 3. Do database update via vbr_client.update_row()
+        # 4. TODO Create and link a 'rename' data_event
+        cont = self.get_biosample_by_local_id(local_id)
+        cont.tracking_id = new_tracking_id
+        cont = self.vbr_client.update_row(cont)
+        return cont
+
+    # TODO Update status
+
     def create_container(self,
                          tracking_id: str,
                          project_id: int,
@@ -45,17 +59,3 @@ class ContainerApi(object):
                                          container_type_id, location_id)
         except Exception:
             return self.get_container_by_tracking_id(tracking_id)
-
-    def relabel_container(self, local_id: str,
-                          new_tracking_id: str) -> Container:
-        """Update the tracking_id for a Container by local_id."""
-        # 1. Query for row matching local_id
-        # 2. Set the new value
-        # 3. Do database update via vbr_client.update_row()
-        # 4. TODO Create and link a 'rename' data_event
-        cont = self.get_biosample_by_local_id(local_id)
-        cont.tracking_id = new_tracking_id
-        cont = self.vbr_client.update_row(cont)
-        return cont
-
-    # Update status

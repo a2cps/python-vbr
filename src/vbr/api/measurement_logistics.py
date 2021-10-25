@@ -43,7 +43,9 @@ class MeasurementLogisticsApi(object):
                 'value': biosample.biosample_id
             }
         }
-        return self.vbr_client.query_rows(root_url='measurement', query=query, limit=1000000)
+        return self.vbr_client.query_rows(root_url='measurement',
+                                          query=query,
+                                          limit=1000000)
 
     def partition_measurement(self,
                               measurement: Measurement,
@@ -58,7 +60,8 @@ class MeasurementLogisticsApi(object):
         if tracking_id is not None:
             m2.tracking_id = tracking_id
         else:
-            m2.tracking_id = measurement.tracking_id + '.' + utc_time_in_seconds()
+            m2.tracking_id = measurement.tracking_id + '.' + utc_time_in_seconds(
+            )
         m2 = self.vbr_client.create_row(m2)[0]
         # 2. Register the relation via MeasurementFromMeasurement table
         # 3. Create a partitioned data event for original Measurement

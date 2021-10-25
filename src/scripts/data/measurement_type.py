@@ -2,12 +2,10 @@ from .loader import TableData
 
 
 class MeasurementTypeData(TableData):
-    DATA = [
-    {
+    DATA = [{
         'measurement_type_id': 0,
         'name': 'generic measurement'
-    },
-    {
+    }, {
         'measurement_type_id': 1,
         'name': 'generic liquid sample'
     }, {

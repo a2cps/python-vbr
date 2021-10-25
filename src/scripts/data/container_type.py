@@ -2,12 +2,10 @@ from .loader import TableData
 
 
 class ContainerTypeData(TableData):
-    DATA = [
-    {
+    DATA = [{
         'container_type_id': 0,
         'name': 'virtual container'
-    },
-    {
+    }, {
         'container_type_id': 1,
         'name': 'generic box'
     }, {

@@ -17,6 +17,18 @@ class BiosampleApi(object):
         return self._get_row_from_table_with_tracking_id(
             'biosample', tracking_id)
 
+    def relabel_biosample_by_local_id(self, local_id: str,
+                                      new_tracking_id: str) -> Biosample:
+        """Update the tracking_id for a Biosample by local_id."""
+        # 1. Query for row matching local_id
+        # 2. Set the new value
+        # 3. Do database update via vbr_client.update_row()
+        # 4. TODO Create and link a 'rename' data_event
+        bsam = self.get_biosample_by_local_id(local_id)
+        bsam.tracking_id = new_tracking_id
+        bsam = self.vbr_client.update_row(bsam)
+        return bsam
+
     def create_biosample(self,
                          tracking_id: str,
                          subject_id: int,
@@ -48,18 +60,6 @@ class BiosampleApi(object):
                                          anatomy_id, creation_timestr)
         except Exception:
             return self.get_biosample_by_tracking_id(tracking_id)
-
-    def relabel_biosample(self, local_id: str,
-                          new_tracking_id: str) -> Biosample:
-        """Update the tracking_id for a Biosample by local_id."""
-        # 1. Query for row matching local_id
-        # 2. Set the new value
-        # 3. Do database update via vbr_client.update_row()
-        # 4. TODO Create and link a 'rename' data_event
-        bsam = self.get_biosample_by_local_id(local_id)
-        bsam.tracking_id = new_tracking_id
-        bsam = self.vbr_client.update_row(bsam)
-        return bsam
 
     # ! Relocate (new location or inside another container)
     # Update status

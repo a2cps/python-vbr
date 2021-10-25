@@ -23,6 +23,7 @@ class DataEventApi(object):
                           rank: int = None,
                           comment: str = None) -> DataEvent:
         """Create a new DataEvent with supplied kwargs."""
+        # TODO - check that at least one argument is not None
         de = DataEvent(protocol=protocol_id,
                        reason=reason_id,
                        status=status_id,

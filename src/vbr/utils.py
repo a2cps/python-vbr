@@ -2,9 +2,11 @@ import datetime
 import pytz
 from . import constants
 
+
 def utc_time_in_seconds() -> str:
     """Return string of UTC time in seconds."""
     return str(int(datetime.datetime.today().timestamp()))
+
 
 def timestamp() -> datetime.datetime:
     """Returns the current UTC-localized datetime
