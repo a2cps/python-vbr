@@ -16,7 +16,7 @@ class RcapTableApi(object):
         for p in PARAMS:
             if kwargs.get(p, None) is not None:
                 redcap_data[p] = kwargs.get(p)
-                print('kwarg found: ', p, redcap_data[p])
+                # print('kwarg found: ', p, redcap_data[p])
         # Instantiate the VBR object
         instance = tc(**redcap_data)
         return self.vbr_client.create_row(instance)[0]

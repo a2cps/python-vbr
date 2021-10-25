@@ -9,34 +9,12 @@ from .measurement import MeasurementApi
 from .project import ProjectApi
 from .subject import SubjectApi
 
-__all__ = ['LogisticsApi']
+__all__ = ['ContainerLogisticsApi']
 
 
-# Methods defined here focus on sample and container handling logistics
+# Methods defined here focus on Container handling logistics
 # and tend to span multiple VBR types
-class LogisticsApi(object):
-    def get_measurements_in_biosample(self,
-                                      local_id: str = None,
-                                      biosample_id: int = None) -> list:
-        """Retrieve Measurements derived from a Biosample."""
-        raise NotImplemented()
-
-    def get_measurements_in_container(self,
-                                      local_id: str = None,
-                                      container_id: int = None) -> list:
-        """Retrieve Measurements in a Container."""
-        raise NotImplemented()
-
-    def relocate_measurement(self, local_id: str,
-                             container_local_id: str) -> Measurement:
-        """Move a Measurement to a Container."""
-        # 4. TODO Create and link a 'relocate' data_event
-        meas = Measurement.get_measurement_by_local_id(self, local_id)
-        cont = ContainerApi.get_container_by_local_id(self, container_local_id)
-        meas.container = cont.container_id
-        meas = self.vbr_client.update_row(meas)
-        return meas
-
+class ContainerLogisticsApi(object):
     def relocate_container(self,
                            container: Container,
                            location: Location,

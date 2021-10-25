@@ -10,7 +10,9 @@ from .project import ProjectApi
 from .redcap import RcapTableApi
 from .shipment import ShipmentApi
 from .subject import SubjectApi
-from .logistics import LogisticsApi
+# These must be imported after the table-specific Api classes
+from .container_logistics import ContainerLogisticsApi
+from .measurement_logistics import MeasurementLogisticsApi
 
 from functools import lru_cache
 from vbr.hashable import picklecache
@@ -66,5 +68,5 @@ class ApiBase(object):
 
 class VBR_Api(ApiBase, BiosampleApi, ContainerApi, DataEventApi, LocationApi,
               MeasurementApi, ProjectApi, RcapTableApi, ShipmentApi,
-              SubjectApi, LogisticsApi):
+              SubjectApi, ContainerLogisticsApi, MeasurementLogisticsApi):
     pass
