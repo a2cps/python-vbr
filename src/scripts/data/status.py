@@ -21,4 +21,9 @@ class StatusData(TableData):
         'status_id': 10,
         'name': 'created',
         'description': 'Item was created in the VBR'
+    },
+    {
+        'status_id': 20,
+        'name': 'sample.shipped',
+        'description': 'Sample was packaged and shipped'
     }]

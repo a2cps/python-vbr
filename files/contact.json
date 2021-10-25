@@ -37,14 +37,6 @@
         }
     },
     "comments": "TACC-defined table: contains administrative contact information",
-    "constraints": {
-        "unique": {
-            "signature": [
-                "email",
-                "organization"
-            ]
-        }
-    },
     "root_url": "contact",
     "table_name": "contact"
 }

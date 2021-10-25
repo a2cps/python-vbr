@@ -174,15 +174,6 @@
             "default": "CREATETIME",
             "null": true
         },
-        "data_event_id": {
-            "data_type": "integer",
-            "event_action": "RESTRICT",
-            "foreign_key": true,
-            "null": true,
-            "on_event": "ON DELETE",
-            "reference_column": "data_event_id",
-            "reference_table": "data_event"
-        },
         "last_updated_ts": {
             "data_type": "timestamp",
             "default": "UPDATETIME",
@@ -197,10 +188,28 @@
             "reference_column": "measurement_id",
             "reference_table": "measurement"
         },
+        "protocol_id": {
+            "comments": "VBR protocol",
+            "data_type": "integer",
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "protocol_id",
+            "reference_table": "protocol"
+        },
         "record_id": {
             "char_len": 255,
             "comments": "REDCap record_id identifying subject",
             "data_type": "varchar"
+        },
+        "status_id": {
+            "comments": "VBR status",
+            "data_type": "integer",
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
         },
         "subject_id": {
             "data_type": "integer",

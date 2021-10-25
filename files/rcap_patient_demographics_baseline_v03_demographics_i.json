@@ -24,15 +24,6 @@
             "default": "CREATETIME",
             "null": true
         },
-        "data_event_id": {
-            "data_type": "integer",
-            "event_action": "RESTRICT",
-            "foreign_key": true,
-            "null": true,
-            "on_event": "ON DELETE",
-            "reference_column": "data_event_id",
-            "reference_table": "data_event"
-        },
         "dem_race": {
             "data_type": "integer",
             "null": true
@@ -76,6 +67,15 @@
             "data_type": "serial",
             "primary_key": true
         },
+        "protocol_id": {
+            "comments": "VBR protocol",
+            "data_type": "integer",
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "protocol_id",
+            "reference_table": "protocol"
+        },
         "record_id": {
             "char_len": 255,
             "comments": "REDCap record_id identifying subject",
@@ -84,6 +84,15 @@
         "sex": {
             "data_type": "integer",
             "null": true
+        },
+        "status_id": {
+            "comments": "VBR status",
+            "data_type": "integer",
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
         },
         "subject_id": {
             "data_type": "integer",
