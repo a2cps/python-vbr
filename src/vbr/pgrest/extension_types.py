@@ -64,3 +64,10 @@ class LocalId(String, AutoHashId):
     @classmethod
     def instantiate(cls, value):
         return cls.autopopulate(value)
+
+    @classmethod
+    def cast(cls, value):
+        if value is None:
+            return cls.autopopulate(value)
+        else:
+            return str(value)

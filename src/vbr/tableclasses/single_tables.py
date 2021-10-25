@@ -313,7 +313,7 @@ class Shipment(Table):
     source_record_id = Column(String,
                               nullable=True,
                               comments='REDCap record_id for shipment')
-    # Shipment 
+    # Shipment
     project = Column(Integer, ForeignKey('project.project_id'))
     ship_to = Column(Integer, ForeignKey("contact.contact_id"), nullable=True)
     # Default is mtaub@jhsph.edu
