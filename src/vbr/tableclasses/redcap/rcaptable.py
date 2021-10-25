@@ -39,7 +39,7 @@ class RcapTable(Table):
     @classmethod
     def _links(cls):
         # Update this with any new linkages established by adding FK constraints above
-        return ('data_event', 'biosample', 'measurement', 'subject')
+        return ('protocol', 'status', 'biosample', 'measurement', 'subject')
 
     @classmethod
     def link_column_names(cls):
