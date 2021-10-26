@@ -1,0 +1,229 @@
+event_id,arm_id,day_offset,offset_min,offset_max,descrip,external_id,custom_event_label
+1,1,0,0,0,Event 1,NULL,NULL
+2,2,0,0,0,Enrollment,NULL,NULL
+3,2,1,0,0,Dose 1,NULL,NULL
+4,2,3,0,0,Visit 1,NULL,NULL
+5,2,8,0,0,Dose 2,NULL,NULL
+6,2,10,0,0,Visit 2,NULL,NULL
+7,2,15,0,0,Dose 3,NULL,NULL
+8,2,17,0,0,Visit 3,NULL,NULL
+9,2,30,0,0,Final visit,NULL,NULL
+10,3,0,0,0,Enrollment,NULL,NULL
+11,3,1,0,0,Dose 1,NULL,NULL
+12,3,3,0,0,Visit 1,NULL,NULL
+13,3,8,0,0,Dose 2,NULL,NULL
+14,3,10,0,0,Visit 2,NULL,NULL
+15,3,15,0,0,Dose 3,NULL,NULL
+16,3,17,0,0,Visit 3,NULL,NULL
+17,3,30,0,0,Final visit,NULL,NULL
+18,4,0,0,0,Enrollment,NULL,NULL
+19,4,5,0,0,Deadline to opt out of study,NULL,NULL
+20,4,7,0,0,First dose,NULL,NULL
+21,4,10,2,2,First visit,NULL,NULL
+22,4,13,0,0,Second dose,NULL,NULL
+23,4,15,2,2,Second visit,NULL,NULL
+24,4,20,2,2,Final visit,NULL,NULL
+25,4,30,0,0,Deadline to return feedback,NULL,NULL
+26,5,0,0,0,Event 1,NULL,NULL
+27,6,0,0,0,Event 1,NULL,NULL
+28,7,0,0,0,Event 1,NULL,NULL
+29,8,0,0,0,Event 1,NULL,NULL
+30,9,0,0,0,Event 1,NULL,NULL
+31,10,0,0,0,Event 1,NULL,NULL
+32,11,0,0,0,Initial Data,NULL,NULL
+33,11,1,0,0,Week 1,NULL,NULL
+34,11,8,0,0,Week 2,NULL,NULL
+35,11,15,0,0,Week 3,NULL,NULL
+36,11,22,0,0,Week 4,NULL,NULL
+37,11,30,0,0,Final Data,NULL,NULL
+38,12,0,0,0,Event 1,NULL,NULL
+39,13,0,0,0,Event 1,NULL,NULL
+40,14,0,0,0,Event 1,NULL,NULL
+41,15,1,0,0,Informed Consent,NULL,NULL
+42,15,2,0,0,Baseline Visit,NULL,
+43,15,30,0,0,6-Wks Post-Op,NULL,
+44,15,31,0,0,3-Mo Post-Op,NULL,
+45,15,32,0,0,6-Mo Post-Op,NULL,
+46,16,0,0,0,Event 1,NULL,NULL
+47,15,40,0,0,12-Mo Post-Op,NULL,
+48,15,3,0,0,3 Days Pre-Op,NULL,
+56,18,0,0,0,Event 1,NULL,NULL
+89,15,5,0,0,Day 4 Post-Op,NULL,[traj04wkenterdate]
+90,15,6,0,0,Day 5 Post-Op,NULL,[traj04wkenterdate]
+91,15,7,0,0,Day 6 Post-Op,NULL,[traj04wkenterdate]
+92,15,8,0,0,Day 7 Post-Op,NULL,[traj04wkenterdate]
+93,15,9,0,0,Day 8 Post-Op,NULL,[traj04wkenterdate]
+94,15,10,0,0,Day 9 Post-Op,NULL,[traj04wkenterdate]
+95,15,11,0,0,Day 10 Post-Op,NULL,[traj04wkenterdate]
+96,15,12,0,0,Day 11 Post-Op,NULL,[traj04wkenterdate]
+97,15,13,0,0,Day 12 Post-Op,NULL,[traj04wkenterdate]
+98,15,14,0,0,Day 13 Post-Op,NULL,[traj04wkenterdate]
+99,15,15,0,0,Day 14 Post-Op,NULL,[traj04wkenterdate]
+100,15,16,0,0,Day 15 Post-Op,NULL,[traj04wkenterdate]
+101,15,17,0,0,Day 16 Post-Op,NULL,[traj04wkenterdate]
+102,15,18,0,0,Day 17 Post-Op,NULL,[traj04wkenterdate]
+103,15,19,0,0,Day 18 Post-Op,NULL,[traj04wkenterdate]
+104,15,20,0,0,Day 19 Post-Op,NULL,[traj04wkenterdate]
+105,15,21,0,0,Day 20 Post-Op,NULL,[traj04wkenterdate]
+106,15,22,0,0,Day 21 Post-Op,NULL,[traj04wkenterdate]
+107,15,23,0,0,Day 22 Post-Op,NULL,[traj04wkenterdate]
+108,15,24,0,0,Day 23 Post-Op,NULL,[traj04wkenterdate]
+109,15,25,0,0,Day 24 Post-Op,NULL,[traj04wkenterdate]
+110,15,26,0,0,Day 25 Post-Op,NULL,[traj04wkenterdate]
+111,15,27,0,0,Day 26 Post-Op,NULL,[traj04wkenterdate]
+112,15,28,0,0,Day 27 Post-Op,NULL,[traj04wkenterdate]
+113,15,29,0,0,Day 28 Post-Op,NULL,[traj04wkenterdate]
+114,15,33,0,0,6-Mo Post-Op Day 1 ,NULL,NULL
+115,15,34,0,0,6-Mo Post-Op Day 2,NULL,NULL
+116,15,35,0,0,6-Mo Post-Op Day 3,NULL,NULL
+117,15,36,0,0,6-Mo Post-Op Day 4,NULL,NULL
+118,15,37,0,0,6-Mo Post-Op Day 5,NULL,NULL
+119,15,38,0,0,6-Mo Post-Op Day 6,NULL,NULL
+120,15,39,0,0,6-Mo Post-Op Day 7,NULL,NULL
+164,15,41,0,0,Event Reporting,NULL,NULL
+165,21,0,0,0,Event 1,NULL,NULL
+166,22,0,0,0,Event 1,NULL,NULL
+167,23,1,0,0,Event 1,NULL,
+168,24,0,0,0,Event 1,NULL,NULL
+169,25,1,0,0,Event 1,NULL,NULL
+170,26,1,0,0,Informed Consent,NULL,NULL
+171,26,2,0,0,Baseline Visit,NULL,NULL
+172,26,3,0,0,3 Days Pre-Op,NULL,NULL
+173,26,7,0,0,Day 4 Post-Op,NULL,[traj04wkenterdate]
+174,26,8,0,0,Day 5 Post-Op,NULL,[traj04wkenterdate]
+175,26,9,0,0,Day 6 Post-Op,NULL,[traj04wkenterdate]
+176,26,10,0,0,Day 7 Post-Op,NULL,[traj04wkenterdate]
+177,26,11,0,0,Day 8 Post-Op,NULL,[traj04wkenterdate]
+178,26,12,0,0,Day 9 Post-Op,NULL,[traj04wkenterdate]
+179,26,13,0,0,Day 10 Post-Op,NULL,[traj04wkenterdate]
+180,26,14,0,0,Day 11 Post-Op,NULL,[traj04wkenterdate]
+181,26,15,0,0,Day 12 Post-Op,NULL,[traj04wkenterdate]
+182,26,16,0,0,Day 13 Post-Op,NULL,[traj04wkenterdate]
+183,26,17,0,0,Day 14 Post-Op,NULL,[traj04wkenterdate]
+184,26,18,0,0,Day 15 Post-Op,NULL,[traj04wkenterdate]
+185,26,19,0,0,Day 16 Post-Op,NULL,[traj04wkenterdate]
+186,26,20,0,0,Day 17 Post-Op,NULL,[traj04wkenterdate]
+187,26,21,0,0,Day 18 Post-Op,NULL,[traj04wkenterdate]
+188,26,22,0,0,Day 19 Post-Op,NULL,[traj04wkenterdate]
+189,26,23,0,0,Day 20 Post-Op,NULL,[traj04wkenterdate]
+190,26,24,0,0,Day 21 Post-Op,NULL,[traj04wkenterdate]
+191,26,25,0,0,Day 22 Post-Op,NULL,[traj04wkenterdate]
+192,26,26,0,0,Day 23 Post-Op,NULL,[traj04wkenterdate]
+193,26,27,0,0,Day 24 Post-Op,NULL,[traj04wkenterdate]
+194,26,28,0,0,Day 25 Post-Op,NULL,[traj04wkenterdate]
+195,26,29,0,0,Day 26 Post-Op,NULL,[traj04wkenterdate]
+196,26,30,0,0,Day 27 Post-Op,NULL,[traj04wkenterdate]
+197,26,31,0,0,Day 28 Post-Op,NULL,[traj04wkenterdate]
+198,26,32,0,0,6-Wks Post-Op,NULL,NULL
+199,26,33,0,0,3-Mo Post-Op,NULL,NULL
+200,26,34,0,0,6-Mo Post-Op,NULL,NULL
+201,26,35,0,0,6-Mo Post-Op Day 1 ,NULL,NULL
+202,26,36,0,0,6-Mo Post-Op Day 2,NULL,NULL
+203,26,37,0,0,6-Mo Post-Op Day 3,NULL,NULL
+204,26,38,0,0,6-Mo Post-Op Day 4,NULL,NULL
+205,26,39,0,0,6-Mo Post-Op Day 5,NULL,NULL
+206,26,40,0,0,6-Mo Post-Op Day 6,NULL,NULL
+207,26,41,0,0,6-Mo Post-Op Day 7,NULL,NULL
+208,26,42,0,0,12-Mo Post-Op,NULL,NULL
+209,26,43,0,0,Event Reporting,NULL,NULL
+210,15,4,0,0,Day 3 Post-Op,NULL,[traj04wkenterdate]
+211,27,0,0,0,Enrollment,NULL,NULL
+212,27,1,0,0,Dose 1,NULL,NULL
+213,27,3,0,0,Visit 1,NULL,NULL
+214,27,8,0,0,Dose 2,NULL,NULL
+215,27,10,0,0,Visit 2,NULL,NULL
+216,27,15,0,0,Dose 3,NULL,NULL
+217,27,17,0,0,Visit 3,NULL,NULL
+218,27,30,0,0,Final visit,NULL,NULL
+260,29,1,0,0,Event 1,NULL,NULL
+261,30,1,0,0,Informed Consent,NULL,NULL
+262,30,2,0,0,Baseline Visit,NULL,NULL
+263,30,3,0,0,3 Days Pre-Op,NULL,NULL
+264,30,4,0,0,Day 3 Post-Op,NULL,[traj04wkenterdate]
+265,30,5,0,0,Day 4 Post-Op,NULL,[traj04wkenterdate]
+266,30,6,0,0,Day 5 Post-Op,NULL,[traj04wkenterdate]
+267,30,7,0,0,Day 6 Post-Op,NULL,[traj04wkenterdate]
+268,30,8,0,0,Day 7 Post-Op,NULL,[traj04wkenterdate]
+269,30,9,0,0,Day 8 Post-Op,NULL,[traj04wkenterdate]
+270,30,10,0,0,Day 9 Post-Op,NULL,[traj04wkenterdate]
+271,30,11,0,0,Day 10 Post-Op,NULL,[traj04wkenterdate]
+272,30,12,0,0,Day 11 Post-Op,NULL,[traj04wkenterdate]
+273,30,13,0,0,Day 12 Post-Op,NULL,[traj04wkenterdate]
+274,30,14,0,0,Day 13 Post-Op,NULL,[traj04wkenterdate]
+275,30,15,0,0,Day 14 Post-Op,NULL,[traj04wkenterdate]
+276,30,16,0,0,Day 15 Post-Op,NULL,[traj04wkenterdate]
+277,30,17,0,0,Day 16 Post-Op,NULL,[traj04wkenterdate]
+278,30,18,0,0,Day 17 Post-Op,NULL,[traj04wkenterdate]
+279,30,19,0,0,Day 18 Post-Op,NULL,[traj04wkenterdate]
+280,30,20,0,0,Day 19 Post-Op,NULL,[traj04wkenterdate]
+281,30,21,0,0,Day 20 Post-Op,NULL,[traj04wkenterdate]
+282,30,22,0,0,Day 21 Post-Op,NULL,[traj04wkenterdate]
+283,30,23,0,0,Day 22 Post-Op,NULL,[traj04wkenterdate]
+284,30,24,0,0,Day 23 Post-Op,NULL,[traj04wkenterdate]
+285,30,25,0,0,Day 24 Post-Op,NULL,[traj04wkenterdate]
+286,30,26,0,0,Day 25 Post-Op,NULL,[traj04wkenterdate]
+287,30,27,0,0,Day 26 Post-Op,NULL,[traj04wkenterdate]
+288,30,28,0,0,Day 27 Post-Op,NULL,[traj04wkenterdate]
+289,30,29,0,0,Day 28 Post-Op,NULL,[traj04wkenterdate]
+290,30,30,0,0,6-Wks Post-Op,NULL,NULL
+291,30,31,0,0,3-Mo Post-Op,NULL,NULL
+292,30,32,0,0,6-Mo Post-Op,NULL,NULL
+293,30,33,0,0,6-Mo Post-Op Day 1 ,NULL,NULL
+294,30,34,0,0,6-Mo Post-Op Day 2,NULL,NULL
+295,30,35,0,0,6-Mo Post-Op Day 3,NULL,NULL
+296,30,36,0,0,6-Mo Post-Op Day 4,NULL,NULL
+297,30,37,0,0,6-Mo Post-Op Day 5,NULL,NULL
+298,30,38,0,0,6-Mo Post-Op Day 6,NULL,NULL
+299,30,39,0,0,6-Mo Post-Op Day 7,NULL,NULL
+300,30,40,0,0,12-Mo Post-Op,NULL,NULL
+301,30,41,0,0,Event Reporting,NULL,NULL
+302,31,0,0,0,Event 1,NULL,NULL
+303,32,0,0,0,Event 1,NULL,NULL
+304,33,1,0,0,Event 1,NULL,NULL
+305,34,1,0,0,Event 1,NULL,NULL
+306,35,0,0,0,Event 1,NULL,NULL
+307,36,0,0,0,Event 1,NULL,NULL
+308,37,0,0,0,Event 1,NULL,NULL
+309,38,0,0,0,Event 1,NULL,NULL
+310,39,1,0,0,Informed Consent,NULL,NULL
+311,39,2,0,0,Baseline Visit,NULL,NULL
+312,39,3,0,0,3 Days Pre-Op,NULL,NULL
+313,39,4,0,0,Day 3 Post-Op,NULL,[traj04wkenterdate]
+314,39,5,0,0,Day 4 Post-Op,NULL,[traj04wkenterdate]
+315,39,6,0,0,Day 5 Post-Op,NULL,[traj04wkenterdate]
+316,39,7,0,0,Day 6 Post-Op,NULL,[traj04wkenterdate]
+317,39,8,0,0,Day 7 Post-Op,NULL,[traj04wkenterdate]
+318,39,9,0,0,Day 8 Post-Op,NULL,[traj04wkenterdate]
+319,39,10,0,0,Day 9 Post-Op,NULL,[traj04wkenterdate]
+320,39,11,0,0,Day 10 Post-Op,NULL,[traj04wkenterdate]
+321,39,12,0,0,Day 11 Post-Op,NULL,[traj04wkenterdate]
+322,39,13,0,0,Day 12 Post-Op,NULL,[traj04wkenterdate]
+323,39,14,0,0,Day 13 Post-Op,NULL,[traj04wkenterdate]
+324,39,15,0,0,Day 14 Post-Op,NULL,[traj04wkenterdate]
+325,39,16,0,0,Day 15 Post-Op,NULL,[traj04wkenterdate]
+326,39,17,0,0,Day 16 Post-Op,NULL,[traj04wkenterdate]
+327,39,18,0,0,Day 17 Post-Op,NULL,[traj04wkenterdate]
+328,39,19,0,0,Day 18 Post-Op,NULL,[traj04wkenterdate]
+329,39,20,0,0,Day 19 Post-Op,NULL,[traj04wkenterdate]
+330,39,21,0,0,Day 20 Post-Op,NULL,[traj04wkenterdate]
+331,39,22,0,0,Day 21 Post-Op,NULL,[traj04wkenterdate]
+332,39,23,0,0,Day 22 Post-Op,NULL,[traj04wkenterdate]
+333,39,24,0,0,Day 23 Post-Op,NULL,[traj04wkenterdate]
+334,39,25,0,0,Day 24 Post-Op,NULL,[traj04wkenterdate]
+335,39,26,0,0,Day 25 Post-Op,NULL,[traj04wkenterdate]
+336,39,27,0,0,Day 26 Post-Op,NULL,[traj04wkenterdate]
+337,39,28,0,0,Day 27 Post-Op,NULL,[traj04wkenterdate]
+338,39,29,0,0,Day 28 Post-Op,NULL,[traj04wkenterdate]
+339,39,30,0,0,6-Wks Post-Op,NULL,NULL
+340,39,31,0,0,3-Mo Post-Op,NULL,NULL
+341,39,32,0,0,6-Mo Post-Op,NULL,NULL
+342,39,33,0,0,6-Mo Post-Op Day 1 ,NULL,NULL
+343,39,34,0,0,6-Mo Post-Op Day 2,NULL,NULL
+344,39,35,0,0,6-Mo Post-Op Day 3,NULL,NULL
+345,39,36,0,0,6-Mo Post-Op Day 4,NULL,NULL
+346,39,37,0,0,6-Mo Post-Op Day 5,NULL,NULL
+347,39,38,0,0,6-Mo Post-Op Day 6,NULL,NULL
+348,39,39,0,0,6-Mo Post-Op Day 7,NULL,NULL
+349,39,40,0,0,12-Mo Post-Op,NULL,NULL
+350,39,41,0,0,Event Reporting,NULL,NULL
+351,40,1,0,0,Event 1,NULL,NULL

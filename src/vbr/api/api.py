@@ -1,6 +1,6 @@
 from vbr.client import VBR
+from vbr.utils.helpers import get_client
 from vbr.tableclasses import Table
-from tapipy.tapis import Tapis
 from .biosample import BiosampleApi
 from .container import ContainerApi
 from .data_event import DataEventApi
@@ -13,20 +13,27 @@ from .subject import SubjectApi
 # These must be imported after the table-specific Api classes
 from .container_logistics import ContainerLogisticsApi
 from .measurement_logistics import MeasurementLogisticsApi
+from tapipy.tapis import Tapis
 
 from functools import lru_cache
 from vbr.hashable import picklecache
 
-__all__ = ['new_vbr_client', 'VBR_Api']
+__all__ = ['get_vbr_api_client', 'VBR_Api']
 
 
-def new_api_client(tapis_client: Tapis) -> VBR:
+def get_vbr_api_client(tapis_client: Tapis = None) -> VBR:
     """Instantiate a VBR client."""
     return VBR_Api(tapis_client=tapis_client)
 
 
 class ApiBase(object):
-    def __init__(self, tapis_client):
+    def __init__(self, tapis_client: Tapis = None):
+        # If tapis client not provided try to bootstrap
+        # from localhost and then environment vars. This
+        # is an affordance to assist with local and
+        # in-actor debugging
+        if tapis_client is None:
+            tapis_client = get_client()
         self.vbr_client = VBR(tapis_client)
 
     @picklecache.mcache(lru_cache(maxsize=32))
