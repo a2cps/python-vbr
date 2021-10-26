@@ -1,4 +1,4 @@
-API ?= https://a2cps.tapis.io
+API ?= https://a2cps-dev.tapis.io
 USERNAME ?= $(A2CPS_USERNAME)
 PASSWORD ?= $(A2CPS_PASSWORD)
 
