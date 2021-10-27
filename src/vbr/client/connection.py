@@ -28,10 +28,15 @@ class Connection(object):
         if auto_connect:
             self.connect()
 
-    def connect(self, tapis_client: Tapis = None) -> NoReturn:
+    def connect(self, tapis_client: Tapis = None) -> NoReturn:        
         if tapis_client is not None:
             self.client = tapis_client
-        self.client.get_tokens()
+        
+        # try:
+        #     self.client.get_tokens()
+        # except Exception:
+        #     # Probably running inside an Actor where this won't work
+        #     pass
 
 
 class TapisUserEnv(Tapis):
