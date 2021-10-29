@@ -1,6 +1,7 @@
 from typing import NoReturn, Any
 from tapipy.tapis import Tapis, TapisResult
 from vbr.pgrest import table
+from .connection import TapisDirectClient
 
 __all__ = ['TableManager']
 
@@ -8,15 +9,21 @@ __all__ = ['TableManager']
 class TableManager(object):
     """Manage PgREST tables
     """
+    def create_table_from_definition(self, table_def: dict) -> NoReturn:
+        """Create a new PgREST table from a table dictionary (if authorized)"""
+        # Disable use of Tapipy for this until OAPI spec is updated to include constraints
+        # resp = self.client.pgrest.create_table(**table_def)
+        #
+        # Use TapisDirectClient instead to make a POST
+        direct_client = TapisDirectClient(self.client)
+        direct_client.setup('pgrest', api_path='manage/tables')
+        resp = direct_client.post(json=table_def)
+        return resp
+
     def create_table(self, table_object: Any) -> NoReturn:
         """Create a PgREST table from a VBR Table (if authorized)"""
         tdef = table_object.__schema__.definition()
-        resp = self.client.pgrest.create_table(**tdef)
-        return resp
-
-    def create_table_from_definition(self, table_def: dict) -> NoReturn:
-        """Create a new PgREST table from a table dictionary (if authorized)"""
-        resp = self.client.pgrest.create_table(**table_def)
+        resp = self.create_table_from_definition(tdef)
         return resp
 
     def update_table(self, table_object: Any, table_id: int) -> NoReturn:

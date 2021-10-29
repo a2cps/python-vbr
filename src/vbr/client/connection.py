@@ -10,7 +10,7 @@ from tapipy.tapis import Tapis, TapisResult
 
 logging.basicConfig(level=logging.CRITICAL)
 
-__all__ = ['Connection', 'TapisUserEnv']
+__all__ = ['Connection', 'TapisUserEnv', 'TapisDirectClient']
 
 
 class Connection(object):
@@ -28,10 +28,10 @@ class Connection(object):
         if auto_connect:
             self.connect()
 
-    def connect(self, tapis_client: Tapis = None) -> NoReturn:        
+    def connect(self, tapis_client: Tapis = None) -> NoReturn:
         if tapis_client is not None:
             self.client = tapis_client
-        
+
         # try:
         #     self.client.get_tokens()
         # except Exception:
@@ -76,8 +76,8 @@ class TapisDirectClient(object):
             self.headers['X-Tapis-Token'] = '{}'.format(token)
 
     def setup(self, service_name, service_version='v3', api_path=None):
-        setattr(self, 'service_version', service_version)
         setattr(self, 'service_name', service_name)
+        setattr(self, 'service_version', service_version)
         setattr(self, 'api_path', api_path)
 
     def build_url(self, *args):
