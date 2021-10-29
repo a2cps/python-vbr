@@ -2,6 +2,7 @@ def main(args):
     t = Tapis(base_url=args['base_url'],
               username=args['username'],
               password=args['password'])
+    t.get_tokens()
     v = VBR(tapis_client=t)
 
     print(v.list_rows('organization'))
