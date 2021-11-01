@@ -1,5 +1,5 @@
 import tapipy
-from tapipy.actors import actors
+from tapipy import actors
 from .tapis_local_cache import TapisLocalCache
 
 __all__ = ['get_client']
