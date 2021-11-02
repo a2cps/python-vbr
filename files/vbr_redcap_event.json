@@ -1,0 +1,57 @@
+{
+    "columns": {
+        "created": {
+            "comments": "When created",
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
+        "event_id": {
+            "data_type": "integer",
+            "null": true
+        },
+        "event_status": {
+            "char_len": 255,
+            "comments": "Event status",
+            "data_type": "varchar",
+            "default": "CREATED"
+        },
+        "instrument": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "instrument_complete": {
+            "data_type": "integer",
+            "null": true
+        },
+        "internal_id": {
+            "data_type": "serial",
+            "primary_key": true
+        },
+        "local_id": {
+            "char_len": 16,
+            "comments": "Public identifier",
+            "data_type": "varchar",
+            "unique": true
+        },
+        "project_id": {
+            "data_type": "integer",
+            "null": true
+        },
+        "record": {
+            "char_len": 255,
+            "data_type": "varchar",
+            "null": true
+        },
+        "updated": {
+            "comments": "When created",
+            "data_type": "timestamp",
+            "default": "UPDATETIME",
+            "null": true
+        }
+    },
+    "comments": "Event sourced from REDcap -> VBR integrations.",
+    "root_url": "vbr_redcap_event",
+    "table_name": "vbr_redcap_event"
+}
