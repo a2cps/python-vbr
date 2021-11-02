@@ -2,7 +2,7 @@
     "columns": {
         "biosample_id": {
             "data_type": "integer",
-            "event_action": "RESTRICT",
+            "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -55,7 +55,7 @@
         },
         "measurement_id": {
             "data_type": "integer",
-            "event_action": "RESTRICT",
+            "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
@@ -108,7 +108,7 @@
         },
         "subject_id": {
             "data_type": "integer",
-            "event_action": "RESTRICT",
+            "event_action": "CASCADE",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",

@@ -2,7 +2,7 @@
     "columns": {
         "dataset": {
             "data_type": "integer",
-            "event_action": "RESTRICT",
+            "event_action": "CASCADE",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "dataset_id",
@@ -14,7 +14,7 @@
         },
         "project": {
             "data_type": "integer",
-            "event_action": "RESTRICT",
+            "event_action": "CASCADE",
             "foreign_key": true,
             "on_event": "ON DELETE",
             "reference_column": "project_id",
