@@ -63,7 +63,7 @@ class ApiBase(object):
 
     @picklecache.mcache(lru_cache(maxsize=32))
     def _get_rows_from_table_with_query(self, root_url: str,
-                                       query: dict) -> Table:
+                                        query: dict) -> Table:
         """Get rows by table root_url and pgrest 'where' query"""
         resp = self.vbr_client.query_rows(root_url=root_url, query=query)
         if len(resp) == 0:
@@ -84,6 +84,6 @@ class ApiBase(object):
 
 class VBR_Api(ApiBase, BiosampleApi, ContainerApi, DataEventApi, LocationApi,
               MeasurementApi, ProjectApi, RcapTableApi, ShipmentApi,
-              SubjectApi, VbrRedcapEventApi, ContainerLogisticsApi, 
+              SubjectApi, VbrRedcapEventApi, ContainerLogisticsApi,
               MeasurementLogisticsApi):
     pass

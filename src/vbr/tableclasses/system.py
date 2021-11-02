@@ -3,7 +3,9 @@ from .constants import Constants
 
 __all__ = ['VbrSysEventTable', 'VbrRedcapEvent']
 
-STATUSES = ['CREATED', 'PROCESSING', 'COMPLETE', 'FAILED']
+STATUSES = [
+    'RECEIVED', 'PROCESSING', 'PROCESSING_COMPLETE', 'PROCESSING_FAILED'
+]
 
 
 class SysEventStatus(String):
