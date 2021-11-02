@@ -10,6 +10,7 @@ from .project import ProjectApi
 from .redcap import RcapTableApi
 from .shipment import ShipmentApi
 from .subject import SubjectApi
+from .system import VbrRedcapEventApi
 # These must be imported after the table-specific Api classes
 from .container_logistics import ContainerLogisticsApi
 from .measurement_logistics import MeasurementLogisticsApi
@@ -61,19 +62,28 @@ class ApiBase(object):
                                                    query=query)
 
     @picklecache.mcache(lru_cache(maxsize=32))
+    def _get_rows_from_table_with_query(self, root_url: str,
+                                       query: dict) -> Table:
+        """Get rows by table root_url and pgrest 'where' query"""
+        resp = self.vbr_client.query_rows(root_url=root_url, query=query)
+        if len(resp) == 0:
+            raise ValueError('Does not match any {0}'.format(root_url))
+        else:
+            return resp
+
+    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_query(self, root_url: str,
                                        query: dict) -> Table:
         """Get a row by table root_url and pgrest 'where' query"""
-        resp = self.vbr_client.query_rows(root_url=root_url, query=query)
+        resp = self._get_rows_from_table_with_query(root_url, query)
         if len(resp) > 1:
             raise ValueError('Resolves to multiple {0}'.format(root_url))
-        elif len(resp) == 0:
-            raise ValueError('Does not match any {0}'.format(root_url))
         else:
             return resp[0]
 
 
 class VBR_Api(ApiBase, BiosampleApi, ContainerApi, DataEventApi, LocationApi,
               MeasurementApi, ProjectApi, RcapTableApi, ShipmentApi,
-              SubjectApi, ContainerLogisticsApi, MeasurementLogisticsApi):
+              SubjectApi, VbrRedcapEventApi, ContainerLogisticsApi, 
+              MeasurementLogisticsApi):
     pass
