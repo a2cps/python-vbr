@@ -22,8 +22,8 @@ class BiosampleInDataset(AssociationTable):
     """Maps biosamples to datasets."""
 
     biosample_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    biosample = Column(Integer, ForeignKey('biosample.biosample_id'))
-    dataset = Column(Integer, ForeignKey('dataset.dataset_id'))
+    biosample = Column(Integer, ForeignKey('biosample.biosample_id', event_action='CASCADE'))
+    dataset = Column(Integer, ForeignKey('dataset.dataset_id', event_action='CASCADE'))
 
 
 class ContainerInShipment(AssociationTable):
@@ -33,31 +33,31 @@ class ContainerInShipment(AssociationTable):
     container = Column(Integer,
                        ForeignKey('container.container_id'),
                        unique=True)
-    shipment = Column(Integer, ForeignKey('shipment.shipment_id'))
-    signature = Signature('container_id', 'shipment_id')
+    shipment = Column(Integer, ForeignKey('shipment.shipment_id', event_action='CASCADE'))
+    signature = Signature('container_id', 'shipment_id', event_action='CASCADE')
 
 
 class DatasetInProject(AssociationTable):
     """Maps datasets to their associated projects."""
 
     dataset_in_project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    dataset = Column(Integer, ForeignKey('dataset.dataset_id'))
-    project = Column(Integer, ForeignKey('project.project_id'))
+    dataset = Column(Integer, ForeignKey('dataset.dataset_id', event_action='CASCADE'))
+    project = Column(Integer, ForeignKey('project.project_id', event_action='CASCADE'))
 
 
 class FileInDataEvent(AssociationTable):
     """Maps files to data events which create or alter them."""
 
     file_in_data_event_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    file = Column(Integer, ForeignKey('file.file_id'))
-    data_event = Column(Integer, ForeignKey('data_event.data_event_id'))
+    file = Column(Integer, ForeignKey('file.file_id', event_action='CASCADE'))
+    data_event = Column(Integer, ForeignKey('data_event.data_event_id', event_action='CASCADE'))
 
 
 class FileInDataset(AssociationTable):
     """Maps files to dataset collections."""
     file_in_dataset_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
-    file = Column(Integer, ForeignKey('file.file_id'))
-    dataset = Column(Integer, ForeignKey('dataset.dataset_id'))
+    file = Column(Integer, ForeignKey('file.file_id', event_action='CASCADE'))
+    dataset = Column(Integer, ForeignKey('dataset.dataset_id', event_action='CASCADE'))
 
 
 # Not needed. Each Measurement is derived from exactly one Biosample

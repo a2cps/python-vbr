@@ -27,13 +27,13 @@ class RcapTable(Table):
 
     # Optionally, join to biosample, measurement, or subject
     biosample_id = Column(Integer,
-                          ForeignKey("biosample.biosample_id"),
+                          ForeignKey("biosample.biosample_id", event_action='CASCADE'),
                           nullable=True)
     measurement_id = Column(Integer,
-                            ForeignKey("measurement.measurement_id"),
+                            ForeignKey("measurement.measurement_id", event_action='CASCADE'),
                             nullable=True)
     subject_id = Column(Integer,
-                        ForeignKey("subject.subject_id"),
+                        ForeignKey("subject.subject_id", event_action='CASCADE'),
                         nullable=True)
 
     @classmethod

@@ -43,7 +43,7 @@ class Biosample(Table):
                          unique=True)
     anatomy = Column(Integer, ForeignKey('anatomy.anatomy_id'))
     project = Column(Integer, ForeignKey('project.project_id'))
-    subject = Column(Integer, ForeignKey('subject.subject_id'))
+    subject = Column(Integer, ForeignKey('subject.subject_id', event_action='CASCADE'))
 
 
 class Container(Table):
@@ -230,7 +230,7 @@ class Measurement(Table):
         Integer, ForeignKey('measurement_type.measurement_type_id'))
     unit = Column(Integer, ForeignKey('unit.unit_id'))
 
-    biosample = Column(Integer, ForeignKey('biosample.biosample_id'))
+    biosample = Column(Integer, ForeignKey('biosample.biosample_id', event_action='CASCADE'))
     # Optional. Allows physical Measurement assets to be associated with a physical Container
     container = Column(Integer,
                        ForeignKey('container.container_id'),
