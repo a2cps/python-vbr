@@ -63,7 +63,7 @@ class TapisDirectClient(object):
         # Always refresh when using a requests call
         try:
             token = tapis_client.access_token.access_token
-        except AttributeError;
+        except AttributeError:
             token = tapis_client.access_token
 
         self.user_agent = 'TapisDirectClient/1.0'
