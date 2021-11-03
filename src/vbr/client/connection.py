@@ -61,7 +61,11 @@ class TapisDirectClient(object):
         # TODO - Catch when client is missing properties
         # token = tapis_client.token.token_info['access_token']
         # Always refresh when using a requests call
-        token = tapis_client.access_token.access_token
+        try:
+            token = tapis_client.access_token.access_token
+        except AttributeError;
+            token = tapis_client.access_token
+
         self.user_agent = 'TapisDirectClient/1.0'
         self.api_server = tapis_client.base_url
         self.api_key = tapis_client.client_id
