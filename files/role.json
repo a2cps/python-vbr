@@ -20,7 +20,7 @@
     "comments": "TACC-defined table: defines permissions associated with users of this system.",
     "constraints": {
         "unique": {
-            "signature": [
+            "signature-29a7e96": [
                 "url",
                 "name"
             ]

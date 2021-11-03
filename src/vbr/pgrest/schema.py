@@ -1,3 +1,4 @@
+import hashlib
 import inspect
 import json
 
@@ -60,7 +61,10 @@ class PgrestSchema(object):
                 cvalues = v.property()
                 if ctype not in defn:
                     defn[ctype] = {}
-                defn[ctype][k] = cvalues
+                # hash table name
+                table_name = hashlib.md5(self.table_name.encode('utf-8')).hexdigest()[:7]
+                key = '{0}_{1}'.format(k, table_name)
+                defn[ctype][key] = cvalues
         return defn
 
     @property

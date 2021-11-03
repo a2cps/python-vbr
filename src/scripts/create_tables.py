@@ -16,7 +16,7 @@ def main(args):
                 time.sleep(0.125)
         except Exception as exc:
             print(exc)
-
+            # raise
 
 if __name__ == '__main__':
 

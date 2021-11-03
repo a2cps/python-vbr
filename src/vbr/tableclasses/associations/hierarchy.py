@@ -34,7 +34,7 @@ class ContainerInShipment(AssociationTable):
                        ForeignKey('container.container_id'),
                        unique=True)
     shipment = Column(Integer, ForeignKey('shipment.shipment_id', event_action='CASCADE'))
-    signature = Signature('container_id', 'shipment_id', event_action='CASCADE')
+    signature = Signature('container', 'shipment')
 
 
 class DatasetInProject(AssociationTable):

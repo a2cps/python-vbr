@@ -22,7 +22,7 @@
     "comments": "C2M2 proposed future extension: a list of data-generating research programs or entities.",
     "constraints": {
         "unique": {
-            "signature": [
+            "signature-b4c1948": [
                 "url",
                 "name"
             ]
