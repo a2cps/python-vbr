@@ -31,6 +31,8 @@ def get_client():
         return actors_get_client()
     except errors.BaseTapyException:
         # Works on configured local host
-        return TapisLocalCache.restore()
+        t = TapisLocalCache.restore()
+        t.get_tokens()
+        return t
     except Exception:
         raise
