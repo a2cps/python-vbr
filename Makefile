@@ -70,7 +70,11 @@ reformat-source:
 reformat-scripts:
 	black src/scripts
 
-reformat: reformat-source reformat-scripts
+.SILENT:
+reformat-tests:
+	black src/tests
+
+reformat: reformat-source reformat-scripts reformat-tests
 
 .SILENT:
 isort-source:

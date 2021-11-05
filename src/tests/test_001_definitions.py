@@ -1,3 +1,5 @@
+"""Test ability to generate table definitions.
+"""
 from vbr import tableclasses
 
 

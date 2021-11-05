@@ -156,7 +156,7 @@ if __name__ == "__main__":
         "data_event_in_shipment",
         "measurement_from_measurement",
         "rcap_consented_participant_information",
-        "blood_sample_collection_and_processing_crf",
+        "rcap_blood_sample_collection_and_processing_crf",
     ]
 
     parser = get_parser()
