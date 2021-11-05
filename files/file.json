@@ -85,7 +85,7 @@
     "comments": "C2M2-defined table: provide unique persistent name and associated information for files",
     "constraints": {
         "unique": {
-            "signature-8c7dd92": [
+            "signature_8c7dd92": [
                 "filename",
                 "sha256",
                 "md5",

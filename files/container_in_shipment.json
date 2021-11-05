@@ -25,9 +25,9 @@
     "comments": "Maps containers inside other shipments.",
     "constraints": {
         "unique": {
-            "signature-c323055": [
-                "container_id",
-                "shipment_id"
+            "signature_c323055": [
+                "container",
+                "shipment"
             ]
         }
     },
