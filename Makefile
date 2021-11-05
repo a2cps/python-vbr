@@ -2,20 +2,17 @@ API ?= https://a2cps-dev.tapis.io
 USERNAME ?= $(A2CPS_USERNAME)
 PASSWORD ?= $(A2CPS_PASSWORD)
 
+.SILENT:
 deps:
-	pip install pytest flake8 yapf
+	pip --disable-pip-version-check install -r requirements.txt
 
-lint: deps
-	# stop the build if there are Python syntax errors or undefined names
-	flake8 src/vbr --count --select=E9,F63,F7,F82 --show-source --statistics
-	# exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-	flake8 src/vbr --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
+.SILENT:
 pytest: deps
 	python -m pytest
 
-tests: lint pytest
+tests: pytest
 
+.SILENT:
 classfiles-clean:
 	cd src ; python -m scripts.redcap_classfiles clean
 
@@ -25,48 +22,61 @@ classfiles:
 definitions:
 	cd src ; python -m scripts.definitions; mv -f *.json  ../files/
 
+.SILENT:
 definitions-clean:
 	rm -f files/*.json
 
 clean: definitions-clean
 
+.SILENT:
 create_tables:
 	cd src ; python -m scripts.create_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
+.SILENT:
 drop_tables:
 	cd src ; python -m scripts.drop_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
+.SILENT:
 bootstrap_tables:
 	cd src ; python -m scripts.bootstrap_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
+.SILENT:
 dump_tables: 
 	cd src ; python -m scripts.dump_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
+.SILENT:
 load_tables: 
 	cd src ; python -m scripts.load_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
+.SILENT:
 dump_tables-clean:
 	cd exports; rm *.csv
 
+.SILENT:
 clean_tables:
 	cd src; echo "Cleaning: $(SCRIPT_ARGS)"
 
 reset: drop_tables create_tables bootstrap_tables
 
+.SILENT:
 dbml:
 	mkdir -p files-dbml; cd src; python -m scripts.dbml build --dotfile; mv -f dbml.* ../files-dbml/
 
+.SILENT:
 reformat-source:
 	black src/vbr
 
+.SILENT:
 reformat-scripts:
 	black src/scripts
 
 reformat: reformat-source reformat-scripts
 
+.SILENT:
 isort-source:
 	isort src/vbr
 
+.SILENT:
 isort-scripts:
 	isort src/scripts
 
