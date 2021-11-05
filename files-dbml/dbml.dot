@@ -241,6 +241,7 @@ data_event_in_shipment -> data_event  [headlabel=data_event_id, minlen=3, tailla
 data_event_in_shipment -> shipment  [headlabel=shipment_id, minlen=3, taillabel=shipment, xlabel="                                      "];
 data_event_in_measurement -> data_event  [headlabel=data_event_id, minlen=3, taillabel=data_event, xlabel="                                              "];
 data_event_in_measurement -> measurement  [headlabel=measurement_id, minlen=3, taillabel=measurement, xlabel="                                                  "];
+data_event_in_biosample -> biosample  [headlabel=biosample_id, minlen=3, taillabel=biosample, xlabel="                                          "];
 data_event_in_biosample -> data_event  [headlabel=data_event_id, minlen=3, taillabel=data_event, xlabel="                                              "];
 rcap_consented_participant_information -> biosample  [headlabel=biosample_id, minlen=3, taillabel=biosample_id, xlabel="                                                "];
 rcap_consented_participant_information -> status  [headlabel=status_id, minlen=5, taillabel=consented_participant_information_complete, xlabel="                                                                                                      "];

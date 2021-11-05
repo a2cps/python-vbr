@@ -178,7 +178,7 @@ Table data_event_in_measurement {
   Note: 'Maps data_events associated with measurements.'
 }
 Table data_event_in_biosample {
-  biosample int 
+  biosample int [ref: > biosample.biosample_id]
   data_event int [ref: > data_event.data_event_id]
   data_event_in_biosample_id int [primary key, increment]
   Note: 'Maps data_events to biosamples.'
