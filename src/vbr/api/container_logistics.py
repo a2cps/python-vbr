@@ -1,6 +1,13 @@
-from vbr.tableclasses import (Biosample, Container, Location, Measurement,
-                              Project, Shipment, Subject)
-from vbr.tableclasses import (ContainerInShipment)
+from vbr.tableclasses import (
+    Biosample,
+    Container,
+    ContainerInShipment,
+    Location,
+    Measurement,
+    Project,
+    Shipment,
+    Subject,
+)
 
 from .biosample import BiosampleApi
 from .container import ContainerApi
@@ -9,16 +16,15 @@ from .measurement import MeasurementApi
 from .project import ProjectApi
 from .subject import SubjectApi
 
-__all__ = ['ContainerLogisticsApi']
+__all__ = ["ContainerLogisticsApi"]
 
 
 # Methods defined here focus on Container handling logistics
 # and tend to span multiple VBR types
 class ContainerLogisticsApi(object):
-    def relocate_container(self,
-                           container: Container,
-                           location: Location,
-                           sync: bool = True) -> Container:
+    def relocate_container(
+        self, container: Container, location: Location, sync: bool = True
+    ) -> Container:
         """Move a Container to a Location."""
         container.location = location.location_id
         container = self.vbr_client.update_row(container)
@@ -36,18 +42,16 @@ class ContainerLogisticsApi(object):
             # TODO - relocated data event?
             self.vbr_client.update_row(child)
 
-    def _sync_container_location_with_parent(
-            self, container: Container) -> Container:
+    def _sync_container_location_with_parent(self, container: Container) -> Container:
         """Synchronize locations of a Container with its parent."""
         parent = self.get_container_parent(container)
         container.location = parent.location
         # TODO - relocated data event?
         return self.vbr_client.update_row(container)
 
-    def put_container_in_container(self,
-                                   container: Container,
-                                   parent: Container,
-                                   sync: bool = True) -> Container:
+    def put_container_in_container(
+        self, container: Container, parent: Container, sync: bool = True
+    ) -> Container:
         """Put a Container inside a parent Container."""
         container.parent_container = parent.container_id
         container = self.vbr_client.update_row(container)
@@ -74,45 +78,32 @@ class ContainerLogisticsApi(object):
 
     def get_container_children(self, container: Container) -> list:
         """Retrieve child Containers for a Container."""
-        query = {
-            'parent_container': {
-                'operator': '=',
-                'value': container.container_id
-            }
-        }
-        return self.vbr_client.query_rows(root_url='container', query=query)
+        query = {"parent_container": {"operator": "=", "value": container.container_id}}
+        return self.vbr_client.query_rows(root_url="container", query=query)
 
     def get_shipment_for_container(self, container: Container) -> Shipment:
         """Retrieve the Shipment (if any) for a container (not recursive)."""
         raise NotImplemented()
 
     def associate_container_with_shipment(
-            self,
-            container: Container,
-            shipment: Shipment,
-            sync: bool = True) -> ContainerInShipment:
+        self, container: Container, shipment: Shipment, sync: bool = True
+    ) -> ContainerInShipment:
         """Associate a Container with a Shipment."""
-        conshp = ContainerInShipment(container=container.container_id,
-                                     shipment=shipment.shipment_id)
+        conshp = ContainerInShipment(
+            container=container.container_id, shipment=shipment.shipment_id
+        )
         # ContainerInShipment needs a constraint such that there can only be
         # one combination of container_id and shipment_id.
         try:
             resp = self.vbr_client.create_row(conshp)
             return resp
         except Exception:
-            raise ValueError('Unable to attach container to shipment')
+            raise ValueError("Unable to attach container to shipment")
 
-    def disassociate_container_from_shipment(self,
-                                             container: Container) -> None:
+    def disassociate_container_from_shipment(self, container: Container) -> None:
         """Disassociate a Container from its Shipment."""
         # Retrieve the relevant ContainerInShipment
-        query = {
-            'container': {
-                'operator': '=',
-                'value': container.container_id
-            }
-        }
+        query = {"container": {"operator": "=", "value": container.container_id}}
         # Assumption is single row. Die if not!
-        conshp = self._get_row_from_table_with_query('container_in_shipment',
-                                                     query)
+        conshp = self._get_row_from_table_with_query("container_in_shipment", query)
         self.vbr_client.delete_row(conshp)

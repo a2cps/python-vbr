@@ -1,6 +1,6 @@
 from .constants import *
 
-__all__ = ['Statuses']
+__all__ = ["Statuses"]
 
 
 class Statuses:

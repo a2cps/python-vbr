@@ -1,18 +1,18 @@
 from vbr.tableclasses import Project
 
-__all__ = ['ProjectApi']
+__all__ = ["ProjectApi"]
 
 
 class ProjectApi(object):
     def get_project(self, pkid: str) -> Project:
         """Retrieve a Project by primary identifier."""
-        return self._get_row_from_table_with_id('project', pkid)
+        return self._get_row_from_table_with_id("project", pkid)
 
     def get_project_by_local_id(self, local_id: str) -> Project:
-        raise NotImplemented('Projects do not have local_id')
+        raise NotImplemented("Projects do not have local_id")
 
     def get_project_by_tracking_id(self, tracking_id: str) -> Project:
-        raise NotImplemented('Projects do not have tracking_id')
+        raise NotImplemented("Projects do not have tracking_id")
 
     def redcap_to_vbr_project(self, redcap_record_id: str) -> Project:
         """Retrieve a Project via its REDCap project identifier."""
@@ -29,4 +29,4 @@ class ProjectApi(object):
         return self.redcap_to_vbr_project(redcap_record_id).project_id
 
     def relabel_project(self, local_id: str, new_tracking_id: str) -> Project:
-        raise NotImplemented('Projects do not have tracking_id')
+        raise NotImplemented("Projects do not have tracking_id")

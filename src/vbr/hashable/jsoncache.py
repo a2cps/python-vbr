@@ -1,13 +1,14 @@
 # Derived from: https://gist.github.com/adah1972/f4ec69522281aaeacdba65dbee53fade
 # Supports BSON types as per https://stackoverflow.com/a/18405626
-from collections import namedtuple
 import functools
 import json
+from collections import namedtuple
+
 import six
 from bson import Binary, Code, Timestamp
-from bson.json_util import loads, dumps
+from bson.json_util import dumps, loads
 
-Serialized = namedtuple('Serialized', 'json')
+Serialized = namedtuple("Serialized", "json")
 
 # class JSONEncoder(json.JSONEncoder):
 #     def default(self, o):
@@ -33,13 +34,18 @@ def mcache(cache):
 
         @functools.wraps(func)
         def hashable_cached_func(*args, **kwargs):
-            _args = tuple([
-                Serialized(dumps(arg, sort_keys=True))
-                if type(arg) in (list, dict) else arg for arg in args
-            ])
+            _args = tuple(
+                [
+                    Serialized(dumps(arg, sort_keys=True))
+                    if type(arg) in (list, dict)
+                    else arg
+                    for arg in args
+                ]
+            )
             _kwargs = {
                 k: Serialized(dumps(v, sort_keys=True))
-                if type(v) in (list, dict) else v
+                if type(v) in (list, dict)
+                else v
                 for k, v in kwargs.items()
             }
             return cached_func(*_args, **_kwargs)

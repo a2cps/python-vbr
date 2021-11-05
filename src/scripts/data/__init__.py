@@ -8,10 +8,11 @@ from vbr.tableclasses import class_from_table
 from .anatomy import AnatomyData
 from .assay_type import AssayTypeData
 from .biosample import BiosampleData
+from .contact import ContactData
+
 # from .box_type import BoxTypeData
 from .container import ContainerData
 from .container_type import ContainerTypeData
-from .contact import ContactData
 from .data_event import DataEventData
 from .data_type import DataTypeData
 from .dataset import DatasetData
@@ -29,28 +30,27 @@ from .status import StatusData
 from .subject import SubjectData
 from .unit import UnitData
 
-#__all__ = ['data_loads']
+# __all__ = ['data_loads']
 
 
 def _classes():
-    """Private: Return the list of table data classes via Python inspection
-    """
+    """Private: Return the list of table data classes via Python inspection"""
     import inspect
     import sys
+
     classlist = []
     for _, obj in inspect.getmembers(sys.modules[__name__]):
         if inspect.isclass(obj):
             if TableData in obj.__bases__:
                 # Filter out the spurious table named association_table that
                 # we get from importing AssociationTable
-                if obj.__name__ not in ('TableData'):
+                if obj.__name__ not in ("TableData"):
                     classlist.append(obj)
     return tuple(classlist)
 
 
 def class_from_name(table_name: str) -> TableData:
-    """Return table data class by table class name
-    """
+    """Return table data class by table class name"""
     for c in _classes():
         try:
             if c.__name__ == table_name:
@@ -62,17 +62,16 @@ def class_from_name(table_name: str) -> TableData:
 def data_classes(table_definitions: list) -> list:
     ordered = []
     for t in table_definitions:
-        tdef_name = t['table_name']
-        tdef_classname = class_from_table(t['table_name']).__name__
-        cl = class_from_name(tdef_classname + 'Data')
+        tdef_name = t["table_name"]
+        tdef_classname = class_from_table(t["table_name"]).__name__
+        cl = class_from_name(tdef_classname + "Data")
         if cl is not None:
             ordered.append(cl)
     return ordered
 
 
 def data_loads(table_definition: list) -> list:
-    """Return dependency-ordered list of data objects to load
-    """
+    """Return dependency-ordered list of data objects to load"""
     ordered = []
     oc = data_classes(table_definition)
     for c in oc:
@@ -82,7 +81,6 @@ def data_loads(table_definition: list) -> list:
 
 
 def redcap_data_dictionaries() -> list:
-    """Return paths to REDcap *DataDictionary* files from 'data' directory
-    """
+    """Return paths to REDcap *DataDictionary* files from 'data' directory"""
     base = os.path.dirname(__file__)
-    return glob.glob(os.path.join(base, '*DataDictionary*'), recursive=False)
+    return glob.glob(os.path.join(base, "*DataDictionary*"), recursive=False)

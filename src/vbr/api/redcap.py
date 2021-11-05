@@ -1,17 +1,18 @@
-from vbr.tableclasses import class_from_table, RcapTable
+from vbr.tableclasses import RcapTable, class_from_table
 
-__all__ = ['RcapTableApi']
+__all__ = ["RcapTableApi"]
 
 
 class RcapTableApi(object):
-    def create_redcap_table_row(self, redcap_form_name: str, redcap_data: dict,
-                                **kwargs) -> RcapTable:
+    def create_redcap_table_row(
+        self, redcap_form_name: str, redcap_data: dict, **kwargs
+    ) -> RcapTable:
         """Create a RcapTable-derived VBR record."""
         # TODO = fix this in RcapTable. I don't like this construction
         PARAMS = list(RcapTable.link_column_names())
-        PARAMS.append('record_id')
+        PARAMS.append("record_id")
         # Look up the table class
-        tc = class_from_table('rcap_' + redcap_form_name)
+        tc = class_from_table("rcap_" + redcap_form_name)
         # Extend redcap_data dictionary with any provided kwargs on the allow list
         for p in PARAMS:
             if kwargs.get(p, None) is not None:

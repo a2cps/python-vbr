@@ -1,15 +1,16 @@
 # Derived from: https://gist.github.com/adah1972/f4ec69522281aaeacdba65dbee53fade
 # Supports BSON types as per https://stackoverflow.com/a/18405626
-from collections import namedtuple
 import functools
+from collections import namedtuple
+
 import six
 
 try:
-    from cloudpickle import dumps, loads, HIGHEST_PROTOCOL
+    from cloudpickle import HIGHEST_PROTOCOL, dumps, loads
 except Exception:
-    from pickle import dumps, loads, HIGHEST_PROTOCOL
+    from pickle import HIGHEST_PROTOCOL, dumps, loads
 
-Serialized = namedtuple('Serialized', 'payload')
+Serialized = namedtuple("Serialized", "payload")
 
 # class JSONEncoder(json.JSONEncoder):
 #     def default(self, o):
@@ -35,13 +36,18 @@ def mcache(cache):
 
         @functools.wraps(func)
         def hashable_cached_func(*args, **kwargs):
-            _args = tuple([
-                Serialized(dumps(arg, protocol=HIGHEST_PROTOCOL))
-                if type(arg) in (list, dict) else arg for arg in args
-            ])
+            _args = tuple(
+                [
+                    Serialized(dumps(arg, protocol=HIGHEST_PROTOCOL))
+                    if type(arg) in (list, dict)
+                    else arg
+                    for arg in args
+                ]
+            )
             _kwargs = {
                 k: Serialized(dumps(v, protocol=HIGHEST_PROTOCOL))
-                if type(v) in (list, dict) else v
+                if type(v) in (list, dict)
+                else v
                 for k, v in kwargs.items()
             }
             return cached_func(*_args, **_kwargs)

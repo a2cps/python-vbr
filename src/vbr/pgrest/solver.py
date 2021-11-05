@@ -1,7 +1,7 @@
-import random
 import logging
+import random
 
-__all__ = ['DependencySolver']
+__all__ = ["DependencySolver"]
 
 
 class DependencySolver(object):
@@ -25,8 +25,8 @@ class DependencySolver(object):
 
             # find dependencies
             tdef = self.to_do.pop()
-            tdef_table_name = tdef['table_name']
-            tdef_cols = tdef['columns']
+            tdef_table_name = tdef["table_name"]
+            tdef_cols = tdef["columns"]
 
             # Are any foreign keys defined? If so, do they
             # refer to tables that have not been completed. If
@@ -35,11 +35,11 @@ class DependencySolver(object):
             dep_found = False
             deps = []
             for k, v in tdef_cols.items():
-                if v.get('foreign_key', False):
-                    if v['reference_table'] not in self.completed:
+                if v.get("foreign_key", False):
+                    if v["reference_table"] not in self.completed:
                         # print('dependency: {0} <- {1}'.format(tdef_table_name, v['reference_table']))
                         dep_found = True
-                        deps.append(v['reference_table'])
+                        deps.append(v["reference_table"])
                         # break
 
             if not dep_found:
@@ -55,9 +55,11 @@ class DependencySolver(object):
             # random.shuffle(self.to_do)
 
         if len(self.to_do) > 0:
-            fails = ','.join([t['table_name'] for t in self.to_do])
+            fails = ",".join([t["table_name"] for t in self.to_do])
             raise ValueError(
-                'Some tables could not be ordered due to unresolved dependencies: {0}'
-                .format(fails))
+                "Some tables could not be ordered due to unresolved dependencies: {0}".format(
+                    fails
+                )
+            )
 
         return ordered

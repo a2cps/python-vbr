@@ -2,8 +2,8 @@ import hashlib
 import inspect
 import json
 
-from .config import Config
 from .column import Column
+from .config import Config
 from .constraints import Constraint
 from .enums import Enumeration
 from .utils import camel_to_kebab_case, camel_to_snake_case
@@ -62,36 +62,38 @@ class PgrestSchema(object):
                 if ctype not in defn:
                     defn[ctype] = {}
                 # hash table name
-                table_name = hashlib.md5(self.table_name.encode('utf-8')).hexdigest()[:7]
-                key = '{0}_{1}'.format(k, table_name)
+                table_name = hashlib.md5(self.table_name.encode("utf-8")).hexdigest()[
+                    :7
+                ]
+                key = "{0}_{1}".format(k, table_name)
                 defn[ctype][key] = cvalues
         return defn
 
     @property
     def definition(self):
         data = {
-            'table_name': self.table_name,
-            'root_url': self.root_url,
-            'columns': self.columns
+            "table_name": self.table_name,
+            "root_url": self.root_url,
+            "columns": self.columns,
         }
 
         # Extend table definition with enums if provided
         enums = self.enumerations
         if enums != {}:
-            data['enums'] = enums
+            data["enums"] = enums
 
         # Feature gate: Support table-level constraints
         # https://github.com/tapis-project/paas/issues/12
         constraints = self.constraints
         if Config.TABLE_CONSTRAINTS:
             if constraints != {}:
-                data['constraints'] = constraints
+                data["constraints"] = constraints
 
         # Feature gate: Support for table comment property
         # https://github.com/tapis-project/paas/issues/11
         if Config.TABLE_COMMENTS:
-            if self.comment is not None and self.comment != '':
-                data['comments'] = self.comment
+            if self.comment is not None and self.comment != "":
+                data["comments"] = self.comment
 
         return data
 

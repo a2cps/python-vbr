@@ -1,7 +1,7 @@
 from .config import Config
 from .foreign_key import ForeignKey
 
-__all__ = ['Column', 'ForeignKey']
+__all__ = ["Column", "ForeignKey"]
 
 
 class PgRestColumn(object):
@@ -10,7 +10,7 @@ class PgRestColumn(object):
 
     @classmethod
     def properties(cls):
-        return {'data_type': cls.DATA_TYPE}
+        return {"data_type": cls.DATA_TYPE}
 
     @classmethod
     def validate(cls, value):
@@ -34,25 +34,27 @@ class PgRestColumn(object):
 
 
 class Column(object):
-    """PgREST Column
-    """
-    def __init__(self,
-                 ctype,
-                 *args,
-                 primary_key=False,
-                 unique=False,
-                 nullable=False,
-                 default=None,
-                 comments=None,
-                 identifier=False,
-                 **kwargs):
+    """PgREST Column"""
+
+    def __init__(
+        self,
+        ctype,
+        *args,
+        primary_key=False,
+        unique=False,
+        nullable=False,
+        default=None,
+        comments=None,
+        identifier=False,
+        **kwargs
+    ):
 
         # self.cname = cname
         self.ctype = ctype
         if self.ctype.validate(default):
             self.default = default
         else:
-            raise ValueError('Invalid type for default')
+            raise ValueError("Invalid type for default")
 
         self.primary_key = primary_key
         self.unique = unique
@@ -76,28 +78,28 @@ class Column(object):
         # value. If no default at all, don't provide a
         # 'default' value for the column
         if self.default is not None:
-            all_props['default'] = self.default
+            all_props["default"] = self.default
 
         if self.primary_key:
-            all_props['primary_key'] = True
+            all_props["primary_key"] = True
             # Force nullable to false because PK can't be null
             self.nullable = False
         if self.unique:
-            all_props['unique'] = True
+            all_props["unique"] = True
 
         # Only include 'null' in table def if need to set it
         if self.nullable:
-            all_props['null'] = self.nullable
+            all_props["null"] = self.nullable
 
         # Feature gate: Support per-column comments
         # https://github.com/tapis-project/paas/issues/10
         if Config.COLUMN_COMMENTS:
             if self.comments is not None:
-                all_props['comments'] = self.comments
+                all_props["comments"] = self.comments
 
         if self.fk is not None:
             fk_props = self.fk.properties()
-            self.relations.append(fk_props['reference_table'])
+            self.relations.append(fk_props["reference_table"])
             all_props = {**all_props, **fk_props}
 
         return all_props

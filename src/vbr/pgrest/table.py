@@ -1,6 +1,6 @@
 import copy
-import json
 import datetime
+import json
 
 from .column import Column
 from .constraints import Constraint
@@ -8,12 +8,12 @@ from .enums import Enumeration
 from .schema import PgrestSchema
 from .utils import datetime_to_isodate
 
-__all__ = ['Table', 'AssociationTable']
+__all__ = ["Table", "AssociationTable"]
 
 
 class Table(object):
-    """PgREST Table
-    """
+    """PgREST Table"""
+
     __tablename__ = None
     __rooturl__ = None
 
@@ -38,18 +38,17 @@ class Table(object):
             if isinstance(attr, Column):
                 self.__class_attrs__[aname] = attr
                 # TODO - use validate() from attr
-                setattr(self, aname,
-                        attr.ctype.instantiate(kwargs.get(aname, None)))
+                setattr(self, aname, attr.ctype.instantiate(kwargs.get(aname, None)))
 
         # Set _pkid
         # Helpful for update and other maintenance tasks
-        setattr(self, '_pkid', kwargs.get('_pkid', None))
+        setattr(self, "_pkid", kwargs.get("_pkid", None))
 
     def __repr__(self):
         values = []
         for v in self.__schema__.column_names:
-            values.append('{0}={1}'.format(v, getattr(self, v, None)))
-        return '{0}: {1}'.format(self.__class__.__name__, ','.join(values))
+            values.append("{0}={1}".format(v, getattr(self, v, None)))
+        return "{0}: {1}".format(self.__class__.__name__, ",".join(values))
 
     def __setattr__(self, key, value):
         """Capture original attribute values specified at instantiation before allowing them to be updated."""
@@ -73,8 +72,7 @@ class Table(object):
         return copy.deepcopy(self)
 
     def dict(self):
-        """Return a dict filtered for use in row insert or update operations
-        """
+        """Return a dict filtered for use in row insert or update operations"""
         dct = {}
         for v in self.__schema__.column_names:
             _d = getattr(self, v, None)
@@ -95,10 +93,13 @@ class Table(object):
 
     def json(self, indent=0, sort_keys=True, class_name=None):
         # TODO - deal with datetime
-        return json.dumps(self.dict(),
-                          indent=indent,
-                          sort_keys=sort_keys,
-                          cls=class_name)
+        return json.dumps(
+            self.dict(), indent=indent, sort_keys=sort_keys, cls=class_name
+        )
+
+    def primary_key_id(self):
+        """Return value of VBR row primary key."""
+        return getattr(self, "_pkid", None)
 
 
 class AssociationTable(Table):

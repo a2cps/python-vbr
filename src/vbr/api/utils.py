@@ -1,6 +1,6 @@
 import uuid
 
-__all__ = ['generate_guid']
+__all__ = ["generate_guid"]
 
 
 def generate_guid() -> str:

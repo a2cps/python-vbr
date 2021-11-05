@@ -1,7 +1,7 @@
-__all__ = ['ApiManager']
+__all__ = ["ApiManager"]
 
 
 class ApiManager(object):
-    """Add-on VBR APIs
-    """
+    """Add-on VBR APIs"""
+
     pass

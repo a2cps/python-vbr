@@ -1,4 +1,4 @@
-__all__ = ['Constraint', 'UniqueConstraint', 'Signature']
+__all__ = ["Constraint", "UniqueConstraint", "Signature"]
 
 
 class Constraint(object):
@@ -15,7 +15,7 @@ class Constraint(object):
 
 
 class UniqueConstraint(Constraint):
-    TYPE = 'unique'
+    TYPE = "unique"
 
     def __init__(self, *args, **kwargs):
         self.values = []

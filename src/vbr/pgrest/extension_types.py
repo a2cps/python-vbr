@@ -1,18 +1,19 @@
 import uuid
+
 from hashids import Hashids
+
 from .column import PgRestColumn
 from .types import *
 
 # TODO - Move this outside of the pgrest module
 
-__all__ = ['LocalId', 'new_hashid']
+__all__ = ["LocalId", "new_hashid"]
 
-HASH_SALT = '*<rjFeB$Fy2#~-H@'
+HASH_SALT = "*<rjFeB$Fy2#~-H@"
 
 
 def new_hashid(salt=None):
-    """Return a new, randomly-generated hashid
-    """
+    """Return a new, randomly-generated hashid"""
     if salt is None:
         salt = HASH_SALT
     hashids = Hashids(salt=salt)
@@ -43,23 +44,22 @@ class AutoHashId(AutoPopulate):
 
     @classmethod
     def validated(cls, value):
-        """Returns value if valid, raises ValueError if not
-        """
+        """Returns value if valid, raises ValueError if not"""
         hashids = Hashids(salt=cls.SALT)
         dec = hashids.decode(value)
         if len(dec) > 0:
             return value
         else:
-            raise ValueError('{0} is not a valid hashid'.format(value))
+            raise ValueError("{0} is not a valid hashid".format(value))
 
 
 class LocalId(String, AutoHashId):
-    """Extension of String that automatically populates its value with a HashId
-    """
-    DATA_TYPE = 'varchar'
+    """Extension of String that automatically populates its value with a HashId"""
+
+    DATA_TYPE = "varchar"
     PYTHON_TYPE = str
     CHAR_LEN = 16
-    SALT = '*<rjFeB$Fy2#~-H@'
+    SALT = "*<rjFeB$Fy2#~-H@"
 
     @classmethod
     def instantiate(cls, value):

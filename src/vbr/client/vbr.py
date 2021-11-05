@@ -1,6 +1,6 @@
 from .api import ApiManager
-from .data import DataManager
 from .connection import Connection
+from .data import DataManager
 from .manage import TableManager
 
 

@@ -16,9 +16,6 @@ pytest: deps
 
 tests: lint pytest
 
-reformat:
-	yapf -i --recursive src/vbr
-
 classfiles-clean:
 	cd src ; python -m scripts.redcap_classfiles clean
 
@@ -58,3 +55,19 @@ reset: drop_tables create_tables bootstrap_tables
 
 dbml:
 	mkdir -p files-dbml; cd src; python -m scripts.dbml build --dotfile; mv -f dbml.* ../files-dbml/
+
+reformat-source:
+	black src/vbr
+
+reformat-scripts:
+	black src/scripts
+
+reformat: reformat-source reformat-scripts
+
+isort-source:
+	isort src/vbr
+
+isort-scripts:
+	isort src/scripts
+
+isort: isort-source isort-scripts
