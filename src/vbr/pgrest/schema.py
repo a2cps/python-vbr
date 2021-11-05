@@ -1,12 +1,25 @@
 import hashlib
 import inspect
 import json
+import re
 
 from .column import Column
 from .config import Config
 from .constraints import Constraint
 from .enums import Enumeration
 from .utils import camel_to_kebab_case, camel_to_snake_case
+
+
+def _redcap_aware_camel_to_snake_case(class_name: str):
+    # NOTE - I hate this. Remember to take it out if we ever reuse this code
+    #
+    # This is a hack to support the 'partN' strings that arise in Redcap classes"""
+    table_name = camel_to_snake_case(class_name)
+    # Only attempt this in case of redcap tables
+    if table_name.startswith("rcap"):
+        return re.sub("(part)([0-9]{1,3})", r"\1_\2", table_name)
+    else:
+        return table_name
 
 
 class PgrestSchema(object):
@@ -16,7 +29,7 @@ class PgrestSchema(object):
     @property
     def table_name(self):
         if self.parent.__tablename__ is None:
-            return camel_to_snake_case(self.parent.__class__.__name__)
+            return _redcap_aware_camel_to_snake_case(self.parent.__class__.__name__)
         else:
             return self.parent.__tablename__
 
