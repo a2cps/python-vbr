@@ -17,7 +17,7 @@ def redcap_event_to_vbr_protocol(event_name: str) -> int:
         "event_1_arm_1": 50,
     }
     try:
-        return events.get(event_name)
+        return events[event_name]
     except KeyError:
         raise ValueError("Unknown redcap event name: %s", event_name)
 
