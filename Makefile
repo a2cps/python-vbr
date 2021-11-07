@@ -2,10 +2,10 @@ API ?= https://a2cps-dev.tapis.io
 USERNAME ?= $(A2CPS_USERNAME)
 PASSWORD ?= $(A2CPS_PASSWORD)
 
-docs-autodoc:
+docs-apidoc:
 	cd docs; sphinx-apidoc --maxdepth 2 -M -H "API Reference" -f -o source ../src/vbr
 
-docs: docs-autodoc
+docs: docs-apidoc
 	cd docs; make html
 
 .SILENT:
