@@ -7,3 +7,4 @@ sdist/
 .vscode/
 env/
 exports/*.csv
+docs/_build
