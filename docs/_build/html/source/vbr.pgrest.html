@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>vbr.pgrest package &#8212; VBR  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-vbr.pgrest">
+<span id="vbr-pgrest-package"></span><h1>vbr.pgrest package<a class="headerlink" href="#module-vbr.pgrest" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-vbr.pgrest.column">
+<span id="vbr-pgrest-column-module"></span><h2>vbr.pgrest.column module<a class="headerlink" href="#module-vbr.pgrest.column" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.column.Column">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.column.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nullable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.column.Column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>PgREST Column</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.column.Column.property">
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.column.Column.property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.column.ForeignKey">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.column.</span></span><span class="sig-name descname"><span class="pre">ForeignKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ON</span> <span class="pre">DELETE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RESTRICT'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.column.ForeignKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.column.ForeignKey.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.column.ForeignKey.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.config">
+<span id="vbr-pgrest-config-module"></span><h2>vbr.pgrest.config module<a class="headerlink" href="#module-vbr.pgrest.config" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for PgREST classes</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.config.Config">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.config.</span></span><span class="sig-name descname"><span class="pre">Config</span></span><a class="headerlink" href="#vbr.pgrest.config.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Configuration class mostly used for feature gating to match the current PgREST schema</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.config.Config.COLUMN_COMMENTS">
+<span class="sig-name descname"><span class="pre">COLUMN_COMMENTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#vbr.pgrest.config.Config.COLUMN_COMMENTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.config.Config.COLUMN_USE_FOREIGN_KEY_PROPERTY_NAME">
+<span class="sig-name descname"><span class="pre">COLUMN_USE_FOREIGN_KEY_PROPERTY_NAME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#vbr.pgrest.config.Config.COLUMN_USE_FOREIGN_KEY_PROPERTY_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.config.Config.TABLE_COMMENTS">
+<span class="sig-name descname"><span class="pre">TABLE_COMMENTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#vbr.pgrest.config.Config.TABLE_COMMENTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.config.Config.TABLE_CONSTRAINTS">
+<span class="sig-name descname"><span class="pre">TABLE_CONSTRAINTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#vbr.pgrest.config.Config.TABLE_CONSTRAINTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.constants">
+<span id="vbr-pgrest-constants-module"></span><h2>vbr.pgrest.constants module<a class="headerlink" href="#module-vbr.pgrest.constants" title="Permalink to this headline">¶</a></h2>
+<p>PgRest constants</p>
+</section>
+<section id="module-vbr.pgrest.constraints">
+<span id="vbr-pgrest-constraints-module"></span><h2>vbr.pgrest.constraints module<a class="headerlink" href="#module-vbr.pgrest.constraints" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.constraints.Constraint">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.constraints.</span></span><span class="sig-name descname"><span class="pre">Constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.constraints.Constraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.constraints.Constraint.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#vbr.pgrest.constraints.Constraint.TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.constraints.Constraint.constraint_type">
+<span class="sig-name descname"><span class="pre">constraint_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.constraints.Constraint.constraint_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.constraints.Constraint.property">
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.constraints.Constraint.property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.constraints.Signature">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.constraints.</span></span><span class="sig-name descname"><span class="pre">Signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.constraints.Signature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.constraints.UniqueConstraint" title="vbr.pgrest.constraints.UniqueConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.constraints.UniqueConstraint</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.constraints.UniqueConstraint">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.constraints.</span></span><span class="sig-name descname"><span class="pre">UniqueConstraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.constraints.UniqueConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.constraints.Constraint" title="vbr.pgrest.constraints.Constraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.constraints.Constraint</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.constraints.UniqueConstraint.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'unique'</span></em><a class="headerlink" href="#vbr.pgrest.constraints.UniqueConstraint.TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.constraints.UniqueConstraint.property">
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.constraints.UniqueConstraint.property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.enums">
+<span id="vbr-pgrest-enums-module"></span><h2>vbr.pgrest.enums module<a class="headerlink" href="#module-vbr.pgrest.enums" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.enums.Enumeration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.enums.</span></span><span class="sig-name descname"><span class="pre">Enumeration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.enums.Enumeration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>PgRest enums property</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.enums.Enumeration.property">
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.enums.Enumeration.property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.extension_types">
+<span id="vbr-pgrest-extension-types-module"></span><h2>vbr.pgrest.extension_types module<a class="headerlink" href="#module-vbr.pgrest.extension_types" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.extension_types.LocalId">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.extension_types.</span></span><span class="sig-name descname"><span class="pre">LocalId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.extension_types.LocalId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.types.String" title="vbr.pgrest.types.String"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.types.String</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.extension_types.AutoHashId</span></code></p>
+<p>Extension of String that automatically populates its value with a HashId</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.extension_types.LocalId.CHAR_LEN">
+<span class="sig-name descname"><span class="pre">CHAR_LEN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">16</span></em><a class="headerlink" href="#vbr.pgrest.extension_types.LocalId.CHAR_LEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.extension_types.LocalId.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'varchar'</span></em><a class="headerlink" href="#vbr.pgrest.extension_types.LocalId.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.extension_types.LocalId.PYTHON_TYPE">
+<span class="sig-name descname"><span class="pre">PYTHON_TYPE</span></span><a class="headerlink" href="#vbr.pgrest.extension_types.LocalId.PYTHON_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.extension_types.LocalId.SALT">
+<span class="sig-name descname"><span class="pre">SALT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'*&lt;rjFeB$Fy2#~-H&#64;'</span></em><a class="headerlink" href="#vbr.pgrest.extension_types.LocalId.SALT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.extension_types.LocalId.cast">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.extension_types.LocalId.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.extension_types.LocalId.instantiate">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.extension_types.LocalId.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.pgrest.extension_types.new_hashid">
+<span class="sig-prename descclassname"><span class="pre">vbr.pgrest.extension_types.</span></span><span class="sig-name descname"><span class="pre">new_hashid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">salt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.extension_types.new_hashid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new, randomly-generated hashid</p>
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.foreign_key">
+<span id="vbr-pgrest-foreign-key-module"></span><h2>vbr.pgrest.foreign_key module<a class="headerlink" href="#module-vbr.pgrest.foreign_key" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.foreign_key.ForeignKey">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.foreign_key.</span></span><span class="sig-name descname"><span class="pre">ForeignKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ON</span> <span class="pre">DELETE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RESTRICT'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.foreign_key.ForeignKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.foreign_key.ForeignKey.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.foreign_key.ForeignKey.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.relationship">
+<span id="vbr-pgrest-relationship-module"></span><h2>vbr.pgrest.relationship module<a class="headerlink" href="#module-vbr.pgrest.relationship" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-vbr.pgrest.schema">
+<span id="vbr-pgrest-schema-module"></span><h2>vbr.pgrest.schema module<a class="headerlink" href="#module-vbr.pgrest.schema" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.schema.</span></span><span class="sig-name descname"><span class="pre">PgrestSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.column_names">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">column_names</span></span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.column_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.columns">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.comment">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">comment</span></span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.constraints">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">constraints</span></span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.definition">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">definition</span></span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.definition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.enumerations">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">enumerations</span></span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.enumerations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.root_url">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">root_url</span></span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.root_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.table_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">table_name</span></span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.table_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.schema.PgrestSchema.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.schema.PgrestSchema.to_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.solver">
+<span id="vbr-pgrest-solver-module"></span><h2>vbr.pgrest.solver module<a class="headerlink" href="#module-vbr.pgrest.solver" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.solver.DependencySolver">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.solver.</span></span><span class="sig-name descname"><span class="pre">DependencySolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definitions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.solver.DependencySolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.solver.DependencySolver.ordered_emit">
+<span class="sig-name descname"><span class="pre">ordered_emit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.solver.DependencySolver.ordered_emit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.table">
+<span id="vbr-pgrest-table-module"></span><h2>vbr.pgrest.table module<a class="headerlink" href="#module-vbr.pgrest.table" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.table.AssociationTable">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.table.</span></span><span class="sig-name descname"><span class="pre">AssociationTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.table.AssociationTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.table.Table" title="vbr.pgrest.table.Table"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.Table</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.table.Table">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.table.</span></span><span class="sig-name descname"><span class="pre">Table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.table.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>PgREST Table</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.table.Table.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.table.Table.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a mutable clone of this VBR object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.table.Table.dict">
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.table.Table.dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dict filtered for use in row insert or update operations</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.table.Table.json">
+<span class="sig-name descname"><span class="pre">json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.table.Table.json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.table.Table.primary_key_id">
+<span class="sig-name descname"><span class="pre">primary_key_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.table.Table.primary_key_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return value of VBR row primary key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.table.Table.updates">
+<span class="sig-name descname"><span class="pre">updates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vbr.pgrest.table.Table.dict" title="vbr.pgrest.table.Table.dict"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#vbr.pgrest.table.Table.updates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dict of attributes updated since instantation.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.time">
+<span id="vbr-pgrest-time-module"></span><h2>vbr.pgrest.time module<a class="headerlink" href="#module-vbr.pgrest.time" title="Permalink to this headline">¶</a></h2>
+<p>Manipulate and deal with dates and times.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.pgrest.time.timestamp">
+<span class="sig-prename descclassname"><span class="pre">vbr.pgrest.time.</span></span><span class="sig-name descname"><span class="pre">timestamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.time.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return UTC timestamp formatted for pgrest.</p>
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.types">
+<span id="vbr-pgrest-types-module"></span><h2>vbr.pgrest.types module<a class="headerlink" href="#module-vbr.pgrest.types" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Boolean">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">Boolean</span></span><a class="headerlink" href="#vbr.pgrest.types.Boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.column.PgRestColumn</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Boolean.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'boolean'</span></em><a class="headerlink" href="#vbr.pgrest.types.Boolean.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Boolean.PYTHON_TYPE">
+<span class="sig-name descname"><span class="pre">PYTHON_TYPE</span></span><a class="headerlink" href="#vbr.pgrest.types.Boolean.PYTHON_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Boolean.cast">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.Boolean.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.CreatedTimeStamp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">CreatedTimeStamp</span></span><a class="headerlink" href="#vbr.pgrest.types.CreatedTimeStamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.types.TimeStamp" title="vbr.pgrest.types.TimeStamp"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.types.TimeStamp</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.CreatedTimeStamp.properties">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.CreatedTimeStamp.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Date">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">Date</span></span><a class="headerlink" href="#vbr.pgrest.types.Date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.column.PgRestColumn</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Date.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'date'</span></em><a class="headerlink" href="#vbr.pgrest.types.Date.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Date.cast">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.Date.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.GUID">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.GUID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.types.String" title="vbr.pgrest.types.String"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.types.String</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Integer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">Integer</span></span><a class="headerlink" href="#vbr.pgrest.types.Integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.column.PgRestColumn</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Integer.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'integer'</span></em><a class="headerlink" href="#vbr.pgrest.types.Integer.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Integer.PYTHON_TYPE">
+<span class="sig-name descname"><span class="pre">PYTHON_TYPE</span></span><a class="headerlink" href="#vbr.pgrest.types.Integer.PYTHON_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Integer.cast">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.Integer.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Integer.instantiate">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.Integer.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.IntegerList">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">IntegerList</span></span><a class="headerlink" href="#vbr.pgrest.types.IntegerList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.column.PgRestColumn</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.IntegerList.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'int[]'</span></em><a class="headerlink" href="#vbr.pgrest.types.IntegerList.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.IntegerList.PYTHON_TYPE">
+<span class="sig-name descname"><span class="pre">PYTHON_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#vbr.pgrest.types.IntegerList.PYTHON_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Numeric">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">Numeric</span></span><a class="headerlink" href="#vbr.pgrest.types.Numeric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.column.PgRestColumn</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Numeric.CHAR_LEN">
+<span class="sig-name descname"><span class="pre">CHAR_LEN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">32</span></em><a class="headerlink" href="#vbr.pgrest.types.Numeric.CHAR_LEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Numeric.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'varchar'</span></em><a class="headerlink" href="#vbr.pgrest.types.Numeric.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Numeric.PYTHON_TYPE">
+<span class="sig-name descname"><span class="pre">PYTHON_TYPE</span></span><a class="headerlink" href="#vbr.pgrest.types.Numeric.PYTHON_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Numeric.cast">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.Numeric.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Numeric.instantiate">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.Numeric.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Numeric.properties">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.Numeric.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Serial">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">Serial</span></span><a class="headerlink" href="#vbr.pgrest.types.Serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.types.Integer" title="vbr.pgrest.types.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.types.Integer</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Serial.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'serial'</span></em><a class="headerlink" href="#vbr.pgrest.types.Serial.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.String">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">String</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.String" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.column.PgRestColumn</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.String.CHAR_LEN">
+<span class="sig-name descname"><span class="pre">CHAR_LEN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">255</span></em><a class="headerlink" href="#vbr.pgrest.types.String.CHAR_LEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.String.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'varchar'</span></em><a class="headerlink" href="#vbr.pgrest.types.String.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.String.PYTHON_TYPE">
+<span class="sig-name descname"><span class="pre">PYTHON_TYPE</span></span><a class="headerlink" href="#vbr.pgrest.types.String.PYTHON_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.String.cast">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.String.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.String.properties">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.String.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.StringList">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">StringList</span></span><a class="headerlink" href="#vbr.pgrest.types.StringList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.column.PgRestColumn</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.StringList.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'varchar[]'</span></em><a class="headerlink" href="#vbr.pgrest.types.StringList.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.StringList.PYTHON_TYPE">
+<span class="sig-name descname"><span class="pre">PYTHON_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#vbr.pgrest.types.StringList.PYTHON_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Text">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">Text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.Text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.types.String" title="vbr.pgrest.types.String"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.types.String</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.Text.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'text'</span></em><a class="headerlink" href="#vbr.pgrest.types.Text.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.TimeStamp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">TimeStamp</span></span><a class="headerlink" href="#vbr.pgrest.types.TimeStamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.column.PgRestColumn</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.TimeStamp.DATA_TYPE">
+<span class="sig-name descname"><span class="pre">DATA_TYPE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'timestamp'</span></em><a class="headerlink" href="#vbr.pgrest.types.TimeStamp.DATA_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.pgrest.types.TimeStamp.PYTHON_TYPE">
+<span class="sig-name descname"><span class="pre">PYTHON_TYPE</span></span><a class="headerlink" href="#vbr.pgrest.types.TimeStamp.PYTHON_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.types.UpdatedTimeStamp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.types.</span></span><span class="sig-name descname"><span class="pre">UpdatedTimeStamp</span></span><a class="headerlink" href="#vbr.pgrest.types.UpdatedTimeStamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.pgrest.types.TimeStamp" title="vbr.pgrest.types.TimeStamp"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.types.TimeStamp</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.pgrest.types.UpdatedTimeStamp.properties">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.types.UpdatedTimeStamp.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.pgrest.utils">
+<span id="vbr-pgrest-utils-module"></span><h2>vbr.pgrest.utils module<a class="headerlink" href="#module-vbr.pgrest.utils" title="Permalink to this headline">¶</a></h2>
+<p>Helper functions for PgREST</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.pgrest.utils.camel_to_kebab_case">
+<span class="sig-prename descclassname"><span class="pre">vbr.pgrest.utils.</span></span><span class="sig-name descname"><span class="pre">camel_to_kebab_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.utils.camel_to_kebab_case" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.pgrest.utils.camel_to_snake_case">
+<span class="sig-prename descclassname"><span class="pre">vbr.pgrest.utils.</span></span><span class="sig-name descname"><span class="pre">camel_to_snake_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.utils.camel_to_snake_case" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.pgrest.utils.class_or_instancemethod">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.pgrest.utils.</span></span><span class="sig-name descname"><span class="pre">class_or_instancemethod</span></span><a class="headerlink" href="#vbr.pgrest.utils.class_or_instancemethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">classmethod</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.pgrest.utils.datetime_to_date">
+<span class="sig-prename descclassname"><span class="pre">vbr.pgrest.utils.</span></span><span class="sig-name descname"><span class="pre">datetime_to_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.utils.datetime_to_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Python datetime object to ISO-8601 date</p>
+<p>Example Response: 2021-06-07</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.pgrest.utils.datetime_to_isodate">
+<span class="sig-prename descclassname"><span class="pre">vbr.pgrest.utils.</span></span><span class="sig-name descname"><span class="pre">datetime_to_isodate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.utils.datetime_to_isodate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Python datetime object to ISO-8601</p>
+<p>Example Response: 2021-06-07 18:42:28.062Z</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.pgrest.utils.snake_to_camel_case">
+<span class="sig-prename descclassname"><span class="pre">vbr.pgrest.utils.</span></span><span class="sig-name descname"><span class="pre">snake_to_camel_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_first_word</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.utils.snake_to_camel_case" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.pgrest.utils.snake_to_title_string">
+<span class="sig-prename descclassname"><span class="pre">vbr.pgrest.utils.</span></span><span class="sig-name descname"><span class="pre">snake_to_title_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_first_word</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.pgrest.utils.snake_to_title_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">VBR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, TACC Open Source.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/vbr.pgrest.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

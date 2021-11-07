@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>vbr.tableclasses.associations package &#8212; VBR  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-vbr.tableclasses.associations">
+<span id="vbr-tableclasses-associations-package"></span><h1>vbr.tableclasses.associations package<a class="headerlink" href="#module-vbr.tableclasses.associations" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-vbr.tableclasses.associations.describe">
+<span id="vbr-tableclasses-associations-describe-module"></span><h2>vbr.tableclasses.associations.describe module<a class="headerlink" href="#module-vbr.tableclasses.associations.describe" title="Permalink to this headline">¶</a></h2>
+<p>Represent cases where files describe VBR records.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.describe.FileDescribesBiosample">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.describe.</span></span><span class="sig-name descname"><span class="pre">FileDescribesBiosample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.describe.FileDescribesBiosample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps files to the biosamples they describe.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.describe.FileDescribesBiosample.biosample">
+<span class="sig-name descname"><span class="pre">biosample</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.describe.FileDescribesBiosample.biosample" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.describe.FileDescribesBiosample.file">
+<span class="sig-name descname"><span class="pre">file</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.describe.FileDescribesBiosample.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.describe.FileDescribesBiosample.file_describes_biosample_id">
+<span class="sig-name descname"><span class="pre">file_describes_biosample_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.describe.FileDescribesBiosample.file_describes_biosample_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.describe.FileDescribesSubject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.describe.</span></span><span class="sig-name descname"><span class="pre">FileDescribesSubject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.describe.FileDescribesSubject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps files to associated subjects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.describe.FileDescribesSubject.file">
+<span class="sig-name descname"><span class="pre">file</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.describe.FileDescribesSubject.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.describe.FileDescribesSubject.file_describes_subject_id">
+<span class="sig-name descname"><span class="pre">file_describes_subject_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.describe.FileDescribesSubject.file_describes_subject_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.describe.FileDescribesSubject.subject">
+<span class="sig-name descname"><span class="pre">subject</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.describe.FileDescribesSubject.subject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.tableclasses.associations.event">
+<span id="vbr-tableclasses-associations-event-module"></span><h2>vbr.tableclasses.associations.event module<a class="headerlink" href="#module-vbr.tableclasses.associations.event" title="Permalink to this headline">¶</a></h2>
+<p>Represent data event associations with VBR types.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInBiosample">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.event.</span></span><span class="sig-name descname"><span class="pre">DataEventInBiosample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInBiosample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps data_events to biosamples.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInBiosample.biosample">
+<span class="sig-name descname"><span class="pre">biosample</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInBiosample.biosample" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInBiosample.data_event">
+<span class="sig-name descname"><span class="pre">data_event</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInBiosample.data_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInBiosample.data_event_in_biosample_id">
+<span class="sig-name descname"><span class="pre">data_event_in_biosample_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInBiosample.data_event_in_biosample_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInContainer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.event.</span></span><span class="sig-name descname"><span class="pre">DataEventInContainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps data_events to containers.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInContainer.container">
+<span class="sig-name descname"><span class="pre">container</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInContainer.container" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInContainer.data_event">
+<span class="sig-name descname"><span class="pre">data_event</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInContainer.data_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInContainer.data_event_in_container_id">
+<span class="sig-name descname"><span class="pre">data_event_in_container_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInContainer.data_event_in_container_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.event.</span></span><span class="sig-name descname"><span class="pre">DataEventInDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps data_events to datasets.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInDataset.data_event">
+<span class="sig-name descname"><span class="pre">data_event</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInDataset.data_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInDataset.data_event_in_dataset_id">
+<span class="sig-name descname"><span class="pre">data_event_in_dataset_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInDataset.data_event_in_dataset_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInDataset.dataset">
+<span class="sig-name descname"><span class="pre">dataset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInDataset.dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInMeasurement">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.event.</span></span><span class="sig-name descname"><span class="pre">DataEventInMeasurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInMeasurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps data_events associated with measurements.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInMeasurement.data_event">
+<span class="sig-name descname"><span class="pre">data_event</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInMeasurement.data_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInMeasurement.data_event_in_measurement_id">
+<span class="sig-name descname"><span class="pre">data_event_in_measurement_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInMeasurement.data_event_in_measurement_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInMeasurement.measurement">
+<span class="sig-name descname"><span class="pre">measurement</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInMeasurement.measurement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInShipment">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.event.</span></span><span class="sig-name descname"><span class="pre">DataEventInShipment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInShipment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps data_events associated with shipments.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInShipment.data_event">
+<span class="sig-name descname"><span class="pre">data_event</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInShipment.data_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInShipment.data_event_in_shipment_id">
+<span class="sig-name descname"><span class="pre">data_event_in_shipment_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInShipment.data_event_in_shipment_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInShipment.shipment">
+<span class="sig-name descname"><span class="pre">shipment</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInShipment.shipment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInSubject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.event.</span></span><span class="sig-name descname"><span class="pre">DataEventInSubject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInSubject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps data_events associated with each subject.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInSubject.data_event">
+<span class="sig-name descname"><span class="pre">data_event</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInSubject.data_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInSubject.data_event_in_subject_id">
+<span class="sig-name descname"><span class="pre">data_event_in_subject_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInSubject.data_event_in_subject_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.event.DataEventInSubject.subject">
+<span class="sig-name descname"><span class="pre">subject</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.event.DataEventInSubject.subject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.tableclasses.associations.hierarchy">
+<span id="vbr-tableclasses-associations-hierarchy-module"></span><h2>vbr.tableclasses.associations.hierarchy module<a class="headerlink" href="#module-vbr.tableclasses.associations.hierarchy" title="Permalink to this headline">¶</a></h2>
+<p>Represent hiearchical relationships between types.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.BiosampleInDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.hierarchy.</span></span><span class="sig-name descname"><span class="pre">BiosampleInDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.BiosampleInDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps biosamples to datasets.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.BiosampleInDataset.biosample">
+<span class="sig-name descname"><span class="pre">biosample</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.BiosampleInDataset.biosample" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.BiosampleInDataset.biosample_in_dataset_id">
+<span class="sig-name descname"><span class="pre">biosample_in_dataset_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.BiosampleInDataset.biosample_in_dataset_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.BiosampleInDataset.dataset">
+<span class="sig-name descname"><span class="pre">dataset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.BiosampleInDataset.dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.ContainerInShipment">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.hierarchy.</span></span><span class="sig-name descname"><span class="pre">ContainerInShipment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.ContainerInShipment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps containers inside other shipments.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.ContainerInShipment.container">
+<span class="sig-name descname"><span class="pre">container</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.ContainerInShipment.container" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.ContainerInShipment.container_in_shipment_id">
+<span class="sig-name descname"><span class="pre">container_in_shipment_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.ContainerInShipment.container_in_shipment_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.ContainerInShipment.shipment">
+<span class="sig-name descname"><span class="pre">shipment</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.ContainerInShipment.shipment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.ContainerInShipment.signature">
+<span class="sig-name descname"><span class="pre">signature</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.constraints.Signature</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.ContainerInShipment.signature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.DatasetInProject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.hierarchy.</span></span><span class="sig-name descname"><span class="pre">DatasetInProject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.DatasetInProject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps datasets to their associated projects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.DatasetInProject.dataset">
+<span class="sig-name descname"><span class="pre">dataset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.DatasetInProject.dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.DatasetInProject.dataset_in_project_id">
+<span class="sig-name descname"><span class="pre">dataset_in_project_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.DatasetInProject.dataset_in_project_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.DatasetInProject.project">
+<span class="sig-name descname"><span class="pre">project</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.DatasetInProject.project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.FileInDataEvent">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.hierarchy.</span></span><span class="sig-name descname"><span class="pre">FileInDataEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.FileInDataEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps files to data events which create or alter them.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.FileInDataEvent.data_event">
+<span class="sig-name descname"><span class="pre">data_event</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.FileInDataEvent.data_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.FileInDataEvent.file">
+<span class="sig-name descname"><span class="pre">file</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.FileInDataEvent.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.FileInDataEvent.file_in_data_event_id">
+<span class="sig-name descname"><span class="pre">file_in_data_event_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.FileInDataEvent.file_in_data_event_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.FileInDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.hierarchy.</span></span><span class="sig-name descname"><span class="pre">FileInDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.FileInDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps files to dataset collections.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.FileInDataset.dataset">
+<span class="sig-name descname"><span class="pre">dataset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.FileInDataset.dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.FileInDataset.file">
+<span class="sig-name descname"><span class="pre">file</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.FileInDataset.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.FileInDataset.file_in_dataset_id">
+<span class="sig-name descname"><span class="pre">file_in_dataset_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.FileInDataset.file_in_dataset_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.SubjectInDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.hierarchy.</span></span><span class="sig-name descname"><span class="pre">SubjectInDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.SubjectInDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps subjects to dataset collections.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.SubjectInDataset.dataset_id">
+<span class="sig-name descname"><span class="pre">dataset_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.SubjectInDataset.dataset_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.SubjectInDataset.subject_id">
+<span class="sig-name descname"><span class="pre">subject_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.SubjectInDataset.subject_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.hierarchy.SubjectInDataset.subject_in_dataset_id">
+<span class="sig-name descname"><span class="pre">subject_in_dataset_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.hierarchy.SubjectInDataset.subject_in_dataset_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.tableclasses.associations.self_from">
+<span id="vbr-tableclasses-associations-self-from-module"></span><h2>vbr.tableclasses.associations.self_from module<a class="headerlink" href="#module-vbr.tableclasses.associations.self_from" title="Permalink to this headline">¶</a></h2>
+<p>Represent descendant relationships for the same type.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_from.FileFromFile">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.self_from.</span></span><span class="sig-name descname"><span class="pre">FileFromFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.self_from.FileFromFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps files derived from other files.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_from.FileFromFile.file">
+<span class="sig-name descname"><span class="pre">file</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_from.FileFromFile.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_from.FileFromFile.file_from_file_id">
+<span class="sig-name descname"><span class="pre">file_from_file_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_from.FileFromFile.file_from_file_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_from.FileFromFile.source_file">
+<span class="sig-name descname"><span class="pre">source_file</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_from.FileFromFile.source_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_from.MeasurementFromMeasurement">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.self_from.</span></span><span class="sig-name descname"><span class="pre">MeasurementFromMeasurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.self_from.MeasurementFromMeasurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps measurements derived from another measurement.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_from.MeasurementFromMeasurement.measurement">
+<span class="sig-name descname"><span class="pre">measurement</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_from.MeasurementFromMeasurement.measurement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_from.MeasurementFromMeasurement.measurement_from_measurement_id">
+<span class="sig-name descname"><span class="pre">measurement_from_measurement_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_from.MeasurementFromMeasurement.measurement_from_measurement_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_from.MeasurementFromMeasurement.source_measurement">
+<span class="sig-name descname"><span class="pre">source_measurement</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_from.MeasurementFromMeasurement.source_measurement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.tableclasses.associations.self_in">
+<span id="vbr-tableclasses-associations-self-in-module"></span><h2>vbr.tableclasses.associations.self_in module<a class="headerlink" href="#module-vbr.tableclasses.associations.self_in" title="Permalink to this headline">¶</a></h2>
+<p>Represent nested relations of the same type.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_in.DatasetInDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.self_in.</span></span><span class="sig-name descname"><span class="pre">DatasetInDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.self_in.DatasetInDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps dataset hierarchy and “cross-cut” collections.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_in.DatasetInDataset.dataset">
+<span class="sig-name descname"><span class="pre">dataset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_in.DatasetInDataset.dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_in.DatasetInDataset.dataset_in_dataset_id">
+<span class="sig-name descname"><span class="pre">dataset_in_dataset_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_in.DatasetInDataset.dataset_in_dataset_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_in.DatasetInDataset.parent_dataset">
+<span class="sig-name descname"><span class="pre">parent_dataset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_in.DatasetInDataset.parent_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_in.FileInFile">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.tableclasses.associations.self_in.</span></span><span class="sig-name descname"><span class="pre">FileInFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.tableclasses.associations.self_in.FileInFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.AssociationTable" title="vbr.pgrest.table.AssociationTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.pgrest.table.AssociationTable</span></code></a></p>
+<p>Maps files to a tar, zip or container file.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_in.FileInFile.file">
+<span class="sig-name descname"><span class="pre">file</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_in.FileInFile.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_in.FileInFile.file_in_file_id">
+<span class="sig-name descname"><span class="pre">file_in_file_id</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_in.FileInFile.file_in_file_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.tableclasses.associations.self_in.FileInFile.parent_file">
+<span class="sig-name descname"><span class="pre">parent_file</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;vbr.pgrest.column.Column</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vbr.tableclasses.associations.self_in.FileInFile.parent_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">VBR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, TACC Open Source.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/vbr.tableclasses.associations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

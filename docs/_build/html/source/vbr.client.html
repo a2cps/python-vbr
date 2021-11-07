@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>vbr.client package &#8212; VBR  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-vbr.client">
+<span id="vbr-client-package"></span><h1>vbr.client package<a class="headerlink" href="#module-vbr.client" title="Permalink to this headline">¶</a></h1>
+<p>Provides a VBR client with APIs</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-vbr.client.api">
+<span id="vbr-client-api-module"></span><h2>vbr.client.api module<a class="headerlink" href="#module-vbr.client.api" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.client.api.ApiManager">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.client.api.</span></span><span class="sig-name descname"><span class="pre">ApiManager</span></span><a class="headerlink" href="#vbr.client.api.ApiManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Add-on VBR APIs</p>
+</dd></dl>
+
+</section>
+<section id="module-vbr.client.connection">
+<span id="vbr-client-connection-module"></span><h2>vbr.client.connection module<a class="headerlink" href="#module-vbr.client.connection" title="Permalink to this headline">¶</a></h2>
+<p>VBR Database Driver</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.client.connection.Connection">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.client.connection.</span></span><span class="sig-name descname"><span class="pre">Connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tapis_client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tapipy.tapis.Tapis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_connect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.Connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides a PgREST client</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.Connection.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tapis_client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tapipy.tapis.Tapis</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#vbr.client.connection.Connection.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.client.connection.</span></span><span class="sig-name descname"><span class="pre">TapisDirectClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tapis_client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Requests client bootstrapped from a Tapis API client
+The intended use is to implement methods not expressed by the
+current OpenAPI spec and which are thus not accessible in TapiPy.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.VERBOSE_ERRORS">
+<span class="sig-name descname"><span class="pre">VERBOSE_ERRORS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.VERBOSE_ERRORS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.build_url">
+<span class="sig-name descname"><span class="pre">build_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.build_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.get_bytes">
+<span class="sig-name descname"><span class="pre">get_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.get_bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.post_data_basic">
+<span class="sig-name descname"><span class="pre">post_data_basic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.post_data_basic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisDirectClient.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'v3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisDirectClient.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.client.connection.TapisUserEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.client.connection.</span></span><span class="sig-name descname"><span class="pre">TapisUserEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.connection.TapisUserEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tapipy.tapis.Tapis</span></code></p>
+<p>Supports initialization of a Tapis user client from env vars</p>
+</dd></dl>
+
+</section>
+<section id="module-vbr.client.data">
+<span id="vbr-client-data-module"></span><h2>vbr.client.data module<a class="headerlink" href="#module-vbr.client.data" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.client.data.DataManager">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.client.data.</span></span><span class="sig-name descname"><span class="pre">DataManager</span></span><a class="headerlink" href="#vbr.client.data.DataManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manages data in PgREST collections</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.data.DataManager.create_row">
+<span class="sig-name descname"><span class="pre">create_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbr_obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.Table" title="vbr.pgrest.table.Table"><span class="pre">vbr.pgrest.table.Table</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.Table" title="vbr.pgrest.table.Table"><span class="pre">vbr.pgrest.table.Table</span></a></span></span><a class="headerlink" href="#vbr.client.data.DataManager.create_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a PgREST record from a VBR Table instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.data.DataManager.create_row_from_dict">
+<span class="sig-name descname"><span class="pre">create_row_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.Table" title="vbr.pgrest.table.Table"><span class="pre">vbr.pgrest.table.Table</span></a></span></span><a class="headerlink" href="#vbr.client.data.DataManager.create_row_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a PgREST record from a Python dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.data.DataManager.delete_row">
+<span class="sig-name descname"><span class="pre">delete_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbr_obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.Table" title="vbr.pgrest.table.Table"><span class="pre">vbr.pgrest.table.Table</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#vbr.client.data.DataManager.delete_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a VBR Record from the database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.data.DataManager.list_rows">
+<span class="sig-name descname"><span class="pre">list_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#vbr.client.data.DataManager.list_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists VBR Records in table</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.data.DataManager.query_rows">
+<span class="sig-name descname"><span class="pre">query_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#vbr.client.data.DataManager.query_rows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.data.DataManager.retrieve_row">
+<span class="sig-name descname"><span class="pre">retrieve_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pk_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.Table" title="vbr.pgrest.table.Table"><span class="pre">vbr.pgrest.table.Table</span></a></span></span><a class="headerlink" href="#vbr.client.data.DataManager.retrieve_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a VBR Record from the database by primary key and table name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.data.DataManager.update_row">
+<span class="sig-name descname"><span class="pre">update_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbr_obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.Table" title="vbr.pgrest.table.Table"><span class="pre">vbr.pgrest.table.Table</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="vbr.pgrest.html#vbr.pgrest.table.Table" title="vbr.pgrest.table.Table"><span class="pre">vbr.pgrest.table.Table</span></a></span></span><a class="headerlink" href="#vbr.client.data.DataManager.update_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a VBR Record in the database.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.client.manage">
+<span id="vbr-client-manage-module"></span><h2>vbr.client.manage module<a class="headerlink" href="#module-vbr.client.manage" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.client.manage.TableManager">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.client.manage.</span></span><span class="sig-name descname"><span class="pre">TableManager</span></span><a class="headerlink" href="#vbr.client.manage.TableManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manage PgREST tables</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.manage.TableManager.create_table">
+<span class="sig-name descname"><span class="pre">create_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_object</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#vbr.client.manage.TableManager.create_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a PgREST table from a VBR Table (if authorized)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.manage.TableManager.create_table_from_definition">
+<span class="sig-name descname"><span class="pre">create_table_from_definition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_def</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#vbr.client.manage.TableManager.create_table_from_definition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new PgREST table from a table dictionary (if authorized)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.manage.TableManager.delete_table">
+<span class="sig-name descname"><span class="pre">delete_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#vbr.client.manage.TableManager.delete_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a PgREST table by id (if authorized)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.manage.TableManager.get_table">
+<span class="sig-name descname"><span class="pre">get_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tapipy.tapis.TapisResult</span></span></span><a class="headerlink" href="#vbr.client.manage.TableManager.get_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a PgREST tables by id (if authorized)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.manage.TableManager.list_tables">
+<span class="sig-name descname"><span class="pre">list_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#vbr.client.manage.TableManager.list_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>List PgREST tables (if authorized)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vbr.client.manage.TableManager.update_table">
+<span class="sig-name descname"><span class="pre">update_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_object</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#vbr.client.manage.TableManager.update_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a PgREST table with with a VBR Table (if authorized)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.client.vbr">
+<span id="vbr-client-vbr-module"></span><h2>vbr.client.vbr module<a class="headerlink" href="#module-vbr.client.vbr" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.client.vbr.VBR">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.client.vbr.</span></span><span class="sig-name descname"><span class="pre">VBR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tapis_client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tapipy.tapis.Tapis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_connect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vbr.client.vbr.VBR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vbr.client.connection.Connection" title="vbr.client.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.client.connection.Connection</span></code></a>, <a class="reference internal" href="#vbr.client.data.DataManager" title="vbr.client.data.DataManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.client.data.DataManager</span></code></a>, <a class="reference internal" href="#vbr.client.manage.TableManager" title="vbr.client.manage.TableManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.client.manage.TableManager</span></code></a>, <a class="reference internal" href="#vbr.client.api.ApiManager" title="vbr.client.api.ApiManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">vbr.client.api.ApiManager</span></code></a></p>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">VBR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, TACC Open Source.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/vbr.client.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

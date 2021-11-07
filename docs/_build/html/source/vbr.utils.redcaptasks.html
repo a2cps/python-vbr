@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>vbr.utils.redcaptasks package &#8212; VBR  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-vbr.utils.redcaptasks">
+<span id="vbr-utils-redcaptasks-package"></span><h1>vbr.utils.redcaptasks package<a class="headerlink" href="#module-vbr.utils.redcaptasks" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-vbr.utils.redcaptasks.constants">
+<span id="vbr-utils-redcaptasks-constants-module"></span><h2>vbr.utils.redcaptasks.constants module<a class="headerlink" href="#module-vbr.utils.redcaptasks.constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-vbr.utils.redcaptasks.crf">
+<span id="vbr-utils-redcaptasks-crf-module"></span><h2>vbr.utils.redcaptasks.crf module<a class="headerlink" href="#module-vbr.utils.redcaptasks.crf" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.crf.transform_redcap_record">
+<span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.crf.</span></span><span class="sig-name descname"><span class="pre">transform_redcap_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#vbr.utils.redcaptasks.crf.transform_redcap_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform a Redcap record from API response into a dict that can be used to populate a VBR RcapTable.</p>
+</dd></dl>
+
+</section>
+<section id="module-vbr.utils.redcaptasks.event">
+<span id="vbr-utils-redcaptasks-event-module"></span><h2>vbr.utils.redcaptasks.event module<a class="headerlink" href="#module-vbr.utils.redcaptasks.event" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.event.redcap_event_id_to_unique_event_name">
+<span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.event.</span></span><span class="sig-name descname"><span class="pre">redcap_event_id_to_unique_event_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#vbr.utils.redcaptasks.event.redcap_event_id_to_unique_event_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map a redcap event_id into its unique name.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.event.redcap_event_to_vbr_protocol">
+<span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.event.</span></span><span class="sig-name descname"><span class="pre">redcap_event_to_vbr_protocol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#vbr.utils.redcaptasks.event.redcap_event_to_vbr_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map redcap event name to VBR protocol.</p>
+</dd></dl>
+
+</section>
+<section id="module-vbr.utils.redcaptasks.project">
+<span id="vbr-utils-redcaptasks-project-module"></span><h2>vbr.utils.redcaptasks.project module<a class="headerlink" href="#module-vbr.utils.redcaptasks.project" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.project.redcap_project_to_token">
+<span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.project.</span></span><span class="sig-name descname"><span class="pre">redcap_project_to_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tapis_client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secret_owner</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secret_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tenant</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#vbr.utils.redcaptasks.project.redcap_project_to_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.project.redcap_to_vbr_project_id">
+<span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.project.</span></span><span class="sig-name descname"><span class="pre">redcap_to_vbr_project_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#vbr.utils.redcaptasks.project.redcap_to_vbr_project_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-vbr.utils.redcaptasks.query">
+<span id="vbr-utils-redcaptasks-query-module"></span><h2>vbr.utils.redcaptasks.query module<a class="headerlink" href="#module-vbr.utils.redcaptasks.query" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.query.record_by_id">
+<span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.query.</span></span><span class="sig-name descname"><span class="pre">record_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#vbr.utils.redcaptasks.query.record_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first REDcap record for a given record, instrument, event.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.query.records_by_id">
+<span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.query.</span></span><span class="sig-name descname"><span class="pre">records_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#vbr.utils.redcaptasks.query.records_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return REDcap records for a given record, instrument, event.</p>
+</dd></dl>
+
+</section>
+<section id="module-vbr.utils.redcaptasks.status">
+<span id="vbr-utils-redcaptasks-status-module"></span><h2>vbr.utils.redcaptasks.status module<a class="headerlink" href="#module-vbr.utils.redcaptasks.status" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.status.Statuses">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.status.</span></span><span class="sig-name descname"><span class="pre">Statuses</span></span><a class="headerlink" href="#vbr.utils.redcaptasks.status.Statuses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.status.Statuses.CREATED">
+<span class="sig-name descname"><span class="pre">CREATED</span></span><em class="property"> <span class="pre">=</span> <span class="pre">10</span></em><a class="headerlink" href="#vbr.utils.redcaptasks.status.Statuses.CREATED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.status.Statuses.SHIPPED">
+<span class="sig-name descname"><span class="pre">SHIPPED</span></span><em class="property"> <span class="pre">=</span> <span class="pre">20</span></em><a class="headerlink" href="#vbr.utils.redcaptasks.status.Statuses.SHIPPED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vbr.utils.redcaptasks.time">
+<span id="vbr-utils-redcaptasks-time-module"></span><h2>vbr.utils.redcaptasks.time module<a class="headerlink" href="#module-vbr.utils.redcaptasks.time" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="vbr.utils.redcaptasks.time.redcap_to_pgrest_datetime">
+<span class="sig-prename descclassname"><span class="pre">vbr.utils.redcaptasks.time.</span></span><span class="sig-name descname"><span class="pre">redcap_to_pgrest_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_time_str</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_timezone</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#vbr.utils.redcaptasks.time.redcap_to_pgrest_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tranform REDcap time strings into ISO-8601 format.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">VBR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, TACC Open Source.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/vbr.utils.redcaptasks.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
