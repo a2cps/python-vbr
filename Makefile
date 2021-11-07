@@ -2,6 +2,12 @@ API ?= https://a2cps-dev.tapis.io
 USERNAME ?= $(A2CPS_USERNAME)
 PASSWORD ?= $(A2CPS_PASSWORD)
 
+docs-autodoc:
+	cd docs; sphinx-apidoc --maxdepth 2 -M -H "API Reference" -f -o source ../src/vbr
+
+docs: docs-autodoc
+	cd docs; make html
+
 .SILENT:
 deps:
 	pip --disable-pip-version-check install -r requirements.txt
