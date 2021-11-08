@@ -37,7 +37,11 @@ class ContainerInShipment(AssociationTable):
 
     container_in_shipment_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     # Constrained to be unique so that a container can only be directly inside ONE other shipment
-    container = Column(Integer, ForeignKey("container.container_id"), unique=True)
+    container = Column(
+        Integer,
+        ForeignKey("container.container_id", event_action="CASCADE"),
+        unique=True,
+    )
     shipment = Column(
         Integer, ForeignKey("shipment.shipment_id", event_action="CASCADE")
     )
