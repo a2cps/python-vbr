@@ -20,6 +20,7 @@ from .project import ProjectApi
 from .redcap import RcapTableApi
 from .shipment import ShipmentApi
 from .subject import SubjectApi
+from .status import StatusApi
 from .system import VbrRedcapEventApi
 
 __all__ = ["get_vbr_api_client", "VBR_Api"]
@@ -91,6 +92,7 @@ class VBR_Api(
     RcapTableApi,
     ShipmentApi,
     SubjectApi,
+    StatusApi,
     VbrRedcapEventApi,
     ContainerLogisticsApi,
     MeasurementLogisticsApi,

@@ -28,4 +28,39 @@ class StatusData(TableData):
             "name": "sample.shipped",
             "description": "Sample was packaged and shipped",
         },
+        {
+            "status_id": 30,
+            "name": "easypost.pre_transit",
+            "description": "Shipment prepared",
+        },
+        {
+            "status_id": 31,
+            "name": "easypost.in_transit",
+            "description": "Shipment in transit",
+        },
+        {
+            "status_id": 32,
+            "name": "easypost.out_for_delivery",
+            "description": "Shipment out for delivery",
+        },
+        {
+            "status_id": 34,
+            "name": "easypost.delivered",
+            "description": "Shipment Delivered",
+        },
+        {
+            "status_id": 35,
+            "name": "easypost.return_to_sender",
+            "description": "Shipment returned to sender",
+        },
+        {
+            "status_id": 36,
+            "name": "easypost.failure",
+            "description": "Shipment failure",
+        },
+        {
+            "status_id": 37,
+            "name": "easypost.unknown",
+            "description": "Shipment status unknown",
+        },
     ]
