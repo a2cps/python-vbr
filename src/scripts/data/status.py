@@ -26,12 +26,12 @@ class StatusData(TableData):
         {
             "status_id": 20,
             "name": "sample.shipped",
-            "description": "Sample was packaged and shipped",
+            "description": "Sample was packaged for shipment",
         },
         {
             "status_id": 30,
             "name": "easypost.pre_transit",
-            "description": "Shipment prepared",
+            "description": "Shipment dispatched to carrier",
         },
         {
             "status_id": 31,

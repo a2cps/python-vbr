@@ -6,11 +6,13 @@ from vbr.tableclasses import (
     Measurement,
     Project,
     Shipment,
+    Status,
     Subject,
 )
 
 from .biosample import BiosampleApi
 from .container import ContainerApi
+from .data_event import DataEventApi
 from .location import LocationApi
 from .measurement import MeasurementApi
 from .project import ProjectApi
@@ -85,6 +87,7 @@ class ContainerLogisticsApi(object):
         """Retrieve the Shipment (if any) for a container (not recursive)."""
         raise NotImplemented()
 
+    # TODO - DataEvent
     def associate_container_with_shipment(
         self, container: Container, shipment: Shipment, sync: bool = True
     ) -> ContainerInShipment:
@@ -100,6 +103,7 @@ class ContainerLogisticsApi(object):
         except Exception:
             raise ValueError("Unable to attach container to shipment")
 
+    # TODO - DataEvent
     def disassociate_container_from_shipment(self, container: Container) -> None:
         """Disassociate a Container from its Shipment."""
         # Retrieve the relevant ContainerInShipment
@@ -107,3 +111,19 @@ class ContainerLogisticsApi(object):
         # Assumption is single row. Die if not!
         conshp = self._get_row_from_table_with_query("container_in_shipment", query)
         self.vbr_client.delete_row(conshp)
+
+    def update_shipment_status(
+        self, shipment: Shipment, status: Status, comment: str = None
+    ) -> Shipment:
+        """Update Shipment status, creating a linked DataEvent in the process."""
+        shipment.status = status.status_id
+        shipment = self.vbr_client.update_row(shipment)
+        # Create and link DataEvent
+        DataEventApi.create_and_link(
+            self,
+            protocol_id=50,  # 50,shipping,Sample shipping
+            status_id=status.status_id,  # This will be one of the easypost shipment statuses
+            comment=comment,
+            link_target=shipment,
+        )
+        return shipment
