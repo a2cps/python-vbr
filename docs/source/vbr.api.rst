@@ -97,6 +97,14 @@ vbr.api.shipment module
    :undoc-members:
    :show-inheritance:
 
+vbr.api.status module
+---------------------
+
+.. automodule:: vbr.api.status
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 vbr.api.subject module
 ----------------------
 

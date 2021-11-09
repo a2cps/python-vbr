@@ -16,6 +16,7 @@ from .data_event import DataEventApi
 from .location import LocationApi
 from .measurement import MeasurementApi
 from .project import ProjectApi
+from .status import StatusApi
 from .subject import SubjectApi
 
 __all__ = ["ContainerLogisticsApi"]
@@ -112,7 +113,7 @@ class ContainerLogisticsApi(object):
         conshp = self._get_row_from_table_with_query("container_in_shipment", query)
         self.vbr_client.delete_row(conshp)
 
-    def update_shipment_status(
+    def set_shipment_status(
         self, shipment: Shipment, status: Status, comment: str = None
     ) -> Shipment:
         """Update Shipment status, creating a linked DataEvent in the process."""
@@ -128,6 +129,10 @@ class ContainerLogisticsApi(object):
         )
         return shipment
 
-    def data_events_for_shipment(shipment) -> list:
-        """Return ordered list of data events for a Shipment"""
-        pass
+    def get_shipment_status(self, shipment: Shipment) -> Status:
+        """Get current Status for a Shipment."""
+        return StatusApi.get_status(self, shipment.status)
+
+    def get_shipment_status_history(self, shipment) -> list:
+        """Return list of data events for a Shipment."""
+        return DataEventApi.data_events_for_record(self, record=shipment)
