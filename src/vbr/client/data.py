@@ -58,6 +58,7 @@ class DataManager(object):
         """Retrieve a VBR Record from the database by primary key and table name"""
         # TODO - support either root_url or table_name
         # TODO - support query
+        pk_value = str(pk_value)
         resp = self.client.pgrest.get_table_row(collection=root_url, item=pk_value)[0]
         if isinstance(resp, list):
             return [self._tapis_result_to_vbr(r, root_url) for r in resp]

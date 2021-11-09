@@ -103,3 +103,27 @@ class DataEventApi(object):
         association = self.link_data_event(data_event, link_target=link_target)
 
         return (data_event, association)
+
+    def data_events_for_record(self, record: Table, sort=False) -> list:
+        """Return DataEvents associated with a VBR record."""
+        # Look up the relevant AssocationTable class
+        left_table_name = "data_event"
+        left_table_id_name = "data_event_id"
+
+        right_table_name = record.__schema__.root_url
+        right_table_id_name = right_table_name + "_id"
+        right_table_id_value = getattr(record, right_table_id_name)
+
+        combined_table_name = "{0}_in_{1}".format(left_table_name, right_table_name)
+        # NOTE: Manual implementation of a SQL join
+        query = {right_table_name: {"operator": "=", "value": right_table_id_value}}
+        associations = self.vbr_client.query_rows(combined_table_name, query=query)
+        # TODO - Implement ordering by DataEvent.event_ts
+        data_events = []
+        for a in associations:
+            data_events.append(
+                self.vbr_client.retrieve_row(
+                    pk_value=a.data_event, root_url="data_event"
+                )
+            )
+        return data_events

@@ -127,3 +127,7 @@ class ContainerLogisticsApi(object):
             link_target=shipment,
         )
         return shipment
+
+    def data_events_for_shipment(shipment) -> list:
+        """Return ordered list of data events for a Shipment"""
+        pass
