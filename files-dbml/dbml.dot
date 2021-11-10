@@ -142,6 +142,7 @@ biosample [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	<TR><TD align="left">creation_time? : date</TD></TR>
 	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left">project? : int</TD></TR>
+	<TR><TD align="left">protocol? : int</TD></TR>
 	<TR><TD align="left">subject? : int</TD></TR>
 	<TR><TD align="left"><I>tracking_id?</I> : varchar(255)</TD></TR>
 	        </TABLE>>];
@@ -205,6 +206,51 @@ rcap_consented_participant_information [label=<<TABLE BORDER="1" CELLBORDER="0" 
 	<TR><TD align="left">status_id? : int</TD></TR>
 	<TR><TD align="left">subject_id : int</TD></TR>
 	        </TABLE>>];
+rcap_blood_sample_collection_and_processing_crf [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
+	        <TR><TD><B>rcap_blood_sample_collection_and_processing_crf</B></TD></TR><HR></HR>
+	        <TR><TD align="left">biosample_id : int</TD></TR>
+	<TR><TD align="left">blood_sample_collection_and_processing_crf_complete? : int</TD></TR>
+	<TR><TD align="left"><B>blood_sample_collection_and_processing_crf_id</B> : int</TD></TR>
+	<TR><TD align="left">bscp_aliq_cnt : int</TD></TR>
+	<TR><TD align="left">bscp_aliquot_box_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_aliquot_freezer_time : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_any_vacc : boolean</TD></TR>
+	<TR><TD align="left">bscp_buffycoat_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_buffycoat_na : boolean</TD></TR>
+	<TR><TD align="left">bscp_caff_cups_amt : int</TD></TR>
+	<TR><TD align="left">bscp_deg_of_hemolysis : varchar(32)</TD></TR>
+	<TR><TD align="left">bscp_hrs_since_cafstim : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_hrs_since_food : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_hrs_since_water : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_lav1_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_lav1_centrif_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_lav1_not_obt : boolean</TD></TR>
+	<TR><TD align="left">bscp_no_sample_reason : int</TD></TR>
+	<TR><TD align="left">bscp_paxg_aliq_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_paxg_aliq_na : boolean</TD></TR>
+	<TR><TD align="left">bscp_paxg_box_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_paxg_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_paxg_not_obt : boolean</TD></TR>
+	<TR><TD align="left">bscp_phleb_by_init : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_plasma_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_plugcap_centrif_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_procby_initials : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_protocol_dev : boolean</TD></TR>
+	<TR><TD align="left">bscp_protocol_dev_reason : int</TD></TR>
+	<TR><TD align="left">bscp_ra_initials : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_sample_obtained : boolean</TD></TR>
+	<TR><TD align="left">bscp_samplekit_brcd : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_time_blood_draw : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_time_centrifuge : varchar(255)</TD></TR>
+	<TR><TD align="left">bscp_verify_pt : boolean</TD></TR>
+	<TR><TD align="left">creation_time : timestamp</TD></TR>
+	<TR><TD align="left">last_updated_ts : timestamp</TD></TR>
+	<TR><TD align="left">measurement_id : int</TD></TR>
+	<TR><TD align="left">protocol_id? : int</TD></TR>
+	<TR><TD align="left">record_id? : varchar(255)</TD></TR>
+	<TR><TD align="left">status_id? : int</TD></TR>
+	<TR><TD align="left">subject_id : int</TD></TR>
+	        </TABLE>>];
 measurement_from_measurement [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>measurement_from_measurement</B></TD></TR><HR></HR>
 	        <TR><TD align="left"><I>measurement?</I> : int</TD></TR>
@@ -228,6 +274,7 @@ container_in_shipment -> container  [headlabel=container_id, minlen=3, taillabel
 container_in_shipment -> shipment  [headlabel=shipment_id, minlen=3, taillabel=shipment, xlabel="                                      "];
 biosample -> anatomy  [headlabel=anatomy_id, minlen=3, taillabel=anatomy, xlabel="                                  "];
 biosample -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
+biosample -> protocol  [headlabel=protocol_id, minlen=3, taillabel=protocol, xlabel="                                      "];
 biosample -> subject  [headlabel=subject_id, minlen=3, taillabel=subject, xlabel="                                  "];
 measurement -> biosample  [headlabel=biosample_id, minlen=3, taillabel=biosample, xlabel="                                          "];
 measurement -> container  [headlabel=container_id, minlen=3, taillabel=container, xlabel="                                          "];
@@ -249,6 +296,12 @@ rcap_consented_participant_information -> measurement  [headlabel=measurement_id
 rcap_consented_participant_information -> protocol  [headlabel=protocol_id, minlen=3, taillabel=protocol_id, xlabel="                                            "];
 rcap_consented_participant_information -> status  [headlabel=status_id, minlen=3, taillabel=status_id, xlabel="                                    "];
 rcap_consented_participant_information -> subject  [headlabel=subject_id, minlen=3, taillabel=subject_id, xlabel="                                        "];
+rcap_blood_sample_collection_and_processing_crf -> biosample  [headlabel=biosample_id, minlen=3, taillabel=biosample_id, xlabel="                                                "];
+rcap_blood_sample_collection_and_processing_crf -> status  [headlabel=status_id, minlen=5, taillabel=blood_sample_collection_and_processing_crf_complete, xlabel="                                                                                                                        "];
+rcap_blood_sample_collection_and_processing_crf -> measurement  [headlabel=measurement_id, minlen=3, taillabel=measurement_id, xlabel="                                                        "];
+rcap_blood_sample_collection_and_processing_crf -> protocol  [headlabel=protocol_id, minlen=3, taillabel=protocol_id, xlabel="                                            "];
+rcap_blood_sample_collection_and_processing_crf -> status  [headlabel=status_id, minlen=3, taillabel=status_id, xlabel="                                    "];
+rcap_blood_sample_collection_and_processing_crf -> subject  [headlabel=subject_id, minlen=3, taillabel=subject_id, xlabel="                                        "];
 measurement_from_measurement -> measurement  [headlabel=measurement_id, minlen=3, taillabel=measurement, xlabel="                                                  "];
 measurement_from_measurement -> container  [headlabel=container_id, minlen=4, taillabel=source_measurement, xlabel="                                                            "];
 }

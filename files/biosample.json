@@ -29,6 +29,14 @@
             "reference_column": "project_id",
             "reference_table": "project"
         },
+        "protocol": {
+            "data_type": "integer",
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "protocol_id",
+            "reference_table": "protocol"
+        },
         "subject": {
             "data_type": "integer",
             "event_action": "CASCADE",
@@ -45,6 +53,14 @@
         }
     },
     "comments": "C2M2-defined table: each record uniquely identifies a biosample obtained from a subject",
+    "constraints": {
+        "unique": {
+            "signature_52a51d2": [
+                "subject",
+                "protocol"
+            ]
+        }
+    },
     "root_url": "biosample",
     "table_name": "biosample"
 }

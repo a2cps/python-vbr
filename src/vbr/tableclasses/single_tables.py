@@ -42,7 +42,10 @@ class Biosample(Table):
     )
     anatomy = Column(Integer, ForeignKey("anatomy.anatomy_id"))
     project = Column(Integer, ForeignKey("project.project_id"))
+    protocol = Column(Integer, ForeignKey("protocol.protocol_id"))
     subject = Column(Integer, ForeignKey("subject.subject_id", event_action="CASCADE"))
+    # Only permit one biosample per subject x protocol
+    signature = Signature("subject", "protocol")
 
 
 class Container(Table):
@@ -153,7 +156,7 @@ class DataType(Table):
     description = Column(Text, comments="Description of the data_type", nullable=True)
     name = Column(String, comments="Short name for this data_type")
     # Enforce unique combination of id and name
-    signature = Signature("id", "name")
+    # signature = Signature("id", "name")
 
 
 class File(Table):
@@ -296,7 +299,7 @@ class Role(Table):
     name = Column(String)
     url = Column(String)
     # TODO - confirm these fields
-    signature = Signature("url", "name")
+    # signature = Signature("url", "name")
 
 
 class Shipment(Table):

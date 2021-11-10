@@ -22,14 +22,6 @@
         }
     },
     "comments": "C2M2-defined table: provides classifications for data; id is an EDAM CV data term in the form of data:[EDAM#]",
-    "constraints": {
-        "unique": {
-            "signature_17f71d9": [
-                "id",
-                "name"
-            ]
-        }
-    },
     "root_url": "data_type",
     "table_name": "data_type"
 }

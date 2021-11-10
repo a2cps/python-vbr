@@ -18,14 +18,6 @@
         }
     },
     "comments": "TACC-defined table: defines permissions associated with users of this system.",
-    "constraints": {
-        "unique": {
-            "signature_29a7e96": [
-                "url",
-                "name"
-            ]
-        }
-    },
     "root_url": "role",
     "table_name": "role"
 }
