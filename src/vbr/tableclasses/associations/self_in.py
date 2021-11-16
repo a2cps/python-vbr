@@ -3,7 +3,7 @@
 from ...pgrest import *
 from ..constants import Constants
 
-__all__ = ["DatasetInDataset", "FileInFile"]
+__all__ = ["DatasetInDataset", "FileInFile", "ProjectInProject"]
 
 # class ContainerInContainer(AssociationTable):
 #     """Maps containers inside other containers."""
@@ -39,6 +39,16 @@ class FileInFile(AssociationTable):
     # uniq_parent_file_id_namespace_parent_file_local_id = UniqueConstraint(
     #     'parent_file_id_namespace', 'parent_file_local_id')
     parent_file = Column(Integer, ForeignKey("file.file_id", event_action="CASCADE"))
+
+
+class ProjectInProject(AssociationTable):
+    """Maps project hierarchy and 'cross-cut' collections."""
+
+    project_in_project_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    project = Column(Integer, ForeignKey("project.project_id", event_action="CASCADE"))
+    parent_project = Column(
+        Integer, ForeignKey("project.project_id", event_action="CASCADE")
+    )
 
 
 class ProtocolInProtocol(AssociationTable):

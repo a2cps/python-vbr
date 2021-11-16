@@ -13,11 +13,12 @@ TENANT = "a2cps-dev"
 
 __all__ = ["redcap_to_vbr_project_id", "redcap_project_to_token"]
 
+MAPPINGS = {"project": {"14": "2", "29": "3"}}
+
 
 def redcap_to_vbr_project_id(project_id: str) -> str:
-    # TODO - write real mapping code for this.
-    # Need a canonical list of REDCap project_ids that map to the A2CPS project
-    return "1"
+    # MAPPINGS["project"] comes from src/scripts/data/protocol_in_protocol.py
+    return MAPPINGS["project"].get(str(project_id), "1")
 
 
 def get_secret_map(

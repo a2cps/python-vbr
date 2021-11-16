@@ -29,6 +29,7 @@ from .role import RoleData
 from .status import StatusData
 from .subject import SubjectData
 from .unit import UnitData
+from .project_in_project import ProjectInProjectData
 
 # __all__ = ['data_loads']
 
