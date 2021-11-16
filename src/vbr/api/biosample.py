@@ -26,7 +26,7 @@ class BiosampleApi(object):
         }
         return self._get_row_from_table_with_query("biosample", query=query)
 
-    def relabel_biosample_by_local_id(
+    def relabel_biosample(
         self, local_id: str, new_tracking_id: str
     ) -> Biosample:
         """Update the tracking_id for a Biosample by local_id."""
