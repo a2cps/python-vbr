@@ -1,4 +1,6 @@
 import datetime
+from os import statvfs
+import re
 
 from .column import PgRestColumn
 from .utils import class_or_instancemethod, datetime_to_isodate
@@ -17,6 +19,7 @@ __all__ = [
     "TimeStamp",
     "CreatedTimeStamp",
     "UpdatedTimeStamp",
+    "FreeText",
 ]
 
 
@@ -141,6 +144,22 @@ class String(PgRestColumn):
             return None
         else:
             return str(value)
+
+
+class FreeText(String):
+    CHAR_LEN = 1024
+
+    @classmethod
+    def cast(cls, value):
+        """Formats a long string value into a sanitized and escaped single line"""
+        value = super().cast(value)
+        value = re.sub(r"\s+", " ", value, flags=re.MULTILINE)
+        # HACK This is to work around annoying edge case in json
+        # specs that differ materially on if and how
+        # single-quote characters must be escaped.
+        value = re.sub(r"'", "", value, flags=re.MULTILINE)
+        value = value.strip()
+        return value
 
 
 class StringList(PgRestColumn):

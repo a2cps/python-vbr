@@ -98,7 +98,10 @@ def process_data_dict(filename: str, current: dict = None) -> dict:
                 identifier = False
 
             if form_name != "" and var_field_name != "":
-                if field_type in SUPPORTED_FIELD_TYPES:
+                if (
+                    field_type in SUPPORTED_STRING_TYPES
+                    or field_type in SUPPORTED_FREETEXT_TYPES
+                ):
                     # print('{0}.{1}'.format(form_name, var_field_name))
                     ddict_entry = {
                         "field_type": field_type,
@@ -150,8 +153,10 @@ def build(args):
         # Extend class def with column entries
         keyvals["columns"] = {}
         for col_name, col_config in form_config.items():
-            if col_config.get("field_type", None) in SUPPORTED_FIELD_TYPES:
+            if col_config.get("field_type", None) in SUPPORTED_STRING_TYPES:
                 col_type = "String"
+            elif col_config.get("field_type", None) in SUPPORTED_FREETEXT_TYPES:
+                col_type = "FreeText"
 
             #####################
             # Translation rules #
@@ -313,8 +318,8 @@ if __name__ == "__main__":
 
     CLASS_TEMPLATE = "redcap_tableclass.py.j2"
     INIT_TEMPLATE = "redcap_tableclasses_init.py.j2"
-    SUPPORTED_FIELD_TYPES = ("text", "radio", "dropdown", "checkbox", "yesno")
-
+    SUPPORTED_STRING_TYPES = ["text", "radio", "dropdown", "checkbox", "yesno"]
+    SUPPORTED_FREETEXT_TYPES = ["notes"]
     parser = get_parser()
     parser.add_argument(
         "cmd", nargs="?", choices=["build", "clean"], default="build", help="Command"
