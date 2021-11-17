@@ -95,3 +95,14 @@ class ShipmentApi(object):
             link_target=shipment,
         )
         return shipment
+
+    def relabel_shipment(self, local_id: str, new_tracking_id: str) -> Shipment:
+        """Update the tracking_id for shipment by local_id."""
+        # 1. Query for row matching local_id
+        # 2. Set the new value
+        # 3. Do database update via vbr_client.update_row()
+        # 4. TODO Create and link a 'rename' data_event
+        ship = self.get_shipment_by_local_id(local_id)
+        ship.tracking_id = new_tracking_id
+        ship = self.vbr_client.update_row(ship)
+        return ship
