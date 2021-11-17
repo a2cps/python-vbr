@@ -11,6 +11,7 @@ from vbr.tableclasses import Table, class_from_table
 class DataManager(object):
     """Manages data in PgREST collections"""
 
+    @picklecache.mcache(lru_cache(maxsize=128))
     def _table_root_or_name_to_root(self, table_name=None, root_url=None) -> str:
         if root_url is not None:
             return root_url
