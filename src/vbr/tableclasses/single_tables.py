@@ -56,11 +56,12 @@ class Container(Table):
     # Source: Usually Redcap but might also be user or LIMS
     # MUST be unique!
     tracking_id = Column(
-        String, comments="Tracking ID assigned to container", unique=True
+        String, nullable=True, comments="Tracking ID assigned to container", unique=True
     )
     container_type = Column(
         Integer,
         ForeignKey("container_type.container_type_id"),
+        nullable=True,
         # 0 is default virtual container
         default=0,
     )
