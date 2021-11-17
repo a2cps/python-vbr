@@ -1,4 +1,6 @@
 from vbr.tableclasses import Shipment
+from .data_event import DataEventApi
+from .status import StatusApi
 
 __all__ = ["ShipmentApi"]
 
@@ -68,3 +70,28 @@ class ShipmentApi(object):
             )
         except Exception:
             return self.get_shipment_by_tracking_id(tracking_id)
+
+    def update_shipment_status(
+        self, shipment: Shipment, status: str, comment: str = None
+    ) -> Shipment:
+        status = status.upper()
+        if status not in [
+            "SHIPMENT_SHIPPED",
+            "SHIPMENT_RECEIVED",
+            "SHIPMENT_DELAYED",
+            "SHIPMENT_LOST",
+        ]:
+            raise ValueError("Uknown value for shipment status %s", status)
+        status_name = status.lower()
+        status_name = status_name.replace("_", ".")
+        vbr_status = StatusApi.get_status_by_name(self, status_name)
+        shipment.status = vbr_status.primary_key_id()
+        shipment = self.vbr_client.update_row(shipment)
+        # DataEvent
+        DataEventApi.create_and_link(
+            self,
+            status_id=vbr_status.primary_key_id(),
+            comment=comment,
+            link_target=shipment,
+        )
+        return shipment

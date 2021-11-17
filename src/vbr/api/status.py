@@ -11,4 +11,8 @@ class StatusApi(object):
     def get_status_by_name(self, name: str) -> Status:
         """Retrieve a Status by name."""
         query = {"name": {"operator": "=", "value": name}}
-        return self.vbr_client.query_rows(root_url="status", query=query)[0]
+        try:
+            status = self.vbr_client.query_rows(root_url="status", query=query)[0]
+            return status
+        except IndexError:
+            raise ValueError("Unknown status %s", name)

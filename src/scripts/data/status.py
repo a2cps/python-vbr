@@ -26,7 +26,17 @@ class StatusData(TableData):
         {
             "status_id": 20,
             "name": "sample.shipped",
-            "description": "Sample was packaged for shipment",
+            "description": "Sample marked as shipped",
+        },
+        {
+            "status_id": 21,
+            "name": "sample.received",
+            "description": "Sample receipt acknowleged",
+        },
+        {
+            "status_id": 22,
+            "name": "sample.lost",
+            "description": "Sample marked as never received",
         },
         {
             "status_id": 30,
@@ -62,5 +72,25 @@ class StatusData(TableData):
             "status_id": 37,
             "name": "easypost.unknown",
             "description": "Shipment status unknown",
+        },
+        {
+            "status_id": 40,
+            "name": "shipment.shipped",
+            "description": "Shipment dispatched to carrier",
+        },
+        {
+            "status_id": 41,
+            "name": "shipment.received",
+            "description": "Shipment marked as received",
+        },
+        {
+            "status_id": 42,
+            "name": "shipment.delayed",
+            "description": "Shipment marked as delayed",
+        },
+        {
+            "status_id": 43,
+            "name": "shipment.lost",
+            "description": "Shipment marked as lost/destroyed",
         },
     ]
