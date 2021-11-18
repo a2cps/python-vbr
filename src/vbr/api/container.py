@@ -1,4 +1,6 @@
 from vbr.tableclasses import Container
+from .data_event import DataEventApi
+from .status import StatusApi
 
 __all__ = ["ContainerApi"]
 
@@ -37,6 +39,7 @@ class ContainerApi(object):
         project_id: int,
         container_type_id: int,
         location_id: int = 1,
+        status_id: int = 10,
     ) -> Container:
         """Create a new Container."""
         container_type_id = str(container_type_id)
@@ -45,6 +48,7 @@ class ContainerApi(object):
             tracking_id=tracking_id,
             container_type=container_type_id,
             location=location_id,
+            status=status_id,
         )
         try:
             return self.vbr_client.create_row(ct)[0]
@@ -57,6 +61,7 @@ class ContainerApi(object):
         project_id: int,
         container_type_id: int,
         location_id: int = 1,
+        status_id: int = 10,  # Created
     ) -> Container:
         """Create a Container or return existing with specified tracking_id."""
         try:
@@ -65,3 +70,28 @@ class ContainerApi(object):
             )
         except Exception:
             return self.get_container_by_tracking_id(tracking_id)
+
+    def update_container_status(
+        self, container: Container, status: str, comment: str = None
+    ) -> Container:
+        status = status.upper()
+        if status not in [
+            "CONTAINER_PRESENT",
+            "CONTAINER_DAMAGED",
+            "CONTAINER_MISSING",
+            "CONTAINER_LOST",
+        ]:
+            raise ValueError("Uknown value for container status %s", status)
+        status_name = status.lower()
+        status_name = status_name.replace("_", ".")
+        vbr_status = StatusApi.get_status_by_name(self, status_name)
+        container.status = vbr_status.primary_key_id()
+        container = self.vbr_client.update_row(container)
+        # DataEvent
+        DataEventApi.create_and_link(
+            self,
+            status_id=vbr_status.primary_key_id(),
+            comment=comment,
+            link_target=container,
+        )
+        return container

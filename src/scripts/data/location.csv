@@ -1,0 +1,18 @@
+﻿location_id,display_name,address1,address2,address3,city,state_province_country,zip_or_postcode,organization
+0,Default,,,,,,,1
+1,Receiving: University of California San Diego,,,,,,,10
+2,Shipping: In Transit,,,,,,,10
+10,MCC1: Institute for Translational Medicine,,,,,,,4
+11,MCC1: Rush University Medical Center,,,,,,,3
+12,MCC1: The University of Chicago Medical Center,,,,,,,5
+13,MCC1: NorthShore University HealthSystem,,,,,,,6
+20,MCC2: University of Michigan,,,,,,,7
+21,ODGC-Proteomics: Pacific Northwest National Laboratory,,,,,,,9
+22,ODGC-Lipidomics: Wake Forest University,,,,,,,11
+23,ODGC-Metabolomics: Wake Forest University,,,,,,,11
+24,ODGC-exRNA: University of California San Diego,,,,,,,10
+25,ODGC-GV: University of California San Diego,,,,,,,10
+30,CCC: University of Iowa,,,,,,,8
+40,DIRC: Johns Hopkins University,,,,,,,12
+41,DIRC: Dartmouth College,,,,,,,13
+42,DIRC: Texas Advanced Computing Center,,,,,,,1

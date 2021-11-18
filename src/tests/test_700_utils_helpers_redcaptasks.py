@@ -49,3 +49,20 @@ def test_redcap_to_pgrest_datetime(test_input, expected):
             vbr.utils.redcaptasks.redcap_to_pgrest_datetime(test_input)
     else:
         assert vbr.utils.redcaptasks.redcap_to_pgrest_datetime(test_input) == expected
+
+
+@pytest.mark.parametrize("test_input,expected", [("1", "11"), (1, "11"), ("100", "0")])
+def test_redcap_shipping_mcc_to_vbr_location(test_input, expected):
+    assert (
+        vbr.utils.redcaptasks.redcap_shipping_mcc_to_vbr_location(test_input)
+        == expected
+    )
+
+
+@pytest.mark.parametrize(
+    "test_input,expected", [("1", "2"), (1, "2"), ("4", "3"), (100, "0")]
+)
+def test_redcap_shipping_mcc_to_vbr_project(test_input, expected):
+    assert (
+        vbr.utils.redcaptasks.redcap_shipping_mcc_to_vbr_project(test_input) == expected
+    )

@@ -25,8 +25,20 @@ __all__ = ["ContainerLogisticsApi"]
 # Methods defined here focus on Container handling logistics
 # and tend to span multiple VBR types
 class ContainerLogisticsApi(object):
+    def relocate_container_by_local_id(
+        self, local_id: str, location_local_id: str, comment: str = None
+    ) -> Measurement:
+        """Move a Container to new Location by local_ids."""
+        cont = ContainerApi.get_container_by_local_id(self, local_id)
+        loca = LocationApi.get_location_by_local_id(self, location_local_id)
+        return self.relocate_container(cont, loca, comment)
+
     def relocate_container(
-        self, container: Container, location: Location, sync: bool = True
+        self,
+        container: Container,
+        location: Location,
+        sync: bool = True,
+        comment: str = None,
     ) -> Container:
         """Move a Container to a Location."""
         if container.container_id == 0:

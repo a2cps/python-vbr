@@ -93,4 +93,24 @@ class StatusData(TableData):
             "name": "shipment.lost",
             "description": "Shipment marked as lost/destroyed",
         },
+        {
+            "status_id": 50,
+            "name": "container.present",
+            "description": "Container is present",
+        },
+        {
+            "status_id": 51,
+            "name": "container.damaged",
+            "description": "Container is damaged",
+        },
+        {
+            "status_id": 52,
+            "name": "container.missing",
+            "description": "Container is missing",
+        },
+        {
+            "status_id": 53,
+            "name": "container.lost",
+            "description": "Container is lost",
+        },
     ]

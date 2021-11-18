@@ -1,4 +1,5 @@
 import copy
+from re import M
 
 from vbr.tableclasses import (
     Biosample,
@@ -10,6 +11,7 @@ from vbr.tableclasses import (
     Shipment,
     Subject,
 )
+from vbr.tableclasses.single_tables import MeasurementType
 from vbr.utils import utc_time_in_seconds
 
 from .biosample import BiosampleApi
@@ -26,13 +28,21 @@ __all__ = ["MeasurementLogisticsApi"]
 # and tend to span multiple VBR types
 class MeasurementLogisticsApi(object):
     def relocate_measurement(
-        self, measurement: Measurement, container: Container
+        self, measurement: Measurement, container: Container, comment: str = None
     ) -> Measurement:
         """Move a Measurement to a Container."""
         # 4. TODO Create and link a 'relocate' data_event
         measurement.container = container.container_id
         container = self.vbr_client.update_row(measurement)
         return measurement
+
+    def rebox_measurement_by_local_id(
+        self, local_id: str, container_local_id: str, comment: str = None
+    ) -> Measurement:
+        """Move a Measurement to a Container by local_ids."""
+        meas = MeasurementApi.get_measurement_by_local_id(self, local_id)
+        cont = ContainerApi.get_container_by_local_id(self, container_local_id)
+        return self.relocate_measurement(meas, cont, comment)
 
     def get_measurements_in_container(self, container: Container) -> list:
         """Retrieve Measurements in a Container."""
@@ -47,7 +57,7 @@ class MeasurementLogisticsApi(object):
         )
 
     def partition_measurement(
-        self, measurement: Measurement, tracking_id: str = None
+        self, measurement: Measurement, tracking_id: str = None, comment: str = None
     ) -> Measurement:
         """Partition a sub-Measuremenent from a Measurement."""
         # 1. Clone the original Measurement to a new Measurement,
@@ -61,9 +71,8 @@ class MeasurementLogisticsApi(object):
         else:
             m2.tracking_id = measurement.tracking_id + "." + utc_time_in_seconds()
         m2 = self.vbr_client.create_row(m2)[0]
-        # 2. Register the relation via MeasurementFromMeasurement table
-        # 3. Create a partitioned data event for original Measurement
-        # 4. Return new Measurement
+        # TODO Register the relation via MeasurementFromMeasurement table
+        # TODO Create a partitioned data event for original Measurement
         return m2
 
     def get_measurement_partitions(self, measurement: Measurement) -> list:

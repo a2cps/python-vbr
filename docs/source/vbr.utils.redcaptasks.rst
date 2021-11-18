@@ -33,6 +33,14 @@ vbr.utils.redcaptasks.event module
    :undoc-members:
    :show-inheritance:
 
+vbr.utils.redcaptasks.location module
+-------------------------------------
+
+.. automodule:: vbr.utils.redcaptasks.location
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 vbr.utils.redcaptasks.project module
 ------------------------------------
 

@@ -84,6 +84,7 @@ class Container(Table):
         default=0,
         comments="Parent container_id. Permits nesting relationships.",
     )
+    status = Column(Integer, ForeignKey("status.status_id"), default=10)
 
 
 class ContainerType(Table):
