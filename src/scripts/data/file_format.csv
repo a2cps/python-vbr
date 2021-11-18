@@ -1,4 +1,5 @@
 file_format_id,name,description,id
+0,raw,raw,format:0
 1,json,json,format:3464
 2,csv,comma separated value,format:2330
 3,tsv,tab separated value,format:3475

@@ -4,11 +4,11 @@ from .loader import TableData
 class ProjectData(TableData):
     DATA = [
         {
-            "id_namespace": 'tag:a2cps","',
+            "id_namespace": "",
             "project_id": 0,
-            "tracking_id": "https://a2cps.org",
+            "tracking_id": "",
             "creation_time": "2020-09-01T00:00:00.000Z",
-            "abbreviation": "DEF",
+            "abbreviation": "Default",
             "name": "Default",
             "description": "Default Project",
         },

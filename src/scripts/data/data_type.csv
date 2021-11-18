@@ -1,4 +1,5 @@
 data_type_id,name,description,id
+0,undefined,undefined,data:
 1,consented_participant_information,consented_participant_information,data:
 2,postconsent_study_plan_crf_v06,postconsent_study_plan_crf_v06,data:
 3,patient_demographics_baseline_v03_demographics_i,patient_demographics_baseline_v03_demographics_i,data:

@@ -1,4 +1,5 @@
 protocol_id,name,description
+0,undefined_protocol,undefined protocol
 1,screening,participant screening
 2,informed_consent,participant informed consent
 3,baseline_visit,baseline visit
@@ -39,4 +40,4 @@ protocol_id,name,description
 50,shipping,Sample shipping
 51,receiving,Sample receiving
 53,quality_control,Sample QC
-53,processing,Sample processing
+54,processing,Sample processing

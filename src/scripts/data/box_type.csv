@@ -1,4 +1,5 @@
 box_type_id,name,description
+0,generic,generic box
 1,plasma_aliquot,plasma aliquot box
 2,paxgene,paxgene box
 3,other,container is other than those listed

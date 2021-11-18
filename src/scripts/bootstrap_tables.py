@@ -16,6 +16,7 @@ def main(args):
         try:
             v.create_row(od)
         except Exception as exc:
+            print("Failed loading {0}".format(od))
             print(exc)
 
 

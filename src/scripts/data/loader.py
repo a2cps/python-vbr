@@ -39,7 +39,7 @@ class TableData(object):
     def load_csv(self):
         records = []
         try:
-            with open(self.csv_path, "r") as data:
+            with open(self.csv_path, "r", encoding="utf-8-sig") as data:
                 for record in csv.DictReader(data):
                     records.append(record)
         except FileNotFoundError:
