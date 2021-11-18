@@ -37,3 +37,6 @@ protocol_id,name,description
 36,consent_collection_form,participant consent collection forms 
 37,consent_process_form,participant consent form processing
 50,shipping,Sample shipping
+51,receiving,Sample receiving
+53,quality_control,Sample QC
+53,processing,Sample processing

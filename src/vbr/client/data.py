@@ -116,15 +116,8 @@ class DataManager(object):
         vbr_obj._pkid = None
         # No return!
 
-    def list_rows(self, root_url: str, limit: int = None, offset: int = None) -> list:
+    def list_rows(self, root_url: str, limit: int = 100000, offset: int = 0) -> list:
         """Lists VBR Records in table"""
-        # HACK
-        if limit is None:
-            limit = 100000
-        # HACK
-        if offset is None:
-            offset = 0
-
         resp = self.client.pgrest.get_table(
             collection=root_url, limit=limit, offset=offset
         )
@@ -133,7 +126,7 @@ class DataManager(object):
         return rows
 
     def query_rows(
-        self, root_url: str, query: dict = None, limit: int = None, offset: int = None
+        self, root_url: str, query: dict = None, limit: int = 100000, offset: int = 0
     ) -> list:
 
         # This sets up direct HTTP API client because tapipy does not
@@ -150,14 +143,8 @@ class DataManager(object):
         # Limit and offset
         if limit is not None:
             param_els.append("limit={}".format(limit))
-        else:
-            # HACK
-            limit = 100000
         if offset is not None:
             param_els.append("offset={}".format(offset))
-        else:
-            # HACK
-            offset = 1
 
         # Tranform query, expressed as a where dict, into a
         # list of where parameters

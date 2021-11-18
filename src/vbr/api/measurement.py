@@ -1,6 +1,7 @@
 from vbr.tableclasses import Measurement
 
-from .container import ContainerApi
+from .data_event import DataEventApi
+from .status import StatusApi
 
 __all__ = ["MeasurementApi"]
 
@@ -77,8 +78,41 @@ class MeasurementApi(object):
         # 1. Query for row matching local_id
         # 2. Set the new value
         # 3. Do database update via vbr_client.update_row()
-        # 4. TODO Create and link a 'rename' data_event
         meas = self.get_measurement_by_local_id(local_id)
+        original_tracking_id = meas.tracking_id
         meas.tracking_id = new_tracking_id
         meas = self.vbr_client.update_row(meas)
+        DataEventApi.create_and_link(
+            self,
+            comment="Relabeled from original tracking ID {0}".format(
+                original_tracking_id
+            ),
+            link_target=meas,
+        )
         return meas
+
+    def update_measurement_status(
+        self, measurement: Measurement, status: str, comment: str = None
+    ) -> Measurement:
+        """Update Measurement status by status name"""
+        status = status.upper()
+        if status not in [
+            "MEASUREMENT_PRESENT",
+            "MEASUREMENT_SPOILED",
+            "MEASUREMENT_DEPLETED",
+            "MEASUREMENT_LOST",
+        ]:
+            raise ValueError("Uknown value for measurement status %s", status)
+        status_name = status.lower()
+        status_name = status_name.replace("_", ".")
+        vbr_status = StatusApi.get_status_by_name(self, status_name)
+        measurement.status = vbr_status.primary_key_id()
+        measurement = self.vbr_client.update_row(measurement)
+        # DataEvent
+        DataEventApi.create_and_link(
+            self,
+            status_id=vbr_status.primary_key_id(),
+            comment=comment,
+            link_target=measurement,
+        )
+        return measurement

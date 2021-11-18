@@ -113,4 +113,24 @@ class StatusData(TableData):
             "name": "container.lost",
             "description": "Container is lost",
         },
+        {
+            "status_id": 60,
+            "name": "measurement.present",
+            "description": "Measurement is present",
+        },
+        {
+            "status_id": 61,
+            "name": "measurement.spoiled",
+            "description": "Measurement is spoiled",
+        },
+        {
+            "status_id": 62,
+            "name": "measurement.depleted",
+            "description": "Measurement is depleted",
+        },
+        {
+            "status_id": 63,
+            "name": "measurement.lost",
+            "description": "Measurement has been lost",
+        },
     ]

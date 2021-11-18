@@ -1,6 +1,6 @@
 from vbr.tableclasses import Subject
 
-from .biosample import BiosampleApi
+from .data_event import DataEventApi
 
 __all__ = ["SubjectApi"]
 
@@ -62,10 +62,17 @@ class SubjectApi(object):
         # 1. Query for row matching local_id
         # 2. Set the new value
         # 3. Do database update via vbr_client.update_row()
-        # 4. TODO Create and link a 'rename' data_event
         subj = self.get_subject_by_local_id(local_id)
+        original_tracking_id = subj.tracking_id
         subj.tracking_id = new_tracking_id
         subj = self.vbr_client.update_row(subj)
+        DataEventApi.create_and_link(
+            self,
+            comment="Relabeled from original tracking ID {0}".format(
+                original_tracking_id
+            ),
+            link_target=subj,
+        )
         return subj
 
     def get_subject_biosamples(

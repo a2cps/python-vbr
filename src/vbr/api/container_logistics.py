@@ -10,14 +10,15 @@ from vbr.tableclasses import (
     Subject,
 )
 
-from .biosample import BiosampleApi
 from .container import ContainerApi
 from .data_event import DataEventApi
 from .location import LocationApi
-from .measurement import MeasurementApi
-from .project import ProjectApi
 from .status import StatusApi
-from .subject import SubjectApi
+
+# from .biosample import BiosampleApi
+# from .measurement import MeasurementApi
+# from .project import ProjectApi
+# from .subject import SubjectApi
 
 __all__ = ["ContainerLogisticsApi"]
 

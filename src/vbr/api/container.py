@@ -25,10 +25,17 @@ class ContainerApi(object):
         # 1. Query for row matching local_id
         # 2. Set the new value
         # 3. Do database update via vbr_client.update_row()
-        # 4. TODO Create and link a 'rename' data_event
         cont = self.get_biosample_by_local_id(local_id)
+        original_tracking_id = cont.tracking_id
         cont.tracking_id = new_tracking_id
         cont = self.vbr_client.update_row(cont)
+        DataEventApi.create_and_link(
+            self,
+            comment="Relabeled from original tracking ID {0}".format(
+                original_tracking_id
+            ),
+            link_target=cont,
+        )
         return cont
 
     # TODO Update status
@@ -74,6 +81,7 @@ class ContainerApi(object):
     def update_container_status(
         self, container: Container, status: str, comment: str = None
     ) -> Container:
+        """Update Container status by status name"""
         status = status.upper()
         if status not in [
             "CONTAINER_PRESENT",

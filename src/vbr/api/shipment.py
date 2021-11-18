@@ -74,6 +74,7 @@ class ShipmentApi(object):
     def update_shipment_status(
         self, shipment: Shipment, status: str, comment: str = None
     ) -> Shipment:
+        """Update Shipment by status name"""
         status = status.upper()
         if status not in [
             "SHIPMENT_SHIPPED",
@@ -101,8 +102,15 @@ class ShipmentApi(object):
         # 1. Query for row matching local_id
         # 2. Set the new value
         # 3. Do database update via vbr_client.update_row()
-        # 4. TODO Create and link a 'rename' data_event
-        ship = self.get_shipment_by_local_id(local_id)
-        ship.tracking_id = new_tracking_id
-        ship = self.vbr_client.update_row(ship)
-        return ship
+        shipment = self.get_shipment_by_local_id(local_id)
+        original_tracking_id = shipment.tracking_id
+        shipment.tracking_id = new_tracking_id
+        shipment = self.vbr_client.update_row(shipment)
+        DataEventApi.create_and_link(
+            self,
+            comment="Relabeled from original tracking ID {0}".format(
+                original_tracking_id
+            ),
+            link_target=shipment,
+        )
+        return shipment

@@ -1,5 +1,7 @@
+from datetime import time
 from vbr.errors import TableNotSupported
 from vbr.tableclasses import AssociationTable, DataEvent, Table, class_from_table
+from vbr.pgrest.time import timestamp
 
 __all__ = ["DataEventApi"]
 
@@ -24,7 +26,10 @@ class DataEventApi(object):
         comment: str = None,
     ) -> DataEvent:
         """Create a new DataEvent with supplied kwargs."""
-        # TODO - check that at least one argument is not None
+        # HACK - pgrest CREATED type for datetime seems broken
+        if event_ts_str is None:
+            event_ts_str = timestamp()
+
         de = DataEvent(
             protocol=protocol_id,
             reason=reason_id,
@@ -90,7 +95,6 @@ class DataEventApi(object):
         comment: str = None,
         link_target: Table = None,
     ) -> tuple:
-
         data_event = self.create_data_event(
             protocol_id,
             reason_id,
