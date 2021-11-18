@@ -1,4 +1,5 @@
 from functools import lru_cache
+from re import T
 
 from tapipy.tapis import Tapis
 
@@ -23,11 +24,15 @@ from .subject import SubjectApi
 from .status import StatusApi
 from .system import VbrRedcapEventApi
 
+from ..utils.helpers import get_client
+
 __all__ = ["get_vbr_api_client", "VBR_Api"]
 
 
 def get_vbr_api_client(tapis_client: Tapis = None) -> VBR:
     """Instantiate a VBR client."""
+    if tapis_client is None:
+        tapis_client = get_client()
     return VBR_Api(tapis_client=tapis_client)
 
 
