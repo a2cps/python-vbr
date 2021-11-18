@@ -31,7 +31,7 @@ def records_by_id(
         "rawOrLabelHeaders": "raw",
         "exportCheckboxLabel": "false",
         "exportSurveyFields": "false",
-        "exportDataAccessGroups": "false",
+        "exportDataAccessGroups": "true",
         "returnFormat": "json",
     }
 

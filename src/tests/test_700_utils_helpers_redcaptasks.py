@@ -66,3 +66,13 @@ def test_redcap_shipping_mcc_to_vbr_project(test_input, expected):
     assert (
         vbr.utils.redcaptasks.redcap_shipping_mcc_to_vbr_project(test_input) == expected
     )
+
+
+@pytest.mark.parametrize(
+    "test_input,expected", [("rush_university_me", "11"), ("torchys_tacos", "0")]
+)
+def test_redcap_data_access_group_to_vbr_location(test_input, expected):
+    assert (
+        vbr.utils.redcaptasks.redcap_data_access_group_to_vbr_location(test_input)
+        == expected
+    )
