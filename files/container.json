@@ -9,6 +9,7 @@
             "default": 0,
             "event_action": "RESTRICT",
             "foreign_key": true,
+            "null": true,
             "on_event": "ON DELETE",
             "reference_column": "container_type_id",
             "reference_table": "container_type"
@@ -35,10 +36,20 @@
             "default": 0,
             "null": true
         },
+        "status": {
+            "data_type": "integer",
+            "default": 10,
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
+        },
         "tracking_id": {
             "char_len": 255,
             "comments": "Tracking ID assigned to container",
             "data_type": "varchar",
+            "null": true,
             "unique": true
         }
     },

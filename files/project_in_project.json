@@ -1,0 +1,27 @@
+{
+    "columns": {
+        "parent_project": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "project_id",
+            "reference_table": "project"
+        },
+        "project": {
+            "data_type": "integer",
+            "event_action": "CASCADE",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "project_id",
+            "reference_table": "project"
+        },
+        "project_in_project_id": {
+            "data_type": "serial",
+            "primary_key": true
+        }
+    },
+    "comments": "Maps project hierarchy and 'cross-cut' collections.",
+    "root_url": "project_in_project",
+    "table_name": "project_in_project"
+}

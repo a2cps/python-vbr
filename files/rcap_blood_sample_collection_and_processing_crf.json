@@ -52,6 +52,11 @@
             "data_type": "integer",
             "null": true
         },
+        "bscp_comments": {
+            "char_len": 1024,
+            "data_type": "varchar",
+            "null": true
+        },
         "bscp_deg_of_hemolysis": {
             "char_len": 32,
             "data_type": "varchar",
