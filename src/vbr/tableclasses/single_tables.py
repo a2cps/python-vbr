@@ -324,11 +324,8 @@ class Shipment(Table):
     )
     # Shipment
     project = Column(Integer, ForeignKey("project.project_id"))
-    ship_to = Column(Integer, ForeignKey("contact.contact_id"), nullable=True)
-    # Default is mtaub@jhsph.edu
-    ship_from = Column(
-        Integer, ForeignKey("contact.contact_id"), default=6, nullable=True
-    )
+    ship_to = Column(Integer, ForeignKey("location.location_id"), nullable=True)
+    ship_from = Column(Integer, ForeignKey("location.location_id"), nullable=True)
     status = Column(Integer, ForeignKey("status.status_id"))
 
 

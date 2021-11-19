@@ -28,13 +28,12 @@
         },
         "ship_from": {
             "data_type": "integer",
-            "default": 6,
             "event_action": "RESTRICT",
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
-            "reference_column": "contact_id",
-            "reference_table": "contact"
+            "reference_column": "location_id",
+            "reference_table": "location"
         },
         "ship_to": {
             "data_type": "integer",
@@ -42,8 +41,8 @@
             "foreign_key": true,
             "null": true,
             "on_event": "ON DELETE",
-            "reference_column": "contact_id",
-            "reference_table": "contact"
+            "reference_column": "location_id",
+            "reference_table": "location"
         },
         "shipment_id": {
             "data_type": "serial",
