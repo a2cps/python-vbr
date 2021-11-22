@@ -82,9 +82,9 @@ class ContainerApi(object):
         self, container: Container, status_name: str, comment: str = None
     ) -> Container:
         """Update Container status by status name"""
-        status = status_name.lower()
-        if not status.startswith("container."):
-            status = "container." + status
+        status_name = status_name.lower()
+        if not status_name.startswith("container."):
+            status_name = "container." + status_name
         vbr_status_id = container.status
         try:
             new_vbr_status = StatusApi.get_status_by_name(self, status_name)
