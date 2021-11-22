@@ -95,14 +95,14 @@ class MeasurementApi(object):
         self, measurement: Measurement, status_name: str, comment: str = None
     ) -> Measurement:
         """Update Measurement status by status name"""
-        status = status_name.lower()
-        if not status.startswith("measurement."):
-            status = "measurement." + status
+        status_name = status_name.lower()
+        if not status_name.startswith("measurement."):
+            status_name = "measurement." + status_name
         vbr_status_id = measurement.status
         try:
             new_vbr_status = StatusApi.get_status_by_name(self, status_name)
         except ValueError:
-            raise ValueError("Unrecognized container status %s", status_name)
+            raise ValueError("Unrecognized measurement status %s", status_name)
         new_vbr_status_id = new_vbr_status.status_id
         # Only edit and create event if status changed
         if new_vbr_status_id != vbr_status_id:

@@ -93,14 +93,14 @@ class ShipmentApi(object):
         self, shipment: Shipment, status_name: str, comment: str = None
     ) -> Shipment:
         """Update Shipment status by status name"""
-        status = status_name.lower()
-        if not status.startswith("shipment."):
-            status = "shipment." + status
+        status_name = status_name.lower()
+        if not status_name.startswith("shipment."):
+            status_name = "shipment." + status_name
         vbr_status_id = shipment.status
         try:
             new_vbr_status = StatusApi.get_status_by_name(self, status_name)
         except ValueError:
-            raise ValueError("Unrecognized container status %s", status_name)
+            raise ValueError("Unrecognized shipment status %s", status_name)
         new_vbr_status_id = new_vbr_status.status_id
         # Only edit and create event if status changed
         if new_vbr_status_id != vbr_status_id:
