@@ -78,28 +78,28 @@ class ContainerApi(object):
         except Exception:
             return self.get_container_by_tracking_id(tracking_id)
 
-    def update_container_status(
-        self, container: Container, status: str, comment: str = None
+    def update_container_status_by_name(
+        self, container: Container, status_name: str, comment: str = None
     ) -> Container:
         """Update Container status by status name"""
-        status = status.upper()
-        if status not in [
-            "CONTAINER_PRESENT",
-            "CONTAINER_DAMAGED",
-            "CONTAINER_MISSING",
-            "CONTAINER_LOST",
-        ]:
-            raise ValueError("Uknown value for container status %s", status)
-        status_name = status.lower()
-        status_name = status_name.replace("_", ".")
-        vbr_status = StatusApi.get_status_by_name(self, status_name)
-        container.status = vbr_status.primary_key_id()
-        container = self.vbr_client.update_row(container)
-        # DataEvent
-        DataEventApi.create_and_link(
-            self,
-            status_id=vbr_status.primary_key_id(),
-            comment=comment,
-            link_target=container,
-        )
+        status = status_name.lower()
+        if not status.startswith("container."):
+            status = "container." + status
+        vbr_status_id = container.status
+        try:
+            new_vbr_status = StatusApi.get_status_by_name(self, status_name)
+        except ValueError:
+            raise ValueError("Unrecognized container status %s", status_name)
+        new_vbr_status_id = new_vbr_status.status_id
+        # Only edit and create event if status changed
+        if new_vbr_status_id != vbr_status_id:
+            container.status = new_vbr_status_id
+            container = self.vbr_client.update_row(container)
+            # DataEvent
+            DataEventApi.create_and_link(
+                self,
+                status_id=new_vbr_status_id,
+                comment=comment,
+                link_target=container,
+            )
         return container

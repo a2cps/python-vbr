@@ -91,28 +91,28 @@ class MeasurementApi(object):
         )
         return meas
 
-    def update_measurement_status(
-        self, measurement: Measurement, status: str, comment: str = None
+    def update_measurement_status_by_name(
+        self, measurement: Measurement, status_name: str, comment: str = None
     ) -> Measurement:
         """Update Measurement status by status name"""
-        status = status.upper()
-        if status not in [
-            "MEASUREMENT_PRESENT",
-            "MEASUREMENT_SPOILED",
-            "MEASUREMENT_DEPLETED",
-            "MEASUREMENT_LOST",
-        ]:
-            raise ValueError("Uknown value for measurement status %s", status)
-        status_name = status.lower()
-        status_name = status_name.replace("_", ".")
-        vbr_status = StatusApi.get_status_by_name(self, status_name)
-        measurement.status = vbr_status.primary_key_id()
-        measurement = self.vbr_client.update_row(measurement)
-        # DataEvent
-        DataEventApi.create_and_link(
-            self,
-            status_id=vbr_status.primary_key_id(),
-            comment=comment,
-            link_target=measurement,
-        )
+        status = status_name.lower()
+        if not status.startswith("measurement."):
+            status = "measurement." + status
+        vbr_status_id = measurement.status
+        try:
+            new_vbr_status = StatusApi.get_status_by_name(self, status_name)
+        except ValueError:
+            raise ValueError("Unrecognized container status %s", status_name)
+        new_vbr_status_id = new_vbr_status.status_id
+        # Only edit and create event if status changed
+        if new_vbr_status_id != vbr_status_id:
+            measurement.status = new_vbr_status_id
+            measurement = self.vbr_client.update_row(measurement)
+            # DataEvent
+            DataEventApi.create_and_link(
+                self,
+                status_id=new_vbr_status_id,
+                comment=comment,
+                link_target=measurement,
+            )
         return measurement

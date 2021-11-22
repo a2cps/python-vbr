@@ -13,6 +13,7 @@ from vbr.tableclasses import (
 )
 from vbr.tableclasses.single_tables import MeasurementType
 from vbr.utils import utc_time_in_seconds
+from vbr.pgrest.time import timestamp
 
 from .biosample import BiosampleApi
 from .container import ContainerApi
@@ -65,7 +66,7 @@ class MeasurementLogisticsApi(object):
         m2 = measurement.clone()
         m2.measurement_id = None
         m2.local_id = None
-        m2.creation_time = None
+        m2.creation_time = timestamp()
         if tracking_id is not None:
             m2.tracking_id = tracking_id
         else:

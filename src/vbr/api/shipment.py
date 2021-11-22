@@ -71,32 +71,6 @@ class ShipmentApi(object):
         except Exception:
             return self.get_shipment_by_tracking_id(tracking_id)
 
-    def update_shipment_status(
-        self, shipment: Shipment, status: str, comment: str = None
-    ) -> Shipment:
-        """Update Shipment by status name"""
-        status = status.upper()
-        if status not in [
-            "SHIPMENT_SHIPPED",
-            "SHIPMENT_RECEIVED",
-            "SHIPMENT_DELAYED",
-            "SHIPMENT_LOST",
-        ]:
-            raise ValueError("Uknown value for shipment status %s", status)
-        status_name = status.lower()
-        status_name = status_name.replace("_", ".")
-        vbr_status = StatusApi.get_status_by_name(self, status_name)
-        shipment.status = vbr_status.primary_key_id()
-        shipment = self.vbr_client.update_row(shipment)
-        # DataEvent
-        DataEventApi.create_and_link(
-            self,
-            status_id=vbr_status.primary_key_id(),
-            comment=comment,
-            link_target=shipment,
-        )
-        return shipment
-
     def relabel_shipment(self, local_id: str, new_tracking_id: str) -> Shipment:
         """Update the tracking_id for shipment by local_id."""
         # 1. Query for row matching local_id
@@ -113,4 +87,30 @@ class ShipmentApi(object):
             ),
             link_target=shipment,
         )
+        return shipment
+
+    def update_shipment_status_by_name(
+        self, shipment: Shipment, status_name: str, comment: str = None
+    ) -> Shipment:
+        """Update Shipment status by status name"""
+        status = status_name.lower()
+        if not status.startswith("shipment."):
+            status = "shipment." + status
+        vbr_status_id = shipment.status
+        try:
+            new_vbr_status = StatusApi.get_status_by_name(self, status_name)
+        except ValueError:
+            raise ValueError("Unrecognized container status %s", status_name)
+        new_vbr_status_id = new_vbr_status.status_id
+        # Only edit and create event if status changed
+        if new_vbr_status_id != vbr_status_id:
+            shipment.status = new_vbr_status_id
+            shipment = self.vbr_client.update_row(shipment)
+            # DataEvent
+            DataEventApi.create_and_link(
+                self,
+                status_id=new_vbr_status_id,
+                comment=comment,
+                link_target=shipment,
+            )
         return shipment
