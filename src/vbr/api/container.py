@@ -25,7 +25,7 @@ class ContainerApi(object):
         # 1. Query for row matching local_id
         # 2. Set the new value
         # 3. Do database update via vbr_client.update_row()
-        cont = self.get_biosample_by_local_id(local_id)
+        cont = self.get_container_by_local_id(local_id)
         original_tracking_id = cont.tracking_id
         cont.tracking_id = new_tracking_id
         cont = self.vbr_client.update_row(cont)
