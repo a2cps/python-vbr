@@ -15,12 +15,9 @@ from vbr.tableclasses.single_tables import MeasurementType
 from vbr.utils import utc_time_in_seconds
 from vbr.pgrest.time import timestamp
 
-from .biosample import BiosampleApi
 from .container import ContainerApi
-from .location import LocationApi
+from .data_event import DataEventApi
 from .measurement import MeasurementApi
-from .project import ProjectApi
-from .subject import SubjectApi
 
 __all__ = ["MeasurementLogisticsApi"]
 
@@ -32,9 +29,14 @@ class MeasurementLogisticsApi(object):
         self, measurement: Measurement, container: Container, comment: str = None
     ) -> Measurement:
         """Move a Measurement to a Container."""
-        # 4. TODO Create and link a 'relocate' data_event
+        orig_measurement_container = measurement.container
         measurement.container = container.container_id
         container = self.vbr_client.update_row(measurement)
+        DataEventApi.create_and_link(
+            self,
+            comment="Relocated to container {0}".format(container.local_id),
+            link_target=measurement,
+        )
         return measurement
 
     def rebox_measurement_by_local_id(
@@ -73,7 +75,11 @@ class MeasurementLogisticsApi(object):
             m2.tracking_id = measurement.tracking_id + "." + utc_time_in_seconds()
         m2 = self.vbr_client.create_row(m2)[0]
         # TODO Register the relation via MeasurementFromMeasurement table
-        # TODO Create a partitioned data event for original Measurement
+        DataEventApi.create_and_link(
+            self,
+            comment="Sub-aliquoted to {0}".format(m2.local_id),
+            link_target=measurement,
+        )
         return m2
 
     def get_measurement_partitions(self, measurement: Measurement) -> list:
