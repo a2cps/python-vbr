@@ -33,18 +33,26 @@ vbr.api.container module
    :undoc-members:
    :show-inheritance:
 
-vbr.api.container\_logistics module
------------------------------------
-
-.. automodule:: vbr.api.container_logistics
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 vbr.api.data\_event module
 --------------------------
 
 .. automodule:: vbr.api.data_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vbr.api.hierarchy module
+------------------------
+
+.. automodule:: vbr.api.hierarchy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vbr.api.history module
+----------------------
+
+.. automodule:: vbr.api.history
    :members:
    :undoc-members:
    :show-inheritance:
@@ -57,18 +65,26 @@ vbr.api.location module
    :undoc-members:
    :show-inheritance:
 
-vbr.api.measurement module
---------------------------
+vbr.api.logistics module
+------------------------
 
-.. automodule:: vbr.api.measurement
+.. automodule:: vbr.api.logistics
    :members:
    :undoc-members:
    :show-inheritance:
 
-vbr.api.measurement\_logistics module
--------------------------------------
+vbr.api.manage\_status module
+-----------------------------
 
-.. automodule:: vbr.api.measurement_logistics
+.. automodule:: vbr.api.manage_status
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vbr.api.measurement module
+--------------------------
+
+.. automodule:: vbr.api.measurement
    :members:
    :undoc-members:
    :show-inheritance:
@@ -117,6 +133,14 @@ vbr.api.system module
 ---------------------
 
 .. automodule:: vbr.api.system
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vbr.api.tracking\_id module
+---------------------------
+
+.. automodule:: vbr.api.tracking_id
    :members:
    :undoc-members:
    :show-inheritance:

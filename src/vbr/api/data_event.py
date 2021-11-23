@@ -1,21 +1,20 @@
-from datetime import time
-from typing import List
+from typing import List, Tuple
+
 from vbr.errors import TableNotSupported
 from vbr.pgrest.time import timestamp
 from vbr.tableclasses import AssociationTable, DataEvent, Table, class_from_table
 
 __all__ = ["DataEventApi"]
 
-# protocol_id:int
-# reason_id:int
-# status_id:int
-# performed_by_id:int
-# event_ts_str:str
-# rank:int
-# comment:str
-
 
 class DataEventApi(object):
+    # protocol_id:int
+    # reason_id:int
+    # status_id:int
+    # performed_by_id:int
+    # event_ts_str:str
+    # rank:int
+    # comment:str
     def create_data_event(
         self,
         protocol_id: int = None,
@@ -48,7 +47,7 @@ class DataEventApi(object):
     def link_data_event(
         self, data_event: DataEvent, link_target: Table = None
     ) -> AssociationTable:
-        """Link a DataEvent with another VBR Table entity via an AssociationTable."""
+        """Link a DataEvent with another VBR record via an AssociationTable."""
 
         # Return an empty AssociationTable if no link_target specified
         if link_target is None:
@@ -95,7 +94,8 @@ class DataEventApi(object):
         rank: int = None,
         comment: str = None,
         link_target: Table = None,
-    ) -> tuple:
+    ) -> Tuple[DataEvent, AssociationTable]:
+        """Create a DataEvent and link it to the specified VBR record."""
         data_event = self.create_data_event(
             protocol_id,
             reason_id,
@@ -106,7 +106,6 @@ class DataEventApi(object):
             comment,
         )
         association = self.link_data_event(data_event, link_target=link_target)
-
         return (data_event, association)
 
     def data_events_for_record(self, record: Table, sort=False) -> List[DataEvent]:

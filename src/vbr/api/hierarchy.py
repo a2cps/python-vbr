@@ -4,26 +4,27 @@ from vbr.tableclasses import Biosample, Measurement, Shipment
 from vbr.tableclasses.single_tables import Subject
 
 from .biosample import BiosampleApi
-from .container_logistics import ContainerLogisticsApi
-from .measurement_logistics import MeasurementLogisticsApi
+from .logistics import LogisticsApi
 from .subject import SubjectApi
 
+__all__ = ["ShipmentHierarchyApi"]
 
-class RecursiveShipmentApi(object):
+
+class ShipmentHierarchyApi(object):
     def measurements_in_shipment(self, shipment: Shipment) -> List[Measurement]:
         """Returns a list of Measurements in a Shipment."""
         # Top level shipping containers. Probably just the virtual shipping box but
         # just in case not, include in the list of containers we pull measurements for
-        containers = ContainerLogisticsApi.get_containers_for_shipment(self, shipment)
+        containers = LogisticsApi.get_containers_for_shipment(self, shipment)
         child_containers = []
         for tc in containers:
-            resp = ContainerLogisticsApi.get_container_children(self, tc)
+            resp = LogisticsApi.get_container_children(self, tc)
             child_containers.extend(resp)
         child_containers = list(set(child_containers))
         containers.extend(child_containers)
         measurements = []
         for cont in containers:
-            resp = MeasurementLogisticsApi.get_measurements_in_container(self, cont)
+            resp = LogisticsApi.get_measurements_in_container(self, cont)
             measurements.extend(resp)
         measurements = list(set(measurements))
         return measurements

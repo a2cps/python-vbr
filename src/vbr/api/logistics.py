@@ -1,23 +1,21 @@
+from typing import List, NoReturn
+
+from vbr.pgrest.time import timestamp
 from vbr.tableclasses import (Biosample, Container, ContainerInShipment,
-                              Location, Measurement, Project, Shipment, Status,
-                              Subject)
+                              Location, Measurement, Shipment)
+from vbr.utils import utc_time_in_seconds
 
 from .container import ContainerApi
 from .data_event import DataEventApi
 from .location import LocationApi
-from .status import StatusApi
+from .measurement import MeasurementApi
 
-# from .biosample import BiosampleApi
-# from .measurement import MeasurementApi
-# from .project import ProjectApi
-# from .subject import SubjectApi
-
-__all__ = ["ContainerLogisticsApi"]
+__all__ = ["LogisticsApi"]
 
 
-# Methods defined here focus on Container handling logistics
-# and tend to span multiple VBR types
-class ContainerLogisticsApi(object):
+class LogisticsApi(object):
+    """APIs that involve combinations of shipments, containers, biosamples, measurements, and locations"""
+
     def relocate_container_by_local_id(
         self, local_id: str, location_local_id: str, comment: str = None
     ) -> Measurement:
@@ -42,7 +40,7 @@ class ContainerLogisticsApi(object):
             self._sync_child_container_locations(container)
         return container
 
-    def _sync_child_container_locations(self, container: Container) -> None:
+    def _sync_child_container_locations(self, container: Container) -> NoReturn:
         """Synchronize locations of child Containers with their parent [recursive]."""
         # Iterate thru get_container_children(container) setting location
         # for each to its parent
@@ -91,7 +89,9 @@ class ContainerLogisticsApi(object):
         else:
             return self.get_container(container.parent_container)
 
-    def get_container_lineage(self, container: Container, lineage=None) -> list:
+    def get_container_lineage(
+        self, container: Container, lineage=None
+    ) -> List[Container]:
         """Retrieve a Container's complete parental lineage [recursive].
 
         Returns a list in order [container,parent....,root]"""
@@ -108,13 +108,15 @@ class ContainerLogisticsApi(object):
             self.get_container_lineage(parent, lineage)
         return lineage
 
-    def get_container_parents(self, container: Container) -> list:
+    def get_container_parents(self, container: Container) -> List[Container]:
         """Retrieve a Container's parental lineage [recursive].
 
         Returns a list in order [parent....,root]"""
         return self.get_container_lineage(container)[1:]
 
-    def get_container_children(self, container: Container, descendants=None) -> list:
+    def get_container_children(
+        self, container: Container, descendants=None
+    ) -> List[Container]:
         # TODO - check this with branching relations
         """Retrieve child Containers [recursive]."""
         if container.container_id == 0:
@@ -129,17 +131,8 @@ class ContainerLogisticsApi(object):
                 self.get_container_children(kid, descendants=descendants)
         return descendants
 
-    def _get_shipment_for_container(self, container: Container) -> Shipment:
-        """Retrieve the Shipment for a container [recursive]."""
-        query = {"container": {"operator": "=", "value": container.container_id}}
-        try:
-            c_in_s = self._get_row_from_table_with_query("container_in_shipment", query)
-            return self._get_row_from_table_with_id("shipment", c_in_s.shipment)
-        except ValueError:
-            return None
-
     def get_shipment_for_container(self, container: Container) -> Shipment:
-        """Retrieve the Shipment for a container [recursive]."""
+        """Retrieve the Shipment for a Container [recursive]."""
         # Walk up lineage, startng with provided container, attempting to
         # return a shipment associated with the container. This allows
         # a container to inherit a shipment from its parent.
@@ -158,7 +151,7 @@ class ContainerLogisticsApi(object):
                 pass
         return None
 
-    def get_containers_for_shipment(self, shipment: Shipment) -> list:
+    def get_containers_for_shipment(self, shipment: Shipment) -> List[Container]:
         """Retrieve Container(s) in Shipment [non-recursive]."""
         query = {"shipment": {"operator": "=", "value": shipment.shipment_id}}
         try:
@@ -198,8 +191,7 @@ class ContainerLogisticsApi(object):
             else:
                 raise ValueError("Unable to attach container to shipment")
 
-    # TODO - DataEvent
-    def disassociate_container_from_shipment(self, container: Container) -> None:
+    def disassociate_container_from_shipment(self, container: Container) -> NoReturn:
         """Disassociate a Container from its Shipment."""
         # Retrieve the relevant ContainerInShipment
         query = {"container": {"operator": "=", "value": container.container_id}}
@@ -207,26 +199,64 @@ class ContainerLogisticsApi(object):
         conshp = self._get_row_from_table_with_query("container_in_shipment", query)
         self.vbr_client.delete_row(conshp)
 
-    def set_shipment_status(
-        self, shipment: Shipment, status: Status, comment: str = None
-    ) -> Shipment:
-        """Update Shipment status, creating a linked DataEvent in the process."""
-        shipment.status = status.status_id
-        shipment = self.vbr_client.update_row(shipment)
-        # Create and link DataEvent
+    def relocate_measurement(
+        self, measurement: Measurement, container: Container, comment: str = None
+    ) -> Measurement:
+        """Move a Measurement to a Container."""
+        orig_measurement_container = measurement.container
+        measurement.container = container.container_id
+        container = self.vbr_client.update_row(measurement)
         DataEventApi.create_and_link(
             self,
-            protocol_id=50,  # 50,shipping,Sample shipping
-            status_id=status.status_id,  # This will be one of the easypost shipment statuses
-            comment=comment,
-            link_target=shipment,
+            comment="Relocated to container {0}".format(container.local_id),
+            link_target=measurement,
         )
-        return shipment
+        return measurement
 
-    def get_shipment_status(self, shipment: Shipment) -> Status:
-        """Get current Status for a Shipment."""
-        return StatusApi.get_status(self, shipment.status)
+    def rebox_measurement_by_local_id(
+        self, local_id: str, container_local_id: str, comment: str = None
+    ) -> Measurement:
+        """Move a Measurement to a Container (by local_ids)."""
+        meas = MeasurementApi.get_measurement_by_local_id(self, local_id)
+        cont = ContainerApi.get_container_by_local_id(self, container_local_id)
+        return self.relocate_measurement(meas, cont, comment)
 
-    def get_shipment_status_history(self, shipment) -> list:
-        """Return list of data events for a Shipment."""
-        return DataEventApi.data_events_for_record(self, record=shipment)
+    def get_measurements_in_container(self, container: Container) -> List[Measurement]:
+        """Retrieve Measurements in a Container."""
+        query = {"container": {"operator": "=", "value": container.container_id}}
+        return self.vbr_client.query_rows(root_url="measurement", query=query)
+
+    def get_measurements_in_biosample(self, biosample: Biosample) -> List[Measurement]:
+        """Retrieve Measurements in a Biosample."""
+        query = {"biosample": {"operator": "=", "value": biosample.biosample_id}}
+        return self.vbr_client.query_rows(
+            root_url="measurement", query=query, limit=1000000
+        )
+
+    def partition_measurement(
+        self, measurement: Measurement, tracking_id: str = None, comment: str = None
+    ) -> Measurement:
+        """Partition a sub-Measuremenent from a Measurement."""
+        # 1. Clone the original Measurement to a new Measurement,
+        # appending date in seconds to tracking_id if one is not provided
+        m2 = measurement.clone()
+        m2.measurement_id = None
+        m2.local_id = None
+        m2.creation_time = timestamp()
+        if tracking_id is not None:
+            m2.tracking_id = tracking_id
+        else:
+            m2.tracking_id = measurement.tracking_id + "." + utc_time_in_seconds()
+        m2 = self.vbr_client.create_row(m2)[0]
+        # TODO Register the relation via MeasurementFromMeasurement table
+        DataEventApi.create_and_link(
+            self,
+            comment="Sub-aliquoted to {0}".format(m2.local_id),
+            link_target=measurement,
+        )
+        return m2
+
+    def get_measurement_partitions(self, measurement: Measurement) -> List[Measurement]:
+        """Retrieve Measurements partioned from a Measurment."""
+        # Query MeasurementFromMeasurement table
+        raise NotImplemented()

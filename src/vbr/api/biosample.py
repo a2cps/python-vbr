@@ -1,7 +1,5 @@
 from vbr.tableclasses import Biosample
 
-from .data_event import DataEventApi
-
 __all__ = ["BiosampleApi"]
 
 
@@ -27,25 +25,6 @@ class BiosampleApi(object):
             "protocol": {"operator": "=", "value": protocol_id},
         }
         return self._get_row_from_table_with_query("biosample", query=query)
-
-    def relabel_biosample(self, local_id: str, new_tracking_id: str) -> Biosample:
-        """Update the tracking_id for a Biosample by local_id."""
-        # 1. Query for row matching local_id
-        # 2. Set the new value
-        # 3. Do database update via vbr_client.update_row()
-        # 4. TODO Create and link a 'rename' data_event
-        bsam = self.get_biosample_by_local_id(local_id)
-        original_tracking_id = bsam.tracking_id
-        bsam.tracking_id = new_tracking_id
-        bsam = self.vbr_client.update_row(bsam)
-        DataEventApi.create_and_link(
-            self,
-            comment="Relabeled from original tracking ID {0}".format(
-                original_tracking_id
-            ),
-            link_target=bsam,
-        )
-        return bsam
 
     def create_biosample(
         self,
@@ -92,6 +71,3 @@ class BiosampleApi(object):
             )
         except Exception:
             return self.get_biosample_by_tracking_id(tracking_id)
-
-    # ! Relocate (new location or inside another container)
-    # Update status

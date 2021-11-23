@@ -11,19 +11,20 @@ from vbr.utils.helpers import get_client
 from ..utils.helpers import get_client
 from .biosample import BiosampleApi
 from .container import ContainerApi
-# These must be imported after the table-specific Api classes
-from .container_logistics import ContainerLogisticsApi
 from .data_event import DataEventApi
+from .hierarchy import ShipmentHierarchyApi
+from .history import HistoryApi
 from .location import LocationApi
+from .logistics import LogisticsApi
+from .manage_status import ManageStatusApi
 from .measurement import MeasurementApi
-from .measurement_logistics import MeasurementLogisticsApi
 from .project import ProjectApi
 from .redcap import RcapTableApi
 from .shipment import ShipmentApi
-from .shipment_recursive import RecursiveShipmentApi
 from .status import StatusApi
 from .subject import SubjectApi
 from .system import VbrRedcapEventApi
+from .tracking_id import ManageTrackingIdApi
 
 __all__ = ["get_vbr_api_client", "VBR_Api"]
 
@@ -98,8 +99,10 @@ class VBR_Api(
     SubjectApi,
     StatusApi,
     VbrRedcapEventApi,
-    ContainerLogisticsApi,
-    MeasurementLogisticsApi,
-    RecursiveShipmentApi,
+    LogisticsApi,
+    ManageTrackingIdApi,
+    ManageStatusApi,
+    HistoryApi,
+    ShipmentHierarchyApi,
 ):
     pass

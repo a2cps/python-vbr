@@ -1,8 +1,5 @@
 from vbr.tableclasses import Shipment
 
-from .data_event import DataEventApi
-from .status import StatusApi
-
 __all__ = ["ShipmentApi"]
 
 
@@ -71,47 +68,3 @@ class ShipmentApi(object):
             )
         except Exception:
             return self.get_shipment_by_tracking_id(tracking_id)
-
-    def relabel_shipment(self, local_id: str, new_tracking_id: str) -> Shipment:
-        """Update the tracking_id for shipment by local_id."""
-        # 1. Query for row matching local_id
-        # 2. Set the new value
-        # 3. Do database update via vbr_client.update_row()
-        shipment = self.get_shipment_by_local_id(local_id)
-        original_tracking_id = shipment.tracking_id
-        shipment.tracking_id = new_tracking_id
-        shipment = self.vbr_client.update_row(shipment)
-        DataEventApi.create_and_link(
-            self,
-            comment="Relabeled from original tracking ID {0}".format(
-                original_tracking_id
-            ),
-            link_target=shipment,
-        )
-        return shipment
-
-    def update_shipment_status_by_name(
-        self, shipment: Shipment, status_name: str, comment: str = None
-    ) -> Shipment:
-        """Update Shipment status by status name"""
-        status_name = status_name.lower()
-        if not status_name.startswith("shipment."):
-            status_name = "shipment." + status_name
-        vbr_status_id = shipment.status
-        try:
-            new_vbr_status = StatusApi.get_status_by_name(self, status_name)
-        except ValueError:
-            raise ValueError("Unrecognized shipment status %s", status_name)
-        new_vbr_status_id = new_vbr_status.status_id
-        # Only edit and create event if status changed
-        if new_vbr_status_id != vbr_status_id:
-            shipment.status = new_vbr_status_id
-            shipment = self.vbr_client.update_row(shipment)
-            # DataEvent
-            DataEventApi.create_and_link(
-                self,
-                status_id=new_vbr_status_id,
-                comment=comment,
-                link_target=shipment,
-            )
-        return shipment

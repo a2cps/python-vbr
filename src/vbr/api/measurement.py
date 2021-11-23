@@ -1,7 +1,10 @@
-from vbr.tableclasses import Measurement
+from typing import List
+
+from vbr.pgrest.time import timestamp
+from vbr.tableclasses import Biosample, Container, Measurement
+from vbr.utils import utc_time_in_seconds
 
 from .data_event import DataEventApi
-from .status import StatusApi
 
 __all__ = ["MeasurementApi"]
 
@@ -73,46 +76,44 @@ class MeasurementApi(object):
         except Exception:
             return self.get_measurement_by_tracking_id(tracking_id)
 
-    def relabel_measurement(self, local_id: str, new_tracking_id: str) -> Measurement:
-        """Update the tracking_id for measurement by local_id."""
-        # 1. Query for row matching local_id
-        # 2. Set the new value
-        # 3. Do database update via vbr_client.update_row()
-        meas = self.get_measurement_by_local_id(local_id)
-        original_tracking_id = meas.tracking_id
-        meas.tracking_id = new_tracking_id
-        meas = self.vbr_client.update_row(meas)
+    def partition_measurement(
+        self, measurement: Measurement, tracking_id: str = None, comment: str = None
+    ) -> Measurement:
+        """Create a sub-Measuremenent from a Measurement."""
+        # 1. Clone the original Measurement to a new Measurement,
+        m2 = measurement.clone()
+        m2.measurement_id = None
+        m2.local_id = None
+        m2.creation_time = timestamp()
+        # Append timestamp to extant tracking_id if one not provided
+        if tracking_id is not None:
+            m2.tracking_id = tracking_id
+        else:
+            m2.tracking_id = measurement.tracking_id + "." + utc_time_in_seconds()
+        m2 = self.vbr_client.create_row(m2)[0]
+        # TODO Register the relation via MeasurementFromMeasurement table
         DataEventApi.create_and_link(
             self,
-            comment="Relabeled from original tracking ID {0}".format(
-                original_tracking_id
-            ),
-            link_target=meas,
+            comment="Partitioned to {0}".format(m2.local_id),
+            link_target=measurement,
         )
-        return meas
+        return m2
 
-    def update_measurement_status_by_name(
-        self, measurement: Measurement, status_name: str, comment: str = None
-    ) -> Measurement:
-        """Update Measurement status by status name"""
-        status_name = status_name.lower()
-        if not status_name.startswith("measurement."):
-            status_name = "measurement." + status_name
-        vbr_status_id = measurement.status
-        try:
-            new_vbr_status = StatusApi.get_status_by_name(self, status_name)
-        except ValueError:
-            raise ValueError("Unrecognized measurement status %s", status_name)
-        new_vbr_status_id = new_vbr_status.status_id
-        # Only edit and create event if status changed
-        if new_vbr_status_id != vbr_status_id:
-            measurement.status = new_vbr_status_id
-            measurement = self.vbr_client.update_row(measurement)
-            # DataEvent
-            DataEventApi.create_and_link(
-                self,
-                status_id=new_vbr_status_id,
-                comment=comment,
-                link_target=measurement,
-            )
-        return measurement
+    def get_measurement_partitions(self, measurement: Measurement) -> List[Measurement]:
+        """Retrieve Measurements partioned from a Measurment."""
+        # Query MeasurementFromMeasurement table
+        raise NotImplemented()
+
+    def get_measurements_in_container(self, container: Container) -> List[Measurement]:
+        """Retrieve Measurements in a Container."""
+        query = {"container": {"operator": "=", "value": container.container_id}}
+        return self.vbr_client.query_rows(
+            root_url="measurement", query=query, limit=1000000
+        )
+
+    def get_measurements_in_biosample(self, biosample: Biosample) -> List[Measurement]:
+        """Retrieve Measurements in a Biosample."""
+        query = {"biosample": {"operator": "=", "value": biosample.biosample_id}}
+        return self.vbr_client.query_rows(
+            root_url="measurement", query=query, limit=1000000
+        )
