@@ -1,19 +1,12 @@
 import copy
 from re import M
 
-from vbr.tableclasses import (
-    Biosample,
-    Container,
-    ContainerInShipment,
-    Location,
-    Measurement,
-    Project,
-    Shipment,
-    Subject,
-)
+from vbr.pgrest.time import timestamp
+from vbr.tableclasses import (Biosample, Container, ContainerInShipment,
+                              Location, Measurement, Project, Shipment,
+                              Subject)
 from vbr.tableclasses.single_tables import MeasurementType
 from vbr.utils import utc_time_in_seconds
-from vbr.pgrest.time import timestamp
 
 from .container import ContainerApi
 from .data_event import DataEventApi

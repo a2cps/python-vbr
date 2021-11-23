@@ -1,4 +1,5 @@
 from vbr.tableclasses import Shipment
+
 from .data_event import DataEventApi
 from .status import StatusApi
 

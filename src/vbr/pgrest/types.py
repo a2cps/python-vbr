@@ -1,6 +1,6 @@
 import datetime
-from os import statvfs
 import re
+from os import statvfs
 
 from .column import PgRestColumn
 from .utils import class_or_instancemethod, datetime_to_isodate

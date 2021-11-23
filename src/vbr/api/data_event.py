@@ -1,7 +1,8 @@
 from datetime import time
+from typing import List
 from vbr.errors import TableNotSupported
-from vbr.tableclasses import AssociationTable, DataEvent, Table, class_from_table
 from vbr.pgrest.time import timestamp
+from vbr.tableclasses import AssociationTable, DataEvent, Table, class_from_table
 
 __all__ = ["DataEventApi"]
 
@@ -108,7 +109,7 @@ class DataEventApi(object):
 
         return (data_event, association)
 
-    def data_events_for_record(self, record: Table, sort=False) -> list:
+    def data_events_for_record(self, record: Table, sort=False) -> List[DataEvent]:
         """Return DataEvents associated with a VBR record."""
         # Look up the relevant AssocationTable class
         left_table_name = "data_event"

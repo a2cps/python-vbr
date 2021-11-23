@@ -1,4 +1,5 @@
 from vbr.tableclasses import Biosample
+
 from .data_event import DataEventApi
 
 __all__ = ["BiosampleApi"]

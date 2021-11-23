@@ -9,7 +9,6 @@ from .anatomy import AnatomyData
 from .assay_type import AssayTypeData
 from .biosample import BiosampleData
 from .contact import ContactData
-
 # from .box_type import BoxTypeData
 from .container import ContainerData
 from .container_type import ContainerTypeData
@@ -23,13 +22,13 @@ from .location import LocationData
 from .measurement_type import MeasurementTypeData
 from .organization import OrganizationData
 from .project import ProjectData
+from .project_in_project import ProjectInProjectData
 from .protocol import ProtocolData
 from .reason import ReasonData
 from .role import RoleData
 from .status import StatusData
 from .subject import SubjectData
 from .unit import UnitData
-from .project_in_project import ProjectInProjectData
 
 # __all__ = ['data_loads']
 

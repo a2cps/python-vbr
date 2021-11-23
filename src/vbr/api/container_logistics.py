@@ -1,14 +1,6 @@
-from vbr.tableclasses import (
-    Biosample,
-    Container,
-    ContainerInShipment,
-    Location,
-    Measurement,
-    Project,
-    Shipment,
-    Status,
-    Subject,
-)
+from vbr.tableclasses import (Biosample, Container, ContainerInShipment,
+                              Location, Measurement, Project, Shipment, Status,
+                              Subject)
 
 from .container import ContainerApi
 from .data_event import DataEventApi

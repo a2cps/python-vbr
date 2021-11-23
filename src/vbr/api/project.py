@@ -1,7 +1,6 @@
 from vbr.tableclasses import Project
 from vbr.utils import redcaptasks
 
-
 __all__ = ["ProjectApi"]
 
 

@@ -8,9 +8,9 @@ from vbr.hashable import picklecache
 from vbr.tableclasses import Table
 from vbr.utils.helpers import get_client
 
+from ..utils.helpers import get_client
 from .biosample import BiosampleApi
 from .container import ContainerApi
-
 # These must be imported after the table-specific Api classes
 from .container_logistics import ContainerLogisticsApi
 from .data_event import DataEventApi
@@ -20,11 +20,10 @@ from .measurement_logistics import MeasurementLogisticsApi
 from .project import ProjectApi
 from .redcap import RcapTableApi
 from .shipment import ShipmentApi
-from .subject import SubjectApi
+from .shipment_recursive import RecursiveShipmentApi
 from .status import StatusApi
+from .subject import SubjectApi
 from .system import VbrRedcapEventApi
-
-from ..utils.helpers import get_client
 
 __all__ = ["get_vbr_api_client", "VBR_Api"]
 
@@ -101,5 +100,6 @@ class VBR_Api(
     VbrRedcapEventApi,
     ContainerLogisticsApi,
     MeasurementLogisticsApi,
+    RecursiveShipmentApi,
 ):
     pass
