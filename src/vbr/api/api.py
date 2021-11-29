@@ -18,6 +18,7 @@ from .location import LocationApi
 from .logistics import LogisticsApi
 from .manage_status import ManageStatusApi
 from .measurement import MeasurementApi
+from .organization import OrganizationApi
 from .project import ProjectApi
 from .redcap import RcapTableApi
 from .shipment import ShipmentApi
@@ -93,6 +94,7 @@ class VBR_Api(
     DataEventApi,
     LocationApi,
     MeasurementApi,
+    OrganizationApi,
     ProjectApi,
     RcapTableApi,
     ShipmentApi,
