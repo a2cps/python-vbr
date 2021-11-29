@@ -129,6 +129,8 @@ class DataManager(object):
         self, root_url: str, query: dict = None, limit: int = 100000, offset: int = 0
     ) -> list:
 
+        MAPPINGS = {"operators": {"=": "eq"}}
+
         # This sets up direct HTTP API client because tapipy does not
         # yet support pgrest where constructs
         client = TapisDirectClient(self.client)
@@ -147,12 +149,13 @@ class DataManager(object):
             param_els.append("offset={}".format(offset))
 
         # Tranform query, expressed as a where dict, into a
-        # list of where parameters
+        # list of where parameters. MAPPINGS exists to support
+        # code written against the older version of the pgrest API
         if isinstance(query, dict):
             for k, v in query.items():
-                param_els.append(
-                    "where_{0}{1}{2}".format(k, v.get("operator"), v.get("value"))
-                )
+                op_orig = v.get("operator")
+                operator = MAPPINGS["operators"].get(op_orig, op_orig)
+                param_els.append("{0}.{1}={2}".format(k, operator, v.get("value")))
 
         # Extend api_path with where parameter
         if len(param_els) > 0:
