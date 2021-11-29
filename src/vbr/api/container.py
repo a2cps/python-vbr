@@ -23,6 +23,7 @@ class ContainerApi(object):
         container_type_id: int,
         location_id: int = 1,
         status_id: int = 10,
+        parent_id: int = 0,
     ) -> Container:
         """Create a new Container."""
         container_type_id = str(container_type_id)
