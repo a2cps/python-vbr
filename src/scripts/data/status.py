@@ -94,6 +94,11 @@ class StatusData(TableData):
             "description": "Shipment marked as lost/destroyed",
         },
         {
+            "status_id": 45,
+            "name": "shipment.created",
+            "description": "Shipment created in the system",
+        },
+        {
             "status_id": 50,
             "name": "container.present",
             "description": "Container is present",
@@ -132,5 +137,10 @@ class StatusData(TableData):
             "status_id": 63,
             "name": "measurement.lost",
             "description": "Measurement has been lost",
+        },
+        {
+            "status_id": 64,
+            "name": "measurement.inflight",
+            "description": "Measurement is in transit or in process of being validated",
         },
     ]

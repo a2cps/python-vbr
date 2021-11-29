@@ -20,12 +20,12 @@ class ShipmentApi(object):
         self,
         tracking_id: str,
         project_id: int,
-        name: str,
-        sender_name: str,
-        source_record_id: str,
-        ship_to_id: int,
-        ship_from_id: int,
-        status_id: int,
+        name: str = None,
+        sender_name: str = None,
+        source_record_id: str = None,
+        ship_to_id: int = 0,
+        ship_from_id: int = 0,
+        status_id: int = 10,  # Created
     ) -> Shipment:
         """Create a new Shipment."""
         sh = Shipment(
@@ -47,12 +47,12 @@ class ShipmentApi(object):
         self,
         tracking_id: str,
         project_id: int,
-        name: str,
-        sender_name: str,
-        source_record_id: str,
-        ship_to_id: int,
-        ship_from_id: int,
-        status_id: int,
+        name: str = None,
+        sender_name: str = None,
+        source_record_id: str = None,
+        ship_to_id: int = 0,
+        ship_from_id: int = 0,
+        status_id: int = 10,  # Created
     ) -> Shipment:
         """Create a Shipment or return existing with specified tracking_id."""
         try:
