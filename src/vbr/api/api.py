@@ -73,7 +73,7 @@ class ApiBase(object):
         """Get rows by table root_url and pgrest 'where' query"""
         resp = self.vbr_client.query_rows(root_url=root_url, query=query)
         if len(resp) == 0:
-            raise ValueError("Does not match any {0}".format(root_url))
+            raise ValueError("{0} does not match any {1}".format(query, root_url))
         else:
             return resp
 
@@ -82,7 +82,7 @@ class ApiBase(object):
         """Get a row by table root_url and pgrest 'where' query"""
         resp = self._get_rows_from_table_with_query(root_url, query)
         if len(resp) > 1:
-            raise ValueError("Resolves to multiple {0}".format(root_url))
+            raise ValueError("{0} resolves to multiple {1}".format(query, root_url))
         else:
             return resp[0]
 
