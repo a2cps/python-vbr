@@ -8,6 +8,7 @@ class Anatomy(Table):
     """C2M2-defined table: id is an UBERON CV term locating the origin of a biosample within the physiology of its subject."""
 
     anatomy_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     description = Column(
         String, nullable=True, comments="Description of this anatomy object"
     )
@@ -22,6 +23,7 @@ class AssayType(Table):
     """C2M2-defined table: describes types of material that can be biosamples. id is an OBI CV Term ID"""
 
     assay_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     id = Column(String, comments="OBI CV term ID", unique=True)
     description = Column(
         String, nullable=True, comments="Description of the assay_type"
@@ -91,6 +93,7 @@ class ContainerType(Table):
     """Definitions for storage, shipping, and other containers"""
 
     container_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     description = Column(String, nullable=True, comments="Descriptive name")
     name = Column(
         String, unique=True, comments="Short label (ex. 'aliquot' or 'paxgene'"
@@ -101,6 +104,7 @@ class Contact(Table):
     """TACC-defined table: contains administrative contact information"""
 
     contact_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     email = Column(String, unique=True, comments="Email address for notifications")
     first_name = Column(String, comments="First name")
     last_name = Column(String, comments="Last name")
@@ -154,6 +158,7 @@ class DataType(Table):
     """C2M2-defined table: provides classifications for data; id is an EDAM CV data term in the form of data:[EDAM#]"""
 
     data_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     id = Column(String, comments="EDAM CV data term “data:[EDAM#]”")
     description = Column(Text, comments="Description of the data_type", nullable=True)
     name = Column(String, comments="Short name for this data_type")
@@ -192,6 +197,7 @@ class FileFormat(Table):
     """C2M2-defined table containing classifications for file format. id is an EDAM CV format term."""
 
     file_format_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     id = Column(String, unique=True, comments="EDAM CV format: term")
     description = Column(Text, nullable=True)
     name = Column(String, nullable=True)
@@ -248,6 +254,7 @@ class MeasurementType(Table):
     """Definitions for types of measurement"""
 
     measurement_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     description = Column(String, nullable=True, comments="Descriptive name")
     name = Column(
         String, unique=True, comments="Short label (ex. 'plasma' or 'paxgene'"
@@ -258,6 +265,7 @@ class Organization(Table):
     """C2M2 proposed future extension: a list of data-generating research programs or entities."""
 
     organization_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     name = Column(String)
     description = Column(Text, nullable=True)
     url = Column(String, unique=True)
@@ -280,6 +288,7 @@ class Protocol(Table):
     """C2M2 proposed future extension: an event-type or defined process."""
 
     protocol_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     description = Column(Text, nullable=True)
     name = Column(String, nullable=False)
     tracking_id = Column(String, nullable=True)
@@ -289,6 +298,7 @@ class Reason(Table):
     """TACC-defined table of reasons for incomplete status to aid analysis of participant dropouts, biosample QA, logistics, and other issues."""
 
     reason_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     description = Column(Text)
     name = Column(String, unique=True)
 
@@ -297,6 +307,7 @@ class Role(Table):
     """TACC-defined table: defines permissions associated with users of this system."""
 
     role_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     description = Column(Text)
     name = Column(String)
     url = Column(String)
@@ -333,6 +344,7 @@ class Status(Table):
     """TACC-defined table; status_id mirrors the REDCap 0 (incomplete), 1 (partial), and 2 (complete) status with extensibility for additional status definitions."""
 
     status_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     name = Column(String, unique=True)
     description = Column(Text)
 
@@ -360,6 +372,7 @@ class Unit(Table):
     """Physical unit for measurements"""
 
     unit_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    local_id = Constants.STRING_LOCALID_COLUMN
     name = Column(
         String,
         unique=True,
