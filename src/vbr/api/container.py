@@ -22,8 +22,8 @@ class ContainerApi(object):
         project_id: int,
         container_type_id: int,
         location_id: int = 1,
-        status_id: int = 10,
-        parent_id: int = 0,
+        status_id: int = 10,  # Created
+        parent_id: int = 0,  # Root container
     ) -> Container:
         """Create a new Container."""
         container_type_id = str(container_type_id)
@@ -46,11 +46,17 @@ class ContainerApi(object):
         container_type_id: int,
         location_id: int = 1,
         status_id: int = 10,  # Created
+        parent_id: int = 0,  # Root container
     ) -> Container:
         """Create a Container or return existing with specified tracking_id."""
         try:
             return self.create_container(
-                tracking_id, project_id, container_type_id, location_id
+                tracking_id,
+                project_id,
+                container_type_id,
+                location_id,
+                status_id,
+                parent_id,
             )
         except Exception:
             return self.get_container_by_tracking_id(tracking_id)
