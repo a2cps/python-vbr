@@ -1,6 +1,5 @@
 """Manage tracking ID of VBR objects"""
-from vbr.tableclasses import (Biosample, Container, Measurement, Shipment,
-                              Subject, Table)
+from vbr.tableclasses import Biosample, Container, Measurement, Shipment, Subject, Table
 
 from .data_event import DataEventApi
 

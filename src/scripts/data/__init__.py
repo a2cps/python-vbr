@@ -9,6 +9,7 @@ from .anatomy import AnatomyData
 from .assay_type import AssayTypeData
 from .biosample import BiosampleData
 from .contact import ContactData
+
 # from .box_type import BoxTypeData
 from .container import ContainerData
 from .container_type import ContainerTypeData

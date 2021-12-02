@@ -1,9 +1,10 @@
 from ...pgrest import *
 from ..constants import Constants
 from .rcconstants import REDCapConstants
+from ..vbr_table import TableVBR
 
 
-class RcapTable(Table):
+class RcapTable(TableVBR):
     """Parent class for REDCap-derived tables"""
 
     # tracking_id (subject GUID)

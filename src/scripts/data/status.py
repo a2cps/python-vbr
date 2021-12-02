@@ -143,4 +143,24 @@ class StatusData(TableData):
             "name": "measurement.inflight",
             "description": "Measurement is in transit or in process of being validated",
         },
+        {
+            "status_id": 70,
+            "name": "sysevent.received",
+            "description": "Event received into system",
+        },
+        {
+            "status_id": 71,
+            "name": "sysevent.processing",
+            "description": "Event is being processed by the system",
+        },
+        {
+            "status_id": 72,
+            "name": "sysevent.processing_complete",
+            "description": "Event was processed by the system.",
+        },
+        {
+            "status_id": 73,
+            "name": "sysevent.processing_failed",
+            "description": "Event was unable to be processed by the system.",
+        },
     ]

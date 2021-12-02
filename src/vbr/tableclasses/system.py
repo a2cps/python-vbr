@@ -1,6 +1,7 @@
 from vbr.pgrest import *
 
 from .constants import Constants
+from .vbr_table import TableVBR
 
 __all__ = ["VbrSysEventTable", "VbrRedcapEvent"]
 
@@ -38,12 +39,11 @@ class SysEventStatus(String):
             return str(value).upper()
 
 
-class VbrSysEventTable(Table):
+class VbrSysEventTable(TableVBR):
     """Base class for VBR-specific logging events."""
 
-    local_id = Column(LocalId, unique=True, comments="Public identifier")
-    created = Column(CreatedTimeStamp, nullable=True, comments="When created")
-    updated = Column(UpdatedTimeStamp, nullable=True, comments="When created")
+    created = Column(CreatedTimeStamp, nullable=True, comments="Created")
+    updated = Column(UpdatedTimeStamp, nullable=True, comments="Last updated")
     event_status = Column(SysEventStatus, default=STATUSES[0], comments="Event status")
 
     def set_status(self, status: str) -> str:
