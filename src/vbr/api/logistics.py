@@ -1,8 +1,14 @@
 from typing import List, NoReturn
 
 from vbr.pgrest.time import timestamp
-from vbr.tableclasses import (Biosample, Container, ContainerInShipment,
-                              Location, Measurement, Shipment)
+from vbr.tableclasses import (
+    Biosample,
+    Container,
+    ContainerInShipment,
+    Location,
+    Measurement,
+    Shipment,
+)
 from vbr.utils import utc_time_in_seconds
 
 from .container import ContainerApi
@@ -115,7 +121,7 @@ class LogisticsApi(object):
         return self.get_container_lineage(container)[1:]
 
     def get_container_children(
-        self, container: Container, descendants=None
+        self, container: Container, recursive=True, descendants=None
     ) -> List[Container]:
         # TODO - check this with branching relations
         """Retrieve child Containers [recursive]."""
@@ -126,9 +132,11 @@ class LogisticsApi(object):
         query = {"parent_container": {"operator": "=", "value": container.container_id}}
         kids = self.vbr_client.query_rows(root_url="container", query=query)
         descendants.extend(kids)
-        if len(kids) > 0:
+        if len(kids) > 0 and recursive is True:
             for kid in kids:
-                self.get_container_children(kid, descendants=descendants)
+                self.get_container_children(
+                    kid, recursive=recursive, descendants=descendants
+                )
         return descendants
 
     def get_shipment_for_container(self, container: Container) -> Shipment:
