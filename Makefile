@@ -35,34 +35,34 @@ definitions-clean:
 clean: definitions-clean
 
 .SILENT:
-create_tables:
+create-tables:
 	cd src ; python -m scripts.create_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
 .SILENT:
-drop_tables:
+drop-tables:
 	cd src ; python -m scripts.drop_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
 .SILENT:
-bootstrap_tables:
+bootstrap-tables:
 	cd src ; python -m scripts.bootstrap_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
 .SILENT:
-dump_tables: 
+dump-tables: 
 	cd src ; python -m scripts.dump_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
 .SILENT:
-load_tables: 
+load-tables: 
 	cd src ; python -m scripts.load_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
 .SILENT:
-dump_tables-clean:
+dump-tables-clean:
 	cd exports; rm *.csv
 
 .SILENT:
-clean_tables:
+clean-tables:
 	cd src; echo "Cleaning: $(SCRIPT_ARGS)"
 
-reset: drop_tables create_tables bootstrap_tables
+reset: drop-tables create-tables bootstrap-tables
 
 .SILENT:
 dbml:
