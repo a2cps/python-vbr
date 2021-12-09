@@ -9,7 +9,7 @@ SECRET_NAME = "redcap_project_tokens"
 # Owner of the secret
 SECRET_OWNER = "vaughn"
 # Tenant for the secret
-TENANT = "a2cps-dev"
+TENANT = "a2cpsdev"
 
 __all__ = ["redcap_to_vbr_project_id", "redcap_project_to_token"]
 

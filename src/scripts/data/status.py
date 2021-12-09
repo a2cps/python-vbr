@@ -145,21 +145,26 @@ class StatusData(TableData):
         },
         {
             "status_id": 70,
+            "name": "sysevent.created",
+            "description": "Event created by system",
+        },
+        {
+            "status_id": 71,
             "name": "sysevent.received",
             "description": "Event received into system",
         },
         {
-            "status_id": 71,
+            "status_id": 72,
             "name": "sysevent.processing",
             "description": "Event is being processed by the system",
         },
         {
-            "status_id": 72,
+            "status_id": 73,
             "name": "sysevent.processing_complete",
             "description": "Event was processed by the system.",
         },
         {
-            "status_id": 73,
+            "status_id": 74,
             "name": "sysevent.processing_failed",
             "description": "Event was unable to be processed by the system.",
         },

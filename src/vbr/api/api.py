@@ -24,7 +24,7 @@ from .redcap import RcapTableApi
 from .shipment import ShipmentApi
 from .status import StatusApi
 from .subject import SubjectApi
-from .system import VbrRedcapEventApi
+from .sysevent import SysEventApi
 from .tracking_id import ManageTrackingIdApi
 
 __all__ = ["get_vbr_api_client", "VBR_Api"]
@@ -100,7 +100,7 @@ class VBR_Api(
     ShipmentApi,
     SubjectApi,
     StatusApi,
-    VbrRedcapEventApi,
+    SysEventApi,
     LogisticsApi,
     ManageTrackingIdApi,
     ManageStatusApi,

@@ -1,5 +1,12 @@
 """Manage status of VBR objects"""
-from vbr.tableclasses import Container, Measurement, Shipment, Status, Table
+from vbr.tableclasses import (
+    Container,
+    Measurement,
+    Shipment,
+    Status,
+    Table,
+    VbrRedcapEvent,
+)
 
 from .data_event import DataEventApi
 from .status import StatusApi
@@ -61,6 +68,13 @@ class ManageStatusApi(object):
         new_status = self._status_from_status_name(status_name, "shipment")
         return self._update_row_status(shipment, new_status, comment)
 
+    def update_sysevent_status_by_name(
+        self, sysevent: VbrRedcapEvent, status_name: str, comment: str = None
+    ) -> VbrRedcapEvent:
+        """Update VbrRedcapEvent status by status.name"""
+        new_status = self._status_from_status_name(status_name, "sysevent")
+        return self._update_row_status(sysevent, new_status, comment)
+
     def _get_vbr_row_status(self, vbr_row: Table) -> Status:
         """Get Status for the provided VBR row."""
         if getattr(vbr_row, "status", None) is None:
@@ -80,3 +94,7 @@ class ManageStatusApi(object):
     def get_shipment_status(self, shipment: Shipment) -> Status:
         """Get current Status for a Shipment."""
         return self._get_vbr_row_status(shipment)
+
+    def get_sysevent_status(self, sysevent: VbrRedcapEvent) -> Status:
+        """Get current Status for a VbrRedcapEvent."""
+        return self._get_vbr_row_status(sysevent)

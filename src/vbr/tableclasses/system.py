@@ -5,56 +5,14 @@ from .vbr_table import TableVBR
 
 __all__ = ["VbrSysEventTable", "VbrRedcapEvent"]
 
-STATUSES = ["RECEIVED", "PROCESSING", "PROCESSING_COMPLETE", "PROCESSING_FAILED"]
-
-
-class SysEventStatus(String):
-    """Custom string type for System Events."""
-
-    @classmethod
-    def autopopulate(cls, value):
-        if value is not None:
-            value = value.upper()
-            return cls.validated(value)
-        else:
-            return STATUSES[0]
-
-    @classmethod
-    def validated(cls, value):
-        """Returns value if valid, raises ValueError if not"""
-        if value in STATUSES:
-            return value
-        else:
-            raise ValueError("Unknown system event status {0}".format(value))
-
-    @classmethod
-    def instantiate(cls, value):
-        return cls.autopopulate(value)
-
-    @classmethod
-    def cast(cls, value):
-        if value is None:
-            return cls.autopopulate(value)
-        else:
-            return str(value).upper()
-
 
 class VbrSysEventTable(TableVBR):
     """Base class for VBR-specific logging events."""
 
     created = Column(CreatedTimeStamp, nullable=True, comments="Created")
     updated = Column(UpdatedTimeStamp, nullable=True, comments="Last updated")
-    event_status = Column(SysEventStatus, default=STATUSES[0], comments="Event status")
-
-    def set_status(self, status: str) -> str:
-        """Set event status with validation."""
-        setattr(
-            self, "event_status", SysEventStatus.validated(SysEventStatus.cast(status))
-        )
-
-    def get_status(self) -> str:
-        """Get event status."""
-        return getattr(self, "event_status")
+    # 70 == sysevent.created
+    status = Column(Integer, ForeignKey("status.status_id"), default=70)
 
 
 class VbrRedcapEvent(VbrSysEventTable):
