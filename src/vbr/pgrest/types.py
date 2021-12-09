@@ -124,6 +124,13 @@ class Numeric(PgRestColumn):
 class Serial(Integer):
     DATA_TYPE = "serial"
     # PYTHON_TYPE = int
+    @class_or_instancemethod
+    def properties(self_or_cls):
+        return {
+            "data_type": self_or_cls.DATA_TYPE,
+            "serial_start": 1000,
+            "serial_increment": 1,
+        }
 
 
 class String(PgRestColumn):

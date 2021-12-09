@@ -13,7 +13,10 @@ def main(args):
 
     for t in to_drop:
         print("Deleting {0}".format(t))
-        v.delete_table(t)
+        try:
+            v.delete_table(t)
+        except Exception as exc:
+            print(exc)
 
 
 if __name__ == "__main__":
