@@ -3,7 +3,7 @@ from vbr.pgrest import *
 from .constants import Constants
 from .vbr_table import TableVBR
 
-__all__ = ["VbrSysEventTable", "VbrRedcapEvent"]
+__all__ = ["VbrSysEventTable", "SysEvent"]
 
 
 class VbrSysEventTable(TableVBR):
@@ -12,13 +12,13 @@ class VbrSysEventTable(TableVBR):
     created = Column(CreatedTimeStamp, nullable=True, comments="Created")
     updated = Column(UpdatedTimeStamp, nullable=True, comments="Last updated")
     # 70 == sysevent.created
-    status = Column(Integer, ForeignKey("status.status_id"), default=70)
+    status = Column(Integer, ForeignKey("status.status_id"), nullable=True, default=70)
 
 
-class VbrRedcapEvent(VbrSysEventTable):
+class SysEvent(VbrSysEventTable):
     """Event sourced from REDcap -> VBR integrations."""
 
-    internal_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    sys_event_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     project_id = Column(Integer, nullable=True)
     record = Column(String, nullable=True)
     instrument = Column(String, nullable=True)

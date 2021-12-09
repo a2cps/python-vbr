@@ -5,7 +5,7 @@ from vbr.tableclasses import (
     Shipment,
     Status,
     Table,
-    VbrRedcapEvent,
+    SysEvent,
 )
 
 from .data_event import DataEventApi
@@ -69,11 +69,11 @@ class ManageStatusApi(object):
         return self._update_row_status(shipment, new_status, comment)
 
     def update_sysevent_status_by_name(
-        self, sysevent: VbrRedcapEvent, status_name: str, comment: str = None
-    ) -> VbrRedcapEvent:
-        """Update VbrRedcapEvent status by status.name"""
+        self, sys_event: SysEvent, status_name: str, comment: str = None
+    ) -> SysEvent:
+        """Update SysEvent status by status.name"""
         new_status = self._status_from_status_name(status_name, "sysevent")
-        return self._update_row_status(sysevent, new_status, comment)
+        return self._update_row_status(sys_event, new_status, comment)
 
     def _get_vbr_row_status(self, vbr_row: Table) -> Status:
         """Get Status for the provided VBR row."""
@@ -95,6 +95,6 @@ class ManageStatusApi(object):
         """Get current Status for a Shipment."""
         return self._get_vbr_row_status(shipment)
 
-    def get_sysevent_status(self, sysevent: VbrRedcapEvent) -> Status:
-        """Get current Status for a VbrRedcapEvent."""
-        return self._get_vbr_row_status(sysevent)
+    def get_sysevent_status(self, sys_event: SysEvent) -> Status:
+        """Get current Status for a SysEvent."""
+        return self._get_vbr_row_status(sys_event)
