@@ -3,7 +3,19 @@ from vbr.pgrest import *
 from .constants import Constants
 from .vbr_table import TableVBR
 
-__all__ = ["VbrSysEventTable", "SysEvent"]
+__all__ = ["VbrSysEventTable", "SysEvent", "DataEventInSysEvent"]
+
+
+class DataEventInSysEvent(AssociationTable):
+    """Maps data_events to sys_events."""
+
+    data_event_in_sys_event_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    data_event = Column(
+        Integer, ForeignKey("data_event.data_event_id", event_action="CASCADE")
+    )
+    sys_event = Column(
+        Integer, ForeignKey("sys_event.sys_event_id", event_action="CASCADE")
+    )
 
 
 class VbrSysEventTable(TableVBR):
