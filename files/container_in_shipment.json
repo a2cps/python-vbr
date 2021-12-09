@@ -11,7 +11,9 @@
         },
         "container_in_shipment_id": {
             "data_type": "serial",
-            "primary_key": true
+            "primary_key": true,
+            "serial_increment": 1,
+            "serial_start": 1000
         },
         "shipment": {
             "data_type": "integer",

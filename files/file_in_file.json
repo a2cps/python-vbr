@@ -10,7 +10,9 @@
         },
         "file_in_file_id": {
             "data_type": "serial",
-            "primary_key": true
+            "primary_key": true,
+            "serial_increment": 1,
+            "serial_start": 1000
         },
         "parent_file": {
             "data_type": "integer",

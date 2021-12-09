@@ -2,7 +2,9 @@
     "columns": {
         "data_type_id": {
             "data_type": "serial",
-            "primary_key": true
+            "primary_key": true,
+            "serial_increment": 1,
+            "serial_start": 1000
         },
         "description": {
             "char_len": 255,

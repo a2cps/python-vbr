@@ -10,7 +10,9 @@
         },
         "data_event_in_dataset_id": {
             "data_type": "serial",
-            "primary_key": true
+            "primary_key": true,
+            "serial_increment": 1,
+            "serial_start": 1000
         },
         "dataset": {
             "data_type": "integer",

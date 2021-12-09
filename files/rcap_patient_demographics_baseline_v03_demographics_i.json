@@ -71,7 +71,9 @@
         },
         "patient_demographics_baseline_v03_demographics_i_id": {
             "data_type": "serial",
-            "primary_key": true
+            "primary_key": true,
+            "serial_increment": 1,
+            "serial_start": 1000
         },
         "protocol_id": {
             "comments": "VBR protocol",
