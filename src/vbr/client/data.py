@@ -1,5 +1,5 @@
 from functools import lru_cache
-from typing import Any, NoReturn
+from typing import Any, NoReturn, Dict, List
 
 from tapipy.tapis import TapisResult
 
@@ -125,19 +125,26 @@ class DataManager(object):
         rows = [self._tapis_result_to_vbr(tr, root_url) for tr in resp]
         return rows
 
-    def query_rows(
-        self, root_url: str, query: dict = None, limit: int = 100000, offset: int = 0
-    ) -> list:
-
+    def _query_to_where_params(self, query: dict, param_els=None) -> list:
+        # Tranform query, expressed as a where dict, into a
+        # list of where parameters. MAPPINGS exists to support
+        # code written against the older version of the pgrest API
         MAPPINGS = {"operators": {"=": "eq"}}
+        if isinstance(param_els, list):
+            elements = param_els
+        else:
+            elements = []
+        if isinstance(query, dict):
+            for k, v in query.items():
+                op_orig = v.get("operator")
+                operator = MAPPINGS["operators"].get(op_orig, op_orig)
+                elements.append("{0}.{1}={2}".format(k, operator, v.get("value")))
+        return elements
 
-        # This sets up direct HTTP API client because tapipy does not
-        # yet support pgrest where constructs
-        client = TapisDirectClient(self.client)
-        client.setup(service_name="pgrest", api_path="data")
-        api_path = root_url
+    def _build_url_params(
+        self, query: Dict, limit: int = 1000000, offset: int = 0
+    ) -> str:
         url_params = ""
-
         # Limit, Offset, and Where are implemented in the pgrest
         # API as URL parameters. These are bundled into a list
         # param_els then appended to the table data API URL
@@ -147,23 +154,51 @@ class DataManager(object):
             param_els.append("limit={}".format(limit))
         if offset is not None:
             param_els.append("offset={}".format(offset))
-
-        # Tranform query, expressed as a where dict, into a
-        # list of where parameters. MAPPINGS exists to support
-        # code written against the older version of the pgrest API
-        if isinstance(query, dict):
-            for k, v in query.items():
-                op_orig = v.get("operator")
-                operator = MAPPINGS["operators"].get(op_orig, op_orig)
-                param_els.append("{0}.{1}={2}".format(k, operator, v.get("value")))
-
+        # Transform
+        param_els = self._query_to_where_params(query, param_els)
         # Extend api_path with where parameter
         if len(param_els) > 0:
-            api_path = api_path + "?" + "&".join(param_els)
+            url_params = "?" + "&".join(param_els)
+        return url_params
+
+    def query_rows(
+        self, root_url: str, query: Dict = None, limit: int = 100000, offset: int = 0
+    ) -> List[Table]:
+        """Query a VBR Table for Records."""
+        # Set up direct HTTP API client because tapipy does not
+        # yet support pgrest where constructs
+        client = TapisDirectClient(self.client)
+        client.setup(service_name="pgrest", api_path="data")
+        api_path = root_url
+        url_params = self._build_url_params(query, limit, offset)
+        api_path = api_path + url_params
 
         # Perform and return the API call
         resp = client.get(path=api_path)
         rows = []
         for r in resp:
             rows.append(self._dict_result_to_vbr(r, root_url))
+        return rows
+
+    def query_view_rows(
+        self, view_name: str, query: Dict = None, limit: int = 100000, offset: int = 0
+    ) -> List[Dict]:
+        """Query a view."""
+        # Returns a dict because we don't necessarily have schema models for
+        # custom views
+        #
+        # Set up direct HTTP API client because tapipy does not
+        # yet support pgrest where constructs
+        client = TapisDirectClient(self.client)
+        client.setup(service_name="pgrest", api_path="views")
+        api_path = view_name
+        url_params = self._build_url_params(query, limit, offset)
+        api_path = api_path + url_params
+
+        # Perform and return the API call
+        resp = client.get(path=api_path)
+        rows = []
+        for r in resp:
+            # Response from Tapis is a list of Python dicts
+            rows.append(r)
         return rows
