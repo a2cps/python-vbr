@@ -24,7 +24,7 @@ class LogisticsApi(object):
 
     def relocate_container_by_local_id(
         self, local_id: str, location_local_id: str, comment: str = None
-    ) -> Measurement:
+    ) -> Container:
         """Move a Container to new Location by local_ids."""
         cont = ContainerApi.get_container_by_local_id(self, local_id)
         loca = LocationApi.get_location_by_local_id(self, location_local_id)
@@ -180,24 +180,21 @@ class LogisticsApi(object):
         conshp = ContainerInShipment(
             container=container.container_id, shipment=shipment.shipment_id
         )
+        # Delete existing relations
+        # Container is unique in container_in_shipment
+        query = {"container": {"operator": "=", "value": container.container_id}}
+        try:
+            rows = self._get_rows_from_table_with_query("container_in_shipment", query)
+            for row in rows:
+                print("Deleting", row)
+                self.vbr_client.delete_row(row)
+        except Exception as ex1:
+            raise ValueError("Unable to manage container_in_shipment relation: %s", ex1)
         try:
             resp = self.vbr_client.create_row(conshp)
             return resp
-        except Exception:
-            query = {
-                "container": {"operator": "=", "value": container.container_id},
-                "shipment": {"operator": "=", "value": shipment.shipment_id},
-            }
-            if (
-                len(
-                    self._get_rows_from_table_with_query("container_in_shipment", query)
-                )
-                > 0
-            ):
-                # Already attached
-                pass
-            else:
-                raise ValueError("Unable to attach container to shipment")
+        except Exception as ex2:
+            raise ValueError("Unable to attach Container to Shipment: %s", ex2)
 
     def disassociate_container_from_shipment(self, container: Container) -> NoReturn:
         """Disassociate a Container from its Shipment."""
