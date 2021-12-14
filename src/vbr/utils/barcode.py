@@ -2,10 +2,10 @@
 import re
 import uuid
 
-__all__ = ["sanitize_barcode_string", "generate_barcode_string"]
+__all__ = ["sanitize_identifier_string", "generate_barcode_string"]
 
 
-def sanitize_barcode_string(barcode: str) -> str:
+def sanitize_identifier_string(barcode: str) -> str:
     """Remove whitespace and other junk characters from a barcode string."""
     if barcode is None:
         return None
