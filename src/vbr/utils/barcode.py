@@ -7,8 +7,11 @@ __all__ = ["sanitize_barcode_string", "generate_barcode_string"]
 
 def sanitize_barcode_string(barcode: str) -> str:
     """Remove whitespace and other junk characters from a barcode string."""
+    if barcode is None:
+        return None
     barcode = re.sub(r"\s+", "", barcode)
     barcode = barcode.strip()
+    # TODO - add other sanitization rules
     return barcode
 
 
