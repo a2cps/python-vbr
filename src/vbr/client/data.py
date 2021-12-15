@@ -136,7 +136,8 @@ class DataManager(object):
             elements = []
         if isinstance(query, dict):
             for k, v in query.items():
-                op_orig = v.get("operator")
+                # Default to equality operator
+                op_orig = v.get("operator", "eq")
                 operator = MAPPINGS["operators"].get(op_orig, op_orig)
                 elements.append("{0}.{1}={2}".format(k, operator, v.get("value")))
         return elements
@@ -194,7 +195,6 @@ class DataManager(object):
         api_path = view_name
         url_params = self._build_url_params(query, limit, offset)
         api_path = api_path + url_params
-
         # Perform and return the API call
         resp = client.get(path=api_path)
         rows = []
