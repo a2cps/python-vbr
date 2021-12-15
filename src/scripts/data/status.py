@@ -21,11 +21,26 @@ class StatusData(TableData):
         {
             "status_id": 10,
             "name": "created",
-            "description": "Item was created in the VBR",
+            "description": "Item was created",
+        },
+        {
+            "status_id": 11,
+            "name": "present",
+            "description": "Item is present",
+        },
+        {
+            "status_id": 12,
+            "name": "absent",
+            "description": "Item is missing or lost",
+        },
+        {
+            "status_id": 13,
+            "name": "deleted",
+            "description": "Item was deleted or destroyed",
         },
         {
             "status_id": 20,
-            "name": "sample.shipped",
+            "name": "biosample.created",
             "description": "Sample marked as shipped",
         },
         {
@@ -99,6 +114,11 @@ class StatusData(TableData):
             "description": "Shipment created in the system",
         },
         {
+            "status_id": 46,
+            "name": "shipment.processed",
+            "description": "Shipment processed after being received.",
+        },
+        {
             "status_id": 50,
             "name": "container.present",
             "description": "Container is present",
@@ -119,29 +139,44 @@ class StatusData(TableData):
             "description": "Container is lost",
         },
         {
+            "status_id": 54,
+            "name": "container.created",
+            "description": "Container was created",
+        },
+        {
+            "status_id": 55,
+            "name": "container.destroyed",
+            "description": "Container was destroyed",
+        },
+        {
             "status_id": 60,
             "name": "measurement.present",
-            "description": "Measurement is present",
+            "description": "Item is present",
         },
         {
             "status_id": 61,
             "name": "measurement.spoiled",
-            "description": "Measurement is spoiled",
+            "description": "Item is spoiled",
         },
         {
             "status_id": 62,
             "name": "measurement.depleted",
-            "description": "Measurement is depleted",
+            "description": "Item is depleted",
         },
         {
             "status_id": 63,
             "name": "measurement.lost",
-            "description": "Measurement has been lost",
+            "description": "Item is lost",
         },
         {
             "status_id": 64,
             "name": "measurement.inflight",
-            "description": "Measurement is in transit or in process of being validated",
+            "description": "Item is in transit or in process of being validated",
+        },
+        {
+            "status_id": 65,
+            "name": "measurement.destroyed",
+            "description": "Item was destroyed",
         },
         {
             "status_id": 70,

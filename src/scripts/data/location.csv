@@ -1,18 +1,18 @@
 ﻿location_id,display_name,address1,address2,address3,city,state_province_country,zip_or_postcode,organization
-0,Default,,,,,,,1
-1,Receiving: University of California San Diego,,,,,,,10
-2,Shipping: In Transit,,,,,,,10
-10,MCC1: Institute for Translational Medicine,,,,,,,4
-11,MCC1: Rush University Medical Center,,,,,,,3
-12,MCC1: The University of Chicago Medical Center,,,,,,,5
-13,MCC1: NorthShore University HealthSystem,,,,,,,6
-20,MCC2: University of Michigan,,,,,,,7
-21,ODGC-Proteomics: Pacific Northwest National Laboratory,,,,,,,9
-22,ODGC-Lipidomics: Wake Forest University,,,,,,,11
-23,ODGC-Metabolomics: Wake Forest University,,,,,,,11
-24,ODGC-exRNA: University of California San Diego,,,,,,,10
-25,ODGC-GV: University of California San Diego,,,,,,,10
-30,CCC: University of Iowa,,,,,,,8
-40,DIRC: Johns Hopkins University,,,,,,,12
-41,DIRC: Dartmouth College,,,,,,,13
-42,DIRC: Texas Advanced Computing Center,,,,,,,1
+0,Default,,,,,,99999,1
+1,Receiving: University of California San Diego,,,,La Jolla,CA,92093,10
+2,Shipping: In Transit,,,,,,99999,10
+10,MCC1: Institute for Translational Medicine,,,,Chicago,IL,60637,4
+11,MCC1: Rush University Medical Center,,,,Chicago,IL,60612,3
+12,MCC1: The University of Chicago Medical Center,,,,Chicago,IL,60637,5
+13,MCC1: NorthShore University HealthSystem,,,,Evanston,IL,60201,6
+20,MCC2: University of Michigan,,,,Ann Arbor,MI,48109,7
+21,ODGC-Proteomics: Pacific Northwest National Laboratory,,,,Richland,WA,99354,9
+22,ODGC-Lipidomics: Wake Forest University,,,,Winston-Salem,NC,27109,11
+23,ODGC-Metabolomics: Wake Forest University,,,,Winston-Salem,NC,27109,11
+24,ODGC-exRNA: University of California San Diego,,,,La Jolla,CA,92093,10
+25,ODGC-GV: University of California San Diego,,,,La Jolla,CA,92093,10
+30,CCC: University of Iowa,,,,Iowa City,IA,52242,8
+40,DIRC: Johns Hopkins University,,,,Baltimore,MD,21218,12
+41,DIRC: Dartmouth College,,,,Hanover,NH,3755,13
+42,DIRC: Texas Advanced Computing Center,,,,Austin,TX,78758,1
