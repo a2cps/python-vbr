@@ -189,7 +189,8 @@ class LogisticsApi(object):
                 print("Deleting", row)
                 self.vbr_client.delete_row(row)
         except Exception as ex1:
-            raise ValueError("Unable to manage container_in_shipment relation: %s", ex1)
+            # Who cares if we can't do the delete. We can assume it's OK to create a relation below.
+            pass
         try:
             resp = self.vbr_client.create_row(conshp)
             return resp
