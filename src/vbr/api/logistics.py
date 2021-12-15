@@ -164,10 +164,13 @@ class LogisticsApi(object):
         query = {"shipment": {"operator": "=", "value": shipment.shipment_id}}
         try:
             conts = []
-            c_in_s = self._get_row_from_table_with_query("container_in_shipment", query)
-            conts.append(
-                self._get_row_from_table_with_id("container", c_in_s.container)
+            c_in_s = self._get_rows_from_table_with_query(
+                "container_in_shipment", query
             )
+            for rel in c_in_s:
+                conts.append(
+                    self._get_row_from_table_with_id("container", rel.container)
+                )
             return conts
         except ValueError:
             return []
