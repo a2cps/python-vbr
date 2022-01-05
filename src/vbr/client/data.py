@@ -5,7 +5,7 @@ from tapipy.tapis import TapisResult
 
 from vbr.client.connection import TapisDirectClient
 from vbr.hashable import picklecache
-from vbr.tableclasses import Table, class_from_table
+from vbr.tableclasses import Table, class_from_table, vbr_table
 
 
 class DataManager(object):
@@ -73,8 +73,11 @@ class DataManager(object):
         # assert vbr_obj._pkid is not None,
         #     'VBR object is not derived from a VBR database record. Create it first before updating it.'
 
-        pk_value = str(vbr_obj._pkid)
         root_url = vbr_obj.__schema__.root_url
+        pk_value = getattr(vbr_obj, "._pkid", None)
+        if pk_value is None:
+            pk_attr_name = vbr_obj.__schema__.table_name + "_id"
+            pk_value = getattr(vbr_obj, pk_attr_name)
 
         # Assemble differences into an update payload
         payload = {}
