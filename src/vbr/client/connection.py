@@ -1,5 +1,6 @@
 """VBR Database Driver
 """
+import json
 import logging
 import os
 import uuid
@@ -155,7 +156,7 @@ class TapisDirectClient(object):
         # return the response body as bytes.
         try:
             result = resp.json().get("result", resp.json().get("message", {}))
-        except JSONDecodeError:
+        except json.decoder.JSONDecodeError:
             result = resp.content
         return result
 
