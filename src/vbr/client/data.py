@@ -36,7 +36,7 @@ class DataManager(object):
 
     def create_row_from_dict(self, root_url: str, record_data: dict) -> Table:
         """Create a PgREST record from a Python dictionary"""
-        resp = self.client.pgrest.add_table_row(collection=root_url, data=record_data)
+        resp = self.client.pgrest.add_table_row(root_url=root_url, data=record_data)
         if isinstance(resp, list):
             return [self._tapis_result_to_vbr(r, root_url) for r in resp]
         else:
@@ -60,7 +60,7 @@ class DataManager(object):
         # TODO - support either root_url or table_name
         # TODO - support query
         pk_value = str(pk_value)
-        resp = self.client.pgrest.get_table_row(collection=root_url, item=pk_value)[0]
+        resp = self.client.pgrest.get_table_row(root_url=root_url, item=pk_value)[0]
         if isinstance(resp, list):
             return [self._tapis_result_to_vbr(r, root_url) for r in resp]
         else:
@@ -93,7 +93,7 @@ class DataManager(object):
         if len(payload.items()) > 0:
             payload = {"data": payload}
             resp = self.client.pgrest.update_table_row(
-                collection=root_url, item=pk_value, request_body=payload
+                root_url=root_url, item=pk_value, request_body=payload
             )[0]
             return self._tapis_result_to_vbr(resp, root_url)
         else:
@@ -115,7 +115,7 @@ class DataManager(object):
             pk_value = str(pk_value)
             root_url = str(root_url)
         # assert pk_value is not None, 'Either a fully-formed VBR object or root_url and pk_value parameters must be provided.'
-        self.client.pgrest.delete_table_row(collection=root_url, item=pk_value)
+        self.client.pgrest.delete_table_row(root_url=root_url, item=pk_value)
         # Mark the VBR object as not being attached to a real record
         vbr_obj._pkid = None
         # No return!
@@ -123,7 +123,7 @@ class DataManager(object):
     def list_rows(self, root_url: str, limit: int = 100000, offset: int = 0) -> list:
         """Lists VBR Records in table"""
         resp = self.client.pgrest.get_table(
-            collection=root_url, limit=limit, offset=offset
+            root_url=root_url, limit=limit, offset=offset
         )
 
         rows = [self._tapis_result_to_vbr(tr, root_url) for tr in resp]
