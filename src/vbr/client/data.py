@@ -122,7 +122,7 @@ class DataManager(object):
 
     def list_rows(self, root_url: str, limit: int = 100000, offset: int = 0) -> list:
         """Lists VBR Records in table"""
-        resp = self.client.pgrest.get_table(
+        resp = self.client.pgrest.get_table_rows(
             root_url=root_url, limit=limit, offset=offset
         )
 
