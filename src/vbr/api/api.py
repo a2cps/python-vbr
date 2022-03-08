@@ -10,6 +10,7 @@ from vbr.utils.helpers import get_client
 
 from ..utils.helpers import get_client
 from .biosample import BiosampleApi
+from .collection import CollectionApi
 from .container import ContainerApi
 from .container_type import ContainerTypeApi
 from .data_event import DataEventApi
@@ -91,6 +92,7 @@ class ApiBase(object):
 class VBR_Api(
     ApiBase,
     BiosampleApi,
+    CollectionApi,
     ContainerApi,
     ContainerTypeApi,
     DataEventApi,
