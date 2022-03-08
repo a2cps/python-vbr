@@ -1,6 +1,6 @@
 API ?= $(TAPIS_BASE_URL)
 USERNAME ?= $(TAPIS_SERVICE_UNAME)
-PASSWORD ?= $(TAPIS_SERVICE_PASSWORD)
+PASSWORD ?= $(TAPIS_SERVICE_PASS)
 
 docs-apidoc:
 	cd docs; sphinx-apidoc --maxdepth 2 -M -H "API Reference" -f -o source ../src/vbr
@@ -36,6 +36,9 @@ clean: definitions-clean
 
 .SILENT:
 create-tables:
+	echo $(API)
+	echo $(USERNAME)
+	echo $(PASSWORD)
 	cd src ; python -m scripts.create_tables --base-url "$(API)" --username "$(USERNAME)" --password "$(PASSWORD)" $(SCRIPT_ARGS)
 
 .SILENT:
