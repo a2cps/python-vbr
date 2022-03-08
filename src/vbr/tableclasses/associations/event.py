@@ -5,6 +5,7 @@ from ..constants import Constants
 
 __all__ = [
     "DataEventInContainer",
+    "DataEventInCollection",
     "DataEventInBiosample",
     "DataEventInMeasurement",
     "DataEventInShipment",
@@ -22,6 +23,18 @@ class DataEventInBiosample(AssociationTable):
     )
     biosample = Column(
         Integer, ForeignKey("biosample.biosample_id", event_action="CASCADE")
+    )
+
+
+class DataEventInCollection(AssociationTable):
+    """Maps data_events to collections."""
+
+    data_event_in_collection_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    data_event = Column(
+        Integer, ForeignKey("data_event.data_event_id", event_action="CASCADE")
+    )
+    collection = Column(
+        Integer, ForeignKey("collection.collection_id", event_action="CASCADE")
     )
 
 

@@ -3,7 +3,12 @@
 from ...pgrest import *
 from ..constants import Constants
 
-__all__ = ["DatasetInDataset", "FileInFile", "ProjectInProject"]
+__all__ = [
+    "CollectionInCollection",
+    "DatasetInDataset",
+    "FileInFile",
+    "ProjectInProject",
+]
 
 # class ContainerInContainer(AssociationTable):
 #     """Maps containers inside other containers."""
@@ -13,6 +18,18 @@ __all__ = ["DatasetInDataset", "FileInFile", "ProjectInProject"]
 #                        ForeignKey('container.container_id'),
 #                        unique=True)
 #     parent_container = Column(Integer, ForeignKey('container.container_id'))
+
+
+class CollectionInCollection(AssociationTable):
+    """Maps collections hierarchy and “cross-cut” collections."""
+
+    collection_in_collection_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    collection = Column(
+        Integer, ForeignKey("collection.collection_id", event_action="CASCADE")
+    )
+    parent_collectiont = Column(
+        Integer, ForeignKey("collection.collection_id", event_action="CASCADE")
+    )
 
 
 class DatasetInDataset(AssociationTable):

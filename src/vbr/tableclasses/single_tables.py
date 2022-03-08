@@ -51,6 +51,31 @@ class Biosample(TableVBR):
     signature = Signature("subject", "protocol")
 
 
+class Collection(TableVBR):
+    """TACC defined extension: a virtual collection"""
+
+    collection_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    collection_type = Column(Integer, ForeignKey("collection_type.collection_type_id"))
+    name = Column(String, nullable=False, comments="Short name for this collection")
+    description = Column(Text, nullable=True)
+    tracking_id = Column(
+        String,
+        nullable=True,
+        comments="Tracking ID assigned to collection",
+        unique=True,
+    )
+
+
+class CollectionType(TableVBR):
+    """TACC defined extension: collection type"""
+
+    collection_type_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
+    name = Column(String, nullable=True, comments="Short name for this collection type")
+    description = Column(
+        String, nullable=True, comments="Description of this collection type"
+    )
+
+
 class Container(TableVBR):
     """TACC defined extension: a generic container class"""
 
