@@ -1,6 +1,7 @@
 """Manage status of VBR objects"""
 from vbr.tableclasses import (
     Container,
+    Collection,
     Measurement,
     Shipment,
     Status,
@@ -53,6 +54,13 @@ class ManageStatusApi(object):
         """Update Container status by status.name"""
         new_status = self._status_from_status_name(status_name, "container")
         return self._update_row_status(container, new_status, comment)
+
+    def update_collection_status_by_name(
+        self, collection: Collection, status_name: str, comment: str = None
+    ) -> Container:
+        """Update Collection status by status.name"""
+        new_status = self._status_from_status_name(status_name, "collection")
+        return self._update_row_status(collection, new_status, comment)
 
     def update_measurement_status_by_name(
         self, measurement: Measurement, status_name: str, comment: str = None

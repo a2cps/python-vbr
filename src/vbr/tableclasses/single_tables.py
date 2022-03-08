@@ -57,13 +57,14 @@ class Collection(TableVBR):
     collection_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
     collection_type = Column(Integer, ForeignKey("collection_type.collection_type_id"))
     name = Column(String, nullable=False, comments="Short name for this collection")
-    description = Column(Text, nullable=True)
+    description = Column(Text, nullable=True, comments="Extended description")
     tracking_id = Column(
         String,
         nullable=True,
         comments="Tracking ID assigned to collection",
         unique=True,
     )
+    status = Column(Integer, ForeignKey("status.status_id"), default=10)
 
 
 class CollectionType(TableVBR):

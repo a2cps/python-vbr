@@ -21,6 +21,7 @@ class CollectionApi(object):
         name: str,
         description: str,
         tracking_id: str,
+        status_id: int = 10,  # created
         collection_type_id: int = 1,  # default to 1 -> run list
     ) -> Collection:
         """Create a new Collection."""
@@ -38,12 +39,17 @@ class CollectionApi(object):
             raise
 
     def create_or_get_collection_by_tracking_id(
-        self, name: str, description: str, tracking_id: str, collection_type_id: int = 1
+        self,
+        name: str,
+        description: str,
+        tracking_id: str,
+        status_id: int = 10,
+        collection_type_id: int = 1,
     ) -> Collection:
         """Create a Collection or return existing with specified tracking_id."""
         try:
             return self.create_collection(
-                name, description, tracking_id, collection_type_id
+                name, description, tracking_id, status_id, collection_type_id
             )
         except Exception:
             return self.get_collection_by_tracking_id(tracking_id)
