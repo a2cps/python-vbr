@@ -11,6 +11,7 @@ from .biosample import BiosampleData
 from .contact import ContactData
 
 # from .box_type import BoxTypeData
+from .collection_type import CollectionTypeData
 from .container import ContainerData
 from .container_type import ContainerTypeData
 from .data_event import DataEventData
