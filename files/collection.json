@@ -16,6 +16,7 @@
         },
         "description": {
             "char_len": 255,
+            "comments": "Extended description",
             "data_type": "text",
             "null": true
         },
@@ -29,6 +30,15 @@
             "char_len": 255,
             "comments": "Short name for this collection",
             "data_type": "varchar"
+        },
+        "status": {
+            "data_type": "integer",
+            "default": 10,
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "on_event": "ON DELETE",
+            "reference_column": "status_id",
+            "reference_table": "status"
         },
         "tracking_id": {
             "char_len": 255,
