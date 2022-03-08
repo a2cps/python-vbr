@@ -5,24 +5,28 @@ graph [rankdir=LR];
 unit [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>unit</B></TD></TR><HR></HR>
 	        <TR><TD align="left">description? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
 	<TR><TD align="left"><B>unit_id</B> : int</TD></TR>
 	        </TABLE>>];
 status [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>status</B></TD></TR><HR></HR>
 	        <TR><TD align="left">description? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
 	<TR><TD align="left"><B>status_id</B> : int</TD></TR>
 	        </TABLE>>];
 reason [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>reason</B></TD></TR><HR></HR>
 	        <TR><TD align="left">description? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
 	<TR><TD align="left"><B>reason_id</B> : int</TD></TR>
 	        </TABLE>>];
 protocol [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>protocol</B></TD></TR><HR></HR>
 	        <TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left">name? : varchar(255)</TD></TR>
 	<TR><TD align="left"><B>protocol_id</B> : int</TD></TR>
 	<TR><TD align="left">tracking_id : varchar(255)</TD></TR>
@@ -40,6 +44,7 @@ project [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 organization [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>organization</B></TD></TR><HR></HR>
 	        <TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left">name? : varchar(255)</TD></TR>
 	<TR><TD align="left"><B>organization_id</B> : int</TD></TR>
 	<TR><TD align="left"><I>url?</I> : varchar(255)</TD></TR>
@@ -47,6 +52,7 @@ organization [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 measurement_type [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>measurement_type</B></TD></TR><HR></HR>
 	        <TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left"><B>measurement_type_id</B> : int</TD></TR>
 	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
 	        </TABLE>>];
@@ -67,16 +73,18 @@ container_type [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>container_type</B></TD></TR><HR></HR>
 	        <TR><TD align="left"><B>container_type_id</B> : int</TD></TR>
 	<TR><TD align="left">description : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left"><I>name?</I> : varchar(255)</TD></TR>
 	        </TABLE>>];
 container [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>container</B></TD></TR><HR></HR>
 	        <TR><TD align="left"><B>container_id</B> : int</TD></TR>
-	<TR><TD align="left">container_type? : int</TD></TR>
+	<TR><TD align="left">container_type : int</TD></TR>
 	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left">location : int</TD></TR>
 	<TR><TD align="left">parent_container : int</TD></TR>
-	<TR><TD align="left"><I>tracking_id?</I> : varchar(255)</TD></TR>
+	<TR><TD align="left">status? : int</TD></TR>
+	<TR><TD align="left"><I>tracking_id</I> : varchar(255)</TD></TR>
 	        </TABLE>>];
 contact [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>contact</B></TD></TR><HR></HR>
@@ -84,6 +92,7 @@ contact [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	<TR><TD align="left"><I>email?</I> : varchar(255)</TD></TR>
 	<TR><TD align="left">first_name? : varchar(255)</TD></TR>
 	<TR><TD align="left">last_name? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left">organization? : int</TD></TR>
 	<TR><TD align="left">phone : varchar(255)</TD></TR>
 	        </TABLE>>];
@@ -92,6 +101,7 @@ anatomy [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD align="left"><B>anatomy_id</B> : int</TD></TR>
 	<TR><TD align="left">description : varchar(255)</TD></TR>
 	<TR><TD align="left">id? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left">name : varchar(255)</TD></TR>
 	        </TABLE>>];
 subject [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
@@ -196,6 +206,7 @@ rcap_consented_participant_information [label=<<TABLE BORDER="1" CELLBORDER="0" 
 	<TR><TD align="left">home_phone_number : varchar(255)</TD></TR>
 	<TR><TD align="left">last_name : varchar(255)</TD></TR>
 	<TR><TD align="left">last_updated_ts : timestamp</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left">maintcomp202108 : boolean</TD></TR>
 	<TR><TD align="left">measurement_id : int</TD></TR>
 	<TR><TD align="left">mobile_phone_number : varchar(255)</TD></TR>
@@ -218,6 +229,7 @@ rcap_blood_sample_collection_and_processing_crf [label=<<TABLE BORDER="1" CELLBO
 	<TR><TD align="left">bscp_buffycoat_brcd : varchar(255)</TD></TR>
 	<TR><TD align="left">bscp_buffycoat_na : boolean</TD></TR>
 	<TR><TD align="left">bscp_caff_cups_amt : int</TD></TR>
+	<TR><TD align="left">bscp_comments : varchar(1024)</TD></TR>
 	<TR><TD align="left">bscp_deg_of_hemolysis : varchar(32)</TD></TR>
 	<TR><TD align="left">bscp_hrs_since_cafstim : varchar(255)</TD></TR>
 	<TR><TD align="left">bscp_hrs_since_food : varchar(255)</TD></TR>
@@ -245,6 +257,7 @@ rcap_blood_sample_collection_and_processing_crf [label=<<TABLE BORDER="1" CELLBO
 	<TR><TD align="left">bscp_verify_pt : boolean</TD></TR>
 	<TR><TD align="left">creation_time : timestamp</TD></TR>
 	<TR><TD align="left">last_updated_ts : timestamp</TD></TR>
+	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
 	<TR><TD align="left">measurement_id : int</TD></TR>
 	<TR><TD align="left">protocol_id? : int</TD></TR>
 	<TR><TD align="left">record_id? : varchar(255)</TD></TR>
@@ -260,11 +273,12 @@ measurement_from_measurement [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACIN
 location -> organization  [headlabel=organization_id, minlen=3, taillabel=organization, xlabel="                                                      "];
 container -> container_type  [headlabel=container_type_id, minlen=4, taillabel=container_type, xlabel="                                                              "];
 container -> location  [headlabel=location_id, minlen=3, taillabel=location, xlabel="                                      "];
+container -> status  [headlabel=status_id, minlen=2, taillabel=status, xlabel="                              "];
 contact -> organization  [headlabel=organization_id, minlen=3, taillabel=organization, xlabel="                                                      "];
 subject -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
 shipment -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
-shipment -> contact  [headlabel=contact_id, minlen=3, taillabel=ship_from, xlabel="                                      "];
-shipment -> contact  [headlabel=contact_id, minlen=3, taillabel=ship_to, xlabel="                                  "];
+shipment -> location  [headlabel=location_id, minlen=3, taillabel=ship_from, xlabel="                                        "];
+shipment -> location  [headlabel=location_id, minlen=3, taillabel=ship_to, xlabel="                                    "];
 shipment -> status  [headlabel=status_id, minlen=2, taillabel=status, xlabel="                              "];
 data_event -> contact  [headlabel=contact_id, minlen=3, taillabel=performed_by, xlabel="                                            "];
 data_event -> protocol  [headlabel=protocol_id, minlen=3, taillabel=protocol, xlabel="                                      "];
