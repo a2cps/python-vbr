@@ -1,6 +1,6 @@
-API ?= https://a2cpsdev.tapis.io
-USERNAME ?= $(A2CPS_USERNAME)
-PASSWORD ?= $(A2CPS_PASSWORD)
+API ?= $(TAPIS_BASE_URL)
+USERNAME ?= $(TAPIS_SERVICE_UNAME)
+PASSWORD ?= $(TAPIS_SERVICE_PASSWORD)
 
 docs-apidoc:
 	cd docs; sphinx-apidoc --maxdepth 2 -M -H "API Reference" -f -o source ../src/vbr

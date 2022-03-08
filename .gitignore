@@ -10,3 +10,4 @@ exports/*.csv
 docs/_build
 */environment.pickle
 .DS_Store
+env.rc
