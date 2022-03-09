@@ -179,6 +179,16 @@ class StatusData(TableData):
             "description": "Item was destroyed",
         },
         {
+            "status_id": 66,
+            "name": "measurement.inuse",
+            "description": "Item is actively in use",
+        },
+        {
+            "status_id": 67,
+            "name": "measurement.available",
+            "description": "Item is avaiable for use",
+        },
+        {
             "status_id": 70,
             "name": "sysevent.created",
             "description": "Event created by system",
@@ -202,5 +212,20 @@ class StatusData(TableData):
             "status_id": 74,
             "name": "sysevent.processing_failed",
             "description": "Event was unable to be processed by the system.",
+        },
+        {
+            "status_id": 80,
+            "name": "collection.ready",
+            "description": "Collection is ready for use.",
+        },
+        {
+            "status_id": 81,
+            "name": "collection.processing",
+            "description": "Collection is being processed.",
+        },
+        {
+            "status_id": 82,
+            "name": "collection.processed",
+            "description": "Collection has been processed.",
         },
     ]
