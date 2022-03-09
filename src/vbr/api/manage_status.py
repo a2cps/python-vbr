@@ -1,7 +1,7 @@
 """Manage status of VBR objects"""
 from vbr.tableclasses import (
-    Container,
     Collection,
+    Container,
     Measurement,
     Shipment,
     Status,
@@ -90,6 +90,10 @@ class ManageStatusApi(object):
                 "Cannot get status of <%s> object", vbr_row.__schema__.table_name
             )
         return StatusApi.get_status(self, vbr_row.status)
+
+    def get_collection_status(self, collection: Collection) -> Status:
+        """Get current Status for a Collection."""
+        return self._get_vbr_row_status(collection)
 
     def get_container_status(self, container: Container) -> Status:
         """Get current Status for a Container."""
