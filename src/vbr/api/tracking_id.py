@@ -1,5 +1,13 @@
 """Manage tracking ID of VBR objects"""
-from vbr.tableclasses import Biosample, Container, Measurement, Shipment, Subject, Table
+from vbr.tableclasses import (
+    Biosample,
+    Collection,
+    Container,
+    Measurement,
+    Shipment,
+    Subject,
+    Table,
+)
 
 from .data_event import DataEventApi
 
@@ -27,6 +35,11 @@ class ManageTrackingIdApi(object):
         """Update a Biosample tracking_id (by local_id)."""
         bsam = self.get_biosample_by_local_id(local_id)
         return self._relabel_row(bsam, new_tracking_id)
+
+    def relabel_collection(self, local_id: str, new_tracking_id: str) -> Collection:
+        """Update a Collection tracking_id (by local_id)."""
+        cont = self.get_collection_by_local_id(local_id)
+        return self._relabel_row(cont, new_tracking_id)
 
     def relabel_container(self, local_id: str, new_tracking_id: str) -> Container:
         """Update a Container tracking_id (by local_id)."""

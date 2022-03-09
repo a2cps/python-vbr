@@ -1,4 +1,5 @@
 from vbr.tableclasses import Collection
+from .utils import generate_guid
 
 __all__ = ["CollectionApi"]
 
@@ -20,21 +21,23 @@ class CollectionApi(object):
         self,
         name: str,
         description: str,
-        tracking_id: str,
+        tracking_id: str = None,
         status_id: int = 10,  # created
         collection_type_id: int = 1,  # default to 1 -> run list
     ) -> Collection:
         """Create a new Collection."""
         collection_type_id = str(collection_type_id)
-        location_id = str(location_id)
-        ct = Collection(
-            tracking_id=tracking_id,
-            collection_type=collection_type_id,
+        if tracking_id is None:
+            tracking_id = generate_guid()
+        cl = Collection(
             name=name,
             description=description,
+            tracking_id=tracking_id,
+            status=status_id,
+            collection_type=collection_type_id,
         )
         try:
-            return self.vbr_client.create_row(ct)[0]
+            return self.vbr_client.create_row(cl)[0]
         except Exception:
             raise
 
@@ -42,7 +45,7 @@ class CollectionApi(object):
         self,
         name: str,
         description: str,
-        tracking_id: str,
+        tracking_id: str = None,
         status_id: int = 10,
         collection_type_id: int = 1,
     ) -> Collection:
