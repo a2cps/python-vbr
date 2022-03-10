@@ -1,10 +1,8 @@
-from functools import lru_cache
 from re import T
 
 from tapipy.tapis import Tapis
 
 from vbr.client import VBR
-from vbr.hashable import picklecache
 from vbr.tableclasses import Table
 from vbr.utils.helpers import get_client
 
@@ -49,20 +47,17 @@ class ApiBase(object):
             tapis_client = get_client()
         self.vbr_client = VBR(tapis_client)
 
-    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_id(self, root_url: str, pkid: str):
         """Get a row from table root_url by primary key identifier"""
         search_key = root_url + "_id"
         query = {search_key: {"operator": "=", "value": pkid}}
         return self._get_row_from_table_with_query(root_url=root_url, query=query)
 
-    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_local_id(self, root_url: str, local_id: str) -> Table:
         """Get a row from table root_url by local_id"""
         query = {"local_id": {"operator": "=", "value": local_id}}
         return self._get_row_from_table_with_query(root_url=root_url, query=query)
 
-    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_tracking_id(
         self, root_url: str, tracking_id: str
     ) -> Table:
@@ -70,7 +65,6 @@ class ApiBase(object):
         query = {"tracking_id": {"operator": "=", "value": tracking_id}}
         return self._get_row_from_table_with_query(root_url=root_url, query=query)
 
-    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_rows_from_table_with_query(self, root_url: str, query: dict) -> Table:
         """Get rows by table root_url and pgrest 'where' query"""
         resp = self.vbr_client.query_rows(root_url=root_url, query=query)
@@ -79,7 +73,6 @@ class ApiBase(object):
         else:
             return resp
 
-    @picklecache.mcache(lru_cache(maxsize=32))
     def _get_row_from_table_with_query(self, root_url: str, query: dict) -> Table:
         """Get a row by table root_url and pgrest 'where' query"""
         resp = self._get_rows_from_table_with_query(root_url, query)

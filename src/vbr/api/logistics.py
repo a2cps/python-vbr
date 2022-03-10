@@ -3,10 +3,12 @@ from typing import List, NoReturn
 from vbr.pgrest.time import timestamp
 from vbr.tableclasses import (
     Biosample,
+    Collection,
     Container,
     ContainerInShipment,
     Location,
     Measurement,
+    MeasurementInCollection,
     Shipment,
 )
 from vbr.utils import utc_time_in_seconds
@@ -20,7 +22,7 @@ __all__ = ["LogisticsApi"]
 
 
 class LogisticsApi(object):
-    """APIs that involve combinations of shipments, containers, biosamples, measurements, and locations"""
+    """APIs that involve combinations of shipments, containers, biosamples, measurements, locations, and collections"""
 
     def relocate_container_by_local_id(
         self, local_id: str, location_local_id: str, comment: str = None
@@ -269,3 +271,29 @@ class LogisticsApi(object):
         """Retrieve Measurements partioned from a Measurment."""
         # Query MeasurementFromMeasurement table
         raise NotImplemented()
+
+    def associate_measurement_with_collection(
+        self, measurement: Measurement, collection: Collection
+    ) -> MeasurementInCollection:
+        """Associate a Measurement with a Collection."""
+        mescol = MeasurementInCollection(
+            measurement=measurement.measurement_id, collection=collection.collection_id
+        )
+        try:
+            resp = self.vbr_client.create_row(mescol)
+            return resp
+        except Exception as ex2:
+            raise ValueError("Unable to attach Measurement to Collection: %s", ex2)
+
+    def disassociate_measurement_from_collection(
+        self, measurement: Measurement, collection: Collection
+    ) -> NoReturn:
+        """Disassociate a Measurement from a Collection."""
+        # Retrieve the relevant MeasurementInCollection
+        query = {
+            "measurement": {"operator": "=", "value": measurement.measurement_id},
+            "collection": {"operator": "=", "value": collection.collection_id},
+        }
+        # Assumption is single row. Die if not!
+        mescol = self._get_row_from_table_with_query("measurement_in_collection", query)
+        self.vbr_client.delete_row(mescol)

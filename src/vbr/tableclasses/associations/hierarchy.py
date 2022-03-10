@@ -43,6 +43,7 @@ class MeasurementInCollection(AssociationTable):
     collection = Column(
         Integer, ForeignKey("collection.collection_id", event_action="CASCADE")
     )
+    signature = Signature("measurement", "collection")
 
 
 class ContainerInShipment(AssociationTable):

@@ -24,6 +24,14 @@
         }
     },
     "comments": "Maps measurements to collections.",
+    "constraints": {
+        "unique": {
+            "signature_d64a13d": [
+                "measurement",
+                "collection"
+            ]
+        }
+    },
     "root_url": "measurement_in_collection",
     "table_name": "measurement_in_collection"
 }
