@@ -5,11 +5,12 @@ import uuid
 __all__ = ["sanitize_identifier_string", "generate_barcode_string"]
 
 
-def sanitize_identifier_string(barcode: str) -> str:
+def sanitize_identifier_string(barcode: str, no_spaces=False) -> str:
     """Remove whitespace and other junk characters from a barcode string."""
     if barcode is None:
         return None
-    barcode = re.sub(r"\s+", "", barcode)
+    if no_spaces:
+        barcode = re.sub(r"\s+", "", barcode)
     barcode = barcode.strip()
     # TODO - add other sanitization rules
     return barcode

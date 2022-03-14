@@ -65,6 +65,9 @@ class Collection(TableVBR):
         unique=True,
     )
     status = Column(Integer, ForeignKey("status.status_id"), default=10)
+    creation_time = Column(
+        CreatedTimeStamp, comments="When the collection was created", nullable=True
+    )
 
 
 class CollectionType(TableVBR):
