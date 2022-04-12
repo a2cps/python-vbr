@@ -1,3 +1,4 @@
+from ast import Num
 from vbr.pgrest.constraints import Signature
 
 from ..pgrest import *
@@ -277,6 +278,9 @@ class Measurement(TableVBR):
     project = Column(Integer, ForeignKey("project.project_id"))
     # Not sure this belongs here unless other core entities have a status field
     status = Column(Integer, ForeignKey("status.status_id"))
+    volume = Column(
+        Numeric, nullable=False, default=0.0, comments="Volume in milliliters"
+    )
 
 
 class MeasurementType(TableVBR):

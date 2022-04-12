@@ -14,6 +14,12 @@
             "reference_column": "collection_type_id",
             "reference_table": "collection_type"
         },
+        "creation_time": {
+            "comments": "When the collection was created",
+            "data_type": "timestamp",
+            "default": "CREATETIME",
+            "null": true
+        },
         "description": {
             "char_len": 255,
             "comments": "Extended description",

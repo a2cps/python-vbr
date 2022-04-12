@@ -189,6 +189,11 @@ class StatusData(TableData):
             "description": "Item is avaiable for use",
         },
         {
+            "status_id": 68,
+            "name": "measurement.changed_volume",
+            "description": "Item volume was changed",
+        },
+        {
             "status_id": 70,
             "name": "sysevent.created",
             "description": "Event created by system",

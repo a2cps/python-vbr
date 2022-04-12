@@ -60,8 +60,7 @@
             "null": true
         },
         "bscp_deg_of_hemolysis": {
-            "char_len": 32,
-            "data_type": "varchar",
+            "data_type": "float",
             "null": true
         },
         "bscp_hrs_since_cafstim": {
