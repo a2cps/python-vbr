@@ -12,6 +12,8 @@ __all__ = [
     "GUID",
     "Integer",
     "IntegerList",
+    "Numeric",
+    "NumericList",
     "Serial",
     "String",
     "StringList",
@@ -75,50 +77,30 @@ class IntegerList(PgRestColumn):
     # TODO - validate that contents of data are a list of ints
 
 
-# class Numeric(PgRestColumn):
-#     DATA_TYPE = 'numeric'
-#     PYTHON_TYPE = float
-
-#     # TODO Support numeric(p,s), a real number with p digits with s number after the decimal point.
-#     @classmethod
-#     def instantiate(cls, value):
-#         if value is None or value == '':
-#             return None
-#         else:
-#             return float(value)
-
-#     @classmethod
-#     def cast(cls, value):
-#         if value is None or value == '':
-#             return None
-#         else:
-#             return float(value)
-
-
 class Numeric(PgRestColumn):
-    # NOTE - this is currently implemented as a postgresql varchar because PgREST doesn't support numeric type
-    DATA_TYPE = "varchar"
+    # NOTE See https://github.com/tapis-project/paas/issues/31
+    DATA_TYPE = "float"
     PYTHON_TYPE = float
-    CHAR_LEN = 32
 
-    @class_or_instancemethod
-    def properties(self_or_cls):
-        return {"data_type": self_or_cls.DATA_TYPE, "char_len": self_or_cls.CHAR_LEN}
-
-    # TODO Support numeric(p,s), a real number with p digits with s number after the decimal point.
     @classmethod
     def instantiate(cls, value):
         if value is None or value == "":
             return None
         else:
-            return str(float(value))
+            return float(value)
 
     @classmethod
     def cast(cls, value):
         if value is None or value == "":
             return None
         else:
-            return str(float(value))
+            return float(value)
+
+
+class NumericList(PgRestColumn):
+    DATA_TYPE = "float[]"
+    PYTHON_TYPE = None
+    # TODO - validate that contents of data are a list of floats
 
 
 class Serial(Integer):
