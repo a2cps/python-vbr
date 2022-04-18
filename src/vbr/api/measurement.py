@@ -1,3 +1,4 @@
+from re import M
 from typing import List
 
 from vbr.pgrest.time import timestamp
@@ -94,11 +95,25 @@ class MeasurementApi(object):
         return measurement
 
     def partition_measurement(
-        self, measurement: Measurement, tracking_id: str = None, comment: str = None
+        self,
+        measurement: Measurement,
+        volume: int,
+        tracking_id: str = None,
+        comment: str = None,
     ) -> Measurement:
         """Create a sub-Measuremenent from a Measurement."""
+
+        # validate provided volume
+        if measurement.volume < volume:
+            raise ValueError(
+                "Cannot partition volume of {0} from a volume of {1}".format(
+                    volume, measurement.volume
+                )
+            )
+
         # 1. Clone the original Measurement to a new Measurement,
         m2 = measurement.clone()
+        m2.volume = volume
         m2.measurement_id = None
         m2.local_id = None
         m2.creation_time = timestamp()
@@ -108,6 +123,11 @@ class MeasurementApi(object):
         else:
             m2.tracking_id = measurement.tracking_id + "." + utc_time_in_seconds()
         m2 = self.vbr_client.create_row(m2)[0]
+
+        # Decrease the volume of original measurement
+        new_parent_volume = measurement.volume - volume
+        self.set_volume(measurement, new_parent_volume)
+
         # TODO Register the relation via MeasurementFromMeasurement table
         DataEventApi.create_and_link(
             self,
