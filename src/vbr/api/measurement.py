@@ -76,6 +76,23 @@ class MeasurementApi(object):
         except Exception:
             return self.get_measurement_by_tracking_id(tracking_id)
 
+    def set_volume(
+        self, measurement: Measurement, volume: float, comment: str = None
+    ) -> Measurement:
+        """Set the volume for a Measurement."""
+        if volume < 0.0:
+            raise ValueError("Volume cannot be negative")
+        measurement.volume = volume
+        measurement = self.vbr_client.update_row(measurement)
+
+        DataEventApi.create_and_link(
+            self,
+            status_id=68,
+            comment=comment,
+            link_target=measurement,
+        )
+        return measurement
+
     def partition_measurement(
         self, measurement: Measurement, tracking_id: str = None, comment: str = None
     ) -> Measurement:
