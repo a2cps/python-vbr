@@ -11,6 +11,7 @@ from .biosample import BiosampleApi
 from .collection import CollectionApi
 from .container import ContainerApi
 from .container_type import ContainerTypeApi
+from .collection_type import CollectionTypeApi
 from .data_event import DataEventApi
 from .hierarchy import ShipmentHierarchyApi
 from .history import HistoryApi
@@ -88,6 +89,7 @@ class VBR_Api(
     CollectionApi,
     ContainerApi,
     ContainerTypeApi,
+    CollectionTypeApi,
     DataEventApi,
     LocationApi,
     MeasurementApi,
