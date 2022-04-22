@@ -194,6 +194,16 @@ class StatusData(TableData):
             "description": "Item volume was changed",
         },
         {
+            "status_id": 69,
+            "name": "measurement.thawed",
+            "description": "Item volume was thawed",
+        },
+        {
+            "status_id": 200,
+            "name": "measurement.frozen",
+            "description": "Item volume was frozen",
+        },
+        {
             "status_id": 70,
             "name": "sysevent.created",
             "description": "Event created by system",
