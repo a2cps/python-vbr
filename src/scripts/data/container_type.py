@@ -12,4 +12,7 @@ class ContainerTypeData(TableData):
         {"container_type_id": 6, "name": "-20C freezer"},
         {"container_type_id": 7, "name": "4C refrigerator"},
         {"container_type_id": 8, "name": "liquid nitrogen storage"},
+        {"container_type_id": 9, "name": "24 well plate"},
+        {"container_type_id": 10, "name": "96 well plate"},
+        {"container_type_id": 11, "name": "384 well plate"},
     ]
