@@ -59,6 +59,7 @@ class Collection(TableVBR):
     collection_type = Column(Integer, ForeignKey("collection_type.collection_type_id"))
     name = Column(String, nullable=False, comments="Short name for this collection")
     description = Column(Text, nullable=True, comments="Extended description")
+    location = Column(Integer, ForeignKey("location.location_id"), nullable=True)
     tracking_id = Column(
         String,
         nullable=True,

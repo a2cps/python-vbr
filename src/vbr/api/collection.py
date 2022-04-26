@@ -21,6 +21,7 @@ class CollectionApi(object):
         self,
         name: str,
         description: str,
+        location_id: int = None,
         tracking_id: str = None,
         status_id: int = 10,  # created
         collection_type_id: int = 1,  # default to 1 -> run list
@@ -32,6 +33,7 @@ class CollectionApi(object):
         cl = Collection(
             name=name,
             description=description,
+            location=location_id,
             tracking_id=tracking_id,
             status=status_id,
             collection_type=collection_type_id,
