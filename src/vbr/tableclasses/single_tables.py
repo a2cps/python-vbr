@@ -263,7 +263,7 @@ class Measurement(TableVBR):
     creation_time = Column(CreatedTimeStamp, nullable=True)
     # Currently cannot be unique in case tracking_id are reused
     tracking_id = Column(
-        String, comments="Identifier assigned to measurement at creation"
+        String, unique=True, comments="Identifier assigned to measurement at creation"
     )
 
     measurement_type = Column(
