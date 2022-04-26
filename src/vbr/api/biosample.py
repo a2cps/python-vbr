@@ -30,6 +30,7 @@ class BiosampleApi(object):
         self,
         tracking_id: str,
         subject_id: int,
+        location_id: int,
         project_id: int,
         protocol_id: int,
         anatomy_id: int,
@@ -40,6 +41,7 @@ class BiosampleApi(object):
         bs = Biosample(
             tracking_id=tracking_id,
             subject=subject_id,
+            location=location_id,
             project=project_id,
             protocol=protocol_id,
             anatomy=anatomy_id,
@@ -54,6 +56,7 @@ class BiosampleApi(object):
         self,
         tracking_id: str,
         subject_id: int,
+        location_id: int,
         project_id: int,
         protocol_id: int,
         anatomy_id: int,
@@ -64,6 +67,7 @@ class BiosampleApi(object):
             return self.create_biosample(
                 tracking_id,
                 subject_id,
+                location_id,
                 project_id,
                 protocol_id,
                 anatomy_id,

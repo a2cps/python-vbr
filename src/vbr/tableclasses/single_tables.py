@@ -45,6 +45,11 @@ class Biosample(TableVBR):
         String, comments="ID assigned to sample when collected", unique=True
     )
     anatomy = Column(Integer, ForeignKey("anatomy.anatomy_id"))
+    location = Column(
+        Integer,
+        ForeignKey("location.location_id"),
+        comments="Location where collected/created",
+    )
     project = Column(Integer, ForeignKey("project.project_id"))
     protocol = Column(Integer, ForeignKey("protocol.protocol_id"))
     subject = Column(Integer, ForeignKey("subject.subject_id", event_action="CASCADE"))
