@@ -48,6 +48,7 @@ class Biosample(TableVBR):
     location = Column(
         Integer,
         ForeignKey("location.location_id"),
+        nullable=True,
         comments="Location where collected/created",
     )
     project = Column(Integer, ForeignKey("project.project_id"))

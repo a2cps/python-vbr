@@ -47,6 +47,7 @@ class CollectionApi(object):
         self,
         name: str,
         description: str,
+        location_id: int,
         tracking_id: str = None,
         status_id: int = 10,
         collection_type_id: int = 1,
@@ -54,7 +55,12 @@ class CollectionApi(object):
         """Create a Collection or return existing with specified tracking_id."""
         try:
             return self.create_collection(
-                name, description, tracking_id, status_id, collection_type_id
+                name,
+                description,
+                location_id,
+                tracking_id,
+                status_id,
+                collection_type_id,
             )
         except Exception:
             return self.get_collection_by_tracking_id(tracking_id)
