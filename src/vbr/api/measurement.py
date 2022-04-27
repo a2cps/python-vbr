@@ -7,6 +7,8 @@ from vbr.utils import utc_time_in_seconds
 
 from .data_event import DataEventApi
 
+DEFAULT_VOLUME_ML = 1.0
+
 __all__ = ["MeasurementApi"]
 
 
@@ -32,6 +34,7 @@ class MeasurementApi(object):
         unit_id: int,
         container_id: int,
         status_id: int,
+        volume: float = DEFAULT_VOLUME_ML,
         creation_timestr: str = None,
     ) -> Measurement:
         """Create a new Measurement."""
@@ -44,6 +47,7 @@ class MeasurementApi(object):
             unit=unit_id,
             container=container_id,
             status=status_id,
+            volume=volume,
             creation_time=creation_timestr,
         )
         try:
@@ -60,6 +64,7 @@ class MeasurementApi(object):
         unit_id: int,
         container_id: int,
         status_id: int,
+        volume: float,
         creation_timestr: str = None,
     ) -> Measurement:
         """Create a Measurement or return existing with specified tracking_id."""
@@ -72,6 +77,7 @@ class MeasurementApi(object):
                 unit_id,
                 container_id,
                 status_id,
+                volume,
                 creation_timestr,
             )
         except Exception:
