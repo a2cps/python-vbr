@@ -13,6 +13,7 @@ MAPPINGS = {
         "uchicago": "12",
         "northshore": "13",
         "university_of_mich": "20",
+        "spectrum_health": "21",
     },
 }
 
