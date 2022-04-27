@@ -151,6 +151,7 @@ biosample [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	<TR><TD align="left"><B>biosample_id</B> : int</TD></TR>
 	<TR><TD align="left">creation_time? : date</TD></TR>
 	<TR><TD align="left"><I>local_id?</I> : varchar(16)</TD></TR>
+	<TR><TD align="left">location : int</TD></TR>
 	<TR><TD align="left">project? : int</TD></TR>
 	<TR><TD align="left">protocol? : int</TD></TR>
 	<TR><TD align="left">subject? : int</TD></TR>
@@ -166,8 +167,9 @@ measurement [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	<TR><TD align="left">measurement_type? : int</TD></TR>
 	<TR><TD align="left">project? : int</TD></TR>
 	<TR><TD align="left">status? : int</TD></TR>
-	<TR><TD align="left">tracking_id? : varchar(255)</TD></TR>
+	<TR><TD align="left"><I>tracking_id?</I> : varchar(255)</TD></TR>
 	<TR><TD align="left">unit? : int</TD></TR>
+	<TR><TD align="left">volume? : float</TD></TR>
 	        </TABLE>>];
 data_event_in_subject [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="1">
 	        <TR><TD><B>data_event_in_subject</B></TD></TR><HR></HR>
@@ -230,7 +232,7 @@ rcap_blood_sample_collection_and_processing_crf [label=<<TABLE BORDER="1" CELLBO
 	<TR><TD align="left">bscp_buffycoat_na : boolean</TD></TR>
 	<TR><TD align="left">bscp_caff_cups_amt : int</TD></TR>
 	<TR><TD align="left">bscp_comments : varchar(1024)</TD></TR>
-	<TR><TD align="left">bscp_deg_of_hemolysis : varchar(32)</TD></TR>
+	<TR><TD align="left">bscp_deg_of_hemolysis : float</TD></TR>
 	<TR><TD align="left">bscp_hrs_since_cafstim : varchar(255)</TD></TR>
 	<TR><TD align="left">bscp_hrs_since_food : varchar(255)</TD></TR>
 	<TR><TD align="left">bscp_hrs_since_water : varchar(255)</TD></TR>
@@ -287,6 +289,7 @@ data_event -> status  [headlabel=status_id, minlen=2, taillabel=status, xlabel="
 container_in_shipment -> container  [headlabel=container_id, minlen=3, taillabel=container, xlabel="                                          "];
 container_in_shipment -> shipment  [headlabel=shipment_id, minlen=3, taillabel=shipment, xlabel="                                      "];
 biosample -> anatomy  [headlabel=anatomy_id, minlen=3, taillabel=anatomy, xlabel="                                  "];
+biosample -> location  [headlabel=location_id, minlen=3, taillabel=location, xlabel="                                      "];
 biosample -> project  [headlabel=project_id, minlen=3, taillabel=project, xlabel="                                  "];
 biosample -> protocol  [headlabel=protocol_id, minlen=3, taillabel=protocol, xlabel="                                      "];
 biosample -> subject  [headlabel=subject_id, minlen=3, taillabel=subject, xlabel="                                  "];
