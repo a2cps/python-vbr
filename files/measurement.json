@@ -61,7 +61,8 @@
         "tracking_id": {
             "char_len": 255,
             "comments": "Identifier assigned to measurement at creation",
-            "data_type": "varchar"
+            "data_type": "varchar",
+            "unique": true
         },
         "unit": {
             "data_type": "integer",

@@ -23,6 +23,16 @@
             "data_type": "varchar",
             "unique": true
         },
+        "location": {
+            "comments": "Location where collected/created",
+            "data_type": "integer",
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "location_id",
+            "reference_table": "location"
+        },
         "project": {
             "data_type": "integer",
             "event_action": "RESTRICT",

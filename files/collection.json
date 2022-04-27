@@ -32,6 +32,15 @@
             "data_type": "varchar",
             "unique": true
         },
+        "location": {
+            "data_type": "integer",
+            "event_action": "RESTRICT",
+            "foreign_key": true,
+            "null": true,
+            "on_event": "ON DELETE",
+            "reference_column": "location_id",
+            "reference_table": "location"
+        },
         "name": {
             "char_len": 255,
             "comments": "Short name for this collection",
