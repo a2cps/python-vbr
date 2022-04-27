@@ -7,7 +7,7 @@ from vbr.utils import utc_time_in_seconds
 
 from .data_event import DataEventApi
 
-DEFAULT_VOLUME_ML = 1.0
+DEFAULT_VOLUME_ML = 0.5
 
 __all__ = ["MeasurementApi"]
 
