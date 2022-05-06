@@ -17,11 +17,11 @@ class SysEventApi(object):
 
     def get_vbr_redcap_event(self, pkid: str) -> SysEvent:
         """Retrieve a SysEvent by primary identifier."""
-        return self._get_row_from_table_with_id("vbr_redcap_event", pkid)
+        return self._get_row_from_table_with_id("sys_event", pkid)
 
     def get_vbr_redcap_event_by_local_id(self, local_id: str) -> SysEvent:
         """Retrieve a SysEvent by local_id."""
-        return self._get_row_from_table_with_local_id("vbr_redcap_event", local_id)
+        return self._get_row_from_table_with_local_id("sys_event", local_id)
 
     def set_vbr_redcap_event_status(self, event: SysEvent, status: str) -> SysEvent:
         """Update a SysEvent's status."""
