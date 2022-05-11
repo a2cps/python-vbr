@@ -38,7 +38,7 @@ class Biosample(TableVBR):
 
     biosample_id = Constants.SERIAL_PRIMARY_KEY_COLUMN
 
-    creation_time = Column(Date)
+    creation_time = Column(Date, nullable=True)
     # Source: Redcap
     # MUST be unique!
     tracking_id = Column(

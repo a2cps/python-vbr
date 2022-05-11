@@ -15,7 +15,8 @@
             "serial_start": 1000
         },
         "creation_time": {
-            "data_type": "date"
+            "data_type": "date",
+            "null": true
         },
         "local_id": {
             "char_len": 16,
