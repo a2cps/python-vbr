@@ -23,8 +23,7 @@ class SysEventApi(object):
         """Retrieve a SysEvent by local_id."""
         return self._get_row_from_table_with_local_id("sys_event", local_id)
 
-    def set_vbr_redcap_event_status(self, event: SysEvent, status: str) -> SysEvent:
+    def set_vbr_redcap_event_status_by_name(self, event: SysEvent, status_name: str) -> SysEvent:
         """Update a SysEvent's status."""
-        event.set_status(status)
-        event = self.vbr_client.update_row(event)
+        event = self.update_sysevent_status_by_name(event, status_name)
         return event
