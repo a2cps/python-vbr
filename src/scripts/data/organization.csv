@@ -14,3 +14,6 @@ organization_id,url,name,description
 1,tacc.utexas.edu,TACC,Texas Advanced Computing Center
 0,localhost,Undefined,Undefined
 14,spectrumhealth.org,SPECTRUM,Spectrum Health
+15,upmc.edu,UPMC,University of Pittsburgh Medical Center
+16,ucdavis.edu,UCD,University of California Davis
+17,wayne.edu,WS,Wayne State University
