@@ -300,6 +300,34 @@ class MeasurementType(TableVBR):
         String, unique=True, comments="Short label (ex. 'plasma' or 'paxgene'"
     )
 
+class Metadata(TableVBR):
+    """REDCap Data Dictionary export listing instruments, fieldnames, and field-level attributes by project."""
+    
+    # project_id should be an entry in the project table which corresponds to the REDCap "PID".
+    project_id = Column(Integer, ForeignKey("project.project_id")
+    metadata_export_ts = Column(CreatedTimeStamp, nullable=True)
+    field_name = Column(String)
+    form_name = Column(String)
+    section_header = Column(String, nullable=True)
+    field_type = Column(String, nullable=True)
+    # crlf and html should be stripped from the REDCap field_labels as part of the ETL process                     
+    field_label = Column(String, nullable=True)
+    # select_choices consists of a pipe-separated list of comma-separated integer label pairs which define the possible field selections.                     
+    select_choices_or_calculations = Column(String, nullable=True)
+    # field_note contains notes within REDCap which do not display within the forms                    
+    field_note = Column(String, nullable=True) 
+    # text_validation_type_or_show_slider_number contains a REDCap field format such as date_mdy that should be matched to a DB datatype
+    text_validation_type_or_show_slider_number = Column(String, nullable=True)
+    text_validation_min = Column(String, nullable=True)
+    text_validation_max = Column(String, nullable=True)                    
+    identifier = Column(String, nullable=True)
+    branching_logic = Column(String, nullable=True)
+    required_field = Column(String, nullable=True)
+    custom_alignment = Column(String, nullable=True)
+    question_number = Column(String, nullable=True)
+    matrix_group_name = Column(String, nullable=True)
+    matrix_rank = Column(String, nullable=True)
+    field_annotation = Column(String, nullable=True)                    
 
 class Organization(TableVBR):
     """C2M2 proposed future extension: a list of data-generating research programs or entities."""
