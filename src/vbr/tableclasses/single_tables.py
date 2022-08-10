@@ -304,7 +304,7 @@ class Metadata(TableVBR):
     """REDCap Data Dictionary export listing instruments, fieldnames, and field-level attributes by project."""
     
     # project_id should be an entry in the project table which corresponds to the REDCap "PID".
-    project_id = Column(Integer, ForeignKey("project.project_id")
+    project_id = Column(Integer, ForeignKey("project.project_id"))
     metadata_export_ts = Column(CreatedTimeStamp, nullable=True)
     field_name = Column(String)
     form_name = Column(String)

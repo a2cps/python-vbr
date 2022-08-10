@@ -40,7 +40,7 @@ class EhrPatientDemographic(TableVBR):
   creation_time = Column(CreatedTimeStamp, comments="When the record was created", nullable=True)
   last_updated_ts = Column(CreatedTimeStamp, comments="When the record was last updated or exported", nullable=True) 
     
- class EhrImplants(TableVBR):
+class EhrImplants(TableVBR):
   """EHR implants (many per subject) as defined by Rush""" 
   persistent_id = Column(String, comments="GUID assigned to subject", unique=True) 
   implant = Column(String, nullable=True)
@@ -60,7 +60,7 @@ class EhrMedicalHistory(TableVBR):
   persistent_id = Column(String, comments="GUID assigned to subject", unique=True)
   pmh_diagnosis = Column(String, nullable=True)
   icd10_code = Column(String, nullable=True)
-  icd9_code = Column(String, nullable=True  
+  icd9_code = Column(String, nullable=True)
   pmh_prior_surgery = Column(Integer, comments="duration from diagnosis to surgery in months", nullable=True)
   project_id = Column(Integer, ForeignKey("project.project_id"))
   protocol_id = Column(Integer, ForeignKey("protocol.protocol_id"), nullable=True)
