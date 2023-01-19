@@ -56,7 +56,7 @@ def records_by_id(
     for rec in raw_records:
         # clean any recs with just empty strings for values, 
         # ie, any key that isn't the data access group
-        vals = [v for k,v in rec.items() if k != 'redcap_data_access_group']
+        vals = [v for k,v in rec.items() if k not in ['redcap_data_access_group','redcap_event_name','record_id']]
         if set(vals) == {''}:
             # if the values are empty go to the next loop iteration
             continue
