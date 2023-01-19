@@ -2,12 +2,12 @@ import os
 
 from .constants import *
 
-__all__ = ["redcap_to_vbr_project_id", "recap_project_to_token"]
+__all__ = ["redcap_to_vbr_project_id", "redcap_project_to_token"]
 
 # This is the name of a Tapis SK API secret
 SECRET_NAME = "redcap_project_tokens"
 # Owner of the secret
-SECRET_OWNER = "vaughn"
+SECRET_OWNER = "urrutia"
 # Tenant for the secret
 TENANT = "a2cpsdev"
 
