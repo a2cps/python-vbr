@@ -45,7 +45,7 @@ def records_by_id(
             REDCAP_API_ENV_VAR, "https://redcap.tacc.utexas.edu/api/"
         )
     if fields is not None:
-        query["fields[0]"] = record_id
+        query["fields[0]"] = fields
 
     r = requests.post(api_url, data=query)
     r.raise_for_status()
