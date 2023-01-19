@@ -15,6 +15,7 @@ def records_by_id(
     token: str = None,
     api_url: str = None,
     transform=True,
+    fields = None
 ) -> list:
     """Return REDcap records for a given record, instrument, event."""
 
@@ -43,6 +44,8 @@ def records_by_id(
         api_url = os.environ.get(
             REDCAP_API_ENV_VAR, "https://redcap.tacc.utexas.edu/api/"
         )
+    if fields is not None:
+        query["fields[0]"] = record_id
 
     r = requests.post(api_url, data=query)
     r.raise_for_status()
@@ -73,6 +76,11 @@ def record_by_id(
     token: str = None,
     api_url: str = None,
     transform=True,
+    field = None,
+    single_record = True,
 ) -> dict:
     """Return first REDcap record for a given record, instrument, event."""
-    return records_by_id(record_id, instrument, event, token, api_url, transform)[0]
+    if single_record == True:
+        return records_by_id(record_id, instrument, event, token, api_url, transform, field)[0]
+    else:
+        return records_by_id(record_id, instrument, event, token, api_url, transform, field)

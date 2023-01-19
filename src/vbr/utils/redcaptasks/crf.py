@@ -7,13 +7,14 @@ __all__ = ["transform_redcap_record"]
 
 def transform_redcap_record(record: dict) -> dict:
     """Transform a Redcap record from API response into a dict that can be used to populate a VBR RcapTable."""
-    # delete keys that we will never store in VBR
-    DELETE_KEYS = ["redcap_repeat_instrument", "redcap_repeat_instance"]
-    for k in DELETE_KEYS:
-        try:
-            del record[k]
-        except KeyError:
-            pass
+    # Never say never
+    ## delete keys that we will never store in VBR
+    # DELETE_KEYS = ["redcap_repeat_instrument", "redcap_repeat_instance"]
+    # for k in DELETE_KEYS:
+    #     try:
+    #         del record[k]
+    #     except KeyError:
+    #         pass
     # Find checkbox or multi keys and transform into values
     MULTI = re.compile("___([0-9]{1,})$")
     all_keys = list(record.keys())
