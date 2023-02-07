@@ -3,3 +3,9 @@ isort
 pylint
 pytest
 sphinx
+jinja2
+git+https://github.com/mwvaughn/dbml2dot.git
+pydbml
+hashids
+arrow
+simplejson

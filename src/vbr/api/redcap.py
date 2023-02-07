@@ -21,3 +21,16 @@ class RcapTableApi(object):
         # Instantiate the VBR object
         instance = tc(**redcap_data)
         return self.vbr_client.create_row(instance)[0]
+
+    def get_redcap_record_by_biosample_and_instance(
+        self, redcap_form_name: str, biosample_id: str, subject_id: str, protocol_id: str, repeat_instance: str
+        ) -> RcapTable:
+        """Retrieve a Biosample by subject and protocol IDs."""
+        query = {
+            "subject": {"operator": "=", "value": subject_id},
+            "biosample": {"operator": "=", "value": biosample_id},
+            "protocol": {"operator": "=", "value": protocol_id},
+            "redcap_repeat_instance": {"operator": "=", "value": repeat_instance}
+        }
+        return self._get_row_from_table_with_query(redcap_form_name, query=query)
+
