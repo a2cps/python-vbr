@@ -151,7 +151,7 @@ class RcapBloodSampleCollectionAndProcessingCrf(RcapTable):
     # Choices: N/A
     bscp_procby_initials = Column(String, nullable=True, comments=None)
     # Add this to the autogen script instead
-    redcap_repeat_instance = Column(String, nullable=True, comments=None)
+    redcap_repeat_instance = Column(Integer, nullable=True, comments=None)
     redcap_repeat_instrument = Column(String, nullable=True, comments=None)
     
     
