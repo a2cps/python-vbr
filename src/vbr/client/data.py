@@ -76,7 +76,8 @@ class DataManager(object):
         root_url = vbr_obj.__schema__.root_url
         pk_value = getattr(vbr_obj, "._pkid", None)
         if pk_value is None:
-            pk_attr_name = vbr_obj.__schema__.table_name + "_id"
+            #split rcap off table name to get pk
+            pk_attr_name = vbr_obj.__schema__.table_name.split('rcap_')[-1] + "_id"
             pk_value = getattr(vbr_obj, pk_attr_name)
         pk_value = str(pk_value)
 

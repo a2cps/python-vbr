@@ -41,9 +41,9 @@ class Biosample(TableVBR):
     creation_time = Column(Date, nullable=True)
     # Source: Redcap
     # MUST be unique!
-    tracking_id = Column(
-        String, comments="ID assigned to sample when collected", unique=True
-    )
+    # tracking_id = Column(
+    #     String, comments="ID assigned to sample when collected", unique=True
+    # )
     anatomy = Column(Integer, ForeignKey("anatomy.anatomy_id"))
     location = Column(
         Integer,
