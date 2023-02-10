@@ -40,7 +40,7 @@ class RcapTableApi(object):
             "redcap_repeat_instance": {"operator": "=", "value": repeat_instance}
         }
         #patch for null values
-        if repeat_instance == '':
+        if repeat_instance == '' or repeat_instance is None:
             query["redcap_repeat_instance"] = {'operator': 'null', 'value': 'TRUE'}
 
         return self._get_row_from_table_with_query(redcap_form_name, query=query)
