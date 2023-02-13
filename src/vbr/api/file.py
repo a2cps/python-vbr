@@ -25,6 +25,11 @@ class FileApi(object):
         """Retrieve a File by tracking_id."""
         return self._get_row_from_table_with_tracking_id("file", tracking_id)
 
+    def get_file_by_filename(self, filename: str) -> File:
+        """Retrieve File by file name."""
+        query = {"filename": {"operator": "=", "value": filename}}
+        return self._get_row_from_table_with_query("file", query)
+
     def create_file(
         self,
         file: int,
