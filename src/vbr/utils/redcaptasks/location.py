@@ -6,14 +6,15 @@ __all__ = [
 ]
 
 MAPPINGS = {
-    "mcc_vbr_location": {"1": "11", "2": "12", "3": "13", "4": "20"},
-    "mcc_vbr_project": {"1": "2", "2": "2", "3": "2", "4": "3"},
+    "mcc_vbr_location": {"1": "11", "2": "12", "3": "13", "4": "20", "5": "50", "6": "51"},
+    "mcc_vbr_project": {"1": "2", "2": "2", "3": "2", "4": "3", "5": "3", "6": "3"},
     "dag_vbr_location": {
         "rush_university_me": "11",
         "uchicago": "12",
         "northshore": "13",
         "university_of_mich": "20",
         "spectrum_health": "50",
+        "wayne_state": "51",
     },
 }
 
