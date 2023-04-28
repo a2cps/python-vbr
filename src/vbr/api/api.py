@@ -27,6 +27,7 @@ from .status import StatusApi
 from .subject import SubjectApi
 from .sysevent import SysEventApi
 from .tracking_id import ManageTrackingIdApi
+from .file import FileApi
 
 __all__ = ["get_vbr_api_client", "VBR_Api"]
 
@@ -91,6 +92,7 @@ class VBR_Api(
     ContainerTypeApi,
     CollectionTypeApi,
     DataEventApi,
+    FileApi,
     LocationApi,
     MeasurementApi,
     OrganizationApi,
