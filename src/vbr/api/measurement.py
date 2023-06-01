@@ -168,7 +168,7 @@ class MeasurementApi(object):
                     }
         else:
             query = {
-                "biosample": {"operator": "=", "value": biosample.biosample_id}                }
+                "biosample": {"operator": "=", "value": biosample.biosample_id}}
         return self.vbr_client.query_rows(
             root_url="measurement", query=query, limit=1000000
         )

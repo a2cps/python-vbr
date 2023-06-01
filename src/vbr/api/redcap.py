@@ -45,6 +45,17 @@ class RcapTableApi(object):
 
         return self._get_row_from_table_with_query(redcap_form_name, query=query)
 
+    def get_redcap_record_by_subject_and_protocol(
+        self, redcap_form_name: str, subject_id: str, protocol_id: str
+        ) -> RcapTable:
+        """Retrieve a Biosample by subject and protocol IDs."""
+        redcap_form_name = 'rcap_'+redcap_form_name
+        query = {
+            "subject_id": {"operator": "=", "value": subject_id},
+            "protocol_id": {"operator": "=", "value": protocol_id}
+            }
+        return self._get_row_from_table_with_query(redcap_form_name, query=query)
+    
     def update_redcap_record(
         self, redcap_form_name: str, redcap_record: RcapTable, rcap_row: RcapTable
         ) -> RcapTable:
