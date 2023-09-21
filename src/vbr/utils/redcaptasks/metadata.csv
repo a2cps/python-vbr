@@ -227,3 +227,224 @@ event_id,arm_id,day_offset,offset_min,offset_max,descrip,external_id,custom_even
 349,39,40,0,0,12-Mo Post-Op,NULL,NULL
 350,39,41,0,0,Event Reporting,NULL,NULL
 351,40,1,0,0,Event 1,NULL,NULL
+41,15,1,0,0,Informed Consent,NULL,NULL
+42,15,2,0,0,Baseline Visit,NULL,NULL
+43,15,30,0,0,6-Wks Post-Op,NULL,NULL
+44,15,31,0,0,3-Mo Post-Op,NULL,NULL
+45,15,32,0,0,6-Mo Post-Op,NULL,NULL
+47,15,47,0,0,12-Mo Post-Op,NULL,NULL
+48,15,3,0,0,3 Days Pre-Op,NULL,NULL
+89,15,5,0,0,Day 4 Post-Op,NULL,[traj04wkenterdate]
+90,15,6,0,0,Day 5 Post-Op,NULL,[traj04wkenterdate]
+91,15,7,0,0,Day 6 Post-Op,NULL,[traj04wkenterdate]
+92,15,8,0,0,Day 7 Post-Op,NULL,[traj04wkenterdate]
+93,15,9,0,0,Day 8 Post-Op,NULL,[traj04wkenterdate]
+94,15,10,0,0,Day 9 Post-Op,NULL,[traj04wkenterdate]
+95,15,11,0,0,Day 10 Post-Op,NULL,[traj04wkenterdate]
+96,15,12,0,0,Day 11 Post-Op,NULL,[traj04wkenterdate]
+97,15,13,0,0,Day 12 Post-Op,NULL,[traj04wkenterdate]
+98,15,14,0,0,Day 13 Post-Op,NULL,[traj04wkenterdate]
+99,15,15,0,0,Day 14 Post-Op,NULL,[traj04wkenterdate]
+100,15,16,0,0,Day 15 Post-Op,NULL,[traj04wkenterdate]
+101,15,17,0,0,Day 16 Post-Op,NULL,[traj04wkenterdate]
+102,15,18,0,0,Day 17 Post-Op,NULL,[traj04wkenterdate]
+103,15,19,0,0,Day 18 Post-Op,NULL,[traj04wkenterdate]
+104,15,20,0,0,Day 19 Post-Op,NULL,[traj04wkenterdate]
+105,15,21,0,0,Day 20 Post-Op,NULL,[traj04wkenterdate]
+106,15,22,0,0,Day 21 Post-Op,NULL,[traj04wkenterdate]
+107,15,23,0,0,Day 22 Post-Op,NULL,[traj04wkenterdate]
+108,15,24,0,0,Day 23 Post-Op,NULL,[traj04wkenterdate]
+109,15,25,0,0,Day 24 Post-Op,NULL,[traj04wkenterdate]
+110,15,26,0,0,Day 25 Post-Op,NULL,[traj04wkenterdate]
+111,15,27,0,0,Day 26 Post-Op,NULL,[traj04wkenterdate]
+112,15,28,0,0,Day 27 Post-Op,NULL,[traj04wkenterdate]
+113,15,29,0,0,Day 28 Post-Op,NULL,[traj04wkenterdate]
+114,15,33,0,0,6-Mo Post-Op Day 1 ,NULL,NULL
+115,15,34,0,0,6-Mo Post-Op Day 2,NULL,NULL
+116,15,35,0,0,6-Mo Post-Op Day 3,NULL,NULL
+117,15,36,0,0,6-Mo Post-Op Day 4,NULL,NULL
+118,15,37,0,0,6-Mo Post-Op Day 5,NULL,NULL
+119,15,38,0,0,6-Mo Post-Op Day 6,NULL,NULL
+120,15,39,0,0,6-Mo Post-Op Day 7,NULL,NULL
+164,15,48,0,0,Event Reporting,NULL,NULL
+167,23,1,0,0,Screening,NULL,NULL
+210,15,4,0,0,Day 3 Post-Op,NULL,[traj04wkenterdate]
+304,33,1,0,0,Screening,NULL,NULL
+305,34,1,0,0,Screening,NULL,NULL
+363,15,40,0,0,6-Mo Post-Op Day 8,NULL,NULL
+364,15,41,0,0,6-Mo Post-Op Day 9,NULL,NULL
+365,15,42,0,0,6-Mo Post-Op Day 10,NULL,NULL
+366,15,43,0,0,6-Mo Post-Op Day 11,NULL,NULL
+367,15,44,0,0,6-Mo Post-Op Day 12,NULL,NULL
+368,15,45,0,0,6-Mo Post-Op Day 13,NULL,NULL
+369,15,46,0,0,6-Mo Post-Op Day 14,NULL,NULL
+551,61,1,0,0,Screening,NULL,NULL
+553,63,1,0,0,Informed Consent,NULL,NULL
+554,63,2,0,0,Baseline Visit,NULL,NULL
+555,63,3,0,0,3 Days Pre-Op,NULL,NULL
+556,63,4,0,0,Day 3 Post-Op,NULL,[traj04wkenterdate]
+557,63,5,0,0,Day 4 Post-Op,NULL,[traj04wkenterdate]
+558,63,6,0,0,Day 5 Post-Op,NULL,[traj04wkenterdate]
+559,63,7,0,0,Day 6 Post-Op,NULL,[traj04wkenterdate]
+560,63,8,0,0,Day 7 Post-Op,NULL,[traj04wkenterdate]
+561,63,9,0,0,Day 8 Post-Op,NULL,[traj04wkenterdate]
+562,63,10,0,0,Day 9 Post-Op,NULL,[traj04wkenterdate]
+563,63,11,0,0,Day 10 Post-Op,NULL,[traj04wkenterdate]
+564,63,12,0,0,Day 11 Post-Op,NULL,[traj04wkenterdate]
+565,63,13,0,0,Day 12 Post-Op,NULL,[traj04wkenterdate]
+566,63,14,0,0,Day 13 Post-Op,NULL,[traj04wkenterdate]
+567,63,15,0,0,Day 14 Post-Op,NULL,[traj04wkenterdate]
+568,63,16,0,0,Day 15 Post-Op,NULL,[traj04wkenterdate]
+569,63,17,0,0,Day 16 Post-Op,NULL,[traj04wkenterdate]
+570,63,18,0,0,Day 17 Post-Op,NULL,[traj04wkenterdate]
+571,63,19,0,0,Day 18 Post-Op,NULL,[traj04wkenterdate]
+572,63,20,0,0,Day 19 Post-Op,NULL,[traj04wkenterdate]
+573,63,21,0,0,Day 20 Post-Op,NULL,[traj04wkenterdate]
+574,63,22,0,0,Day 21 Post-Op,NULL,[traj04wkenterdate]
+575,63,23,0,0,Day 22 Post-Op,NULL,[traj04wkenterdate]
+576,63,24,0,0,Day 23 Post-Op,NULL,[traj04wkenterdate]
+577,63,25,0,0,Day 24 Post-Op,NULL,[traj04wkenterdate]
+578,63,26,0,0,Day 25 Post-Op,NULL,[traj04wkenterdate]
+579,63,27,0,0,Day 26 Post-Op,NULL,[traj04wkenterdate]
+580,63,28,0,0,Day 27 Post-Op,NULL,[traj04wkenterdate]
+581,63,29,0,0,Day 28 Post-Op,NULL,[traj04wkenterdate]
+582,63,30,0,0,6-Wks Post-Op,NULL,NULL
+583,63,31,0,0,3-Mo Post-Op,NULL,NULL
+584,63,32,0,0,6-Mo Post-Op,NULL,NULL
+585,63,33,0,0,6-Mo Post-Op Day 1 ,NULL,NULL
+586,63,34,0,0,6-Mo Post-Op Day 2,NULL,NULL
+587,63,35,0,0,6-Mo Post-Op Day 3,NULL,NULL
+588,63,36,0,0,6-Mo Post-Op Day 4,NULL,NULL
+589,63,37,0,0,6-Mo Post-Op Day 5,NULL,NULL
+590,63,38,0,0,6-Mo Post-Op Day 6,NULL,NULL
+591,63,39,0,0,6-Mo Post-Op Day 7,NULL,NULL
+592,63,40,0,0,6-Mo Post-Op Day 8,NULL,NULL
+593,63,41,0,0,6-Mo Post-Op Day 9,NULL,NULL
+594,63,42,0,0,6-Mo Post-Op Day 10,NULL,NULL
+595,63,43,0,0,6-Mo Post-Op Day 11,NULL,NULL
+596,63,44,0,0,6-Mo Post-Op Day 12,NULL,NULL
+597,63,45,0,0,6-Mo Post-Op Day 13,NULL,NULL
+598,63,46,0,0,6-Mo Post-Op Day 14,NULL,NULL
+599,63,47,0,0,12-Mo Post-Op,NULL,NULL
+600,63,48,0,0,Event Reporting,NULL,NULL
+651,23,2,0,0,June 2022 Re-consent,NULL,NULL
+652,61,2,0,0,June 2022 Re-consent,NULL,NULL
+653,33,2,0,0,June 2022 Re-consent,NULL,NULL
+654,34,2,0,0,June 2022 Re-consent,NULL,NULL
+663,66,1,0,0,Screening,NULL,NULL
+664,66,2,0,0,June 2022 Re-consent,NULL,NULL
+260,29,1,0,0,Screening,NULL,NULL
+261,30,1,0,0,Informed Consent,NULL,NULL
+262,30,2,0,0,Baseline Visit,NULL,NULL
+263,30,3,0,0,3 Days Pre-Op,NULL,NULL
+264,30,4,0,0,Day 3 Post-Op,NULL,[traj04wkenterdate]
+265,30,5,0,0,Day 4 Post-Op,NULL,[traj04wkenterdate]
+266,30,6,0,0,Day 5 Post-Op,NULL,[traj04wkenterdate]
+267,30,7,0,0,Day 6 Post-Op,NULL,[traj04wkenterdate]
+268,30,8,0,0,Day 7 Post-Op,NULL,[traj04wkenterdate]
+269,30,9,0,0,Day 8 Post-Op,NULL,[traj04wkenterdate]
+270,30,10,0,0,Day 9 Post-Op,NULL,[traj04wkenterdate]
+271,30,11,0,0,Day 10 Post-Op,NULL,[traj04wkenterdate]
+272,30,12,0,0,Day 11 Post-Op,NULL,[traj04wkenterdate]
+273,30,13,0,0,Day 12 Post-Op,NULL,[traj04wkenterdate]
+274,30,14,0,0,Day 13 Post-Op,NULL,[traj04wkenterdate]
+275,30,15,0,0,Day 14 Post-Op,NULL,[traj04wkenterdate]
+276,30,16,0,0,Day 15 Post-Op,NULL,[traj04wkenterdate]
+277,30,17,0,0,Day 16 Post-Op,NULL,[traj04wkenterdate]
+278,30,18,0,0,Day 17 Post-Op,NULL,[traj04wkenterdate]
+279,30,19,0,0,Day 18 Post-Op,NULL,[traj04wkenterdate]
+280,30,20,0,0,Day 19 Post-Op,NULL,[traj04wkenterdate]
+281,30,21,0,0,Day 20 Post-Op,NULL,[traj04wkenterdate]
+282,30,22,0,0,Day 21 Post-Op,NULL,[traj04wkenterdate]
+283,30,23,0,0,Day 22 Post-Op,NULL,[traj04wkenterdate]
+284,30,24,0,0,Day 23 Post-Op,NULL,[traj04wkenterdate]
+285,30,25,0,0,Day 24 Post-Op,NULL,[traj04wkenterdate]
+286,30,26,0,0,Day 25 Post-Op,NULL,[traj04wkenterdate]
+287,30,27,0,0,Day 26 Post-Op,NULL,[traj04wkenterdate]
+288,30,28,0,0,Day 27 Post-Op,NULL,[traj04wkenterdate]
+289,30,29,0,0,Day 28 Post-Op,NULL,[traj04wkenterdate]
+290,30,30,0,0,6-Wks Post-Op,NULL,NULL
+291,30,31,0,0,3-Mo Post-Op,NULL,NULL
+292,30,32,0,0,6-Mo Post-Op,NULL,NULL
+293,30,33,0,0,6-Mo Post-Op Day 1 ,NULL,NULL
+294,30,34,0,0,6-Mo Post-Op Day 2,NULL,NULL
+295,30,35,0,0,6-Mo Post-Op Day 3,NULL,NULL
+296,30,36,0,0,6-Mo Post-Op Day 4,NULL,NULL
+297,30,37,0,0,6-Mo Post-Op Day 5,NULL,NULL
+298,30,38,0,0,6-Mo Post-Op Day 6,NULL,NULL
+299,30,39,0,0,6-Mo Post-Op Day 7,NULL,NULL
+300,30,47,0,0,12-Mo Post-Op,NULL,NULL
+301,30,48,0,0,Event Reporting,NULL,NULL
+351,40,1,0,0,Screening,NULL,NULL
+353,42,1,0,0,Screening,NULL,NULL
+354,43,1,0,0,Screening,NULL,NULL
+370,30,40,0,0,6-Mo Post-Op Day 8,NULL,NULL
+371,30,41,0,0,6-Mo Post-Op Day 9,NULL,NULL
+372,30,42,0,0,6-Mo Post-Op Day 10,NULL,NULL
+373,30,43,0,0,6-Mo Post-Op Day 11,NULL,NULL
+374,30,44,0,0,6-Mo Post-Op Day 12,NULL,NULL
+375,30,45,0,0,6-Mo Post-Op Day 13,NULL,NULL
+376,30,46,0,0,6-Mo Post-Op Day 14,NULL,NULL
+444,48,1,0,0,Screening,NULL,NULL
+445,49,1,0,0,Screening,NULL,NULL
+446,50,1,0,0,Event 1,NULL,NULL
+447,51,1,0,0,Screening,NULL,NULL
+552,62,1,0,0,Screening,NULL,NULL
+601,64,1,0,0,Informed Consent,NULL,NULL
+602,64,2,0,0,Baseline Visit,NULL,NULL
+603,64,3,0,0,3 Days Pre-Op,NULL,NULL
+604,64,4,0,0,Day 3 Post-Op,NULL,[traj04wkenterdate]
+605,64,5,0,0,Day 4 Post-Op,NULL,[traj04wkenterdate]
+606,64,6,0,0,Day 5 Post-Op,NULL,[traj04wkenterdate]
+607,64,7,0,0,Day 6 Post-Op,NULL,[traj04wkenterdate]
+608,64,8,0,0,Day 7 Post-Op,NULL,[traj04wkenterdate]
+609,64,9,0,0,Day 8 Post-Op,NULL,[traj04wkenterdate]
+610,64,10,0,0,Day 9 Post-Op,NULL,[traj04wkenterdate]
+611,64,11,0,0,Day 10 Post-Op,NULL,[traj04wkenterdate]
+612,64,12,0,0,Day 11 Post-Op,NULL,[traj04wkenterdate]
+613,64,13,0,0,Day 12 Post-Op,NULL,[traj04wkenterdate]
+614,64,14,0,0,Day 13 Post-Op,NULL,[traj04wkenterdate]
+615,64,15,0,0,Day 14 Post-Op,NULL,[traj04wkenterdate]
+616,64,16,0,0,Day 15 Post-Op,NULL,[traj04wkenterdate]
+617,64,17,0,0,Day 16 Post-Op,NULL,[traj04wkenterdate]
+618,64,18,0,0,Day 17 Post-Op,NULL,[traj04wkenterdate]
+619,64,19,0,0,Day 18 Post-Op,NULL,[traj04wkenterdate]
+620,64,20,0,0,Day 19 Post-Op,NULL,[traj04wkenterdate]
+621,64,21,0,0,Day 20 Post-Op,NULL,[traj04wkenterdate]
+622,64,22,0,0,Day 21 Post-Op,NULL,[traj04wkenterdate]
+623,64,23,0,0,Day 22 Post-Op,NULL,[traj04wkenterdate]
+624,64,24,0,0,Day 23 Post-Op,NULL,[traj04wkenterdate]
+625,64,25,0,0,Day 24 Post-Op,NULL,[traj04wkenterdate]
+626,64,26,0,0,Day 25 Post-Op,NULL,[traj04wkenterdate]
+627,64,27,0,0,Day 26 Post-Op,NULL,[traj04wkenterdate]
+628,64,28,0,0,Day 27 Post-Op,NULL,[traj04wkenterdate]
+629,64,29,0,0,Day 28 Post-Op,NULL,[traj04wkenterdate]
+630,64,30,0,0,6-Wks Post-Op,NULL,NULL
+631,64,31,0,0,3-Mo Post-Op,NULL,NULL
+632,64,32,0,0,6-Mo Post-Op,NULL,NULL
+633,64,33,0,0,6-Mo Post-Op Day 1 ,NULL,NULL
+634,64,34,0,0,6-Mo Post-Op Day 2,NULL,NULL
+635,64,35,0,0,6-Mo Post-Op Day 3,NULL,NULL
+636,64,36,0,0,6-Mo Post-Op Day 4,NULL,NULL
+637,64,37,0,0,6-Mo Post-Op Day 5,NULL,NULL
+638,64,38,0,0,6-Mo Post-Op Day 6,NULL,NULL
+639,64,39,0,0,6-Mo Post-Op Day 7,NULL,NULL
+640,64,40,0,0,6-Mo Post-Op Day 8,NULL,NULL
+641,64,41,0,0,6-Mo Post-Op Day 9,NULL,NULL
+642,64,42,0,0,6-Mo Post-Op Day 10,NULL,NULL
+643,64,43,0,0,6-Mo Post-Op Day 11,NULL,NULL
+644,64,44,0,0,6-Mo Post-Op Day 12,NULL,NULL
+645,64,45,0,0,6-Mo Post-Op Day 13,NULL,NULL
+646,64,46,0,0,6-Mo Post-Op Day 14,NULL,NULL
+647,64,47,0,0,12-Mo Post-Op,NULL,NULL
+648,64,48,0,0,Event Reporting,NULL,NULL
+655,29,2,0,0,June 2022 Re-consent,NULL,NULL
+656,62,2,0,0,Re-consent,NULL,NULL
+657,40,2,0,0,June 2022 Re-consent,NULL,NULL
+658,42,2,0,0,June 2022 Re-consent,NULL,NULL
+659,43,2,0,0,June 2022 Re-consent,NULL,NULL
+660,48,2,0,0,June 2022 Re-consent,NULL,NULL
+661,51,2,0,0,June 2022 Re-consent,NULL,NULL
+662,49,2,0,0,June 2022 Re-consent,NULL,NULL
+665,67,1,0,0,Screening,NULL,NULL
+666,67,2,0,0,2022 Re-consent,NULL,NULL
