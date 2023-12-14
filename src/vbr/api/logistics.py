@@ -216,7 +216,7 @@ class LogisticsApi(object):
         """Move a Measurement to a Container."""
         orig_measurement_container = measurement.container
         measurement.container = container.container_id
-        container = self.vbr_client.update_row(measurement)
+        measurement = self.vbr_client.update_row(measurement)
         DataEventApi.create_and_link(
             self,
             comment="Relocated to container {0}".format(container.local_id),
