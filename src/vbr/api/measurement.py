@@ -36,6 +36,7 @@ class MeasurementApi(object):
         status_id: int,
         volume: float = DEFAULT_VOLUME_ML,
         creation_timestr: str = None,
+        redcap_repeat_instance: int = None,
     ) -> Measurement:
         """Create a new Measurement."""
         # TODO - data_event
@@ -49,6 +50,7 @@ class MeasurementApi(object):
             status=status_id,
             volume=volume,
             creation_time=creation_timestr,
+            redcap_repeat_instance=redcap_repeat_instance,
         )
         try:
             return self.vbr_client.create_row(bs)[0]
@@ -66,6 +68,7 @@ class MeasurementApi(object):
         status_id: int,
         volume: float,
         creation_timestr: str = None,
+        redcap_repeat_instance: int = None,
     ) -> Measurement:
         """Create a Measurement or return existing with specified tracking_id."""
         try:
@@ -79,6 +82,7 @@ class MeasurementApi(object):
                 status_id,
                 volume,
                 creation_timestr,
+                redcap_repeat_instance
             )
         except Exception:
             return self.get_measurement_by_tracking_id(tracking_id)
@@ -154,9 +158,17 @@ class MeasurementApi(object):
             root_url="measurement", query=query, limit=1000000
         )
 
-    def get_measurements_in_biosample(self, biosample: Biosample) -> List[Measurement]:
+    def get_measurements_in_biosample(self, biosample: Biosample, redcap_repeat_instance) -> List[Measurement]:
         """Retrieve Measurements in a Biosample."""
-        query = {"biosample": {"operator": "=", "value": biosample.biosample_id}}
+        # PgREST doesn't handle =None queries well, patch:
+        if redcap_repeat_instance is not None:
+            query = {
+                    "biosample": {"operator": "=", "value": biosample.biosample_id},
+                    "redcap_repeat_instance": {"operator": "=", "value": redcap_repeat_instance}
+                    }
+        else:
+            query = {
+                "biosample": {"operator": "=", "value": biosample.biosample_id}}
         return self.vbr_client.query_rows(
             root_url="measurement", query=query, limit=1000000
         )

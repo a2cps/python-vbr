@@ -288,6 +288,7 @@ class Measurement(TableVBR):
     volume = Column(
         Numeric, nullable=False, default=0.0, comments="Volume in milliliters"
     )
+    redcap_repeat_instance = Column(Integer, nullable=True, comments=None)
 
 
 class MeasurementType(TableVBR):
